@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Fonts ── */
+  --font-heading: var(--font-playfair), Georgia, serif;
+  --font-body:    var(--font-dm-sans), system-ui, sans-serif;
+  --font-sans:    var(--font-dm-sans), system-ui, sans-serif;
+
+  /* ── Brand Colors ── */
+  --color-primary:   #1C2321; /* deep charcoal-green */
+  --color-secondary: #2E4F41; /* forest green       */
+  --color-tertiary:  #D07A53; /* warm terracotta    */
+
+  /* ── Neutral Palette ── */
+  --color-neutral-50:  #F9F6F0; /* site background / canvas  */
+  --color-neutral-100: #F0EBE3; /* card / section backgrounds */
+  --color-neutral-200: #E0D8CE; /* borders, dividers          */
+  --color-neutral-400: #A89F94; /* placeholder / disabled text */
+  --color-neutral-600: #6B6259; /* secondary / muted body text */
+  --color-neutral-800: #3A3430; /* primary body text           */
+  --color-neutral-900: #1C1916; /* headings on light bg        */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Base styles ── */
+body {
+  background-color: #FAF8F5;
+  color: var(--color-neutral-800);
+  font-family: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.container-pad {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+@media (max-width: 768px) {
+  .container-pad {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }

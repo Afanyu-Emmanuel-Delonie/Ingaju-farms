@@ -25,7 +25,7 @@ export default function DairyCta() {
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#2E4F41] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#3a6352]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
               Get In Touch <ArrowRight className="h-4 w-4" />
             </Link>

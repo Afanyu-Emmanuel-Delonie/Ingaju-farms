@@ -61,7 +61,7 @@ export default function Navbar() {
               Ingaju <span className="text-[#D07A53]">Farms</span>
             </span>
             <span
-              className={`text-[9px] font-body font-semibold uppercase tracking-widest transition-colors duration-300 mt-0.5 ${scrolled ? "text-[#2E4F41]" : "text-[#6DBE8C]"
+              className={`text-[9px] font-body font-semibold uppercase tracking-widest transition-colors duration-300 mt-0.5 ${scrolled ? "text-[#3A7D5A]" : "text-[#6DBE8C]"
                 }`}
             >
               Organic & Circular
@@ -85,7 +85,7 @@ export default function Navbar() {
                   <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover/nav:rotate-180" />
                 )}
                 <span
-                  className={`absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full ${scrolled ? "bg-[#2E4F41]" : "bg-[#6DBE8C]"
+                  className={`absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full ${scrolled ? "bg-[#3A7D5A]" : "bg-[#6DBE8C]"
                     }`}
                 />
               </Link>
@@ -97,7 +97,7 @@ export default function Navbar() {
                       <Link
                         key={drop.label}
                         href={drop.href}
-                        className="px-5 py-3 text-sm font-body transition-colors text-[#1C2321]/80 hover:bg-[#2E4F41]/5 hover:text-[#2E4F41]"
+                        className="px-5 py-3 text-sm font-body transition-colors text-[#1C2321]/80 hover:bg-[#3A7D5A]/5 hover:text-[#3A7D5A]"
                       >
                         {drop.label}
                       </Link>
@@ -112,7 +112,7 @@ export default function Navbar() {
         {/* Desktop Call To Action */}
         <Link
           href="/contact"
-          className="group hidden lg:inline-flex items-center gap-2 rounded-full bg-[#2E4F41] px-6 py-2.5 text-sm font-body font-semibold text-white transition-all duration-300 hover:bg-[#1C2321] hover:shadow-md hover:-translate-y-0.5"
+          className="group hidden lg:inline-flex items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-2.5 text-sm font-body font-semibold text-white transition-all duration-300 hover:bg-[#1C2321] hover:shadow-md hover:-translate-y-0.5"
         >
           <span>Contact Us</span>
           <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -170,7 +170,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2E4F41] px-5 py-3 text-sm font-body font-semibold text-white transition-colors hover:bg-[#3a6352]"
+            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#3A7D5A] px-5 py-3 text-sm font-body font-semibold text-white transition-colors hover:bg-[#2f6b4a]"
           >
             Contact Us
             <ArrowRight className="h-4 w-4" />

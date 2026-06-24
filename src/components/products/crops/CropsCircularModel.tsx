@@ -37,12 +37,12 @@ export default function CropsCircularModel() {
 
           {/* Copy */}
           <div>
-            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41] mb-3">
+            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
               Ingaju Circular Model
             </p>
             <h2 className="font-heading text-3xl font-bold leading-tight text-[#1C2321] sm:text-4xl">
               Crops Fed by the Farm,<br />
-              <span className="text-[#2E4F41]">Not by Chemicals.</span>
+              <span className="text-[#3A7D5A]">Not by Chemicals.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259]">
               Instead of synthetic fertilizers, Ingaju Farms closes the loop — organic manure from our dairy herd enriches the soil, crops thrive naturally, and nothing goes to waste.
@@ -50,14 +50,14 @@ export default function CropsCircularModel() {
             <ul className="mt-6 space-y-3">
               {POINTS.map((point) => (
                 <li key={point} className="flex items-start gap-3 text-[15px] font-body text-[#6B6259]">
-                  <span aria-hidden className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E4F41]" />
+                  <span aria-hidden className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#3A7D5A]" />
                   {point}
                 </li>
               ))}
             </ul>
             <Link
               href="/about"
-              className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-[#2E4F41] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#3a6352]"
+              className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
               Our Farming Model <ArrowRight className="h-4 w-4" />
             </Link>

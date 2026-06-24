@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { motion, useSpring, useTransform, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 
 interface CountUpProps {
   to: number;
@@ -9,22 +9,30 @@ interface CountUpProps {
   className?: string;
 }
 
-export default function CountUp({ to, duration = 2, className = "" }: CountUpProps) {
+export default function CountUp({ to, duration = 1.5, className }: CountUpProps) {
+  const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  
-  const spring = useSpring(0, {
-    duration: duration * 1000,
-    bounce: 0,
-  });
-  
-  const display = useTransform(spring, (current) => Math.round(current));
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    if (isInView) {
-      spring.set(to);
-    }
-  }, [isInView, spring, to]);
+    if (!isInView) return;
+    let start = 0;
+    const steps = 60;
+    const increment = to / steps;
+    const interval = (duration * 1000) / steps;
 
-  return <motion.span ref={ref} className={className}>{display}</motion.span>;
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= to) {
+        setCount(to);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, [isInView, to, duration]);
+
+  return <span ref={ref} className={className}>{count}</span>;
 }

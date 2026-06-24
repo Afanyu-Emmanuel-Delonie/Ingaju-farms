@@ -10,16 +10,16 @@ export default function CircularTrainings() {
 
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
           <div>
-            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41] mb-3">
+            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
               Learn It Yourself
             </p>
             <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-              Training Programs at <span className="text-[#2E4F41]">Ingaju</span>
+              Training Programs at <span className="text-[#3A7D5A]">Ingaju</span>
             </h2>
           </div>
           <Link
             href="/trainings"
-            className="inline-flex items-center gap-2 text-sm font-body font-semibold text-[#2E4F41] hover:underline shrink-0"
+            className="inline-flex items-center gap-2 text-sm font-body font-semibold text-[#3A7D5A] hover:underline shrink-0"
           >
             View All Programs <ArrowRight className="h-4 w-4" />
           </Link>
@@ -42,13 +42,13 @@ export default function CircularTrainings() {
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-heading text-lg font-bold text-[#1C2321] group-hover:text-[#2E4F41] transition-colors">
+                <h3 className="font-heading text-lg font-bold text-[#1C2321] group-hover:text-[#3A7D5A] transition-colors">
                   {item.title}
                 </h3>
                 <p className="mt-2 flex-1 text-sm font-body leading-relaxed text-[#6B6259]">
                   {item.description}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-body font-semibold text-[#2E4F41]">
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-body font-semibold text-[#3A7D5A]">
                   {item.ctaLabel} <ArrowRight className="h-4 w-4" />
                 </span>
               </div>

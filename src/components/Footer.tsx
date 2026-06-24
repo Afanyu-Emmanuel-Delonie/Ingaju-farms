@@ -47,7 +47,7 @@ export default function Footer() {
             </p>
             <a
               href="/contact"
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#2E4F41] px-5 py-2.5 text-sm font-body font-medium text-white transition-colors hover:bg-[#3a6352]"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#3A7D5A] px-5 py-2.5 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
               Get In Touch
               <ArrowRight className="h-4 w-4" />

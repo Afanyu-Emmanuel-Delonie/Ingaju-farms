@@ -8,7 +8,8 @@
 
   /* ── Brand Colors ── */
   --color-primary:   #1C2321; /* deep charcoal-green */
-  --color-secondary: #2E4F41; /* forest green       */
+  --color-secondary: #3A7D5A; /* forest green — primary brand green */
+  --color-secondary-hover: #2f6b4a; /* hover state */
   --color-tertiary:  #D07A53; /* warm terracotta    */
 
   /* ── Neutral Palette ── */

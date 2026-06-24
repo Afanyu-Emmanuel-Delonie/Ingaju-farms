@@ -48,9 +48,9 @@ export default function CircularStages() {
     <section className="w-full bg-white">
       <div className="container-pad py-24">
         <div className="text-center mb-16">
-          <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41] mb-3">Deep Dive</p>
+          <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">Deep Dive</p>
           <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-            The Four Stages <span className="text-[#2E4F41]">Explained</span>
+            The Four Stages <span className="text-[#3A7D5A]">Explained</span>
           </h2>
         </div>
 
@@ -63,14 +63,14 @@ export default function CircularStages() {
               <div>
                 <div className="flex items-center gap-4 mb-5">
                   <span className="font-heading text-5xl font-bold text-[#1C2321]/8 leading-none">{number}</span>
-                  <span className="text-xs font-body font-semibold uppercase tracking-widest text-[#2E4F41]">{label}</span>
+                  <span className="text-xs font-body font-semibold uppercase tracking-widest text-[#3A7D5A]">{label}</span>
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-[#1C2321] sm:text-3xl">{title}</h3>
                 <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">{body}</p>
                 <ul className="mt-6 space-y-3">
                   {bullets.map((point) => (
                     <li key={point} className="flex items-start gap-3 text-[15px] font-body text-[#6B6259]">
-                      <span aria-hidden className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E4F41]" />
+                      <span aria-hidden className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#3A7D5A]" />
                       {point}
                     </li>
                   ))}

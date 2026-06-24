@@ -26,7 +26,7 @@ export default function CoreValues() {
           transition={{ duration: 0.7, ease: EASE }}
           className="mb-14"
         >
-          <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41]">What We Stand For</p>
+          <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A]">What We Stand For</p>
           <h2 className="mt-3 text-3xl font-heading font-bold text-[#1C2321] sm:text-4xl">
             Our Core <span className="text-[#D07A53]">Values</span>
           </h2>
@@ -43,7 +43,7 @@ export default function CoreValues() {
               className="bg-[#FAF8F5] p-8 flex flex-col gap-4 hover:bg-[#f0ede7] transition-colors duration-300"
             >
               <div className="flex items-center justify-between">
-                <div className="w-11 h-11 rounded-full bg-[#2E4F41]/10 text-[#2E4F41] flex items-center justify-center">
+                <div className="w-11 h-11 rounded-full bg-[#3A7D5A]/10 text-[#3A7D5A] flex items-center justify-center">
                   <value.icon className="w-5 h-5" />
                 </div>
                 <span className="font-heading text-4xl font-bold text-[#1C2321]/10 select-none">

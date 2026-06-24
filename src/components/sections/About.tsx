@@ -15,12 +15,12 @@ export default function About() {
 
         <motion.div variants={container(0.15)} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-8%" }} className="grid grid-cols-1 gap-10 pb-20 md:grid-cols-2 md:gap-16 items-center">
           <motion.div variants={item}>
-            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41]">
+            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A]">
               More About Us
             </p>
             <h2 className="mt-3 text-3xl font-heading font-bold leading-tight text-[#1C2321] md:text-4xl">
               Building the Future Through{" "}
-              <span className="text-[#2E4F41]">Circular Farming</span>
+              <span className="text-[#3A7D5A]">Circular Farming</span>
             </h2>
           </motion.div>
 
@@ -37,7 +37,7 @@ export default function About() {
             </p>
             <a
               href="/about"
-              className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#2E4F41] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#3a6352]"
+              className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
               Learn More
               <ArrowRight className="h-4 w-4" />
@@ -56,7 +56,7 @@ export default function About() {
             />
           </motion.div>
 
-          <motion.div variants={item} className="flex h-72 w-full flex-col justify-end bg-[#2E4F41] p-6 text-white rounded-xl">
+          <motion.div variants={item} className="flex h-72 w-full flex-col justify-end bg-[#3A7D5A] p-6 text-white rounded-xl">
             <span className="text-4xl font-heading font-bold leading-none sm:text-5xl">6+</span>
             <p className="mt-3 text-sm font-body font-semibold tracking-wide uppercase">Years of Excellence</p>
             <p className="mt-2 text-xs font-body leading-relaxed text-white/80">

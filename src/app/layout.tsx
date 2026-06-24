@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageLoader from "@/components/PageLoader";
-import PageTransition from "@/components/PageTransition";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
@@ -35,9 +34,7 @@ export default function RootLayout({
         <SmoothScroll>
           <PageLoader />
           <Navbar />
-          <PageTransition>
-            {children}
-          </PageTransition>
+          {children}
           <Footer />
         </SmoothScroll>
       </body>

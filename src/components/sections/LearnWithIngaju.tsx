@@ -51,11 +51,11 @@ export default function LearnWithIngaju() {
             viewport={{ once: true, margin: "-8%" }}
             transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
           >
-            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41] mb-4">
+            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-4">
               Circular Agriculture
             </p>
             <h2 className="font-heading text-3xl font-bold leading-tight text-[#1C2321] sm:text-4xl">
-              A Farm That <span className="text-[#2E4F41]">Feeds Itself.</span>
+              A Farm That <span className="text-[#3A7D5A]">Feeds Itself.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259] max-w-lg">
               Circular agriculture is a system where nothing is wasted — every output becomes an input. At Ingaju, we've built a farm that sustains itself through an integrated loop of livestock, crops, and soil.
@@ -77,7 +77,7 @@ export default function LearnWithIngaju() {
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a
                 href="/circular-system"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#2E4F41] px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#3a6352]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3A7D5A] px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#2f6b4a]"
               >
                 Learn How It Works <ArrowRight className="h-4 w-4" />
               </a>

@@ -13,7 +13,7 @@ export default function CircularHero() {
       <div className="absolute inset-0 bg-black/55" />
 
       <div className="relative z-10 flex h-full flex-col items-start justify-end container-pad pb-12">
-        <span className="mb-4 inline-block rounded-full bg-[#2E4F41] px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-widest text-white">
+        <span className="mb-4 inline-block rounded-full bg-[#3A7D5A] px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-widest text-white">
           How We Farm
         </span>
         <h1 className="max-w-4xl text-4xl font-heading font-bold leading-tight text-white md:text-6xl">
@@ -26,7 +26,7 @@ export default function CircularHero() {
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <a
             href="#the-loop"
-            className="w-full text-center rounded-full bg-[#2E4F41] px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#3a6352] sm:w-auto"
+            className="w-full text-center rounded-full bg-[#3A7D5A] px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#2f6b4a] sm:w-auto"
           >
             See The Loop
           </a>

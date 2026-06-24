@@ -123,7 +123,7 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="mt-2 w-full rounded-full bg-[#1C2321] py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2E4F41]"
+              className="mt-2 w-full rounded-full bg-[#1C2321] py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#3A7D5A]"
             >
               Send Message
             </button>

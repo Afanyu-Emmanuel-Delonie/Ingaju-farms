@@ -131,14 +131,14 @@ export default function Testimonials() {
             <div className="flex gap-3 mt-6 md:mt-0">
               <button
                 onClick={prevSlide}
-                className="group flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#252E2B] text-white transition-all duration-300 hover:bg-[#2E4F41] hover:border-white/20 hover:scale-105 active:scale-95"
+                className="group flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#252E2B] text-white transition-all duration-300 hover:bg-[#3A7D5A] hover:border-white/20 hover:scale-105 active:scale-95"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-0.5" />
               </button>
               <button
                 onClick={nextSlide}
-                className="group flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#252E2B] text-white transition-all duration-300 hover:bg-[#2E4F41] hover:border-white/20 hover:scale-105 active:scale-95"
+                className="group flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#252E2B] text-white transition-all duration-300 hover:bg-[#3A7D5A] hover:border-white/20 hover:scale-105 active:scale-95"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />

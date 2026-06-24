@@ -29,11 +29,11 @@ export default function DairyShowcase() {
       <div className="container-pad py-24">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
-            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41] mb-3">
+            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
               Our Products
             </p>
             <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-              Dairy Raised With <span className="text-[#2E4F41]">Integrity</span>
+              Dairy Raised With <span className="text-[#3A7D5A]">Integrity</span>
             </h2>
           </div>
           <p className="max-w-sm text-[15px] font-body leading-relaxed text-[#6B6259]">
@@ -52,7 +52,7 @@ export default function DairyShowcase() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
               <div className="absolute inset-x-0 bottom-0 p-8">
-                <span className="inline-block rounded-full bg-[#2E4F41] px-3 py-1 text-xs font-body font-semibold uppercase tracking-widest text-white mb-3">
+                <span className="inline-block rounded-full bg-[#3A7D5A] px-3 py-1 text-xs font-body font-semibold uppercase tracking-widest text-white mb-3">
                   {prod.label}
                 </span>
                 <h3 className="font-heading text-2xl font-bold text-white">{prod.title}</h3>

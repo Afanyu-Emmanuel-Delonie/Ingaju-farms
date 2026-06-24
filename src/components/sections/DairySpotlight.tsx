@@ -21,7 +21,7 @@ const products = [
 
 export default function DairySpotlight() {
   return (
-    <section className="w-full bg-[#2E4F41]">
+    <section className="w-full bg-[#3A7D5A]">
       <div className="container-pad py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
@@ -52,7 +52,7 @@ export default function DairySpotlight() {
 
             <a
               href="/categories/dairy-livestock"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-body font-semibold text-[#2E4F41] transition-colors hover:bg-white/90"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-body font-semibold text-[#3A7D5A] transition-colors hover:bg-white/90"
             >
               Explore Dairy Products
               <ArrowRight className="h-4 w-4" />

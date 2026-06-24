@@ -13,7 +13,7 @@ export default function DairyFeatures() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {FEATURES.map(({ icon: Icon, title, desc }, idx) => (
             <div key={idx} className="flex flex-col gap-4 rounded-2xl bg-white p-8 shadow-sm border border-[#1C2321]/5">
-              <div className="w-fit rounded-xl bg-[#2E4F41]/10 p-3 text-[#2E4F41]">
+              <div className="w-fit rounded-xl bg-[#3A7D5A]/10 p-3 text-[#3A7D5A]">
                 <Icon className="h-5 w-5" />
               </div>
               <h3 className="font-heading text-lg font-bold text-[#1C2321]">{title}</h3>

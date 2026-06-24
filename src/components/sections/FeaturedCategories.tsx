@@ -7,7 +7,7 @@ export default function FeaturedCategories() {
     <section className="w-full bg-[#FAF8F5]">
       <div className="container-pad py-20">
         <h2 className="text-3xl font-heading font-bold text-[#1C2321] sm:text-4xl">
-          What We <span className="text-[#2E4F41]">Offer</span>
+          What We <span className="text-[#3A7D5A]">Offer</span>
         </h2>
 
         <div className="mt-10 grid grid-cols-1 gap-4">
@@ -25,14 +25,14 @@ export default function FeaturedCategories() {
             />
             <div aria-hidden className="absolute inset-0 bg-black/55" />
             <div className="absolute inset-y-0 left-0 flex flex-col justify-end p-8 max-w-lg">
-              <span className="inline-block w-fit rounded-full bg-[#2E4F41] px-3 py-1 text-xs font-body font-semibold uppercase tracking-widest text-white mb-3">
+              <span className="inline-block w-fit rounded-full bg-[#3A7D5A] px-3 py-1 text-xs font-body font-semibold uppercase tracking-widest text-white mb-3">
                 Featured
               </span>
               <h3 className="text-2xl font-heading font-bold text-white sm:text-3xl">Dairy & Livestock</h3>
               <p className="mt-2 text-sm font-body leading-relaxed text-white/80">
                 Fresh milk, organic manure, and quality breeding livestock produced through responsible farm management.
               </p>
-              <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-[#2E4F41] px-5 py-2.5 text-sm font-body font-medium text-white transition-colors group-hover:bg-[#3a6352]">
+              <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-[#3A7D5A] px-5 py-2.5 text-sm font-body font-medium text-white transition-colors group-hover:bg-[#2f6b4a]">
                 Explore Dairy <ArrowRight className="h-4 w-4" />
               </span>
             </div>

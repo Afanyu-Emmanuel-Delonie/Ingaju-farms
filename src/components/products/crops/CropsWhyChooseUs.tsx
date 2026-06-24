@@ -31,12 +31,12 @@ export default function CropsWhyChooseUs() {
 
           {/* Sticky left heading */}
           <div className="lg:sticky lg:top-32">
-            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41] mb-3">
+            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
               Why Ingaju
             </p>
             <h2 className="font-heading text-3xl font-bold leading-tight text-[#1C2321] sm:text-4xl">
               Crops You Can Trust,<br />
-              <span className="text-[#2E4F41]">From Soil to Table.</span>
+              <span className="text-[#3A7D5A]">From Soil to Table.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259] max-w-sm">
               Ingaju Farms isn't just a supplier — it's a transparent, traceable, and responsible source of organic produce for Rwanda and beyond.
@@ -47,7 +47,7 @@ export default function CropsWhyChooseUs() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {FEATURES.map(({ icon: Icon, title, desc }, idx) => (
               <div key={idx} className="flex flex-col gap-4 rounded-2xl bg-white p-8 shadow-sm border border-[#1C2321]/5">
-                <div className="w-fit rounded-xl bg-[#2E4F41]/10 p-3 text-[#2E4F41]">
+                <div className="w-fit rounded-xl bg-[#3A7D5A]/10 p-3 text-[#3A7D5A]">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="font-heading text-lg font-bold text-[#1C2321]">{title}</h3>

@@ -34,16 +34,16 @@ export default function OurStory() {
             viewport={{ once: true, margin: "-8%" }}
             transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
           >
-            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41]">Our Story</p>
+            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A]">Our Story</p>
             <h2 className="mt-3 text-3xl font-heading font-bold leading-tight text-[#1C2321] md:text-4xl">
-              Built on <span className="text-[#2E4F41]">Circular Principles</span>
+              Built on <span className="text-[#3A7D5A]">Circular Principles</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259]">
               Ingaju was founded on the belief that healthy food begins with healthy farming systems. By integrating livestock, crops, and natural resource management, we created a circular farming model that produces quality food while protecting the environment and supporting local communities.
             </p>
             <a
               href="/marketplace"
-              className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#2E4F41] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#3a6352]"
+              className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
               Explore Our Products
               <ArrowRight className="h-4 w-4" />

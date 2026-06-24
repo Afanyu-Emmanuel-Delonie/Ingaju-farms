@@ -12,7 +12,7 @@ export default function MissionVision() {
           {[{
             label: "Our Vision",
             text: "To be a leading agribusiness model in Africa, championing sustainable and smart agriculture while promoting food security, environmental conservation, and digital innovation.",
-            bg: "bg-[#2E4F41]",
+            bg: "bg-[#3A7D5A]",
             textColor: "text-white",
             subColor: "text-white/75",
           }, {

@@ -39,15 +39,15 @@ export default function FaqSection() {
       <div className="container-pad py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
           <div>
-            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41]">
+            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A]">
               FAQ
             </p>
             <h2 className="mt-2 text-3xl font-heading font-bold leading-tight text-[#1C2321] sm:text-4xl">
-              Frequently Asked <span className="text-[#2E4F41]">Questions</span>
+              Frequently Asked <span className="text-[#3A7D5A]">Questions</span>
             </h2>
             <p className="mt-4 text-sm font-body leading-relaxed text-[#6B6259]">
               Can&apos;t find what you&apos;re looking for? Feel free to{" "}
-              <a href="/contact" className="text-[#2E4F41] underline underline-offset-2 hover:opacity-80">
+              <a href="/contact" className="text-[#3A7D5A] underline underline-offset-2 hover:opacity-80">
                 contact us
               </a>{" "}
               directly.
@@ -65,7 +65,7 @@ export default function FaqSection() {
                     <span className="text-base font-heading font-semibold text-[#1C2321]">
                       {faq.question}
                     </span>
-                    <span className="flex-shrink-0 rounded-full bg-[#F0F7F4] p-1.5 text-[#2E4F41]">
+                    <span className="flex-shrink-0 rounded-full bg-[#F0F7F4] p-1.5 text-[#3A7D5A]">
                       {open === i ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                     </span>
                   </button>

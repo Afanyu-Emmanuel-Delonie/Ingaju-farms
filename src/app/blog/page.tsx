@@ -17,9 +17,9 @@ export default function BlogPage() {
       <div className="container-pad">
 
         <div className="mb-14">
-          <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41]">Ingaju Blog</p>
+          <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A]">Ingaju Blog</p>
           <h1 className="mt-3 text-4xl font-heading font-bold text-[#1C2321] sm:text-5xl">
-            Insights from the <span className="text-[#2E4F41]">Farm</span>
+            Insights from the <span className="text-[#3A7D5A]">Farm</span>
           </h1>
           <p className="mt-4 max-w-xl text-[15px] font-body leading-relaxed text-[#6B6259]">
             Practical knowledge on sustainable farming, dairy management, circular agriculture, and building resilient food systems.
@@ -41,10 +41,10 @@ export default function BlogPage() {
             />
           </div>
           <div className="flex flex-col justify-center p-8 lg:p-12">
-            <span className="inline-block rounded-full bg-[#2E4F41]/10 px-3 py-1 text-xs font-body font-semibold uppercase tracking-widest text-[#2E4F41]">
+            <span className="inline-block rounded-full bg-[#3A7D5A]/10 px-3 py-1 text-xs font-body font-semibold uppercase tracking-widest text-[#3A7D5A]">
               {featured.category}
             </span>
-            <h2 className="mt-4 text-2xl font-heading font-bold leading-snug text-[#1C2321] group-hover:text-[#2E4F41] transition-colors sm:text-3xl">
+            <h2 className="mt-4 text-2xl font-heading font-bold leading-snug text-[#1C2321] group-hover:text-[#3A7D5A] transition-colors sm:text-3xl">
               {featured.title}
             </h2>
             <p className="mt-3 text-[15px] font-body leading-relaxed text-[#6B6259]">{featured.excerpt}</p>
@@ -53,7 +53,7 @@ export default function BlogPage() {
               <span className="text-sm font-body text-[#A89F94]">·</span>
               <span className="text-sm font-body text-[#6B6259]">{featured.readTime}</span>
             </div>
-            <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#2E4F41] px-6 py-2.5 text-sm font-body font-medium text-white transition-colors group-hover:bg-[#3a6352]">
+            <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-2.5 text-sm font-body font-medium text-white transition-colors group-hover:bg-[#2f6b4a]">
               Read Article <ArrowRight className="h-4 w-4" />
             </span>
           </div>
@@ -77,12 +77,12 @@ export default function BlogPage() {
                 />
               </div>
               <div className="flex flex-1 flex-col p-5">
-                <span className="text-xs font-body font-semibold uppercase tracking-widest text-[#2E4F41]">{post.category}</span>
-                <h3 className="mt-2 text-base font-heading font-bold leading-snug text-[#1C2321] group-hover:text-[#2E4F41] transition-colors">{post.title}</h3>
+                <span className="text-xs font-body font-semibold uppercase tracking-widest text-[#3A7D5A]">{post.category}</span>
+                <h3 className="mt-2 text-base font-heading font-bold leading-snug text-[#1C2321] group-hover:text-[#3A7D5A] transition-colors">{post.title}</h3>
                 <p className="mt-2 flex-1 text-sm font-body leading-relaxed text-[#6B6259]">{post.excerpt}</p>
                 <div className="mt-4 flex items-center justify-between">
                   <span className="text-xs font-body text-[#6B6259]">{post.date} · {post.readTime}</span>
-                  <span className="inline-flex items-center gap-1 text-xs font-body font-medium text-[#1C2321] group-hover:text-[#2E4F41] transition-colors">
+                  <span className="inline-flex items-center gap-1 text-xs font-body font-medium text-[#1C2321] group-hover:text-[#3A7D5A] transition-colors">
                     Read More <ArrowRight className="h-3 w-3" />
                   </span>
                 </div>

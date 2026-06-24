@@ -61,7 +61,7 @@ export default function ExperienceCircularFarming() {
             <h2 className="font-heading text-3xl font-bold leading-tight text-[#1C2321] sm:text-4xl">
               Experience Circular
               <br />
-              <span className="text-[#2E4F41]">Farming in Action</span>
+              <span className="text-[#3A7D5A]">Farming in Action</span>
             </h2>
 
             <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
@@ -77,7 +77,7 @@ export default function ExperienceCircularFarming() {
                 >
                   <span
                     aria-hidden
-                    className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E4F41]"
+                    className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#3A7D5A]"
                   />
                   {item}
                 </li>
@@ -86,7 +86,7 @@ export default function ExperienceCircularFarming() {
 
             <a
               href="/book-a-tour"
-              className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-[#2E4F41] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#3a6352]"
+              className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
               Book A Farm Tour
               <ArrowRight className="h-4 w-4" />

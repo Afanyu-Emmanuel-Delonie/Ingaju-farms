@@ -49,7 +49,7 @@ export default async function BlogPostPage({ params }: Props) {
           <Link href="/blog" className="mb-6 inline-flex items-center gap-2 text-sm font-body text-white/70 transition-colors hover:text-white">
             <ArrowLeft className="h-4 w-4" /> Back to Blog
           </Link>
-          <span className="mb-3 inline-block rounded-full bg-[#2E4F41] px-3 py-1 text-xs font-body font-semibold uppercase tracking-widest text-white w-fit">
+          <span className="mb-3 inline-block rounded-full bg-[#3A7D5A] px-3 py-1 text-xs font-body font-semibold uppercase tracking-widest text-white w-fit">
             {post.category}
           </span>
           <h1 className="max-w-3xl text-3xl font-heading font-bold leading-tight text-white sm:text-4xl md:text-5xl">
@@ -67,7 +67,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="mx-auto max-w-2xl">
 
           {/* Excerpt / lead */}
-          <p className="mb-10 text-lg font-body leading-relaxed text-[#1C2321] border-l-4 border-[#2E4F41] pl-5">
+          <p className="mb-10 text-lg font-body leading-relaxed text-[#1C2321] border-l-4 border-[#3A7D5A] pl-5">
             {post.excerpt}
           </p>
 
@@ -86,7 +86,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <ul key={i} className="space-y-3 pl-1">
                     {block.items!.map((item, j) => (
                       <li key={j} className="flex items-start gap-3 text-[15px] font-body leading-relaxed text-[#6B6259]">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E4F41]" />
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#3A7D5A]" />
                         {item}
                       </li>
                     ))}
@@ -102,7 +102,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           {/* CTA */}
-          <div className="mt-14 rounded-2xl bg-[#2E4F41] p-8 text-white">
+          <div className="mt-14 rounded-2xl bg-[#3A7D5A] p-8 text-white">
             <h3 className="text-xl font-heading font-bold">Want to Learn More?</h3>
             <p className="mt-2 text-sm font-body leading-relaxed text-white/75">
               Visit Ingaju Farms for hands-on training, farm tours, and practical learning experiences in sustainable agriculture.
@@ -110,7 +110,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/trainings"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-body font-semibold text-[#2E4F41] transition-colors hover:bg-[#F0EBE3]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-body font-semibold text-[#3A7D5A] transition-colors hover:bg-[#F0EBE3]"
               >
                 Explore Trainings <ArrowRight className="h-4 w-4" />
               </Link>
@@ -145,11 +145,11 @@ export default async function BlogPostPage({ params }: Props) {
                     />
                   </div>
                   <div className="p-5">
-                    <span className="text-xs font-body font-semibold uppercase tracking-widest text-[#2E4F41]">{rel.category}</span>
-                    <h3 className="mt-1 text-sm font-heading font-bold leading-snug text-[#1C2321] group-hover:text-[#2E4F41] transition-colors">{rel.title}</h3>
+                    <span className="text-xs font-body font-semibold uppercase tracking-widest text-[#3A7D5A]">{rel.category}</span>
+                    <h3 className="mt-1 text-sm font-heading font-bold leading-snug text-[#1C2321] group-hover:text-[#3A7D5A] transition-colors">{rel.title}</h3>
                     <div className="mt-3 flex items-center justify-between">
                       <span className="text-xs font-body text-[#6B6259]">{rel.date}</span>
-                      <span className="inline-flex items-center gap-1 text-xs font-body font-medium text-[#2E4F41]">
+                      <span className="inline-flex items-center gap-1 text-xs font-body font-medium text-[#3A7D5A]">
                         Read <ArrowRight className="h-3 w-3" />
                       </span>
                     </div>

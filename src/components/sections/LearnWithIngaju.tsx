@@ -1,61 +1,95 @@
 "use client";
 
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { TRAININGS } from "@/lib/constants";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  show: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.7, delay: i * 0.12, ease: EASE } }),
-};
+
+const STEPS = [
+  { number: "01", title: "Livestock produce manure",       desc: "Our dairy herd generates organic waste that would otherwise go unused." },
+  { number: "02", title: "Manure becomes fertilizer",      desc: "Waste is composted and applied back to the fields — no synthetic inputs needed." },
+  { number: "03", title: "Crops feed the farm",            desc: "Harvests feed both people and livestock, completing a self-sustaining loop." },
+];
 
 export default function LearnWithIngaju() {
   return (
     <section className="w-full bg-[#FAF8F5]">
-      <div className="container-pad py-20">
-        <h2 className="text-center text-3xl font-heading font-bold text-[#1C2321] sm:text-4xl">
-          Learn With <span className="text-[#2E4F41]">Ingaju</span>
-        </h2>
+      <div className="container-pad py-24">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center lg:gap-24">
 
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {TRAININGS.map((item, i) => (
-            <motion.div
-              key={item.key}
-              custom={i}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-8%" }}
-              className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm"
-            >
-              <div className="relative h-56 w-full">
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover"
-                />
+          {/* Left — image */}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-8%" }}
+            transition={{ duration: 0.7, ease: EASE }}
+            className="grid grid-cols-2 gap-3"
+          >
+            <div className="flex flex-col gap-3">
+              <div className="relative h-56 w-full overflow-hidden rounded-2xl sm:h-72">
+                <Image src="/images/bg-img.png" alt="Dairy cattle at Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
-
-              <div className="flex flex-1 flex-col p-5">
-                <h3 className="text-lg font-heading font-bold text-[#1C2321]">
-                  {item.title}
-                </h3>
-                <p className="mt-2 flex-1 text-sm font-body leading-relaxed text-[#6B6259]">
-                  {item.description}
-                </p>
-
-                <a
-                  href={item.ctaHref}
-                  className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-[#2E4F41] px-6 py-2.5 text-sm font-body font-medium text-white transition-colors hover:bg-[#3a6352]"
-                >
-                  {item.ctaLabel}
-                </a>
+              <div className="relative h-40 w-full overflow-hidden rounded-2xl">
+                <Image src="/images/bg-3.png" alt="Crops growing on the farm" fill sizes="25vw" className="object-cover" />
               </div>
-            </motion.div>
-          ))}
+            </div>
+            <div className="flex flex-col gap-3">
+              <div className="relative h-40 w-full overflow-hidden rounded-2xl">
+                <Image src="/images/bg-2.png" alt="Organic manure being applied" fill sizes="25vw" className="object-cover" />
+              </div>
+              <div className="relative h-56 w-full overflow-hidden rounded-2xl sm:h-72">
+                <Image src="/images/bg-img.png" alt="Healthy harvest at Ingaju" fill sizes="25vw" className="object-cover" />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right — copy */}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-8%" }}
+            transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
+          >
+            <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#2E4F41] mb-4">
+              Circular Agriculture
+            </p>
+            <h2 className="font-heading text-3xl font-bold leading-tight text-[#1C2321] sm:text-4xl">
+              A Farm That <span className="text-[#2E4F41]">Feeds Itself.</span>
+            </h2>
+            <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259] max-w-lg">
+              Circular agriculture is a system where nothing is wasted — every output becomes an input. At Ingaju, we've built a farm that sustains itself through an integrated loop of livestock, crops, and soil.
+            </p>
+
+            {/* Loop steps */}
+            <div className="mt-8 flex flex-col gap-6">
+              {STEPS.map(({ number, title, desc }) => (
+                <div key={number} className="flex gap-5">
+                  <span className="flex-shrink-0 font-heading text-3xl font-bold text-[#1C2321]/10 leading-none mt-0.5">{number}</span>
+                  <div>
+                    <p className="font-body font-semibold text-[#1C2321]">{title}</p>
+                    <p className="mt-1 text-sm font-body text-[#6B6259] leading-relaxed">{desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="/circular-system"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#2E4F41] px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#3a6352]"
+              >
+                Learn How It Works <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="/about"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1C2321]/20 px-8 py-3.5 text-sm font-body font-semibold text-[#1C2321] transition-colors hover:bg-[#1C2321]/5"
+              >
+                About Ingaju Farms
+              </a>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

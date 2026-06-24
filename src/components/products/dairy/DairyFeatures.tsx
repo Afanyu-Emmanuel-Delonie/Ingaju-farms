@@ -1,0 +1,27 @@
+import { Leaf, RefreshCw, ShieldCheck } from "lucide-react";
+
+const FEATURES = [
+  { icon: Leaf,       title: "100% Organic",             desc: "No synthetic hormones, antibiotics, or pesticides across our entire dairy operation." },
+  { icon: RefreshCw,  title: "Circular System",           desc: "Manure becomes fertilizer, crops become feed — a self-sustaining loop with zero waste." },
+  { icon: ShieldCheck, title: "Farm-To-Table Traceability", desc: "Every product is monitored from pasture to delivery. Pure, fresh, and accountable." },
+];
+
+export default function DairyFeatures() {
+  return (
+    <section className="w-full bg-[#FAF8F5]">
+      <div className="container-pad pt-16 pb-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {FEATURES.map(({ icon: Icon, title, desc }, idx) => (
+            <div key={idx} className="flex flex-col gap-4 rounded-2xl bg-white p-8 shadow-sm border border-[#1C2321]/5">
+              <div className="w-fit rounded-xl bg-[#2E4F41]/10 p-3 text-[#2E4F41]">
+                <Icon className="h-5 w-5" />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-[#1C2321]">{title}</h3>
+              <p className="text-sm font-body text-[#6B6259] leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -10,12 +10,12 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, scale: 0.85 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
 const arrowVariants = {
   hidden: { opacity: 0, pathLength: 0 },
-  visible: { opacity: 1, pathLength: 1, transition: { duration: 0.7, ease: "easeInOut" } },
+  visible: { opacity: 1, pathLength: 1, transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1] as const } },
 };
 
 const NODES = [
@@ -78,7 +78,7 @@ export default function CircularDiagram() {
               initial={{ scale: 0, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
             >
               <svg className="mb-1 text-[#3A7D5A]" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>

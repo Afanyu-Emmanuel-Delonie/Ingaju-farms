@@ -7,23 +7,23 @@ import { useModal } from "@/components/shared/ModalContext";
 const PRODUCTS = [
   {
     label: "Fresh Dairy",
-    title: "Ingaju Fresh Milk",
+    title: "Fresh Milk",
     unit: "liters",
-    desc: "Produced from pasture-raised cows with no synthetic hormones or antibiotics. Rich, creamy, and traceable from our farm to your table.",
+    desc: "Pasture-raised. No synthetic hormones. Just rich, creamy milk that tastes exactly how nature intended.",
     img: "/images/milk.jpg",
   },
   {
     label: "Farm Input",
-    title: "Ingaju Organic Manure",
+    title: "Organic Manure",
     unit: "kg",
-    desc: "Nutrient-dense compost sourced directly from our dairy herd. The same fertilizer that grows our crops — now available for your farm.",
+    desc: "In circular farming, nothing goes to waste. Give your own soil the foundation it needs to thrive.",
     img: "/images/manure.jpg",
   },
   {
     label: "Livestock",
-    title: "Ingaju Breeding Bulls",
+    title: "Breeding Bulls",
     unit: "head",
-    desc: "Genetically healthy, disease-free bulls raised for superior dairy and beef performance. Ideal for farmers looking to improve their herd.",
+    desc: "Genetically healthy and disease-free. Raised carefully for superior dairy and beef performance.",
     img: "/images/bools.png",
   },
 ];
@@ -39,11 +39,11 @@ export default function DairyShowcase() {
               Our Products
             </p>
             <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-              Dairy Raised With <span className="text-[#3A7D5A]">Integrity</span>
+              Fresh. Rich. <span className="text-[#3A7D5A]">Organic.</span>
             </h2>
           </div>
           <p className="max-w-sm text-[15px] font-body leading-relaxed text-[#6B6259]">
-            Three products, one circular system — each one a byproduct of responsible farming.
+            Three products, one circular system. Every jar, every drop supports local biodiversity.
           </p>
         </div>
 

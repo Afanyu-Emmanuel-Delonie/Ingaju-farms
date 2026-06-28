@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function AboutHero() {
   return (
-    <section className="relative w-full h-[70vh] lg:h-[80vh] overflow-hidden bg-[#1C2321] flex items-end">
+    <section className="relative w-full h-[70vh] lg:h-[85vh] overflow-hidden bg-[#1C2321] flex items-end">
 
       {/* Decorative circles — top right */}
       <svg className="absolute top-0 right-0 w-[480px] h-[480px] opacity-10 pointer-events-none" viewBox="0 0 480 480" fill="none">

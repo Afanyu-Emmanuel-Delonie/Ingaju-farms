@@ -20,14 +20,14 @@ export default function DairyHero() {
 
       <div className="relative z-10 flex h-full flex-col items-start justify-end container-pad pb-12">
         <span className="mb-4 inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-widest text-white">
-          Organic Dairy & Livestock
+          Organic Dairy
         </span>
         <h1 className="max-w-4xl text-3xl font-heading font-bold leading-tight text-white md:text-5xl">
-          Sustainably Raised.<br />
-          <span className="text-[#6DBE8C]">Naturally</span> Produced.
+          Fresh. Rich.<br />
+          <span className="text-[#6DBE8C]">Organic.</span>
         </h1>
         <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/75 md:text-lg">
-          From the pastures of Ingaju Farms to your table — dairy products crafted with care, organic practices, and full respect for animal welfare and the environment.
+          Our cows graze freely on natural, chemical-free pastures. The result is dairy that tastes exactly how nature intended. No additives. No shortcuts. Just pure, wholesome nourishment.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <a

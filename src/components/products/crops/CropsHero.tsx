@@ -23,11 +23,11 @@ export default function CropsHero() {
           Organic Crops & Produce
         </span>
         <h1 className="max-w-4xl text-3xl font-heading font-bold leading-tight text-white md:text-5xl">
-          Naturally Grown.<br />
-          <span className="text-[#6DBE8C]">Sustainably</span> Produced.
+          Healthy Soil.<br />
+          <span className="text-[#6DBE8C]">Better</span> Harvests.
         </h1>
         <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/75 md:text-lg">
-          From the fields of Ingaju Farms straight to your table. Our crops are grown organically without harmful synthetic chemicals, ensuring safety, quality, and a healthier planet.
+          We don’t just grow crops. We regenerate the earth. Using our own organic compost, we cultivate nutrient-dense fruits and vegetables. Better for your body. Better for the planet.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <button

@@ -9,35 +9,35 @@ const CROPS = [
     label: "Staple Grain",
     title: "Ingaju Corn",
     unit: "kg",
-    desc: "High-yield, non-GMO corn grown on naturally enriched soil. Harvested at peak nutrition — ideal for households, processors, and bulk buyers.",
+    desc: "Grown in naturally enriched soil. Harvested at peak nutrition. Better for you, better for the earth.",
     img: "/images/maiz.jpg",
   },
   {
     label: "Premium Nut",
-    title: "Ingaju Macadamia",
+    title: "Macadamia",
     unit: "kg",
-    desc: "Rwanda-grown macadamia with a rich, buttery flavour. Our diverse plantation conditions produce nuts of exceptional grade and consistency.",
+    desc: "Rich, buttery, and Rwandan-grown. Cultivated in perfect conditions for exceptional quality.",
     img: "/images/nuts.jpg",
   },
   {
     label: "Protein Crop",
-    title: "Ingaju Beans",
+    title: "Fresh Beans",
     unit: "kg",
-    desc: "High-protein beans cultivated through sustainable crop rotation. Naturally fertile soil means no synthetic inputs — just clean, wholesome legumes.",
+    desc: "High protein. Zero synthetic inputs. Grown through sustainable crop rotation to keep the soil alive.",
     img: "/images/bg-img.png",
   },
   {
     label: "Oilseed Crop",
-    title: "Ingaju Soybeans",
+    title: "Soybeans",
     unit: "kg",
-    desc: "Nutrient-dense soybeans grown through regenerative farming practices. Rich in protein and natural oils — ideal for processors, feed producers, and bulk buyers.",
+    desc: "Nutrient-dense and naturally grown. Perfect for processors and families who demand pure ingredients.",
     img: "/images/bg-img.png",
   },
   {
     label: "Tropical Fruit",
-    title: "Ingaju Mangoes",
+    title: "Mangoes",
     unit: "kg",
-    desc: "Sun-ripened mangoes harvested from our orchard at peak sweetness. Naturally grown without synthetic chemicals — fresh, fragrant, and full of flavour.",
+    desc: "Sun-ripened and harvested at peak sweetness. Fresh, fragrant, and completely organic.",
     img: "/images/bg-img.png",
   },
 ];
@@ -53,11 +53,11 @@ export default function CropsShowcase() {
               Our Produce
             </p>
             <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-              Crops Grown With <span className="text-[#3A7D5A]">Purpose</span>
+              Harvested <span className="text-[#3A7D5A]">Tomorrow.</span>
             </h2>
           </div>
           <p className="max-w-sm text-[15px] font-body leading-relaxed text-[#6B6259]">
-            Every crop on Ingaju Farms is grown as part of a closed-loop system — no synthetic inputs, no shortcuts.
+            We don’t just grow crops; we build soil. Using natural compost, we grow nutrient-dense fruits and vegetables.
           </p>
         </div>
 

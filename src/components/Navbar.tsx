@@ -43,7 +43,7 @@ export default function Navbar() {
       <div className="container-pad flex items-center justify-between">
         {/* Brand/Logo Area */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative h-12 w-12 transition-transform duration-300 group-hover:scale-105">
+          <div className="relative h-12 w-12 overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-105">
             <Image
               src="/images/Logo.png"
               alt="Ingaju Farms Logo"
@@ -114,7 +114,7 @@ export default function Navbar() {
           href="/contact"
           className="group hidden lg:inline-flex items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-2.5 text-sm font-body font-semibold text-white transition-all duration-300 hover:bg-[#1C2321] hover:shadow-md hover:-translate-y-0.5"
         >
-          <span>Contact Us</span>
+          <span>Visit Our Farm</span>
           <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
 
@@ -172,7 +172,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
             className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#3A7D5A] px-5 py-3 text-sm font-body font-semibold text-white transition-colors hover:bg-[#2f6b4a]"
           >
-            Contact Us
+            Visit Our Farm
             <ArrowRight className="h-4 w-4" />
           </Link>
         </nav>

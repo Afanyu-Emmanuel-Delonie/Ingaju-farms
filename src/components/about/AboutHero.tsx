@@ -30,15 +30,15 @@ export default function AboutHero() {
 
       {/* Content */}
       <div className="relative z-10 container-pad pb-12 w-full">
-        <span className="mb-4 inline-block rounded-full bg-[#3A7D5A]/20 border border-[#3A7D5A]/30 px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-widest text-[#ffffff]">
+        <span className="mb-4 inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-widest text-white">
           About Ingaju Farms
         </span>
-        <h1 className="max-w-4xl text-4xl font-heading font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-          Growing More Than Just
-          <span className="text-[#6DBE8C]"> Food.</span>
+        <h1 className="max-w-4xl text-3xl font-heading font-bold leading-tight text-white md:text-5xl">
+          More Than Food.<br />
+          <span className="text-[#6DBE8C]">More Than a Farm.</span>
         </h1>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/80 md:text-lg">
-          Ingaju Farms is a circular agriculture enterprise dedicated to producing organic products, empowering communities, and building a sustainable future through responsible farming.
+        <p className="mt-4 max-w-3xl font-body text-base leading-relaxed text-white/80 md:text-lg">
+          Ingaju is a circular agriculture enterprise built to produce, empower, and sustain — organically, responsibly, and for generations.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <a
@@ -51,7 +51,7 @@ export default function AboutHero() {
             href="/contact"
             className="w-full text-center rounded-full border border-white/20 px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto"
           >
-            Learn More
+            Get In Touch
           </a>
         </div>
       </div>

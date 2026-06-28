@@ -16,30 +16,26 @@ export default function About() {
         <motion.div variants={container(0.15)} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-8%" }} className="grid grid-cols-1 gap-10 pb-20 md:grid-cols-2 md:gap-16 items-center">
           <motion.div variants={item}>
             <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A]">
-              More About Us
+              Who We Are
             </p>
             <h2 className="mt-3 text-3xl font-heading font-bold leading-tight text-[#1C2321] md:text-4xl">
-              Building the Future Through{" "}
-              <span className="text-[#3A7D5A]">Circular Farming</span>
+              Nothing Wasted.{" "}
+              <span className="text-[#3A7D5A]">Everything Grows.</span>
             </h2>
           </motion.div>
 
           <motion.div variants={item} className="flex flex-col justify-center">
             <p className="text-[15px] font-body leading-relaxed text-[#6B6259]">
-              Ingaju is a circular agriculture enterprise dedicated to producing
-              organic products through sustainable farming practices. Our
-              integrated system combines dairy farming, crop production, and
-              natural resource recycling to create a productive and
-              environmentally responsible farm. In addition to supplying quality
-              products, we promote community development through training,
-              employment opportunities, and educational farm experiences,
-              helping build a more sustainable future for agriculture.
+              Ingaju is a circular agriculture enterprise based in Rwanda. We combine dairy farming, crop production, organic manure, and community training into one integrated system where every output feeds the next input.
+            </p>
+            <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
+              The result is healthier food, stronger soil, lower costs, and a farm that works with nature instead of against it.
             </p>
             <a
               href="/about"
               className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
-              Learn More
+              Our Full Story
               <ArrowRight className="h-4 w-4" />
             </a>
           </motion.div>
@@ -56,7 +52,15 @@ export default function About() {
             />
           </motion.div>
 
-          <motion.div variants={item} className="flex h-72 w-full flex-col justify-end bg-[#3A7D5A] p-6 text-white rounded-xl">
+          <motion.div variants={item} className="flex h-72 w-full flex-col justify-end bg-[#3A7D5A] p-6 text-white rounded-xl border-t-4 border-[#2f6b4a] relative overflow-hidden">
+            {/* Dot grid decoration */}
+            <svg className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none" viewBox="0 0 200 200" fill="white">
+              {Array.from({ length: 5 }).map((_, row) =>
+                Array.from({ length: 5 }).map((_, col) => (
+                  <circle key={`${row}-${col}`} cx={col * 38 + 10} cy={row * 38 + 10} r="2.5" />
+                ))
+              )}
+            </svg>
             <span className="text-4xl font-heading font-bold leading-none sm:text-5xl">6+</span>
             <p className="mt-3 text-sm font-body font-semibold tracking-wide uppercase">Years of Excellence</p>
             <p className="mt-2 text-xs font-body leading-relaxed text-white/80">
@@ -74,7 +78,11 @@ export default function About() {
             />
           </motion.div>
 
-          <motion.div variants={item} className="flex h-72 w-full flex-col justify-end bg-[#1C2321] p-6 text-white rounded-xl">
+          <motion.div variants={item} className="flex h-72 w-full flex-col justify-end bg-[#1C2321] p-6 text-white rounded-xl border-t-4 border-[#3A7D5A] relative overflow-hidden">
+            {/* Decorative arc */}
+            <svg className="absolute bottom-0 right-0 w-40 h-40 opacity-5 pointer-events-none" viewBox="0 0 300 300" fill="none">
+              <path d="M300 300 Q 100 300 100 100" stroke="#6DBE8C" strokeWidth="60" strokeLinecap="round" />
+            </svg>
             <span className="text-4xl font-heading font-bold leading-none sm:text-5xl">500+</span>
             <p className="mt-3 text-sm font-body font-semibold tracking-wide uppercase">Farmers & Community</p>
             <p className="mt-2 text-xs font-body leading-relaxed text-white/80">

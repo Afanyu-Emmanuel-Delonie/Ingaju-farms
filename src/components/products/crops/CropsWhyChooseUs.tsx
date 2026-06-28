@@ -46,11 +46,16 @@ export default function CropsWhyChooseUs() {
           {/* Feature list */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {FEATURES.map(({ icon: Icon, title, desc }, idx) => (
-              <div key={idx} className="flex flex-col gap-4 rounded-2xl bg-white p-8 shadow-sm border border-[#1C2321]/5">
-                <div className="w-fit rounded-xl bg-[#3A7D5A]/10 p-3 text-[#3A7D5A]">
-                  <Icon className="h-5 w-5" />
+              <div key={idx} className="flex flex-col gap-3 rounded-2xl bg-white p-7 border-t-2 border-[#3A7D5A] shadow-sm">
+                <div className="flex items-center justify-between">
+                  <div className="rounded-lg bg-[#3A7D5A]/8 p-2.5 text-[#3A7D5A]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <span className="font-heading text-4xl font-bold text-[#3A7D5A]/10 select-none">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
                 </div>
-                <h3 className="font-heading text-lg font-bold text-[#1C2321]">{title}</h3>
+                <h3 className="font-heading text-lg font-bold text-[#1C2321] mt-1">{title}</h3>
                 <p className="text-sm font-body text-[#6B6259] leading-relaxed">{desc}</p>
               </div>
             ))}

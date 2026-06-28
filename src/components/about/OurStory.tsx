@@ -36,10 +36,10 @@ export default function OurStory() {
           >
             <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A]">Our Story</p>
             <h2 className="mt-3 text-3xl font-heading font-bold leading-tight text-[#1C2321] md:text-4xl">
-              Built on <span className="text-[#3A7D5A]">Circular Principles</span>
+              Where It All <span className="text-[#3A7D5A]">Began.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259]">
-              Ingaju was founded on the belief that healthy food begins with healthy farming systems. By integrating livestock, crops, and natural resource management, we created a circular farming model that produces quality food while protecting the environment and supporting local communities.
+              Ingaju was founded on a simple belief — healthy food starts with a healthy farm. By weaving livestock, crops, and natural resource management into one system, we built a farm that sustains itself and the communities around it.
             </p>
             <a
               href="/marketplace"

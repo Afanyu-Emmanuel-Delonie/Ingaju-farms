@@ -21,27 +21,25 @@ export default function ReadyToExperienceCta() {
 
         <div className="absolute inset-x-0 bottom-0 flex flex-col items-center px-6 pb-10 text-center sm:px-10 sm:pb-12">
           <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
-            Ready to Experience Ingaju?
+            Let&apos;s Grow Together.
           </h2>
           <p className="mt-3 max-w-xl text-sm font-body leading-relaxed text-white/80 sm:text-base">
-            Whether you&apos;re looking for organic products, agricultural
-            training, farm experiences, or partnership opportunities, Ingaju
-            is ready to connect.
+            Products, training, farm visits, or partnership — we are ready.
           </p>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
-              href="/marketplace"
+              href="/products/dairy"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
-              Explore Market Place
+              Explore Our Products
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/70 bg-transparent px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-white/10"
             >
-              Contact Us
+              Contact Our Team
             </a>
           </div>
         </div>

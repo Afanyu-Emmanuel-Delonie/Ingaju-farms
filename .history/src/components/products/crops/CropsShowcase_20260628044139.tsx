@@ -10,7 +10,7 @@ const CROPS = [
     title: "Ingaju Corn",
     unit: "kg",
     desc: "Grown in naturally enriched soil. Harvested at peak nutrition. Better for you, better for the earth.",
-    img: "/images/maiz-harvest.png",
+    img: "/images/maiz-harvest.jpg",
   },
   {
     label: "Premium Nut",

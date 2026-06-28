@@ -7,7 +7,15 @@ import { useState } from "react";
 
 const VISIBLE = 3;
 
-export default function BlogSection() {
+interface Props {
+  heading?: string;
+  subheading?: string;
+}
+
+export default function BlogSection({
+  heading = "Insights From the Field.",
+  subheading = "Practical knowledge on circular farming, dairy production, and sustainable agriculture — written by people who farm every day.",
+}: Props) {
   const [start, setStart] = useState(0);
   const total = BLOG_POSTS.length;
 
@@ -24,10 +32,10 @@ export default function BlogSection() {
           <div>
             <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A]">From the Farm</p>
             <h2 className="mt-2 text-3xl font-heading font-bold text-[#1C2321] sm:text-4xl">
-              Insights From <span className="text-[#3A7D5A]">the Field.</span>
+              {heading}
             </h2>
             <p className="mt-3 text-[15px] font-body leading-relaxed text-[#6B6259] max-w-xl">
-              Practical knowledge on circular farming, dairy production, and sustainable agriculture — written by people who farm every day.
+              {subheading}
             </p>
           </div>
 

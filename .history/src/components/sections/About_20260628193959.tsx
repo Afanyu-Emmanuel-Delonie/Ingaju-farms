@@ -70,7 +70,7 @@ export default function About() {
 
           <motion.div variants={item} className="relative h-72 w-full overflow-hidden rounded-xl">
             <Image
-              src="/images/about/about-4.png"
+              src="/images/about/about-3.png"
               alt="Ngaju team engaging with farmers and the local community"
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"

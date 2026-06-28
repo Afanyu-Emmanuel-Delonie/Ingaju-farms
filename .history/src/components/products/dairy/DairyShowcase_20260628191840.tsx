@@ -4,75 +4,58 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useModal } from "@/components/shared/ModalContext";
 
-const CROPS = [
+const PRODUCTS = [
   {
-    label: "Staple Grain",
-    title: "Ingaju Corn",
-    unit: "kg",
-    desc: "Grown in naturally enriched soil. Harvested at peak nutrition. Better for you, better for the earth.",
-    img: "/images/crops/maiz-harvest.png",
+    label: "Fresh Dairy",
+    title: "Fresh Milk",
+    unit: "liters",
+    desc: "Pasture-raised. No synthetic hormones. Just rich, creamy milk that tastes exactly how nature intended.",
+    img: "/images/dairy/milk.jpg",
   },
   {
-    label: "Premium Nut",
-    title: "Macadamia",
+    label: "Farm Input",
+    title: "Organic Manure",
     unit: "kg",
-    desc: "Rich, buttery, and Rwandan-grown. Cultivated in perfect conditions for exceptional quality.",
-    img: "/images/crops/nuts.jpg",
+    desc: "In circular farming, nothing goes to waste. Give your own soil the foundation it needs to thrive.",
+    img: "/images/diary/manure.jpg",
   },
   {
-    label: "Protein Crop",
-    title: "Fresh Beans",
-    unit: "kg",
-    desc: "High protein. Zero synthetic inputs. Grown through sustainable crop rotation to keep the soil alive.",
-    img: "/images/crops/beans.png",
-  },
-  {
-    label: "Oilseed Crop",
-    title: "Soybeans",
-    unit: "kg",
-    desc: "Nutrient-dense and naturally grown. Perfect for processors and families who demand pure ingredients.",
-    img: "/images/crops/soy-beans.png",
-  },
-  {
-    label: "Tropical Fruit",
-    title: "Mangoes",
-    unit: "kg",
-    desc: "Sun-ripened and harvested at peak sweetness. Fresh, fragrant, and completely organic.",
-    img: "/images/crops/mangoes.png",
+    label: "Livestock",
+    title: "Breeding Bulls",
+    unit: "head",
+    desc: "Genetically healthy and disease-free. Raised carefully for superior dairy and beef performance.",
+    img: "/images/diary/bools.png",
   },
 ];
 
-export default function CropsShowcase() {
+export default function DairyShowcase() {
   const { open } = useModal();
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-[#F8F6F2]">
       <div className="container-pad py-24">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
             <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
-              Our Produce
+              Our Products
             </p>
             <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-              Harvested <span className="text-[#3A7D5A]">Tomorrow.</span>
+              Fresh. Rich. <span className="text-[#3A7D5A]">Organic.</span>
             </h2>
           </div>
           <p className="max-w-sm text-[15px] font-body leading-relaxed text-[#6B6259]">
-            We don’t just grow crops; we build soil. Using natural compost, we grow nutrient-dense fruits and vegetables.
+            Three products, one circular system. Every jar, every drop supports local biodiversity.
           </p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-6">
-          {CROPS.map((prod, idx) => (
+          {PRODUCTS.map((prod, idx) => (
             <div key={idx} className="relative h-[500px] w-full max-w-[340px] overflow-hidden rounded-3xl">
-              {/* Image */}
               <Image
                 src={prod.img}
                 alt={prod.title}
                 fill
                 className="object-cover"
               />
-
-              {/* Dark base */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
               {/* Label — top left */}

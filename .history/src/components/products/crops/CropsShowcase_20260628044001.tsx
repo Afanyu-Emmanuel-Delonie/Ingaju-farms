@@ -10,7 +10,7 @@ const CROPS = [
     title: "Ingaju Corn",
     unit: "kg",
     desc: "Grown in naturally enriched soil. Harvested at peak nutrition. Better for you, better for the earth.",
-    img: "/images/maiz-harvest.png",
+    img: "/images/maiz.jpg",
   },
   {
     label: "Premium Nut",
@@ -24,14 +24,14 @@ const CROPS = [
     title: "Fresh Beans",
     unit: "kg",
     desc: "High protein. Zero synthetic inputs. Grown through sustainable crop rotation to keep the soil alive.",
-    img: "/images/beans.png",
+    img: "/images/bg-img.png",
   },
   {
     label: "Oilseed Crop",
     title: "Soybeans",
     unit: "kg",
     desc: "Nutrient-dense and naturally grown. Perfect for processors and families who demand pure ingredients.",
-    img: "/images/soy-beans.png",
+    img: "/images/soybeans.png",
   },
   {
     label: "Tropical Fruit",

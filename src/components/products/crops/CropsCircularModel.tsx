@@ -19,18 +19,18 @@ export default function CropsCircularModel() {
           <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col gap-3">
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
-                <Image src="/images/maiz.jpg" alt="Corn growing in rich organic soil" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/maiz.jpg" alt="Corn growing in rich organic soil" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
-                <Image src="/images/nuts.jpg" alt="Harvested beans at Ingaju Farms" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/nuts.jpg" alt="Harvested beans at Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
             </div>
             <div className="flex flex-col gap-3">
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
-                <Image src="/images/bg-3.png" alt="Macadamia nuts ready for harvest" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/hero/bg-3.png" alt="Macadamia nuts ready for harvest" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
-                <Image src="/images/crops-2.png" alt="Farmer tending crop rows" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/crops-2.png" alt="Farmer tending crop rows" fill sizes="25vw" className="object-cover" />
               </div>
             </div>
           </div>

@@ -6,7 +6,7 @@ export default function JoinUsCta() {
     <section className="w-full bg-[#F8F6F2] px-4 py-10 sm:px-6 lg:px-8">
       <div className="relative mx-auto h-[420px] max-w-6xl overflow-hidden rounded-3xl sm:h-96">
         <Image
-          src="/images/bg-img.png"
+          src="/images/hero/bg-img.png"
           alt="Ingaju Farms"
           fill
           sizes="(min-width: 1024px) 1152px, 100vw"

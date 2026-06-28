@@ -17,7 +17,7 @@ const CROPS = [
     title: "Macadamia",
     unit: "kg",
     desc: "Rich, buttery, and Rwandan-grown. Cultivated in perfect conditions for exceptional quality.",
-    img: "/images/nuts.jpg",
+    img: "/images/crops/nuts.jpg",
   },
   {
     label: "Protein Crop",

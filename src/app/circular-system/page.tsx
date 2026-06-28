@@ -7,8 +7,9 @@ import CircularCta from "@/components/circular-system/CircularCta";
 import ImpactStats from "@/components/shared/ImpactStats";
 
 export const metadata = {
-  title: "The Circular System | Ingaju Farms",
-  description: "Discover how Ingaju Farms uses a zero-waste circular agriculture model — where every output becomes an input.",
+  title: "Circular Economy in Agriculture | 8-Stage Closed-Loop Farming System",
+  description: "Discover how Ingaju Farms uses an 8-stage closed-loop circular economy system — from feed production and dairy to biogas energy recovery, water reuse, and nutrient recycling. Zero waste. Full circle.",
+  keywords: ["circular economy in agriculture", "closed-loop farming system", "farm waste utilization system", "biogas energy recovery farm", "agricultural water reuse", "organic nutrient recycling soil", "integrated dairy farming Rwanda"],
 };
 
 export default function CircularSystemPage() {

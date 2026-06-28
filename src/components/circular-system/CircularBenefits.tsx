@@ -1,34 +1,11 @@
-import { Leaf, TrendingDown, Globe, Users } from "lucide-react";
-
-const BENEFITS = [
-  {
-    icon: Leaf,
-    title: "Zero Synthetic Inputs",
-    desc: "By producing our own fertilizer and feed, we've eliminated reliance on chemical inputs entirely — safer food, healthier soil.",
-  },
-  {
-    icon: TrendingDown,
-    title: "Lower Operating Costs",
-    desc: "A closed-loop system dramatically reduces what we spend on external supplies, making the farm more resilient to market fluctuations.",
-  },
-  {
-    icon: Globe,
-    title: "Minimal Environmental Impact",
-    desc: "No chemical runoff, no wasted organic matter, no soil depletion. Circular farming actively regenerates the land it operates on.",
-  },
-  {
-    icon: Users,
-    title: "A Model Others Can Learn",
-    desc: "We've trained 300+ farmers using this system. What works at Ingaju can work across Rwanda — and beyond.",
-  },
-];
+import { CIRCULAR_BENEFITS } from "@/lib/constants";
 
 export default function CircularBenefits() {
   return (
     <section className="w-full bg-[#F8F6F2]">
       <div className="container-pad py-24">
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 lg:items-start">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_2fr] lg:gap-20 lg:items-start">
 
           {/* Left */}
           <div className="lg:sticky lg:top-32">
@@ -38,15 +15,14 @@ export default function CircularBenefits() {
               <span className="text-[#3A7D5A]">Better for the Planet.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259] max-w-sm">
-              Circular agriculture isn't just an efficient way to farm — it's a commitment to leaving the land better than we found it.
+              Circular agriculture is not just an efficient way to farm — it is a commitment to leaving the land, the water, and the community better than we found them.
             </p>
-            {/* Decorative line */}
             <div className="mt-10 w-16 h-px bg-[#3A7D5A]" />
           </div>
 
           {/* Right — cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {BENEFITS.map(({ icon: Icon, title, desc }, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {CIRCULAR_BENEFITS.map(({ icon: Icon, title, desc }, idx) => (
               <div key={title} className="flex flex-col gap-3 rounded-2xl bg-white p-7 border-t-2 border-[#3A7D5A] shadow-sm">
                 <div className="flex items-center justify-between">
                   <div className="rounded-lg bg-[#3A7D5A]/8 p-2.5 text-[#3A7D5A]">
@@ -56,7 +32,7 @@ export default function CircularBenefits() {
                     {String(idx + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <h3 className="font-heading text-lg font-bold text-[#1C2321] mt-1">{title}</h3>
+                <h3 className="font-heading text-base font-bold text-[#1C2321] mt-1">{title}</h3>
                 <p className="text-sm font-body text-[#6B6259] leading-relaxed">{desc}</p>
               </div>
             ))}

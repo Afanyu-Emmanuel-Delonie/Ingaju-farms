@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react";
+import { ArrowRight, Clock, Calendar } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/constants";
 
 interface Props {
@@ -46,9 +46,6 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         <div className="relative z-10 flex h-full flex-col justify-end container-pad pb-12">
-          <Link href="/blog" className="mb-6 inline-flex items-center gap-2 text-sm font-body text-white/70 transition-colors hover:text-white">
-            <ArrowLeft className="h-4 w-4" /> Back to Blog
-          </Link>
           <span className="mb-3 inline-block rounded-full bg-[#3A7D5A] px-3 py-1 text-xs font-body font-semibold uppercase tracking-widest text-white w-fit">
             {post.category}
           </span>

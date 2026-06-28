@@ -7,8 +7,9 @@ import CropsInsights from "@/components/products/crops/CropsInsights";
 import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata = {
-  title: "Top Crops & Produce | Ingaju Farms",
-  description: "Naturally Grown. Sustainably Produced. Explore our top crops grown with circular farming.",
+  title: "Organic Crop Production Rwanda | Chemical-Free Corn, Beans & Macadamia",
+  description: "Naturally grown corn, beans, soybeans, macadamia, and mangoes cultivated using organic fertilizer from our circular farming system. Zero synthetic inputs. Healthy soil. Better harvests.",
+  keywords: ["organic crop production Rwanda", "chemical-free farming Rwanda", "sustainable crops Africa", "organic fertilizer crop production", "regenerative agriculture crops", "circular farming crop yield"],
 };
 
 export default function CropsPage() {

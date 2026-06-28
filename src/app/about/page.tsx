@@ -6,8 +6,9 @@ import CoreValues from "@/components/about/CoreValues";
 import JoinUsCta from "@/components/about/JoinUsCta";
 
 export const metadata = {
-  title: "About Us | Ingaju Farms",
-  description: "Learn more about Ingaju Farms' story, mission, vision, and core values.",
+  title: "About Ingaju Farms | Sustainable Integrated Dairy Farm Rwanda",
+  description: "Learn about Ingaju Farms — Rwanda's pioneering circular agriculture enterprise. Our mission is to produce high-quality organic dairy and crops through a closed-loop, zero-waste integrated farming system.",
+  keywords: ["about Ingaju Farms", "sustainable integrated farm Africa", "circular dairy farm Rwanda", "organic farming mission Rwanda", "regenerative agriculture enterprise"],
 };
 
 export default function AboutPage() {

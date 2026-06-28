@@ -47,10 +47,10 @@ export default function DairyCircularModel() {
           <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col gap-3">
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
-                <Image src="/images/bg-img.png" alt="Cows grazing at Ingaju Farms" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/hero/bg-img.png" alt="Cows grazing at Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
-                <Image src="/images/milk.jpg" alt="Organic manure processing" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/dairy/milk.jpg" alt="Organic manure processing" fill sizes="25vw" className="object-cover" />
               </div>
             </div>
             <div className="flex flex-col gap-3">

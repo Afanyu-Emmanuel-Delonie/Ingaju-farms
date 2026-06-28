@@ -2,7 +2,7 @@ import BrandPattern from "@/components/shared/BrandPattern";
 
 export default function CircularHero() {
   return (
-    <section className="relative w-full h-[70vh] lg:h-[85vh] overflow-hidden bg-[#1C2321] flex items-end">
+    <section className="relative w-full h-[80vh] lg:h-[80vh] overflow-hidden bg-[#1C2321] flex items-end">
       <BrandPattern />
 
       {/* Content */}

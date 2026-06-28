@@ -17,14 +17,14 @@ export default function OurStory() {
           <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-8%" }} className="grid grid-cols-2 gap-3 h-[420px]">
             <motion.div variants={item} className="flex flex-col gap-3 h-full">
               <div className="relative flex-1 w-full rounded-2xl overflow-hidden">
-                <Image src="/images/training-1.png" alt="Farmers gathering" fill className="object-cover" />
+                <Image src="/images/farm/training-1.png" alt="Farmers gathering" fill className="object-cover" />
               </div>
               <div className="relative flex-1 w-full rounded-2xl overflow-hidden">
                 <Image src="/images/about/about-3.png" alt="Classroom learning" fill className="object-cover" />
               </div>
             </motion.div>
             <motion.div variants={item} className="relative h-full w-full rounded-2xl overflow-hidden">
-              <Image src="/images/cow.png" alt="Farmers in field" fill className="object-cover" />
+              <Image src="/images/dairy/cow.png" alt="Farmers in field" fill className="object-cover" />
             </motion.div>
           </motion.div>
 

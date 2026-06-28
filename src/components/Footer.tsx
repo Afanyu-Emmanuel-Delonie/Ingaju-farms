@@ -32,7 +32,7 @@ export default function Footer() {
   return (
     <footer className="relative w-full text-white overflow-hidden">
       <Image
-        src="/images/nuts.jpg"
+        src="/images/crops/nuts.jpg"
         alt=""
         fill
         sizes="100vw"
@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-start gap-4">
               <Image
-                src="/images/Logo.png"
+                src="/images/brand/Logo.png"
                 alt="Ingaju Farms"
                 width={56}
                 height={56}

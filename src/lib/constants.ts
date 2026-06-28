@@ -1,10 +1,59 @@
+import { Leaf, TrendingDown, Globe, Users, Zap, Droplets, Sprout, RefreshCw } from "lucide-react";
+
+export const CIRCULAR_BENEFITS = [
+  {
+    icon: Leaf,
+    title: "Zero Synthetic Inputs",
+    desc: "By producing our own fertilizer and feed on-site, we have eliminated reliance on chemical inputs entirely — safer food, healthier soil, and lower costs.",
+  },
+  {
+    icon: TrendingDown,
+    title: "Lower Operating Costs",
+    desc: "A closed-loop system dramatically reduces what we spend on external supplies, making the farm more resilient to market fluctuations and price shocks.",
+  },
+  {
+    icon: Sprout,
+    title: "Healthier Soil, Better Yields",
+    desc: "Returning organic matter and nutrients to the land continuously improves soil structure and fertility — leading to higher crop yields and better feed quality each season.",
+  },
+  {
+    icon: Zap,
+    title: "Renewable Energy On-Site",
+    desc: "Biogas captured from organic waste powers cooking, heating, and electricity generation on the farm — reducing energy costs and cutting carbon emissions.",
+  },
+  {
+    icon: Droplets,
+    title: "Water Conservation",
+    desc: "Treated wastewater is reclaimed for irrigation and farm cleaning, conserving fresh water sources and reducing the farm's impact on local water systems.",
+  },
+  {
+    icon: Globe,
+    title: "Minimal Environmental Impact",
+    desc: "No chemical runoff, no wasted organic matter, no soil depletion. Circular farming actively regenerates the land it operates on rather than extracting from it.",
+  },
+  {
+    icon: Users,
+    title: "A Model Others Can Learn",
+    desc: "We have trained 300+ farmers using this system. What works at Ingaju can work across Rwanda — and beyond. Knowledge is part of the loop.",
+  },
+  {
+    icon: RefreshCw,
+    title: "Full Resource Recovery",
+    desc: "Every output — manure, crop residue, wastewater, biogas — is captured and fed back into the system. Nothing is discarded. Everything has a next purpose.",
+  },
+];
+
 export const PARTNERS = [
-  { name: "Partner 1", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Simple_CV.svg/200px-Simple_CV.svg.png" },
-  { name: "Partner 2", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/200px-Amazon_logo.svg.png" },
-  { name: "Partner 3", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/200px-Google_2015_logo.svg.png" },
-  { name: "Partner 4", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/200px-Netflix_2015_logo.svg.png" },
-  { name: "Partner 5", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Apple-logo.png/200px-Apple-logo.png" },
-  { name: "Partner 6", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png" },
+  { name: "Agrivet", logo: "/images/partners/agrivet.png" },
+  { name: "AIF", logo: "/images/partners/aif.png" },
+  { name: "BK Insurance", logo: "/images/partners/bk-insurance.png" },
+  { name: "Ingabo", logo: "/images/partners/ingabo.png" },
+  { name: "Inyanje", logo: "/images/partners/inyanje.png" },
+  { name: "KAFCO", logo: "/images/partners/kafco.png" },
+  { name: "Nyagatare Cooperative", logo: "/images/partners/nyagatare-cooporative.png" },
+  { name: "RAB", logo: "/images/partners/rab.png" },
+  { name: "Sonarwa", logo: "/images/partners/sonarwa.png" },
+  { name: "Western Seed", logo: "/images/partners/western-seed.png" },
 ];
 
 export const CATEGORIES = [
@@ -14,7 +63,7 @@ export const CATEGORIES = [
     description: "Fresh milk, organic manure, and quality breeding livestock produced through responsible farm management and circular farming practices.",
     ctaLabel: "Explore Dairy",
     ctaHref: "/categories/dairy-livestock",
-    image: "/images/bg-img.png",
+    image: "/images/hero/bg-img.png",
     alt: "Dairy cattle grazing on the Ngaju farm",
   },
   {
@@ -23,7 +72,7 @@ export const CATEGORIES = [
     description: "Naturally grown corn, beans & soybeans, and nuts cultivated using sustainable farming methods that support healthy soil and quality harvests.",
     ctaLabel: "Explore Crops",
     ctaHref: "/categories/crop-production",
-    image: "/images/crop-production.png",
+    image: "/images/crops/crop-production.png",
     alt: "Rows of corn growing in the field",
   },
   {
@@ -32,7 +81,7 @@ export const CATEGORIES = [
     description: "Strong and well-managed livestock raised to support productivity and genetic improvement for farmers and livestock enterprises.",
     ctaLabel: "Order Now",
     ctaHref: "/marketplace",
-    image: "/images/organic-manure.png",
+    image: "/images/dairy/organic-manure.png",
     alt: "Organic Manure",
   },
   {
@@ -41,7 +90,7 @@ export const CATEGORIES = [
     description: "Strong and well-managed livestock raised to support productivity and genetic improvement for farmers and livestock enterprises.",
     ctaLabel: "Explore Trainings",
     ctaHref: "/trainings",
-    image: "/images/training-1.png",
+    image: "/images/farm/training-1.png",
     alt: "Group of farmers gathered for a community training session",
   },
 ];
@@ -60,7 +109,7 @@ export const TRAININGS = [
     description: "Practical skills in livestock management and milk production.",
     ctaLabel: "Learn More",
     ctaHref: "/trainings/dairy-farming",
-    image: "/images/bg-img.png",
+    image: "/images/hero/bg-img.png",
     alt: "Farmer working with dairy cattle",
   },
   {
@@ -69,7 +118,7 @@ export const TRAININGS = [
     description: "Sustainable farming techniques for healthier production systems.",
     ctaLabel: "Learn More",
     ctaHref: "/trainings/organic-farming",
-    image: "/images/bg-2.png",
+    image: "/images/hero/bg-2.png",
     alt: "Farmer demonstrating organic farming techniques to a group",
   },
   {
@@ -78,7 +127,7 @@ export const TRAININGS = [
     description: "Hands-on methods for turning farm waste into fertilizer and feed.",
     ctaLabel: "Learn More",
     ctaHref: "/trainings/circular-agriculture",
-    image: "/images/bg-3.png",
+    image: "/images/hero/bg-3.png",
     alt: "Group training session on circular agriculture practices",
   },
 ];
@@ -91,7 +140,7 @@ export const BLOG_POSTS = [
     excerpt: "Discover how integrating livestock, crop production, and waste recycling creates a self-sustaining farming system that benefits both farmers and the environment.",
     date: "June 12, 2025",
     readTime: "6 min read",
-    image: "/images/bg-img.png",
+    image: "/images/blog-circular-farming.png",
     alt: "Farmer working on a circular agriculture farm",
     content: [
       {
@@ -161,7 +210,7 @@ export const BLOG_POSTS = [
     excerpt: "From feed management to hygiene protocols, these practices help dairy farmers consistently produce clean, high-quality milk.",
     date: "May 28, 2025",
     readTime: "5 min read",
-    image: "/images/bg-2.png",
+    image: "/images/blog-dairy-quality.png",
     alt: "Dairy cattle in a clean farm environment",
     content: [
       {
@@ -221,7 +270,7 @@ export const BLOG_POSTS = [
     excerpt: "Hands-on training equips farmers with the knowledge and skills to adopt sustainable methods that increase yields and protect natural resources.",
     date: "May 10, 2025",
     readTime: "4 min read",
-    image: "/images/bg-3.png",
+    image: "/images/farm/students.png",
     alt: "Group of farmers attending a training session",
     content: [
       {
@@ -276,4 +325,54 @@ export const BLOG_POSTS = [
       },
     ],
   },
+  {
+    slug: "biogas-from-cow-manure-farm-energy",
+    category: "Energy Recovery",
+    title: "How Biogas from Cow Manure Powers a Circular Farm",
+    excerpt: "Discover how anaerobic digesters convert livestock waste into clean biogas energy, reducing farm costs and carbon emissions in one closed loop.",
+    date: "April 22, 2025",
+    readTime: "5 min read",
+    image: "/images/blog-biogas.png",
+    alt: "Biogas energy recovery system on a farm",
+    content: [
+      {
+        type: "paragraph" as const,
+        text: "One of the most underutilised resources on any livestock farm is the manure produced daily by the animals. At Ingaju Farms, we treat manure not as waste but as a primary energy feedstock. Through anaerobic digestion, organic waste is broken down by microorganisms in the absence of oxygen, releasing biogas — a mixture of methane and carbon dioxide that can be used directly as a clean fuel source.",
+      },
+      {
+        type: "heading" as const,
+        text: "What Is Anaerobic Digestion?",
+      },
+      {
+        type: "paragraph" as const,
+        text: "Anaerobic digestion is a biological process that occurs naturally when organic matter decomposes without oxygen. On a farm, this process is managed inside a sealed digester tank where manure, crop residues, and other organic inputs are fed continuously. The biogas produced rises to the top of the tank and is captured through pipes for use across the farm.",
+      },
+      {
+        type: "heading" as const,
+        text: "How We Use Biogas at Ingaju",
+      },
+      {
+        type: "list" as const,
+        items: [
+          "Cooking and heating in farm facilities",
+          "Electricity generation for lighting and equipment",
+          "Powering milk processing operations",
+          "Reducing reliance on firewood and charcoal",
+        ],
+      },
+      {
+        type: "paragraph" as const,
+        text: "The digestate — the solid and liquid material remaining after digestion — is not discarded. It is processed into high-quality organic fertilizer that goes directly to our crop fields, completing the resource loop between livestock, energy, and crop production.",
+      },
+      {
+        type: "heading" as const,
+        text: "The Financial and Environmental Case",
+      },
+      {
+        type: "paragraph" as const,
+        text: "For a farm producing significant quantities of manure daily, the energy savings from biogas are substantial. Farms that have installed digesters report reductions in energy costs of 40 to 60 percent within the first year of operation. Beyond cost savings, eliminating open manure decomposition reduces methane emissions — one of the most potent greenhouse gases — from escaping into the atmosphere unmanaged.",
+      },
+    ],
+  },
 ];
+

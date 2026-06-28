@@ -10,7 +10,7 @@ export default function DairyCta() {
     <section className="w-full bg-white px-4 py-10 sm:px-6 lg:px-8">
       <div className="relative mx-auto h-[420px] max-w-6xl overflow-hidden rounded-3xl sm:h-[400px]">
         <Image
-          src="/images/bg-img.png"
+          src="/images/hero/bg-img.png"
           alt="Dairy cattle at Ingaju Farms"
           fill
           sizes="(min-width: 1024px) 1152px, 100vw"

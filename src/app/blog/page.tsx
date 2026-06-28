@@ -5,8 +5,9 @@ import { ArrowRight } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Blog | Ingaju Farms",
-  description: "Insights on circular agriculture, dairy farming, organic crop production, and sustainable food systems from the team at Ingaju Farms.",
+  title: "Blog | Circular Agriculture, Dairy Farming & Sustainable Food Systems",
+  description: "Expert insights on circular agriculture, integrated dairy farming, organic crop production, biogas energy recovery, water reuse, and nutrient recycling — from the team at Ingaju Farms Rwanda.",
+  keywords: ["circular agriculture blog", "dairy farming tips Rwanda", "sustainable agriculture Africa", "how biogas is produced from cow manure", "organic fertilizer benefits", "farm training sustainable agriculture"],
 };
 
 export default function BlogPage() {

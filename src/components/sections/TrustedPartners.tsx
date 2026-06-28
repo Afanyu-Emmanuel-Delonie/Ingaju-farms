@@ -12,9 +12,9 @@ export default function TrustedPartners() {
 
       {/* Marquee track */}
       <div className="relative flex">
-        <div className="flex animate-marquee gap-16 items-center whitespace-nowrap">
+        <div className="flex animate-marquee gap-6 items-center whitespace-nowrap">
           {[...PARTNERS, ...PARTNERS].map((partner, i) => (
-            <div key={i} className="flex items-center justify-center w-32 h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+            <div key={i} className="flex items-center justify-center w-32 h-12">
               <Image
                 src={partner.logo}
                 alt={partner.name}

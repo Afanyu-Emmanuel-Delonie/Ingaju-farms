@@ -6,7 +6,7 @@ export default function ReadyToExperienceCta() {
     <section className="w-full px-4 py-10 sm:px-6 lg:px-8 bg-white">
       <div className="relative mx-auto h-[420px] max-w-6xl overflow-hidden rounded-3xl sm:h-96">
         <Image
-          src="/images/bg-img.png"
+          src="/images/hero/bg-img.png"
           alt="Dairy cattle inside the Ngaju farm barn"
           fill
           sizes="(min-width: 1024px) 1152px, 100vw"

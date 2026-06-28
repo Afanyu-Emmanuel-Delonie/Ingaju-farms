@@ -33,7 +33,7 @@ export default function ImpactStats() {
   return (
     <section
       className="relative w-full overflow-hidden bg-fixed bg-center bg-cover"
-      style={{ backgroundImage: "url('/images/bg-img.png')" }}
+      style={{ backgroundImage: "url('/images/hero/bg-img.png')" }}
     >
       <div aria-hidden className="absolute inset-0 bg-[#0a0f0d]/75" />
 

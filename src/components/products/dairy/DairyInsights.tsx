@@ -18,7 +18,7 @@ export default function DairyInsights() {
         {INSIGHTS.map((insight, idx) => (
           <div key={idx} className="group cursor-pointer">
             <div className="relative h-60 w-full overflow-hidden rounded-2xl mb-6">
-              <Image src="/images/bg-img.png" alt={insight.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+              <Image src="/images/hero/bg-img.png" alt={insight.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
             </div>
             <h3 className="font-heading text-xl font-bold text-[#1C2321] group-hover:text-[#3A7D5A] transition-colors">{insight.title}</h3>
             <p className="mt-3 text-sm font-body text-[#1C2321]/70 line-clamp-3">{insight.desc}</p>

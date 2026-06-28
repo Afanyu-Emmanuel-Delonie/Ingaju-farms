@@ -10,7 +10,7 @@ const PRODUCTS = [
     title: "Fresh Milk",
     unit: "liters",
     desc: "Pasture-raised. No synthetic hormones. Just rich, creamy milk that tastes exactly how nature intended.",
-    img: "/images/milk.jpg",
+    img: "/images/dairy/milk.jpg",
   },
   {
     label: "Farm Input",

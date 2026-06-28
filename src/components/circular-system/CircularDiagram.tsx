@@ -10,23 +10,23 @@ gsap.registerPlugin(ScrollTrigger);
 const STAGES = [
   {
     number: "01",
-    title: "Dairy Cattle & Livestock",
-    desc: "Pasture-raised cattle produce fresh milk daily and organic manure as a natural byproduct — the starting point of the loop.",
+    title: "Feed Production",
+    desc: "The cycle begins with growing high-quality fodder and forage crops. Excellent crop production is the foundation for animal health and milk productivity.",
   },
   {
     number: "02",
-    title: "Organic Fertilizer",
-    desc: "Manure is composted and processed into rich fertilizer that rebuilds soil health — no synthetic inputs needed.",
+    title: "Dairy Production",
+    desc: "Healthy, well-fed cows produce high-quality milk. The quality of feed directly determines the productivity and health of the herd.",
   },
   {
     number: "03",
-    title: "Crop Production",
-    desc: "Naturally enriched soil grows chemical-free crops — corn, beans, macadamia, soybeans, and mangoes.",
+    title: "Waste Utilization",
+    desc: "Manure and organic waste are collected and converted via anaerobic digesters into biogas and organic fertilizer — turning pollutants into resources.",
   },
   {
     number: "04",
-    title: "Animal Feed & Loop Closes",
-    desc: "Crop residues and by-products are fed back to the livestock — keeping the herd healthy and the system self-sustaining.",
+    title: "Nutrient Recycling",
+    desc: "Organic matter and treated water are returned to the land, recycling nutrients into the soil and reducing reliance on costly chemical fertilizers.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function CircularDiagram() {
             How the Circular System <span className="text-[#3A7D5A]">Works</span>
           </h2>
           <p className="mt-4 max-w-xl text-[15px] font-body leading-relaxed text-[#6B6259]">
-            Four connected stages. Zero waste. A farm that sustains itself season after season.
+            Eight connected stages. Zero waste. A closed loop where every resource is kept in use for as long as possible.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export default function CircularDiagram() {
           {/* Left — image */}
           <div ref={imgRef} className="relative h-[520px] w-full overflow-hidden rounded-3xl">
             <Image
-              src="/images/circular-system.png"
+              src="/images/circular-system.jpeg"
               alt="Ingaju Farms circular agriculture"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"

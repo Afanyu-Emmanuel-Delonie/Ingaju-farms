@@ -11,7 +11,7 @@ export default function ImpactStats() {
   return (
     <section className="relative w-full overflow-hidden">
       <Image
-        src="/images/bg-2.png"
+        src="/images/hero/bg-2.png"
         alt="Ingaju farm background"
         fill
         className="object-cover object-center"

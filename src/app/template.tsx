@@ -35,7 +35,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
       >
         <div ref={logoRef} className="flex flex-col items-center gap-3 opacity-0 translate-y-3">
           <div className="relative h-12 w-12 overflow-hidden rounded-full">
-            <Image src="/images/Logo.png" alt="Ingaju Farms" fill className="object-contain" priority />
+            <Image src="/images/brand/Logo.png" alt="Ingaju Farms" fill className="object-contain" priority />
           </div>
           <span className="font-heading text-xl font-bold text-white">
             Ingaju <span className="text-[#D07A53]">Farms</span>

@@ -6,10 +6,10 @@ import { useModal } from "@/components/shared/ModalContext";
 export default function CropsHero() {
   const { open } = useModal();
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen lg:h-screen w-full overflow-hidden">
       <div className="absolute inset-0 animate-ken-burns">
         <Image
-          src="/images/crops-2.png"
+          src="/images/crops/crops-2.png"
           alt="Ingaju Farms green crop fields"
           fill
           priority
@@ -18,7 +18,7 @@ export default function CropsHero() {
       </div>
       <div className="absolute inset-0 bg-black/55" />
 
-      <div className="relative z-10 flex h-full flex-col items-start justify-end container-pad pb-12">
+      <div className="relative z-10 flex h-full flex-col items-start justify-end container-pad pb-20">
         <span className="mb-4 inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-widest text-white">
           Organic Crops & Produce
         </span>

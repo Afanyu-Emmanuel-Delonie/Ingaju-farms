@@ -29,7 +29,7 @@ export default function PageLoader() {
             className="flex flex-col items-center gap-4"
           >
             <div className="relative h-14 w-14 overflow-hidden rounded-full">
-              <Image src="/images/Logo.png" alt="Ingaju Farms" fill className="object-contain" priority />
+              <Image src="/images/brand/Logo.png" alt="Ingaju Farms" fill className="object-contain" priority />
             </div>
             <div className="flex flex-col items-center">
               <span className="font-heading text-2xl font-bold text-[#1C2321]">

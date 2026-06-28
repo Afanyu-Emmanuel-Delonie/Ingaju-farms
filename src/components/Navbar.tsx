@@ -45,7 +45,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative h-12 w-12 overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-105">
             <Image
-              src="/images/Logo.png"
+              src="/images/brand/Logo.png"
               alt="Ingaju Farms Logo"
               fill
               sizes="48px"

@@ -6,7 +6,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function MissionVision() {
   return (
-    <section className="w-full bg-[#FAF8F5]">
+    <section className="w-full bg-[#F8F6F2]">
       <div className="container-pad pb-20">
         <div className="flex flex-col md:flex-row gap-6">
           {[{

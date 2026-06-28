@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function CropsPage() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#FAF8F5]">
+    <main className="flex min-h-screen flex-col bg-[#F8F6F2]">
       <CropsHero />
       <FadeIn direction="up" delay={0.05}><CropsShowcase /></FadeIn>
       <FadeIn direction="up" delay={0.05}><CropsCircularModel /></FadeIn>

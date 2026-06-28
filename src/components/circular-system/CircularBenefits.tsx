@@ -25,7 +25,7 @@ const BENEFITS = [
 
 export default function CircularBenefits() {
   return (
-    <section className="w-full bg-[#FAF8F5]">
+    <section className="w-full bg-[#F8F6F2]">
       <div className="container-pad py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 lg:items-start">
 

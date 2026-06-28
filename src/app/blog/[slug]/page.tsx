@@ -38,7 +38,7 @@ export default async function BlogPostPage({ params }: Props) {
   const related = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
-    <main className="min-h-screen bg-[#FAF8F5]">
+    <main className="min-h-screen bg-[#F8F6F2]">
 
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[360px] w-full overflow-hidden">

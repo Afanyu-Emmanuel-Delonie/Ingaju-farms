@@ -17,7 +17,7 @@ const values = [
 
 export default function CoreValues() {
   return (
-    <section className="w-full bg-[#FAF8F5] py-20">
+    <section className="w-full bg-[#F8F6F2] py-20">
       <div className="container-pad">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -40,7 +40,7 @@ export default function CoreValues() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-8%" }}
               transition={{ duration: 0.6, delay: i * 0.07, ease: EASE }}
-              className="bg-[#FAF8F5] p-8 flex flex-col gap-4 hover:bg-[#f0ede7] transition-colors duration-300"
+              className="bg-[#F8F6F2] p-8 flex flex-col gap-4 hover:bg-[#f0ede7] transition-colors duration-300"
             >
               <div className="flex items-center justify-between">
                 <div className="w-11 h-11 rounded-full bg-[#3A7D5A]/10 text-[#3A7D5A] flex items-center justify-center">
@@ -56,8 +56,8 @@ export default function CoreValues() {
           ))}
 
           {/* Empty filler cell to balance 7 items in a 3-col grid */}
-          <div className="hidden lg:block bg-[#FAF8F5]" />
-          <div className="hidden lg:block bg-[#FAF8F5]" />
+          <div className="hidden lg:block bg-[#F8F6F2]" />
+          <div className="hidden lg:block bg-[#F8F6F2]" />
         </div>
       </div>
     </section>

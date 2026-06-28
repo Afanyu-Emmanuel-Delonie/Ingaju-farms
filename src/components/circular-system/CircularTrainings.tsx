@@ -30,7 +30,7 @@ export default function CircularTrainings() {
             <Link
               key={item.key}
               href={item.ctaHref}
-              className="group flex flex-col overflow-hidden rounded-2xl bg-[#FAF8F5] border border-[#1C2321]/5 transition-shadow hover:shadow-md"
+              className="group flex flex-col overflow-hidden rounded-2xl bg-[#F8F6F2] border border-[#1C2321]/5 transition-shadow hover:shadow-md"
             >
               <div className="relative h-52 w-full overflow-hidden">
                 <Image

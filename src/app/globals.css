@@ -24,7 +24,7 @@
 
 /* ── Base styles ── */
 body {
-  background-color: #FAF8F5;
+  background-color: #F8F6F2;
   color: var(--color-neutral-800);
   font-family: var(--font-body);
 }
@@ -52,6 +52,15 @@ body {
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.35s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {

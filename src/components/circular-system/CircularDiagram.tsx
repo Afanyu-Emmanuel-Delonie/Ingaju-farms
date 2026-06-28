@@ -51,7 +51,7 @@ const NODES = [
 
 export default function CircularDiagram() {
   return (
-    <section id="the-loop" className="w-full bg-[#FAF8F5]">
+    <section id="the-loop" className="w-full bg-[#F8F6F2]">
       <div className="container-pad py-24">
 
         <div className="text-center mb-16">

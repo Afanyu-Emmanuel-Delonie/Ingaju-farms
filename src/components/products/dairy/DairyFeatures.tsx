@@ -8,7 +8,7 @@ const FEATURES = [
 
 export default function DairyFeatures() {
   return (
-    <section className="w-full bg-[#FAF8F5]">
+    <section className="w-full bg-[#F8F6F2]">
       <div className="container-pad pt-16 pb-4">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {FEATURES.map(({ icon: Icon, title, desc }, idx) => (

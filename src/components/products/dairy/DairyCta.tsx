@@ -1,10 +1,13 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useModal } from "@/components/shared/ModalContext";
 
 export default function DairyCta() {
+  const { open } = useModal();
   return (
-    <section className="w-full bg-[#FAF8F5] px-4 py-10 sm:px-6 lg:px-8">
+    <section className="w-full bg-white px-4 py-10 sm:px-6 lg:px-8">
       <div className="relative mx-auto h-[420px] max-w-6xl overflow-hidden rounded-3xl sm:h-[400px]">
         <Image
           src="/images/bg-img.png"
@@ -23,18 +26,18 @@ export default function DairyCta() {
             Whether you need fresh milk for your business, organic manure for your farm, or quality breeding bulls — we're ready to supply with consistency and care.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/contact"
+            <button
+              onClick={() => open({ variant: "order", product: "Dairy Product" })}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
-              Get In Touch <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
+              Place an Order <ArrowRight className="h-4 w-4" />
+            </button>
+            <a
               href="/about"
               className="inline-flex items-center justify-center rounded-full border border-white/70 bg-transparent px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-white/10"
             >
               Explore Ingaju Farms
-            </Link>
+            </a>
           </div>
         </div>
       </div>

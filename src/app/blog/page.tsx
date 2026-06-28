@@ -13,7 +13,7 @@ export default function BlogPage() {
   const [featured, ...rest] = BLOG_POSTS;
 
   return (
-    <main className="min-h-screen bg-[#FAF8F5] pt-32 pb-20">
+    <main className="min-h-screen bg-[#F8F6F2] pt-32 pb-20">
       <div className="container-pad">
 
         <div className="mb-14">

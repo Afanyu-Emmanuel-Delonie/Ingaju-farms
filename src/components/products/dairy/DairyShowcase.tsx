@@ -1,31 +1,37 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useModal } from "@/components/shared/ModalContext";
 
 const PRODUCTS = [
   {
     label: "Fresh Dairy",
-    title: "Ingaju Fresh Milk",
-    desc: "Produced from pasture-raised cows with no synthetic hormones or antibiotics. Rich, creamy, and traceable from our farm to your table.",
-    img: "/images/bg-img.png",
+    title: "Fresh Milk",
+    unit: "liters",
+    desc: "Pasture-raised. No synthetic hormones. Just rich, creamy milk that tastes exactly how nature intended.",
+    img: "/images/milk.jpg",
   },
   {
     label: "Farm Input",
-    title: "Ingaju Organic Manure",
-    desc: "Nutrient-dense compost sourced directly from our dairy herd. The same fertilizer that grows our crops — now available for your farm.",
-    img: "/images/bg-2.png",
+    title: "Organic Manure",
+    unit: "kg",
+    desc: "In circular farming, nothing goes to waste. Give your own soil the foundation it needs to thrive.",
+    img: "/images/manure.jpg",
   },
   {
     label: "Livestock",
-    title: "Ingaju Breeding Bulls",
-    desc: "Genetically healthy, disease-free bulls raised for superior dairy and beef performance. Ideal for farmers looking to improve their herd.",
-    img: "/images/bg-3.png",
+    title: "Breeding Bulls",
+    unit: "head",
+    desc: "Genetically healthy and disease-free. Raised carefully for superior dairy and beef performance.",
+    img: "/images/bools.png",
   },
 ];
 
 export default function DairyShowcase() {
+  const { open } = useModal();
   return (
-    <section className="w-full bg-[#FAF8F5]">
+    <section className="w-full bg-[#F8F6F2]">
       <div className="container-pad py-24">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
@@ -33,36 +39,46 @@ export default function DairyShowcase() {
               Our Products
             </p>
             <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-              Dairy Raised With <span className="text-[#3A7D5A]">Integrity</span>
+              Fresh. Rich. <span className="text-[#3A7D5A]">Organic.</span>
             </h2>
           </div>
           <p className="max-w-sm text-[15px] font-body leading-relaxed text-[#6B6259]">
-            Three products, one circular system — each one a byproduct of responsible farming.
+            Three products, one circular system. Every jar, every drop supports local biodiversity.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {PRODUCTS.map((prod, idx) => (
-            <div key={idx} className="group relative h-[480px] w-full overflow-hidden rounded-2xl">
+            <div key={idx} className="relative h-[500px] w-full max-w-[340px] overflow-hidden rounded-3xl">
               <Image
                 src={prod.img}
                 alt={prod.title}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
-              <div className="absolute inset-x-0 bottom-0 p-8">
-                <span className="inline-block rounded-full bg-[#3A7D5A] px-3 py-1 text-xs font-body font-semibold uppercase tracking-widest text-white mb-3">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+
+              {/* Label — top left */}
+              <div className="absolute top-5 left-5">
+                <span className="inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-3 py-1 text-[10px] font-body font-semibold uppercase tracking-widest text-white">
                   {prod.label}
                 </span>
-                <h3 className="font-heading text-2xl font-bold text-white">{prod.title}</h3>
-                <p className="mt-3 text-sm font-body text-white/75 leading-relaxed">{prod.desc}</p>
-                <Link
-                  href="/contact"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-body font-semibold text-[#1C2321] transition-colors hover:bg-[#f0ede8]"
+              </div>
+
+              {/* Bottom content */}
+              <div className="absolute inset-x-0 bottom-0 p-7">
+                <h3 className="font-heading text-2xl font-bold text-white leading-snug">
+                  {prod.title}
+                </h3>
+                <p className="mt-3 text-sm font-body text-white/75 leading-relaxed">
+                  {prod.desc}
+                </p>
+                <button
+                  onClick={() => open({ variant: "order", product: prod.title, unit: prod.unit })}
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-body font-semibold text-white border-b border-white/50 pb-0.5 hover:border-white transition-colors"
                 >
-                  Order Now <ArrowRight className="h-4 w-4" />
-                </Link>
+                  Order Now <ArrowRight className="h-3.5 w-3.5" />
+                </button>
               </div>
             </div>
           ))}

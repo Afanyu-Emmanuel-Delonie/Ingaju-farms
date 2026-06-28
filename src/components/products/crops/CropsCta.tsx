@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useModal } from "@/components/shared/ModalContext";
 
 export default function CropsCta() {
+  const { open } = useModal();
   return (
     <section className="w-full bg-white px-4 py-10 sm:px-6 lg:px-8">
       <div className="relative mx-auto h-[420px] max-w-6xl overflow-hidden rounded-3xl sm:h-[400px]">
@@ -23,18 +26,18 @@ export default function CropsCta() {
             Whether you're a wholesaler, retailer, institution, or individual — we supply fresh, traceable, organically grown produce on a consistent basis.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/contact"
+            <button
+              onClick={() => open({ variant: "order", product: "Organic Crops", unit: "kg" })}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
               Get a Quote <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
+            </button>
+            <a
               href="/about"
               className="inline-flex items-center justify-center rounded-full border border-white/70 bg-transparent px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-white/10"
             >
               Learn About Our Farm
-            </Link>
+            </a>
           </div>
         </div>
       </div>

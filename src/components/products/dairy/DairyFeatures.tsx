@@ -1,14 +1,14 @@
 import { Leaf, RefreshCw, ShieldCheck } from "lucide-react";
 
 const FEATURES = [
-  { icon: Leaf,       title: "100% Organic",             desc: "No synthetic hormones, antibiotics, or pesticides across our entire dairy operation." },
-  { icon: RefreshCw,  title: "Circular System",           desc: "Manure becomes fertilizer, crops become feed — a self-sustaining loop with zero waste." },
-  { icon: ShieldCheck, title: "Farm-To-Table Traceability", desc: "Every product is monitored from pasture to delivery. Pure, fresh, and accountable." },
+  { icon: Leaf,       title: "100% Organic",             desc: "No synthetic hormones, antibiotics, or pesticides. Just pure, wholesome nourishment." },
+  { icon: RefreshCw,  title: "Circular System",           desc: "The end of one cycle is the beginning of another. Zero waste, pure efficiency." },
+  { icon: ShieldCheck, title: "Farm-To-Table Traceability", desc: "Every product is monitored. You always know exactly where your dairy comes from." },
 ];
 
 export default function DairyFeatures() {
   return (
-    <section className="w-full bg-[#FAF8F5]">
+    <section className="w-full bg-white">
       <div className="container-pad pt-16 pb-4">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {FEATURES.map(({ icon: Icon, title, desc }, idx) => (

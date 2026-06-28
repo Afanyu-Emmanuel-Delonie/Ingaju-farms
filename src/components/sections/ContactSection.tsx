@@ -33,7 +33,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="w-full bg-[#FAF8F5]">
+    <section className="w-full bg-[#F8F6F2]">
       <div className="container-pad py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left */}

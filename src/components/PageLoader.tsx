@@ -28,7 +28,7 @@ export default function PageLoader() {
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center gap-4"
           >
-            <div className="relative h-14 w-14">
+            <div className="relative h-14 w-14 overflow-hidden rounded-full">
               <Image src="/images/Logo.png" alt="Ingaju Farms" fill className="object-contain" priority />
             </div>
             <div className="flex flex-col items-center">

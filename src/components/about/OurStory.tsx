@@ -17,14 +17,14 @@ export default function OurStory() {
           <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-8%" }} className="grid grid-cols-2 gap-3 h-[420px]">
             <motion.div variants={item} className="flex flex-col gap-3 h-full">
               <div className="relative flex-1 w-full rounded-2xl overflow-hidden">
-                <Image src="/images/bg-3.png" alt="Farmers gathering" fill className="object-cover" />
+                <Image src="/images/training-1.png" alt="Farmers gathering" fill className="object-cover" />
               </div>
               <div className="relative flex-1 w-full rounded-2xl overflow-hidden">
-                <Image src="/images/bg-2.png" alt="Classroom learning" fill className="object-cover" />
+                <Image src="/images/about/about-3.png" alt="Classroom learning" fill className="object-cover" />
               </div>
             </motion.div>
             <motion.div variants={item} className="relative h-full w-full rounded-2xl overflow-hidden">
-              <Image src="/images/bg-img.png" alt="Farmers in field" fill className="object-cover" />
+              <Image src="/images/cow.png" alt="Farmers in field" fill className="object-cover" />
             </motion.div>
           </motion.div>
 
@@ -36,10 +36,10 @@ export default function OurStory() {
           >
             <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A]">Our Story</p>
             <h2 className="mt-3 text-3xl font-heading font-bold leading-tight text-[#1C2321] md:text-4xl">
-              Built on <span className="text-[#3A7D5A]">Circular Principles</span>
+              Where It All <span className="text-[#3A7D5A]">Began.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259]">
-              Ingaju was founded on the belief that healthy food begins with healthy farming systems. By integrating livestock, crops, and natural resource management, we created a circular farming model that produces quality food while protecting the environment and supporting local communities.
+              Ingaju was founded on a simple belief — healthy food starts with a healthy farm. By weaving livestock, crops, and natural resource management into one system, we built a farm that sustains itself and the communities around it.
             </p>
             <a
               href="/marketplace"

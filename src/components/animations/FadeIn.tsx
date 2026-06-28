@@ -15,13 +15,16 @@ interface FadeInProps {
   className?: string;
 }
 
-const getClip = (direction: FadeInProps["direction"]) => ({
-  up:    { from: "inset(100% 0 0 0)",    to: "inset(0% 0 0 0)" },
-  down:  { from: "inset(0 0 100% 0)",    to: "inset(0 0 0% 0)" },
-  left:  { from: "inset(0 0 0 100%)",    to: "inset(0 0 0 0%)" },
-  right: { from: "inset(0 100% 0 0)",    to: "inset(0 0% 0 0)" },
-  none:  { from: "inset(0 0 0 0)",       to: "inset(0 0 0 0)" },
-});
+const getClip = (direction: NonNullable<FadeInProps["direction"]>) => {
+  const clips = {
+    up:    { from: "inset(100% 0 0 0)",    to: "inset(0% 0 0 0)" },
+    down:  { from: "inset(0 0 100% 0)",    to: "inset(0 0 0% 0)" },
+    left:  { from: "inset(0 0 0 100%)",    to: "inset(0 0 0 0%)" },
+    right: { from: "inset(0 100% 0 0)",    to: "inset(0 0% 0 0)" },
+    none:  { from: "inset(0 0 0 0)",       to: "inset(0 0 0 0)" },
+  };
+  return clips[direction];
+};
 
 export default function FadeIn({
   children,

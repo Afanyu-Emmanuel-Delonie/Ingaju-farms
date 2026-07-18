@@ -39,10 +39,13 @@ export default function OurStory() {
               Where It All <span className="text-[#3A7D5A]">Began.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259]">
-              Ingaju was founded on a simple belief — healthy food starts with a healthy farm. By weaving livestock, crops, and natural resource management into one system, we built a farm that sustains itself and the communities around it.
+              Ingaju Farms was established on a foundational conviction that sustainable food production begins with a healthy, well-managed farm. By integrating dairy livestock, food and feed crop production, organic waste recovery, and community training into one coherent system, we built an enterprise that sustains itself, improves the land it operates on, and creates lasting value for the farming communities around it.
+            </p>
+            <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
+              Over six years of operation, Ingaju has grown from a single integrated farm into a recognised model for circular agriculture in Rwanda demonstrating that commercial productivity and environmental responsibility are not competing objectives, but complementary ones.
             </p>
             <a
-              href="/marketplace"
+              href="/products/dairy"
               className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
               Explore Our Products

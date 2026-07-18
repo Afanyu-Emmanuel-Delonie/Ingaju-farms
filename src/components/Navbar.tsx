@@ -10,7 +10,7 @@ const navLinks = [
   { label: "About", href: "/about" },
   {
     label: "Products",
-    href: "/marketplace",
+    href: "/products/dairy",
     dropdown: [
       { label: "Dairy Products", href: "/products/dairy" },
       { label: "Crops", href: "/products/crops" }

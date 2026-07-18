@@ -5,29 +5,29 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    question: "What products does Ingaju Farms offer?",
+    question: "What products and services does Ingaju Farms offer?",
     answer:
-      "Ingaju Farms offers a range of organic products including fresh milk, organic manure, breeding livestock, corn, beans, soybeans, and macadamia nuts — all produced through sustainable circular farming practices.",
+      "Ingaju Farms produces fresh milk, certified organic fertilizer, breeding livestock, maize, beans, soybeans, and macadamia nuts — all through an integrated circular production system. We also offer structured farmer training programmes and farm visits for educational and professional groups.",
   },
   {
-    question: "How can I book a farm tour?",
+    question: "How can I arrange a farm visit or educational tour?",
     answer:
-      "You can book a farm tour by visiting our Book a Tour page or contacting us directly. We offer educational tours, school visits, corporate visits, and agricultural learning experiences.",
+      "Farm visits can be arranged through our contact page or by reaching out to our team directly. We accommodate school groups, farmer delegations, research institutions, corporate teams, and individual visitors seeking to observe circular agriculture in practice.",
   },
   {
-    question: "What training programs does Ingaju offer?",
+    question: "What training programmes does Ingaju Farms offer?",
     answer:
-      "We offer hands-on training in dairy farming, organic farming, and circular agriculture. Our programs are designed for both beginner and experienced farmers looking to adopt sustainable methods.",
+      "We offer practical, on-farm training in dairy herd management, organic crop production, and integrated circular agriculture systems. Programmes are tailored for smallholder farmers, farmer cooperatives, agricultural students, and agribusiness professionals at all experience levels.",
   },
   {
-    question: "Can I partner with Ingaju Farms?",
+    question: "Does Ingaju Farms accept institutional or commercial partnerships?",
     answer:
-      "Yes, we welcome partnership opportunities with individuals, organizations, and businesses aligned with sustainable agriculture. Reach out through our contact page to start the conversation.",
+      "Yes. We actively pursue partnerships with development organizations, research institutions, government agencies, cooperatives, and private sector actors aligned with sustainable agriculture. Please contact us through our partnership inquiry page to initiate a discussion.",
   },
   {
-    question: "How does circular farming work at Ingaju?",
+    question: "How does the circular agriculture system work at Ingaju Farms?",
     answer:
-      "At Ingaju, circular farming integrates dairy livestock, crop production, and natural resource recycling. Manure from cattle is used as organic fertilizer for crops, and crop residues feed back into the livestock system — creating a closed, sustainable loop.",
+      "Our circular system integrates dairy production, crop cultivation, and organic resource recovery into one closed loop. Livestock manure is processed through anaerobic digesters to produce biogas energy and nutrient-rich digestate. The digestate is applied as organic fertilizer to crop fields, and crop residues are returned as livestock feed — eliminating waste and reducing dependence on external inputs at every stage.",
   },
 ];
 

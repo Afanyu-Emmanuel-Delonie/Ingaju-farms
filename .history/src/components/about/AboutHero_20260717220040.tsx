@@ -1,0 +1,61 @@
+import { ArrowRight } from "lucide-react";
+
+export default function AboutHero() {
+  return (
+    <section className="relative w-full h-[80vh] min-h-[550px] overflow-hidden bg-[#1C2321] flex items-end">
+
+      {/* Decorative circles — top right */}
+      <svg className="absolute top-0 right-0 w-[480px] h-[480px] opacity-10 pointer-events-none" viewBox="0 0 480 480" fill="none">
+        <circle cx="380" cy="100" r="220" stroke="#3A7D5A" strokeWidth="1.5" />
+        <circle cx="380" cy="100" r="160" stroke="#3A7D5A" strokeWidth="1" />
+        <circle cx="380" cy="100" r="90" stroke="#6DBE8C" strokeWidth="1" />
+      </svg>
+
+      {/* Decorative dot grid — bottom left */}
+      <svg className="absolute bottom-0 left-0 w-56 h-56 opacity-10 pointer-events-none" viewBox="0 0 200 200" fill="#6DBE8C">
+        {Array.from({ length: 6 }).map((_, row) =>
+          Array.from({ length: 6 }).map((_, col) => (
+            <circle key={`${row}-${col}`} cx={col * 34 + 10} cy={row * 34 + 10} r="2" />
+          ))
+        )}
+      </svg>
+
+      {/* Decorative arc — bottom right */}
+      <svg className="absolute bottom-0 right-0 w-72 h-72 opacity-[0.07] pointer-events-none" viewBox="0 0 300 300" fill="none">
+        <path d="M300 300 Q 100 300 100 100" stroke="#3A7D5A" strokeWidth="60" strokeLinecap="round" />
+      </svg>
+
+      {/* Thin horizontal rule accent */}
+      <div className="absolute top-1/2 left-0 w-24 h-px bg-[#3A7D5A]/30" />
+
+      {/* Content */}
+      <div className="relative z-10 container-pad pb-12 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span className="mb-4 inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-widest text-white">
+          About Ingaju Farms
+        </span>
+        <h1 className="max-w-4xl text-3xl font-heading font-bold leading-tight text-white md:text-5xl">
+          An Integrated Agribusiness.<br />
+          <span className="text-[#6DBE8C]">Built for Generations.</span>
+        </h1>
+        <p className="mt-4 max-w-3xl font-body text-base leading-relaxed text-white/80 md:text-lg">
+          Ingaju Farms operates a closed-loop ecosystem in Rwanda—integrating high-yield dairy farming, crop cultivation, and organic recycling. Driven by data management and local capacity building, we scale profitable, climate-smart agriculture.
+        </p>
+        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          <a
+            href="/contact"
+            className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#3A7D5A] px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#2f6b4a] sm:w-auto"
+          >
+            Partner With Us     
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <a
+            href="/products/dairy"
+            className="w-full text-center rounded-full border border-white/20 px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto"
+          >
+            Explore Supply
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}

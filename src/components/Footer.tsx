@@ -9,10 +9,10 @@ const links = {
     { label: "Contact", href: "/contact" },
   ],
   products: [
-    { label: "Dairy & Livestock", href: "/categories/dairy-livestock" },
-    { label: "Crop Production", href: "/categories/crop-production" },
-    { label: "Breeding Bulls", href: "/marketplace" },
-    { label: "Organic Manure", href: "/marketplace" },
+    { label: "Dairy & Livestock", href: "/products/dairy" },
+    { label: "Crop Production", href: "/products/crops" },
+    { label: "Breeding Bulls", href: "/products/dairy" },
+    { label: "Organic Manure", href: "/products/crops" },
   ],
   training: [
     { label: "Dairy Farming", href: "/trainings/dairy-farming" },

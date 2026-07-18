@@ -20,10 +20,10 @@ export default function CropsCta() {
 
         <div className="absolute inset-x-0 bottom-0 flex flex-col items-center px-6 pb-10 text-center sm:px-10 sm:pb-12">
           <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl max-w-xl">
-            Ready to Source Organic Crops from Ingaju?
+            Source Organic Crops from a Climate-Smart Farm
           </h2>
           <p className="mt-3 max-w-lg text-sm font-body leading-relaxed text-white/80 sm:text-base">
-            Whether you're a wholesaler, retailer, institution, or individual — we supply fresh, traceable, organically grown produce on a consistent basis.
+            Whether you are a wholesaler, processor, institution, or individual buyer — we supply fresh, traceable, organically grown produce cultivated through sustainable farming practices that protect the land and conserve natural resources.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <button

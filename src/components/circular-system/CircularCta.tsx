@@ -26,7 +26,7 @@ export default function CircularCta() {
               href="/trainings"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
-              Jion Our Trainings <ArrowRight className="h-4 w-4" />
+              Join Our Trainings <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="/book-a-tour"

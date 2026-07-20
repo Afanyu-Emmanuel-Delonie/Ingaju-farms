@@ -7,9 +7,16 @@ import CircularCta from "@/components/circular-system/CircularCta";
 import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata = {
-  title: "Circular Economy in Agriculture | 8-Stage Closed-Loop Farming System",
-  description: "Discover how Ingaju Farms uses an 8-stage closed-loop circular economy system — from feed production and dairy to biogas energy recovery, water reuse, and nutrient recycling. Zero waste. Full circle.",
-  keywords: ["circular economy in agriculture", "closed-loop farming system", "farm waste utilization system", "biogas energy recovery farm", "agricultural water reuse", "organic nutrient recycling soil", "integrated dairy farming Rwanda"],
+  title: "Circular Agriculture System | Closed-Loop Farming — Ingaju Farms Rwanda",
+  description: "Discover how Ingaju Farms operates a closed-loop circular agriculture system in Eastern Province, Rwanda — where cattle manure becomes organic fertilizer, crops feed the herd, and nothing leaves the loop. Zero waste. Full circle.",
+  keywords: ["circular agriculture system Rwanda", "closed-loop farming Rwanda", "circular economy agriculture Africa", "zero waste farming Eastern Province", "organic fertilizer from manure Rwanda", "integrated dairy farming Rwanda", "circular farming model Africa"],
+  alternates: { canonical: "https://ingajufarms.com/circular-system" },
+  openGraph: {
+    url: "https://ingajufarms.com/circular-system",
+    title: "Circular Agriculture System | Closed-Loop Farming — Ingaju Farms Rwanda",
+    description: "A closed-loop farm in Eastern Province, Rwanda where every resource is recovered and reused. Zero synthetic inputs. Zero waste.",
+    images: [{ url: "/images/hero/bg-img.png", width: 1200, height: 630, alt: "Ingaju Farms Circular System" }],
+  },
 };
 
 export default function CircularSystemPage() {

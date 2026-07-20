@@ -23,9 +23,9 @@ const links = {
 };
 
 const contact = [
-  { icon: MapPin, value: "Ingaju Farm, Kigali, Rwanda" },
-  { icon: Phone, value: "+250 700 000 000" },
-  { icon: Mail,  value: "hello@ingajufarms.com" },
+  { icon: MapPin, value: "Rubero Village, Eastern Province, Rwanda" },
+  { icon: Phone, value: "+250 788 304 921" },
+  { icon: Mail,  value: "support@ingajufarms.com" },
 ];
 
 export default function Footer() {

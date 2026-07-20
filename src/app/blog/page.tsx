@@ -5,9 +5,16 @@ import { ArrowRight } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Blog | Circular Agriculture, Dairy Farming & Sustainable Food Systems",
-  description: "Expert insights on circular agriculture, integrated dairy farming, organic crop production, biogas energy recovery, water reuse, and nutrient recycling — from the team at Ingaju Farms Rwanda.",
-  keywords: ["circular agriculture blog", "dairy farming tips Rwanda", "sustainable agriculture Africa", "how biogas is produced from cow manure", "organic fertilizer benefits", "farm training sustainable agriculture"],
+  title: "Blog | Circular Agriculture, Dairy Farming & Sustainable Food Systems — Ingaju Farms",
+  description: "Expert insights on circular agriculture, organic dairy farming, crop production, and sustainable food systems from the team at Ingaju Farms, Eastern Province, Rwanda. Practical knowledge for farmers and agribusiness professionals.",
+  keywords: ["circular agriculture blog Rwanda", "dairy farming tips Rwanda", "sustainable agriculture Africa", "organic fertilizer benefits", "farm training Rwanda", "regenerative agriculture insights", "smallholder farming Rwanda"],
+  alternates: { canonical: "https://ingajufarms.com/blog" },
+  openGraph: {
+    url: "https://ingajufarms.com/blog",
+    title: "Blog | Circular Agriculture, Dairy Farming & Sustainable Food Systems — Ingaju Farms",
+    description: "Practical insights on circular agriculture, organic dairy, and sustainable farming from Ingaju Farms, Eastern Province, Rwanda.",
+    images: [{ url: "/images/hero/bg-img.png", width: 1200, height: 630, alt: "Ingaju Farms Blog" }],
+  },
 };
 
 export default function BlogPage() {

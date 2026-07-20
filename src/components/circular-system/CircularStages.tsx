@@ -1,85 +1,139 @@
-const STAGES = [
-  {
-    number: "01",
-    title: "Feed Production",
-    body: "The cycle begins with growing high-quality fodder and forage crops specifically for dairy animals. Excellent crop production is the foundation for animal health and milk productivity.",
-    bullets: ["Fodder and forage crops grown on-site", "Foundation of herd health and productivity", "Reduces dependency on external feed sources"],
-  },
-  {
-    number: "02",
-    title: "Dairy Production",
-    body: "Healthy, well-fed cows produce high-quality milk. The quality of feed directly determines the productivity and health of the herd, ensuring consistently premium output.",
-    bullets: ["Pasture-fed, hormone-free herd", "Feed quality directly drives milk quality", "Fresh milk produced daily"],
-  },
-  {
-    number: "03",
-    title: "Milk Processing",
-    body: "Raw milk is processed into value-added consumer dairy products such as yogurt, cheese, and butter. This stage drives market opportunities and increases farm income.",
-    bullets: ["Yogurt, cheese, and butter produced on-site", "Value addition increases market reach", "Higher income per litre of milk"],
-  },
-  {
-    number: "04",
-    title: "Waste Utilization",
-    body: "Manure and organic waste are collected and converted via anaerobic digesters into biogas and organic fertilizer — turning a potential pollutant into a valuable resource.",
-    bullets: ["Anaerobic digesters convert waste to biogas", "Organic fertilizer extracted from manure", "Zero waste leaves the system"],
-  },
-  {
-    number: "05",
-    title: "Crop Production",
-    body: "Organic fertilizer from the waste stage is applied back to the fields, improving soil fertility and supporting the growth of food crops and fodder for the next cycle.",
-    bullets: ["Zero synthetic pesticides or fertilizers", "Diverse crop varieties grown year-round", "Higher nutritional value from healthy soil"],
-  },
-  {
-    number: "06",
-    title: "Energy Recovery",
-    body: "Biogas captured during waste utilization is harnessed as a clean energy source — used for cooking, heating, electricity generation, and meeting farm operational needs.",
-    bullets: ["Biogas powers farm cooking and heating", "Renewable energy reduces operational costs", "Lowers the farm's carbon emissions"],
-  },
-  {
-    number: "07",
-    title: "Water Reuse",
-    body: "Wastewater from farming and processing operations is treated and reclaimed for field irrigation and farm cleaning, conserving fresh water sources and reducing local pollution.",
-    bullets: ["Treated wastewater reused for irrigation", "Reduces freshwater consumption significantly", "Minimises local water pollution"],
-  },
-  {
-    number: "08",
-    title: "Nutrient Recycling",
-    body: "Organic matter and treated water are returned to the land, safely recycling nutrients into the soil. This reduces reliance on chemical fertilizers and brings the cycle back to stage one.",
-    bullets: ["Nutrients returned directly to the soil", "Reduces chemical fertilizer costs", "Completes and restarts the full loop"],
-  },
-];
+"use client";
+
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CIRCULAR_STAGES } from "@/lib/constants";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function CircularStages() {
-  return (
-    <section className="w-full bg-[#F8F6F2]">
-      <div className="container-pad py-24">
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-        <div className="text-center mb-16">
-          <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">Deep Dive</p>
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      rowRefs.current.forEach((row) => {
+        if (!row) return;
+        const img = row.querySelector(".stage-img");
+        const content = row.querySelector(".stage-content");
+
+        gsap.fromTo(
+          img,
+          { opacity: 0, x: -40 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: row,
+              start: "top 72%",
+              once: true,
+            },
+          }
+        );
+
+        gsap.fromTo(
+          content,
+          { opacity: 0, x: 40 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: row,
+              start: "top 72%",
+              once: true,
+            },
+          }
+        );
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="w-full bg-white py-24">
+      <div className="container-pad mx-auto max-w-5xl">
+
+        {/* Header */}
+        <div className="text-center mb-20">
+          <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
+            The Four Stages
+          </p>
           <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-            The Eight Stages <span className="text-[#3A7D5A]">Explained</span>
+            How the Loop Works
           </h2>
-          <p className="mt-4 max-w-xl mx-auto text-[15px] font-body leading-relaxed text-[#6B6259]">
-            Eight interconnected stages. Zero waste. Every output from one stage becomes the input for another.
+          <p className="mt-4 max-w-md mx-auto text-[15px] font-body leading-relaxed text-[#6B6259]">
+            Four stages. Zero waste. Every output from one stage becomes the input for the next.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {STAGES.map(({ number, title, body, bullets }) => (
-            <div key={number} className="flex flex-col rounded-2xl bg-white border border-[#1C2321]/5 p-6">
-              <span className="font-heading text-xs font-bold text-[#3A7D5A] mb-4">{number}</span>
-              <h3 className="font-heading text-base font-bold text-[#1C2321] leading-snug">{title}</h3>
-              <p className="mt-3 text-sm font-body text-[#6B6259] leading-relaxed">{body}</p>
-              <ul className="mt-5 space-y-2">
-                {bullets.map((point) => (
-                  <li key={point} className="flex items-start gap-2.5 text-sm font-body text-[#6B6259]">
-                    <span aria-hidden className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#3A7D5A]" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        {/* Stages */}
+        <div className="flex flex-col gap-24">
+          {CIRCULAR_STAGES.map(({ number, title, body, bullets, imgSrc, imgAlt }, i) => {
+            const isEven = i % 2 === 1;
+            return (
+              <div
+                key={number}
+                ref={(el) => { rowRefs.current[i] = el; }}
+                className={`flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16 ${isEven ? "lg:flex-row-reverse" : ""}`}
+              >
+                {/* Image */}
+                <div className="stage-img lg:w-1/2 flex-shrink-0">
+                  <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+                    <Image
+                      src={imgSrc}
+                      alt={imgAlt}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                    {/* Stage number overlay */}
+                    <div className="absolute top-5 left-5 bg-[#3A7D5A] text-white font-heading font-bold text-xs tracking-widest uppercase px-3 py-1.5 rounded-full">
+                      Stage {number}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="stage-content lg:w-1/2">
+                  <p className="text-xs font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
+                    {number} / 04
+                  </p>
+                  <h3 className="font-heading text-2xl font-bold text-[#1C2321] sm:text-3xl leading-tight">
+                    {title}
+                  </h3>
+                  <p className="mt-4 text-[15px] font-body text-[#6B6259] leading-relaxed">
+                    {body}
+                  </p>
+                  <ul className="mt-6 space-y-3">
+                    {bullets.map((point) => (
+                      <li key={point} className="flex items-start gap-3 text-sm font-body text-[#6B6259]">
+                        <span aria-hidden className="mt-[5px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#3A7D5A]" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Connector line to next stage */}
+                  {i < CIRCULAR_STAGES.length - 1 && (
+                    <div className="mt-10 flex items-center gap-3">
+                      <div className="h-px flex-1 bg-[#3A7D5A]/20" />
+                      <span className="text-xs font-body text-[#3A7D5A]/60 uppercase tracking-widest">
+                        feeds into
+                      </span>
+                      <div className="h-px flex-1 bg-[#3A7D5A]/20" />
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
 
       </div>

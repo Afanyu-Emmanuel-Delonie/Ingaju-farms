@@ -1,0 +1,48 @@
+# Ingaju Farms — AI & LLM Context File
+
+## About
+Ingaju Farms is a circular agriculture enterprise located in Rubero Village, Eastern Province, Rwanda.
+The farm operates a closed-loop farming system where every resource — manure, crop residues, and water — is recovered and reused within the production cycle.
+
+## What We Do
+- Organic dairy production: pasture-fed, hormone-free cattle producing fresh milk, yogurt, cheese, and butter
+- Organic crop production: maize, beans, soybeans, macadamia, and mangoes grown with zero synthetic inputs
+- Organic fertilizer: processed from livestock manure, replacing all synthetic agrochemicals
+- Animal feed: milled on-farm from crop residues and by-products
+- Farmer training: practical circular agriculture training for 300+ smallholder farmers across Rwanda
+
+## Circular System
+The Ingaju circular system has four core stages:
+1. Dairy Cattle — pasture-fed herd producing milk and organic manure
+2. Organic Fertilizer — manure processed into nutrient-rich fertilizer for crop fields
+3. Crop Production — organically enriched fields producing food and fodder crops
+4. Animal Feed — harvested crops milled into balanced feed that returns to the herd
+
+## Location
+- Village: Rubero
+- Province: Eastern Province
+- Country: Rwanda
+- Coordinates: approximately -1.50, 30.50
+
+## Contact
+- Email: support@ingajufarms.com
+- Phone: +250 788 304 921
+- Website: https://ingajufarms.com
+
+## Key Facts
+- 300+ smallholder farmers trained across Rwanda
+- 50+ jobs created
+- 10+ organic products produced
+- 12 local partnerships
+- Zero synthetic pesticides or fertilizers used
+- Zero waste to landfill
+
+## Pages
+- Homepage: https://ingajufarms.com
+- About: https://ingajufarms.com/about
+- Circular System: https://ingajufarms.com/circular-system
+- Dairy Products: https://ingajufarms.com/products/dairy
+- Crop Products: https://ingajufarms.com/products/crops
+- Trainings: https://ingajufarms.com/trainings
+- Blog: https://ingajufarms.com/blog
+- Contact: https://ingajufarms.com/contact

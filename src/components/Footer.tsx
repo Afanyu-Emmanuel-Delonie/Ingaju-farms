@@ -9,10 +9,10 @@ const links = {
     { label: "Contact", href: "/contact" },
   ],
   products: [
-    { label: "Dairy & Livestock", href: "/categories/dairy-livestock" },
-    { label: "Crop Production", href: "/categories/crop-production" },
-    { label: "Breeding Bulls", href: "/marketplace" },
-    { label: "Organic Manure", href: "/marketplace" },
+    { label: "Dairy & Livestock", href: "/products/dairy" },
+    { label: "Crop Production", href: "/products/crops" },
+    { label: "Breeding Bulls", href: "/products/dairy" },
+    { label: "Organic Manure", href: "/products/crops" },
   ],
   training: [
     { label: "Dairy Farming", href: "/trainings/dairy-farming" },
@@ -23,9 +23,9 @@ const links = {
 };
 
 const contact = [
-  { icon: MapPin, value: "Ingaju Farm, Kigali, Rwanda" },
-  { icon: Phone, value: "+250 700 000 000" },
-  { icon: Mail,  value: "hello@ingajufarms.com" },
+  { icon: MapPin, value: "Rubero Village, Eastern Province, Rwanda" },
+  { icon: Phone, value: "+250 788 304 921" },
+  { icon: Mail,  value: "support@ingajufarms.com" },
 ];
 
 export default function Footer() {

@@ -7,9 +7,16 @@ import CropsInsights from "@/components/products/crops/CropsInsights";
 import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata = {
-  title: "Organic Crop Production Rwanda | Chemical-Free Corn, Beans & Macadamia",
-  description: "Naturally grown corn, beans, soybeans, macadamia, and mangoes cultivated using organic fertilizer from our circular farming system. Zero synthetic inputs. Healthy soil. Better harvests.",
-  keywords: ["organic crop production Rwanda", "chemical-free farming Rwanda", "sustainable crops Africa", "organic fertilizer crop production", "regenerative agriculture crops", "circular farming crop yield"],
+  title: "Organic Crop Production Rwanda | Chemical-Free Maize, Beans & Macadamia — Ingaju Farms",
+  description: "Naturally grown maize, beans, soybeans, macadamia, and mangoes from Ingaju Farms, Eastern Province, Rwanda. Cultivated using on-farm organic fertilizer with zero synthetic pesticides or chemicals.",
+  keywords: ["organic crop production Rwanda", "chemical-free farming Eastern Province Rwanda", "organic maize Rwanda", "macadamia farming Rwanda", "sustainable crops Africa", "organic fertilizer crop production Rwanda", "circular farming crop yield Rwanda"],
+  alternates: { canonical: "https://ingajufarms.com/products/crops" },
+  openGraph: {
+    url: "https://ingajufarms.com/products/crops",
+    title: "Organic Crop Production Rwanda | Chemical-Free Maize, Beans & Macadamia — Ingaju Farms",
+    description: "Zero synthetic inputs. Organically enriched soil. Maize, beans, macadamia, and more from Ingaju Farms, Eastern Province, Rwanda.",
+    images: [{ url: "/images/crops/crop-production.png", width: 1200, height: 630, alt: "Ingaju Farms Organic Crop Production" }],
+  },
 };
 
 export default function CropsPage() {

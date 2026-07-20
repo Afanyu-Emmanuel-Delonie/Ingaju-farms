@@ -10,18 +10,18 @@ export default function FeaturedCategories() {
           <div>
             <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">What We Produce</p>
             <h2 className="text-3xl font-heading font-bold text-[#1C2321] sm:text-4xl">
-              Grown With <span className="text-[#3A7D5A]">Purpose.</span>
+              Produced With <span className="text-[#3A7D5A]">Purpose.</span>
             </h2>
           </div>
           <p className="max-w-sm text-[15px] font-body leading-relaxed text-[#6B6259]">
-            Every product from Ingaju carries the integrity of a farming system designed to give more than it takes.
+            Every Ingaju product is fully traceable, maximizing quality while minimizing environmental impact.
           </p>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-4">
           {/* Dairy — full-width hero card */}
           <a
-            href="/categories/dairy-livestock"
+            href="/products/dairy"
             className="group relative block h-96 w-full overflow-hidden rounded-2xl"
           >
             <Image
@@ -40,9 +40,9 @@ export default function FeaturedCategories() {
             </div>
             <div className="absolute inset-y-0 left-0 flex flex-col justify-end p-8 max-w-lg">
               <h3 className="text-2xl font-heading font-bold text-white sm:text-3xl">Dairy & Livestock</h3>
-              <p className="mt-2 text-sm font-body leading-relaxed text-white/75">
-                Fresh milk and quality livestock raised on natural pasture — no synthetic hormones, no shortcuts.
-              </p>
+            <p className="mt-2 text-sm font-body leading-relaxed text-white/75">
+              Premium milk and breeding livestock raised under strict welfare, nutrition, and hormone free protocols.
+            </p>
               <span className="mt-5 inline-flex items-center gap-2 text-sm font-body font-semibold text-white border-b border-white/50 pb-0.5 w-fit hover:border-white transition-colors">
                 Explore Dairy <ArrowRight className="h-3.5 w-3.5" />
               </span>
@@ -64,7 +64,7 @@ export default function FeaturedCategories() {
                 sizes="(min-width: 1024px) 33vw, (min-width: 680px) 50vw, 100vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent" />
               {/* Frosted label */}
               <div className="absolute top-4 left-4">
                 <span className="inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-3 py-1 text-[10px] font-body font-semibold uppercase tracking-widest text-white">

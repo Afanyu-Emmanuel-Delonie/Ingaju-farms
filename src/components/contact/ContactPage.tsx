@@ -9,19 +9,19 @@ const INFO = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Ingaju Farm, Kigali, Rwanda",
+    value: "Rubero Village, Eastern Province, Rwanda",
     sub: "Open for farm tours by appointment",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+254 700 000 000",
+    value: "+250 788 304 921",
     sub: "Mon – Sat, 8am to 5pm",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "hello@ingajufarms.com",
+    value: "support@ingajufarms.com",
     sub: "We reply within 24 hours",
   },
   {
@@ -209,7 +209,7 @@ export default function ContactPage() {
           {/* Overlay top fade to blend with section above */}
           <div className="absolute top-0 inset-x-0 h-8 bg-gradient-to-b from-[#F8F6F2] to-transparent z-10 pointer-events-none" />
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.3587625215!2d30.0588!3d-1.9441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6b32808eab1%3A0xc22b8a26d8adf5b!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2srw!4v1700000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.82257898!2d30.25!3d-1.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d9b4a0f0000001%3A0x1!2sEastern%20Province%2C%20Rwanda!5e0!3m2!1sen!2srw!4v1700000000000"
             width="100%"
             height="100%"
             style={{ border: 0, filter: "grayscale(20%) contrast(1.05)" }}

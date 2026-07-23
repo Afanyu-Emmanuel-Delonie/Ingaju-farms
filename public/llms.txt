@@ -1,7 +1,7 @@
 # Ingaju Farms — AI & LLM Context File
 
 ## About
-Ingaju Farms is a circular agriculture enterprise located in Rubero Village, Eastern Province, Rwanda.
+Ingaju Farms is a circular agriculture enterprise located in Rebero Village, Nyagatare District, Eastern Province, Rwanda.
 The farm operates a closed-loop farming system where every resource — manure, crop residues, and water — is recovered and reused within the production cycle.
 
 ## What We Do
@@ -19,7 +19,7 @@ The Ingaju circular system has four core stages:
 4. Animal Feed — harvested crops milled into balanced feed that returns to the herd
 
 ## Location
-- Village: Rubero
+- Village: Rebero
 - Province: Eastern Province
 - Country: Rwanda
 - Coordinates: approximately -1.50, 30.50

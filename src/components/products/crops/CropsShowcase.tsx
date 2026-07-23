@@ -9,35 +9,35 @@ const CROPS = [
     label: "Staple Grain",
     title: "Maize",
     unit: "kg",
-    desc: "Premium grain grown using data-driven, climate-smart agronomy. Harvested at peak maturity to guarantee high nutritional quality and absolute traceability.",
+    desc: "Grain grown using data-driven, climate-smart agronomy. Harvested at peak maturity with traceable handling.",
     img: "/images/crops/maiz-harvest.png",
   },
   {
-    label: "Premium Nut",
+    label: "Tree Crop",
     title: "Macadamia",
     unit: "kg",
-    desc: "High-value export-grade nuts produced completely free of synthetic inputs. Carefully cultivated under sustainable land protocols for global and local markets.",
+    desc: "Nuts produced without synthetic inputs and cultivated under sustainable land management practices.",
     img: "/images/crops/nuts.jpg",
   },
   {
     label: "Protein Crop",
     title: "Fresh Beans",
     unit: "kg",
-    desc: "Nutrient-dense legumes grown through a sustainable crop rotation loop. Fixes atmospheric nitrogen naturally to regenerate soil structure and maximize field yields.",
+    desc: "Legumes grown through a sustainable crop rotation loop. They help restore soil structure and add nitrogen naturally.",
     img: "/images/crops/beans.png",
   },
   {
     label: "Oilseed Crop",
     title: "Soybeans",
     unit: "kg",
-    desc: "Premium oilseed managed under strict organic fertility frameworks. Engineered for food processors and feed manufacturers demanding clean, chemical-free ingredients.",
+    desc: "Oilseed managed under organic fertility practices and supplied to food and feed markets.",
     img: "/images/crops/soy-beans.png",
   },
   {
     label: "Tropical Fruit",
     title: "Mangoes",
     unit: "kg",
-    desc: "Orchard-grown under strict organic management and harvested at peak readiness. 100% free from synthetic post-harvest chemicals to preserve absolute purity.",
+    desc: "Orchard-grown under organic management and harvested at peak readiness without synthetic post-harvest chemicals.",
     img: "/images/crops/mangoes.png",
   },
 ];
@@ -53,36 +53,24 @@ export default function CropsShowcase() {
               Our Produce
             </p>
             <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-              Harvested <span className="text-[#3A7D5A]">Tomorrow.</span>
+              Harvested <span className="text-[#3A7D5A]">Season by Season.</span>
             </h2>
           </div>
           <p className="max-w-sm text-[15px] font-body leading-relaxed text-[#6B6259]">
-            We don’t just grow crops; we build soil. Using natural compost, we grow nutrient-dense fruits and vegetables.
+            We grow crops and build soil at the same time. Using compost and rotation, we produce food crops and tree crops.
           </p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-6">
           {CROPS.map((prod, idx) => (
             <div key={idx} className="relative h-[500px] w-full max-w-[340px] overflow-hidden rounded-3xl">
-              {/* Image */}
-              <Image
-                src={prod.img}
-                alt={prod.title}
-                fill
-                className="object-cover"
-              />
-
-              {/* Dark base */}
+              <Image src={prod.img} alt={prod.title} fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent" />
-
-              {/* Label — top left */}
               <div className="absolute top-5 left-5">
                 <span className="inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-3 py-1 text-[10px] font-body font-semibold uppercase tracking-widest text-white">
                   {prod.label}
                 </span>
               </div>
-
-              {/* Bottom content */}
               <div className="absolute inset-x-0 bottom-0 p-7">
                 <h3 className="font-heading text-2xl font-bold text-white leading-snug">
                   {prod.title}

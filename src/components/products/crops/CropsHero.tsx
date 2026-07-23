@@ -28,9 +28,7 @@ export default function CropsHero() {
           <span className="text-[#6DBE8C]">Organically Grown.</span>
         </h1>
         <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/75 md:text-lg">
-          Driven by climate-smart agronomy, our integrated crop system relies on
-          organic soil management to eliminate synthetic chemicals and deliver
-          premium, fully traceable yields.
+          Driven by climate-smart agronomy, our integrated crop system uses organic soil management to reduce synthetic inputs and produce traceable yields.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <button

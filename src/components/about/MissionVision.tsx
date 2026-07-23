@@ -11,13 +11,13 @@ export default function MissionVision() {
         <div className="flex flex-col md:flex-row gap-6">
           {[{
             label: "Our Vision",
-            text: "To become Africa's leading model for integrated, climate-smart, and circular agriculture delivering sustainable food systems, environmental stewardship, and prosperous farming communities across the continent.",
+            text: "To be a practical example of integrated, climate-smart, and circular agriculture that supports sustainable food systems, environmental stewardship, and stronger farming communities.",
             bg: "bg-[#3A7D5A]",
             textColor: "text-white",
             subColor: "text-white/75",
           }, {
             label: "Our Mission",
-            text: "To produce high quality dairy and crop products through integrated circular systems, promote responsible resource utilisation, empower farmers through knowledge and innovation, and contribute to food security, climate resilience, and rural economic development.",
+            text: "To produce dairy and crop products through integrated circular systems, promote responsible resource use, share practical knowledge with farmers, and contribute to food security, climate resilience, and rural economic development.",
             bg: "bg-[#1C2321]",
             textColor: "text-white",
             subColor: "text-white/75",

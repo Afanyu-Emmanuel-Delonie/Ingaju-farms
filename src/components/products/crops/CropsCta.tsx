@@ -23,7 +23,7 @@ export default function CropsCta() {
             Source Organic Crops from a Climate-Smart Farm
           </h2>
           <p className="mt-3 max-w-lg text-sm font-body leading-relaxed text-white/80 sm:text-base">
-            Whether you are a wholesaler, processor, institution, or individual buyer — we supply fresh, traceable, organically grown produce cultivated through sustainable farming practices that protect the land and conserve natural resources.
+            Whether you are a wholesaler, processor, institution, or individual buyer, we supply fresh, traceable, organically grown produce from a managed farm system.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <button

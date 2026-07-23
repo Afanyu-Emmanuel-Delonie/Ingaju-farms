@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const POINTS = [
   "High-yield forage grown using data-driven, climate-smart agronomic practices",
-  "Livestock manure processed into premium organic fertilizer",
+  "Livestock manure processed into organic fertilizer",
   "Nutrient-rich compost applied to fields to naturally restore soil fertility",
   "Crop residues tracked and recycled as feed to complete the measured closed loop",
 ];
@@ -26,9 +26,9 @@ export default function DairyCircularModel() {
             </h2>
             <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
               Every stage of our dairy operation is monitored within a
-              zero-waste loop. By merging effective management with continuous
-              data collection, we optimize resource conversion to maximize
-              predictability and yield season after season.
+              managed loop. By combining effective management with continuous
+              data collection, we improve resource use and keep production
+              predictable season after season.
             </p>
             <ul className="mt-6 space-y-3">
               {POINTS.map((point) => (

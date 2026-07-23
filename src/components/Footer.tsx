@@ -23,7 +23,7 @@ const links = {
 };
 
 const contact = [
-  { icon: MapPin, value: "Rubero Village, Eastern Province, Rwanda" },
+  { icon: MapPin, value: "Rebero Village, Nyagatare District, Eastern Province, Rwanda" },
   { icon: Phone, value: "+250 788 304 921" },
   { icon: Mail,  value: "support@ingajufarms.com" },
 ];

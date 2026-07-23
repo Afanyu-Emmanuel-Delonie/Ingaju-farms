@@ -9,7 +9,7 @@ const INFO = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Rubero Village, Eastern Province, Rwanda",
+    value: "Rebero Village, Nyagatare District, Eastern Province, Rwanda",
     sub: "Open for farm tours by appointment",
   },
   {
@@ -209,14 +209,14 @@ export default function ContactPage() {
           {/* Overlay top fade to blend with section above */}
           <div className="absolute top-0 inset-x-0 h-8 bg-gradient-to-b from-[#F8F6F2] to-transparent z-10 pointer-events-none" />
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.82257898!2d30.25!3d-1.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d9b4a0f0000001%3A0x1!2sEastern%20Province%2C%20Rwanda!5e0!3m2!1sen!2srw!4v1700000000000"
+            src="https://www.google.com/maps?q=Rebero%20Village%2C%20Nyagatare%20District%2C%20Eastern%20Province%2C%20Rwanda&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0, filter: "grayscale(20%) contrast(1.05)" }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Ingaju Farms Location"
+            title="Ingaju Farms Location in Rebero Village, Nyagatare District"
           />
         </div>
       </section>

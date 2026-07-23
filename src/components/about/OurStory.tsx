@@ -36,13 +36,13 @@ export default function OurStory() {
           >
             <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A]">Our Story</p>
             <h2 className="mt-3 text-3xl font-heading font-bold leading-tight text-[#1C2321] md:text-4xl">
-              Where It All <span className="text-[#3A7D5A]">Began.</span>
+              Our <span className="text-[#3A7D5A]">Story.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259]">
-              Ingaju Farms was established on a foundational conviction that sustainable food production begins with a healthy, well-managed farm. By integrating dairy livestock, food and feed crop production, organic waste recovery, and community training into one coherent system, we built an enterprise that sustains itself, improves the land it operates on, and creates lasting value for the farming communities around it.
+              Ingaju Farms was established on the view that sustainable food production starts with good farm management. We combine dairy livestock, food and feed crop production, organic waste recovery, and farmer training in one integrated system that supports the farm and the land around it.
             </p>
             <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
-              Over six years of operation, Ingaju has grown from a single integrated farm into a recognised model for circular agriculture in Rwanda demonstrating that commercial productivity and environmental responsibility are not competing objectives, but complementary ones.
+              Over six years of operation, Ingaju has grown from a single integrated farm into a working example of circular agriculture in Rwanda, showing how productivity and environmental care can support each other.
             </p>
             <a
               href="/products/dairy"

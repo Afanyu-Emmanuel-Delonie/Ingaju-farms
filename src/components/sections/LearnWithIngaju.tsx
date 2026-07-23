@@ -10,22 +10,22 @@ const STEPS = [
   { 
     number: "01", 
     title: "Crop Cultivation", 
-    desc: "We grow high quality crops and climate smart fodder to feed our livestock sustainably." 
+    desc: "We grow high quality crops and climate smart fodder to support the livestock system." 
   },
   { 
     number: "02", 
     title: "Dairy Production", 
-    desc: "Well-nourished cattle produce premium, hormone-free milk and quality breeding stock." 
+    desc: "Well-nourished cattle produce milk and breeding stock under hormone free protocols." 
   },
   { 
     number: "03", 
     title: "Manure Processing", 
-    desc: "Livestock waste is collected and composted into nutrient-rich organic fertilizer." 
+    desc: "Livestock waste is collected and composted into organic fertilizer." 
   },
   { 
     number: "04", 
     title: "Regenerative Nutrient Loop", 
-    desc: "Organic fertilizer returns to the soil, nourishing the fields and restarting the loop." 
+    desc: "Organic fertilizer returns to the soil, supporting the fields and restarting the loop." 
   },
 ];
 
@@ -72,7 +72,7 @@ export default function LearnWithIngaju() {
              Our Farming <span className="text-[#3A7D5A]"> System.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259] max-w-lg">
-              Ingaju operates a closed loop where every output becomes a next-stage input eliminating waste and lowering costs.
+              Ingaju operates a closed loop where outputs from one stage become inputs for the next, reducing waste and lowering costs.
             </p>
             {/* Loop steps */}
             <div className="relative mt-8 flex flex-col gap-6">

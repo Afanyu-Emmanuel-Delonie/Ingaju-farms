@@ -13,9 +13,9 @@ export default function CircularHero() {
           <span className="text-[#6DBE8C]">Absolute Traceability.</span>
         </h1>
         <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/80 md:text-lg">
-          By merging effective management with data-driven precision, our
-          closed-loop ecosystem converts operational waste into premium
-          agricultural assets to maximize predictability and yield.
+          By combining effective management with data-driven precision, our
+          closed-loop system turns farm outputs into useful inputs and supports
+          steady production over time.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <a

@@ -42,7 +42,7 @@ export const CIRCULAR_STAGES = [
   {
     number: "01",
     title: "Dairy Cattle",
-    body: "Everything begins with the herd. Healthy, well-fed cattle are the engine of the entire system producing premium milk daily while generating the organic matter that powers every other stage of the loop.",
+    body: "Everything begins with the herd. Healthy, well-fed cattle are the base of the system, producing milk daily while generating the organic matter that supports the rest of the farm.",
     bullets: [
       "Pasture-fed, hormone-free herd managed under strict welfare protocols",
       "Milk yield directly tied to feed quality and animal health",
@@ -114,7 +114,7 @@ export const CIRCULAR_BENEFITS = [
   {
     icon: RefreshCw,
     title: "Complete Resource Recovery",
-    desc: "Every by-product manure, crop residues, processing effluent, and biogas digestate is captured and reintegrated into the production system. Nothing leaves the loop unutilized.",
+    desc: "Every by-product manure, crop residues, and processing effluent is captured and reintegrated into the production system. Nothing leaves the loop unutilized.",
     stat: "0",
     statLabel: "Waste to Landfill",
   },
@@ -137,7 +137,7 @@ export const CATEGORIES = [
   {
     key: "dairy",
     title: "Dairy & Livestock",
-    description: "Premium milk and breeding livestock raised under strict welfare, nutrition, and hormone free protocols.",
+    description: "Milk and breeding livestock raised under sound welfare, nutrition, and hormone free protocols.",
     ctaLabel: "Explore Dairy",
     ctaHref: "/products/dairy",
     image: "/images/hero/bg-img.png",
@@ -146,7 +146,7 @@ export const CATEGORIES = [
   {
     key: "crops",
     title: "Crop Production",
-    description: "Premium maize, legumes, and macadamia nuts cultivated using climate-smart, organic agronomic practices.",
+    description: "Maize, legumes, and macadamia nuts cultivated using climate-smart, organic agronomic practices.",
     ctaLabel: "Explore Crops",
     ctaHref: "/products/crops",
     image: "/images/crops/crop-production.png",
@@ -201,7 +201,7 @@ export const TRAININGS = [
   {
     key: "circular",
     title: "Integrated Circular Agriculture",
-    description: "Comprehensive training in circular farming systems covering manure management, biogas production, organic fertilizer processing, crop-livestock integration, and nutrient recycling.",
+    description: "Comprehensive training in circular farming systems covering manure management, organic fertilizer processing, crop-livestock integration, and nutrient recycling.",
     ctaLabel: "Learn More",
     ctaHref: "/trainings/circular-agriculture",
     image: "/images/hero/bg-3.png",
@@ -249,7 +249,7 @@ export const BLOG_POSTS = [
         items: [
           "Lower fertilizer costs through organic manure recycling",
           "Reduced feed costs by utilizing crop by-products",
-          "Improved soil health leading to higher crop yields",
+          "Improved soil health supporting more consistent crop yields",
           "Diversified income streams from multiple farm outputs",
           "Greater resilience to market price fluctuations",
         ],
@@ -403,43 +403,43 @@ export const BLOG_POSTS = [
     ],
   },
   {
-    slug: "biogas-from-cow-manure-farm-energy",
-    category: "Energy Recovery",
-    title: "How Biogas from Cow Manure Powers a Circular Farm",
-    excerpt: "Discover how anaerobic digesters convert livestock waste into clean biogas energy, reducing farm costs and carbon emissions in one closed loop.",
+    slug: "composting-nutrient-loop-farm",
+    category: "Nutrient Recycling",
+    title: "How Composting Returns Nutrients to the Soil",
+    excerpt: "Discover how manure, crop residues, and other organic materials are turned into compost that rebuilds soil fertility and supports healthier harvests.",
     date: "April 22, 2025",
     readTime: "5 min read",
-    image: "/images/blog-biogas.png",
-    alt: "Biogas energy recovery system on a farm",
+    image: "/images/blog-circular-farming.png",
+    alt: "Compost-based nutrient recycling on a farm",
     content: [
       {
         type: "paragraph" as const,
-        text: "One of the most underutilised resources on any livestock farm is the manure produced daily by the animals. At Ingaju Farms, we treat manure not as waste but as a primary energy feedstock. Through anaerobic digestion, organic waste is broken down by microorganisms in the absence of oxygen, releasing biogas — a mixture of methane and carbon dioxide that can be used directly as a clean fuel source.",
+        text: "One of the most valuable resources on any livestock farm is the organic material produced every day. At Ingaju Farms, we treat manure and crop residues as inputs for rebuilding soil health rather than as waste to discard. Through careful composting, these materials are transformed into a stable organic amendment that supports long-term fertility.",
       },
       {
         type: "heading" as const,
-        text: "What Is Anaerobic Digestion?",
+        text: "How Composting Works",
       },
       {
         type: "paragraph" as const,
-        text: "Anaerobic digestion is a biological process that occurs naturally when organic matter decomposes without oxygen. On a farm, this process is managed inside a sealed digester tank where manure, crop residues, and other organic inputs are fed continuously. The biogas produced rises to the top of the tank and is captured through pipes for use across the farm.",
+        text: "Composting is a natural process that breaks down organic matter into nutrient-rich material. On a farm, manure, plant residues, and other biodegradable inputs are layered, managed for moisture and airflow, and allowed to decompose into a usable soil amendment.",
       },
       {
         type: "heading" as const,
-        text: "How We Use Biogas at Ingaju",
+        text: "How We Use Compost at Ingaju",
       },
       {
         type: "list" as const,
         items: [
-          "Cooking and heating in farm facilities",
-          "Electricity generation for lighting and equipment",
-          "Powering milk processing operations",
-          "Reducing reliance on firewood and charcoal",
+          "Improving soil structure and fertility in crop fields",
+          "Supporting healthier fodder and food crop growth",
+          "Reducing dependence on synthetic fertilizers",
+          "Returning organic matter to the land each season",
         ],
       },
       {
         type: "paragraph" as const,
-        text: "The digestate — the solid and liquid material remaining after digestion — is not discarded. It is processed into high-quality organic fertilizer that goes directly to our crop fields, completing the resource loop between livestock, energy, and crop production.",
+        text: "The finished compost is returned to the fields and incorporated into the production cycle. This closes the loop between livestock, crop production, and soil regeneration without leaving organic material unused.",
       },
       {
         type: "heading" as const,
@@ -447,7 +447,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "For a farm producing significant quantities of manure daily, the energy savings from biogas are substantial. Farms that have installed digesters report reductions in energy costs of 40 to 60 percent within the first year of operation. Beyond cost savings, eliminating open manure decomposition reduces methane emissions — one of the most potent greenhouse gases — from escaping into the atmosphere unmanaged.",
+        text: "For a farm producing significant amounts of organic material, composting lowers waste disposal needs while improving the quality of the soil. Healthier soils hold water better, support stronger crops, and reduce the need for costly external inputs over time.",
       },
     ],
   },

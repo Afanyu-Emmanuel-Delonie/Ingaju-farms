@@ -9,21 +9,21 @@ const PRODUCTS = [
     label: "Fresh Dairy",
     title: "Fresh Milk",
     unit: "liters",
-    desc: "Premium, hormone-free milk from pasture-fed cattle. Produced under strict hygiene and climate-smart protocols with absolute traceability.",
+    desc: "Milk from pasture-fed cattle. Produced under hygiene and climate-smart protocols with traceability.",
     img: "/images/dairy/milk.jpg",
   },
   {
     label: "Farm Input",
     title: "Organic Fertilizer",
     unit: "kg",
-    desc: "Nutrient-rich compost processed from livestock manure. A premium, pathogen-reduced soil amendment designed to rebuild long-term soil health.",
+    desc: "Nutrient-rich compost processed from livestock manure. A soil amendment designed to rebuild long-term soil health.",
     img: "/images/dairy/organic-manure.png",
   },
   {
     label: "Livestock",
     title: "Breeding Stock",
     unit: "head",
-    desc: "Genetically superior, disease-free bulls and heifers. Raised under strict welfare standards to elevate herd performance and dairy yields.",
+    desc: "Disease-free bulls and heifers raised under welfare standards to support herd performance and dairy production.",
     img: "/images/dairy/bools.png", 
   }
 ];
@@ -39,11 +39,11 @@ export default function DairyShowcase() {
               Our Products
             </p>
             <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-              Fresh. Rich. <span className="text-[#3A7D5A]">Organic.</span>
+              Dairy. Fertility. <span className="text-[#3A7D5A]">Livestock.</span>
             </h2>
           </div>
           <p className="max-w-sm text-[15px] font-body leading-relaxed text-[#6B6259]">
-            Three products, one circular system. Every jar, every drop supports local biodiversity.
+            Three products, one integrated system. Each product supports farm productivity and soil health.
           </p>
         </div>
 

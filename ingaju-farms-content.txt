@@ -45,7 +45,7 @@ Body: Most farms rely on expensive external inputs — chemical fertilizers, imp
 Steps:
 01. Feed Production — We grow high-quality fodder and forage crops on-site — the foundation for herd health and milk productivity.
 02. Dairy Production — Well-fed cows produce premium, hormone-free milk daily. Feed quality drives milk quality, directly.
-03. Waste Utilization — Manure enters anaerobic digesters — converted into biogas energy and nutrient-rich organic fertilizer.
+03. Waste Utilization — Manure and crop residues are composted into nutrient-rich organic fertilizer.
 04. Nutrient Recycling — Organic matter and treated water return to the land, restoring soil fertility and restarting the loop.
 
 ---
@@ -195,8 +195,8 @@ Raw milk is processed into value-added consumer dairy products such as yogurt, c
 - Higher income per litre of milk
 
 04. Waste Utilization
-Manure and organic waste are collected and converted via anaerobic digesters into biogas and organic fertilizer — turning a potential pollutant into a valuable resource.
-- Anaerobic digesters convert waste to biogas
+Manure and organic waste are collected and converted through composting into organic fertilizer — turning a potential pollutant into a valuable resource.
+- Composting converts waste into fertilizer
 - Organic fertilizer extracted from manure
 - Zero waste leaves the system
 
@@ -207,8 +207,8 @@ Organic fertilizer from the waste stage is applied back to the fields, improving
 - Higher nutritional value from healthy soil
 
 06. Energy Recovery
-Biogas captured during waste utilization is harnessed as a clean energy source — used for cooking, heating, electricity generation, and meeting farm operational needs.
-- Biogas powers farm cooking and heating
+Organic fertilizer produced during waste utilization is returned to the fields and supports soil health, crop growth, and farm productivity.
+- Compost supports crop production
 - Renewable energy reduces operational costs
 - Lowers the farm's carbon emissions
 
@@ -235,11 +235,11 @@ Benefits:
 01. Zero Synthetic Inputs — By producing our own fertilizer and feed on-site, we have eliminated reliance on chemical inputs entirely — safer food, healthier soil, and lower costs.
 02. Lower Operating Costs — A closed-loop system dramatically reduces what we spend on external supplies, making the farm more resilient to market fluctuations and price shocks.
 03. Healthier Soil, Better Yields — Returning organic matter and nutrients to the land continuously improves soil structure and fertility — leading to higher crop yields and better feed quality each season.
-04. Renewable Energy On-Site — Biogas captured from organic waste powers cooking, heating, and electricity generation on the farm — reducing energy costs and cutting carbon emissions.
+04. Renewable Resource On-Site — Organic waste is transformed into compost and returned to the land on the farm — reducing disposal needs and supporting soil fertility.
 05. Water Conservation — Treated wastewater is reclaimed for irrigation and farm cleaning, conserving fresh water sources and reducing the farm's impact on local water systems.
 06. Minimal Environmental Impact — No chemical runoff, no wasted organic matter, no soil depletion. Circular farming actively regenerates the land it operates on rather than extracting from it.
 07. A Model Others Can Learn — We have trained 300+ farmers using this system. What works at Ingaju can work across Rwanda — and beyond. Knowledge is part of the loop.
-08. Full Resource Recovery — Every output — manure, crop residue, wastewater, biogas — is captured and fed back into the system. Nothing is discarded. Everything has a next purpose.
+08. Full Resource Recovery — Every output — manure, crop residue, wastewater — is captured and fed back into the system. Nothing is discarded. Everything has a next purpose.
 
 ---
 
@@ -462,22 +462,22 @@ When one farmer learns a better practice and achieves better results, their neig
 
 ARTICLE 4
 Category: Energy Recovery
-Title: How Biogas from Cow Manure Powers a Circular Farm
+Title: How Composting Returns Nutrients to the Soil
 Date: April 22, 2025 · 5 min read
-Excerpt: Discover how anaerobic digesters convert livestock waste into clean biogas energy, reducing farm costs and carbon emissions in one closed loop.
+Excerpt: Discover how manure, crop residues, and other organic materials are turned into compost that rebuilds soil fertility and supports healthier harvests.
 
-One of the most underutilised resources on any livestock farm is the manure produced daily by the animals. At Ingaju Farms, we treat manure not as waste but as a primary energy feedstock. Through anaerobic digestion, organic waste is broken down by microorganisms in the absence of oxygen, releasing biogas — a mixture of methane and carbon dioxide that can be used directly as a clean fuel source.
+One of the most valuable resources on any livestock farm is the organic material produced daily by the animals. At Ingaju Farms, we treat manure not as waste but as a valuable input for rebuilding soil health. Through careful composting, organic waste is transformed into a stable organic amendment that supports long-term fertility.
 
 What Is Anaerobic Digestion?
-Anaerobic digestion is a biological process that occurs naturally when organic matter decomposes without oxygen. On a farm, this process is managed inside a sealed digester tank where manure, crop residues, and other organic inputs are fed continuously. The biogas produced rises to the top of the tank and is captured through pipes for use across the farm.
+Composting is a natural process that breaks down organic matter into nutrient-rich material. On a farm, this process is managed by layering manure, crop residues, and other organic inputs while maintaining the right balance of moisture and airflow.
 
-How We Use Biogas at Ingaju
-- Cooking and heating in farm facilities
-- Electricity generation for lighting and equipment
-- Powering milk processing operations
-- Reducing reliance on firewood and charcoal
+How We Use Compost at Ingaju
+- Improving soil structure and fertility in crop fields
+- Supporting healthier fodder and food crop growth
+- Reducing dependence on synthetic fertilizers
+- Returning organic matter to the land each season
 
-The digestate — the solid and liquid material remaining after digestion — is not discarded. It is processed into high-quality organic fertilizer that goes directly to our crop fields, completing the resource loop between livestock, energy, and crop production.
+The finished compost is returned to the fields and incorporated into the production cycle. This completes the resource loop between livestock, crop production, and soil regeneration.
 
 The Financial and Environmental Case
-For a farm producing significant quantities of manure daily, the energy savings from biogas are substantial. Farms that have installed digesters report reductions in energy costs of 40 to 60 percent within the first year of operation. Beyond cost savings, eliminating open manure decomposition reduces methane emissions — one of the most potent greenhouse gases — from escaping into the atmosphere unmanaged.
+For a farm producing significant quantities of organic material daily, composting lowers waste disposal needs while improving the quality of the soil. Healthier soils hold water better, support stronger crops, and reduce the need for costly external inputs over time.

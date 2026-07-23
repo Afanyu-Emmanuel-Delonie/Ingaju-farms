@@ -5,8 +5,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const POINTS = [
-  "Organic soil fertility sustained entirely by processed dairy manure fertilizer",
-  "Zero synthetic pesticides or chemical inputs utilized across all crop fields",
+  "Organic soil fertility supported by processed dairy manure fertilizer",
+  "Synthetic pesticides and chemical inputs are avoided across crop fields",
   "Crop biomass mapped and returned to fields to naturally rebuild organic matter",
   "Data-tracked biological controls deployed for integrated pest management",
 ];
@@ -47,7 +47,7 @@ export default function CropsCircularModel() {
               <span className="text-[#3A7D5A]">Data-Driven Precision.</span>
             </h2>
             <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
-              Every stage of our cultivation loop is monitored within a zero-waste ecosystem. By merging effective agronomic management with continuous data collection, we optimize soil nutrients to maximize premium crop yields season after season.
+              Every stage of our cultivation loop is monitored within an integrated farm system. By combining agronomic management with continuous data collection, we manage soil nutrients and support consistent crop yields season after season.
             </p>
             <ul className="mt-6 space-y-3">
               {POINTS.map((point) => (

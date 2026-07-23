@@ -20,10 +20,10 @@ export default function DairyCta() {
 
         <div className="absolute inset-x-0 bottom-0 flex flex-col items-center px-6 pb-10 text-center sm:px-10 sm:pb-12">
           <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl max-w-xl">
-            Partner with Rwanda’s Premier Circular Agribusiness
+            Work with Ingaju Farms
           </h2>
           <p className="mt-3 max-w-lg text-sm font-body leading-relaxed text-white/80 sm:text-base">
-            Secure a reliable supply of premium fresh milk, organic fertilizer, or high-performing breeding stock all backed by data-driven precision and full traceability.
+            Secure a reliable supply of fresh milk, organic fertilizer, or breeding stock backed by managed production practices and traceability.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <button

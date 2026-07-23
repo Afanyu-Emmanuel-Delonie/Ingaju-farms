@@ -2,14 +2,14 @@ import ContactPage from "@/components/contact/ContactPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Ingaju Farms | Rubero Village, Eastern Province, Rwanda",
-  description: "Contact Ingaju Farms in Rubero Village, Eastern Province, Rwanda. Reach us for product orders, farm tours, training programs, or partnership inquiries. Call +250 788 304 921 or email support@ingajufarms.com.",
-  keywords: ["contact Ingaju Farms", "Ingaju Farms location Rwanda", "farm tour Eastern Province Rwanda", "buy organic dairy Rwanda", "farmer training Rwanda contact", "Rubero Village farm Rwanda"],
+  title: "Contact Ingaju Farms | Rebero Village, Nyagatare District, Eastern Province, Rwanda",
+  description: "Contact Ingaju Farms in Rebero Village, Nyagatare District, Eastern Province, Rwanda. Reach us for product orders, farm tours, training programs, or partnership inquiries. Call +250 788 304 921 or email support@ingajufarms.com.",
+  keywords: ["contact Ingaju Farms", "Ingaju Farms location Rwanda", "farm tour Eastern Province Rwanda", "buy organic dairy Rwanda", "farmer training Rwanda contact", "Rebero Village Nyagatare farm Rwanda"],
   alternates: { canonical: "https://ingajufarms.com/contact" },
   openGraph: {
     url: "https://ingajufarms.com/contact",
-    title: "Contact Ingaju Farms | Rubero Village, Eastern Province, Rwanda",
-    description: "Reach Ingaju Farms for orders, tours, training, or partnerships. Located in Rubero Village, Eastern Province, Rwanda.",
+    title: "Contact Ingaju Farms | Rebero Village, Nyagatare District, Eastern Province, Rwanda",
+    description: "Reach Ingaju Farms for orders, tours, training, or partnerships. Located in Rebero Village, Nyagatare District, Eastern Province, Rwanda.",
     images: [{ url: "/images/hero/bg-img.png", width: 1200, height: 630, alt: "Contact Ingaju Farms" }],
   },
 };

@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "How does the circular agriculture system work at Ingaju Farms?",
     answer:
-      "Our circular system integrates dairy production, crop cultivation, and organic resource recovery into one closed loop. Livestock manure is processed through anaerobic digesters to produce biogas energy and nutrient-rich digestate. The digestate is applied as organic fertilizer to crop fields, and crop residues are returned as livestock feed — eliminating waste and reducing dependence on external inputs at every stage.",
+      "Our circular system integrates dairy production, crop cultivation, and organic resource recovery into one closed loop. Livestock manure is composted into nutrient-rich organic fertilizer, which is applied to crop fields, and crop residues are returned as livestock feed — eliminating waste and reducing dependence on external inputs at every stage.",
   },
 ];
 

@@ -13,8 +13,8 @@ export default function FeaturedCategories() {
               Produced With <span className="text-[#3A7D5A]">Purpose.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-[15px] font-body leading-relaxed text-[#6B6259]">
-            Every Ingaju product is fully traceable, maximizing quality while minimizing environmental impact.
+            <p className="max-w-sm text-[15px] font-body leading-relaxed text-[#6B6259]">
+            Our products come from an integrated farm system with traceable production and managed environmental impact.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function FeaturedCategories() {
             <div className="absolute inset-y-0 left-0 flex flex-col justify-end p-8 max-w-lg">
               <h3 className="text-2xl font-heading font-bold text-white sm:text-3xl">Dairy & Livestock</h3>
             <p className="mt-2 text-sm font-body leading-relaxed text-white/75">
-              Premium milk and breeding livestock raised under strict welfare, nutrition, and hormone free protocols.
+              Milk and breeding livestock raised under welfare, nutrition, and hormone free protocols.
             </p>
               <span className="mt-5 inline-flex items-center gap-2 text-sm font-body font-semibold text-white border-b border-white/50 pb-0.5 w-fit hover:border-white transition-colors">
                 Explore Dairy <ArrowRight className="h-3.5 w-3.5" />

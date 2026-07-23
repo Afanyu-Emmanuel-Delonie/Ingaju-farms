@@ -25,10 +25,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ingajufarms.com"),
   title: {
-    default: "Ingaju Farms | Circular Dairy Farm & Organic Agriculture — Eastern Province, Rwanda",
-    template: "%s | Ingaju Farms"
+    default: "Ingaju Farms | Dairy, Crops & Circular Agriculture - Eastern Province, Rwanda",
+    template: "%s | Ingaju Farms",
   },
-  description: "Ingaju Farms is Rwanda's leading circular agriculture enterprise based in Rubero Village, Eastern Province. We produce organic dairy, organic fertilizer, and sustainable crops through a closed-loop zero-waste farming system — and train 300+ smallholder farmers across Rwanda.",
+    description:
+      "Ingaju Farms is an integrated agricultural enterprise based in Rebero Village, Nyagatare District, Eastern Province. We produce dairy, crops, and organic fertilizer through a circular farming system and train smallholder farmers across Rwanda.",
   keywords: [
     "Ingaju Farms",
     "circular agriculture Rwanda",
@@ -38,16 +39,15 @@ export const metadata: Metadata = {
     "sustainable farming Eastern Province Rwanda",
     "circular economy agriculture Africa",
     "closed-loop farming system",
-    "zero waste farming Rwanda",
+    "circular farming Rwanda",
     "regenerative agriculture Rwanda",
     "smallholder farmer training Rwanda",
     "dairy farm Eastern Province Rwanda",
     "organic crop production Rwanda",
     "farm training Rwanda",
-    "Rubero Village Rwanda farm",
+    "Rebero Village Rwanda farm",
     "sustainable food systems Africa",
     "pasture-fed milk Rwanda",
-    "biogas farm Rwanda",
   ],
   authors: [{ name: "Ingaju Farms", url: "https://ingajufarms.com" }],
   creator: "Ingaju Farms",
@@ -58,21 +58,23 @@ export const metadata: Metadata = {
     locale: "en_RW",
     url: "https://ingajufarms.com",
     siteName: "Ingaju Farms",
-    title: "Ingaju Farms | Circular Dairy Farm & Organic Agriculture — Eastern Province, Rwanda",
-    description: "Rwanda's leading closed-loop farm in Rubero Village, Eastern Province. Organic dairy, sustainable crops, and farmer training — all powered by one circular system.",
+    title: "Ingaju Farms | Dairy, Crops & Circular Agriculture - Eastern Province, Rwanda",
+    description:
+      "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce dairy, crops, and organic fertilizer while training farmers in circular agriculture.",
     images: [
       {
         url: "/images/hero/bg-img.png",
         width: 1200,
         height: 630,
-        alt: "Ingaju Farms — Circular Agriculture, Eastern Province Rwanda",
+        alt: "Ingaju Farms - Circular agriculture in Eastern Province, Rwanda",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ingaju Farms | Circular Dairy Farm & Organic Agriculture — Eastern Province, Rwanda",
-    description: "Rwanda's leading closed-loop farm in Rubero Village, Eastern Province. Organic dairy, sustainable crops, and farmer training — all powered by one circular system.",
+    title: "Ingaju Farms | Dairy, Crops & Circular Agriculture - Eastern Province, Rwanda",
+    description:
+      "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce dairy, crops, and organic fertilizer while training farmers in circular agriculture.",
     images: ["/images/hero/bg-img.png"],
   },
   alternates: {
@@ -103,15 +105,15 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <AuthProvider>
-        <ModalProvider>
-          <SmoothScroll>
-            <Navbar />
-            {children}
-            <Footer />
-            <BackToTop />
-          </SmoothScroll>
-          <RequestModal />
-        </ModalProvider>
+          <ModalProvider>
+            <SmoothScroll>
+              <Navbar />
+              {children}
+              <Footer />
+              <BackToTop />
+            </SmoothScroll>
+            <RequestModal />
+          </ModalProvider>
         </AuthProvider>
       </body>
     </html>

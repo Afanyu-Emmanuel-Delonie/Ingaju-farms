@@ -20,7 +20,7 @@ export default function JoinUsCta() {
             Be Part of the Work
           </h2>
           <p className="mt-3 max-w-xl text-sm font-body leading-relaxed text-white/80 sm:text-base">
-            Partner with us, source premium organic products, or visit the farm to see our circular system in action.
+            Partner with us, source organic products, or visit the farm to see our circular system in action.
           </p>
           <div className="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <a

@@ -23,11 +23,11 @@ export default function DairyHero() {
           Organic Dairy
         </span>
         <h1 className="max-w-4xl text-3xl font-heading font-bold leading-tight text-white md:text-5xl">
-          Sustainable Dairy.<br />
-          <span className="text-[#6DBE8C]">Responsibly Produced.</span>
+          Dairy Production.<br />
+          <span className="text-[#6DBE8C]">Managed Responsibly.</span>
         </h1>
         <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/75 md:text-lg">
-          Driven by climate-smart herd management, our closed-loop dairy system eliminates synthetic inputs to deliver premium, fully traceable milk.
+          Driven by climate-smart herd management, our dairy system reduces reliance on synthetic inputs and produces milk with traceable handling.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <a

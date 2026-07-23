@@ -8,13 +8,13 @@ export default function StructuredData() {
     logo: "https://ingajufarms.com/images/brand/Logo.png",
     image: "https://ingajufarms.com/images/hero/bg-img.png",
     description:
-      "Ingaju Farms is Rwanda's leading circular agriculture enterprise based in Rubero Village, Eastern Province. We produce organic dairy, organic fertilizer, and sustainable crops through a closed-loop zero-waste farming system and train 300+ smallholder farmers across Rwanda.",
+      "Ingaju Farms is an integrated agricultural enterprise based in Rebero Village, Nyagatare District, Eastern Province. We produce dairy, crops, and organic fertilizer through a circular farming system and train smallholder farmers across Rwanda.",
     telephone: "+250788304921",
     email: "support@ingajufarms.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Rubero Village",
-      addressLocality: "Nyagatare",
+      streetAddress: "Rebero Village",
+      addressLocality: "Nyagatare District",
       addressRegion: "Eastern Province",
       addressCountry: "RW",
     },

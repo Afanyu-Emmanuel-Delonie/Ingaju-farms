@@ -21,10 +21,10 @@ export default function ReadyToExperienceCta() {
 
         <div className="absolute inset-0 flex flex-col items-center justify-end px-6 pb-10 text-center sm:px-10 sm:pb-12">
           <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
-            Scale with Ingaju Farms
+            Work with Ingaju Farms
           </h2>
           <p className="mt-3 max-w-xl text-sm font-body leading-relaxed text-white/80 sm:text-base">
-            From premium wholesale supply to sustainable farming partnerships, let’s build climate-smart agriculture together.
+            From farm supply to practical partnerships, let’s build climate-smart agriculture together.
           </p>
 
           <div className="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">

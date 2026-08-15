@@ -14,11 +14,11 @@ export default function CircularTrainings() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
           <div>
             <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
-              Grow With Us
-            </p>
-            <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-              Training Programs at <span className="text-[#3A7D5A]">Ingaju</span>
-            </h2>
+  Grow With Us
+</p>
+<h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
+  Training Programs at <span className="text-[#3A7D5A]">Ingaju</span>
+</h2>
           </div>
          
         </div>

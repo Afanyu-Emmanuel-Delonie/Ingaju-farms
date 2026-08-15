@@ -11,7 +11,7 @@ export default function CropsCta() {
       <div className="relative mx-auto h-[420px] max-w-6xl overflow-hidden rounded-3xl sm:h-[400px]">
         <Image
           src="/images/hero/bg-img.png"
-          alt="Ingaju Farms livestock and crop fields"
+          alt="Lush crop fields at Ingaju Farms"
           fill
           sizes="(min-width: 1024px) 1152px, 100vw"
           className="object-cover"
@@ -20,10 +20,10 @@ export default function CropsCta() {
 
         <div className="absolute inset-x-0 bottom-0 flex flex-col items-center px-6 pb-10 text-center sm:px-10 sm:pb-12">
           <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl max-w-xl">
-            Source Climate-Smart Crops from Our Farm
+            Source Organic Crops from a Climate-Smart Farm
           </h2>
           <p className="mt-3 max-w-lg text-sm font-body leading-relaxed text-white/80 sm:text-base">
-            Whether you are a wholesaler, processor, institution, or individual buyer, we supply fresh, traceable produce grown with organic-input, climate-smart practices.
+            Whether you are a wholesaler, processor, institution, or individual buyer, we supply fresh, traceable, organically grown produce from a managed farm system.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <button
@@ -32,8 +32,8 @@ export default function CropsCta() {
             >
               Get a Quote <ArrowRight className="h-4 w-4" />
             </button>
-            
-             <a href="/about"
+            <a
+              href="/about"
               className="inline-flex items-center justify-center rounded-full border border-white/70 bg-transparent px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-white/10"
             >
               Learn About Our Farm

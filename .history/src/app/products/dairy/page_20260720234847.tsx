@@ -1,4 +1,5 @@
 import DairyHero from "@/components/products/dairy/DairyHero";
+import DairyFeatures from "@/components/products/dairy/DairyFeatures";
 import DairyShowcase from "@/components/products/dairy/DairyShowcase";
 import DairyCircularModel from "@/components/products/dairy/DairyCircularModel";
 import DairyCta from "@/components/products/dairy/DairyCta";
@@ -22,6 +23,7 @@ export default function DairyPage() {
   return (
     <main className="flex min-h-screen flex-col bg-[#F8F6F2]">
       <DairyHero />
+      <FadeIn direction="up" delay={0.05}><DairyFeatures /></FadeIn>
       <FadeIn direction="up" delay={0.05}><DairyShowcase /></FadeIn>
       <FadeIn direction="up" delay={0.05}><DairyCircularModel /></FadeIn>
       <FadeIn direction="up" delay={0.05}><DairyCta /></FadeIn>

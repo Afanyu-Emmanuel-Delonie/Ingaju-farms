@@ -14,7 +14,7 @@ export default function CircularHero() {
         </h1>
         <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/80 md:text-lg">
           Guided by careful record-keeping, our farm turns outputs into useful
-          inputs closing the loop one stage at a time, and supporting
+          inputs — closing the loop one stage at a time, and supporting
           steady production along the way.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">

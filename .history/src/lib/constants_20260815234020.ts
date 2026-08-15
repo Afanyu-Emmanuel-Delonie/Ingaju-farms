@@ -54,7 +54,7 @@ export const CIRCULAR_STAGES = [
   {
     number: "02",
     title: "Organic Fertilizer",
-    body: "Manure from the herd isn't discarded it's composted into organic fertilizer, a line we're currently scaling up. As it comes online, it's reducing our reliance on synthetic chemicals and returning natural nutrients to the soil.",
+    body: "Manure from the herd isn't discarded — it's composted into organic fertilizer, a line we're currently scaling up. As it comes online, it's reducing our reliance on synthetic chemicals and returning natural nutrients to the soil.",
     bullets: [
       "Manure composted into organic fertilizer as this line scales up to full production",
       "Designed to reduce reliance on synthetic agrochemicals across our crop fields",
@@ -66,7 +66,7 @@ export const CIRCULAR_STAGES = [
   {
     number: "03",
     title: "Crop Production",
-    body: "As organic fertilizer comes online, our fields grow food and fodder crops on increasingly enriched soil. Healthy soil grows healthy crops and those crops feed both the market and the herd, closing the loop.",
+    body: "As organic fertilizer comes online, our fields grow food and fodder crops on increasingly enriched soil. Healthy soil grows healthy crops — and those crops feed both the market and the herd, closing the loop.",
     bullets: [
       "Synthetic pesticide and fertilizer use kept low, moving toward organic-input growing",
       "Diverse crop varieties grown year-round, supported by our organic fertilizer line as it scales",
@@ -78,7 +78,7 @@ export const CIRCULAR_STAGES = [
   {
     number: "04",
     title: "Livestock Feed",
-    body: "Harvested crops and crop residues are prepared into feed for the herd. This final stage returns nutrition back to the herd restarting the cycle a little stronger each time.",
+    body: "Harvested crops and crop residues are prepared into feed for the herd. This final stage returns nutrition back to the herd — restarting the cycle a little stronger each time.",
     bullets: [
       "Crop residues and by-products reused as feed, reducing what leaves the system",
       "Feed prepared on-site to match herd nutritional needs",
@@ -88,35 +88,34 @@ export const CIRCULAR_STAGES = [
     imgAlt: "Livestock feed production at Ingaju Farms",
   },
 ];
-
 export const CIRCULAR_BENEFITS = [
   {
     icon: Leaf,
-    title: "Low Synthetic Input Use",
-    desc: "On-farm organic fertilizer and livestock feed are reducing our dependence on synthetic agrochemicals, supporting food safety, soil health, and long-term production economics.",
-    stat: "Ongoing",
-    statLabel: "Reducing Chemical Use",
+    title: "Zero Synthetic Inputs",
+    desc: "On-farm organic fertilizer and livestock feed production eliminates all dependence on synthetic agrochemicals improving food safety, soil biology, and long-term production economics.",
+    stat: "100%",
+    statLabel: "Chemical-Free",
   },
   {
     icon: TrendingDown,
     title: "Lower Production Costs",
-    desc: "Circular resource use is cutting our expenditure on external inputs, strengthening financial resilience against commodity price volatility and supply chain disruptions.",
-    stat: "Tracked",
-    statLabel: "Input Costs Monitored",
+    desc: "Closed-loop resource utilization cuts expenditure on external inputs, strengthening financial resilience against commodity price volatility and supply chain disruptions.",
+    stat: "60%",
+    statLabel: "Input Cost Reduction",
   },
   {
     icon: Users,
-    title: "Smallholder Impact",
-    desc: "The Ingaju circular model is designed to be low-cost and directly applicable to smallholder operations, and we've shared it with farmers in our community in Nyagatare.",
-    stat: "500+",
-    statLabel: "Farmers Reached",
+    title: "Smallholder Impact at Scale",
+    desc: "The Ingaju circular model has been transferred to over 300 farmers across Rwanda. The system is scalable, low-cost, and directly applicable to smallholder operations of any size.",
+    stat: "300+",
+    statLabel: "Farmers Trained",
   },
   {
     icon: RefreshCw,
-    title: "Resource Recovery, Scaling Up",
-    desc: "Manure, crop residues, and other by-products are increasingly captured and reintegrated into the system as our organic fertilizer line comes online.",
-    stat: "Scaling",
-    statLabel: "Toward Zero Waste",
+    title: "Complete Resource Recovery",
+    desc: "Every by-product manure, crop residues, and processing effluent is captured and reintegrated into the production system. Nothing leaves the loop unutilized.",
+    stat: "0",
+    statLabel: "Waste to Landfill",
   },
 ];
 
@@ -182,26 +181,26 @@ export const IMPACT_STATS = [
 export const TRAININGS = [
   {
     key: "dairy",
-    title: "Livestock Production & Herd Management",
-    description: "Hands-on training in livestock herd management, animal nutrition, hygienic milking procedures, milk quality assurance, and preventive animal health practices.",
+    title: "Dairy Production & Herd Management",
+    description: "Hands-on training in dairy herd management, animal nutrition, hygienic milking procedures, milk quality assurance, and preventive animal health protocols.",
     ctaLabel: "Learn More",
     ctaHref: "/trainings/dairy-farming",
     image: "/images/hero/bg-img.png",
-    alt: "Farmer working with livestock at Ingaju Farms",
+    alt: "Farmer working with dairy cattle at Ingaju Farms",
   },
   {
     key: "organic",
-    title: "Climate-Smart Crop Production",
-    description: "Practical instruction in organic-input soil fertility management, composting, natural pest and disease management, and climate-smart farming practices for food and feed crop production.",
+    title: "Organic Crop Production",
+    description: "Practical instruction in organic soil fertility management, composting, integrated pest and disease control, and sustainable agronomic practices for food and feed crop production.",
     ctaLabel: "Learn More",
     ctaHref: "/trainings/organic-farming",
     image: "/images/hero/bg-2.png",
-    alt: "Farmer demonstrating climate-smart farming techniques",
+    alt: "Farmer demonstrating organic farming techniques",
   },
   {
     key: "circular",
     title: "Integrated Circular Agriculture",
-    description: "Comprehensive training in circular farming systems covering manure management, our organic fertilizer process as it scales up, crop-livestock integration, and nutrient recycling.",
+    description: "Comprehensive training in circular farming systems covering manure management, organic fertilizer processing, crop-livestock integration, and nutrient recycling.",
     ctaLabel: "Learn More",
     ctaHref: "/trainings/circular-agriculture",
     image: "/images/hero/bg-3.png",

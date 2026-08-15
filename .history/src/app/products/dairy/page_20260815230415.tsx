@@ -22,6 +22,7 @@ export default function DairyPage() {
   return (
     <main className="flex min-h-screen flex-col bg-[#F8F6F2]">
       <DairyHero />
+      <FadeIn direction="up" delay={0.05}><DairyFeatures /></FadeIn>
       <FadeIn direction="up" delay={0.05}><DairyShowcase /></FadeIn>
       <FadeIn direction="up" delay={0.05}><DairyCircularModel /></FadeIn>
       <FadeIn direction="up" delay={0.05}><DairyCta /></FadeIn>

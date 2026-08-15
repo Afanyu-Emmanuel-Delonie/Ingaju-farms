@@ -20,28 +20,28 @@ export default function CropsHero() {
 
       <div className="relative z-10 flex h-full flex-col items-start justify-end container-pad pb-20">
         <span className="mb-4 inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-widest text-white">
-          Climate-Smart Crops & Produce
+          Organic Crops & Produce
         </span>
         <h1 className="max-w-4xl text-3xl font-heading font-bold leading-tight text-white md:text-5xl">
           Climate-Smart Crops.
           <br />
-          <span className="text-[#6DBE8C]">Grown to Restore the Soil.</span>
+          <span className="text-[#6DBE8C]">Organically Grown.</span>
         </h1>
         <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/75 md:text-lg">
-          Driven by climate-smart farming, our integrated crop system uses careful soil management to reduce synthetic inputs and produce traceable yields.
+          Driven by climate-smart agronomy, our integrated crop system uses organic soil management to reduce synthetic inputs and produce traceable yields.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <button
             onClick={() => open({ variant: "tour" })}
             className="w-full text-center rounded-full bg-[#3A7D5A] px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#2f6b4a] sm:w-auto"
           >
-            Explore Our Products
+            Order Our Products
           </button>
-          
-            <a href="/circular-system"
+          <a
+            href="/circular-system"
             className="w-full text-center rounded-full border border-white/50 px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto"
           >
-            See Our Circular System
+            Partner With Us
           </a>
         </div>
       </div>

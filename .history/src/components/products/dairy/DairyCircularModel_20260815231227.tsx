@@ -6,7 +6,7 @@ const POINTS = [
   "Forage grown using climate-smart farming practices",
   "Livestock manure composted into organic fertilizer as that line scales up",
   "Compost applied to fields to restore soil fertility as the fertilizer line comes online",
-  "Crop residues recycled as feed closing the loop, one piece at a time",
+  "Crop residues recycled as feed — closing the loop, one piece at a time",
 ];
 
 export default function DairyCircularModel() {

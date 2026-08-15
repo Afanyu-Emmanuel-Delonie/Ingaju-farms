@@ -5,10 +5,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const POINTS = [
-  "Manure from our livestock becomes fertilizer for the soil, as we scale up this line",
-  "We keep chemical use low across our fields",
-  "Leftover crop matter goes back into the soil to keep it healthy",
-  "We manage pests naturally to protect our crops",
+  "Soil fertility supported by livestock manure composted into fertilizer, as that line scales up",
+  "Synthetic pesticide and chemical use minimized across crop fields",
+  "Crop biomass returned to fields to naturally rebuild organic matter",
+  "Biological pest management practices used where possible to protect crop health",
 ];
 
 export default function CropsCircularModel() {

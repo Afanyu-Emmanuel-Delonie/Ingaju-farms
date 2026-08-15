@@ -35,7 +35,7 @@ export default function CropsHero() {
             onClick={() => open({ variant: "tour" })}
             className="w-full text-center rounded-full bg-[#3A7D5A] px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#2f6b4a] sm:w-auto"
           >
-            Explore Our Products
+            Order Our Products
           </button>
           
             <a href="/circular-system"

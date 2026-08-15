@@ -12,7 +12,7 @@ export interface StageDetail {
 export const STAGE_DATA: Record<StageKey, StageDetail> = {
   cattle: {
     label: "Dairy Cattle",
-    imgSrc: "/images/dairy/diary-production.png",
+    imgSrc: "/images/dairy/dairy-production.png",
     imgAlt: "Dairy cattle on the farm",
     angle: 270,
   },
@@ -48,7 +48,7 @@ export const CIRCULAR_STAGES = [
       "Milk yield directly tied to feed quality and animal health",
       "Manure collected daily as the primary input for the next stage",
     ],
-    imgSrc: "/images/dairy/diary-production.png",
+    imgSrc: "/images/dairy/dairy-production.png",
     imgAlt: "Livestock herd being milked at Ingaju Farms",
   },
   {
@@ -136,8 +136,10 @@ export const PARTNERS = [
 export const CATEGORIES = [
   {
     key: "dairy",
-    title: "Dairy & Livestock",
-    description: "Milk and breeding livestock raised to strict welfare and nutrition standards, with no added hormones.",
+    title: "Livestock & Dairy",
+    // NOTE: "with no added hormones" removed — not a confirmed practice.
+    // See Ingaju Priority Fix Tracker, Needs Verification.
+    description: "Milk and breeding livestock raised to strict welfare and nutrition standards.",
     ctaLabel: "Explore Dairy",
     ctaHref: "/products/dairy",
     image: "/images/hero/bg-img.png",
@@ -166,17 +168,22 @@ export const CATEGORIES = [
     title: "Farmer Training",
     description: "Practical, on-farm training in circular agriculture for smallholders, cooperatives, students and agribusiness professionals.",
     ctaLabel: "Explore Trainings",
-    ctaHref: "/trainings",
+    ctaHref: "/contact?topic=Training%20Program",
     image: "/images/farm/training-1.png",
     alt: "Farmers attending a practical training session at Ingaju Farms",
   },
 ];
 
-export const IMPACT_STATS = [
-  { key: "jobs", value: 50, label: "Jobs Created" },
-  { key: "farmers", value: 300, label: "Farmers Trained" },
-  { key: "products", value: 10, label: "Organic Products Produced" },
-  { key: "partnerships", value: 12, label: "Local Partnerships" },
+// NOTE: "farmers" (500+) is the one confirmed ground-truth figure — matches
+// CIRCULAR_BENEFITS above. jobs/products/partnerships have no source anywhere
+// in the repo, so they're softened to non-numeric language pending
+// verification rather than left as invented counts. See Ingaju Priority Fix
+// Tracker, "Needs Verification."
+export const IMPACT_STATS: { key: string; label: string; value?: number; display?: string }[] = [
+  { key: "jobs", display: "Multiple", label: "Jobs Created" },
+  { key: "farmers", value: 500, label: "Farmers Trained" },
+  { key: "products", display: "Several", label: "Organic Products Produced" },
+  { key: "partnerships", display: "Growing", label: "Local Partnerships" },
 ];
 
 export const TRAININGS = [
@@ -185,7 +192,7 @@ export const TRAININGS = [
     title: "Livestock Production & Herd Management",
     description: "Hands-on training in livestock herd management, animal nutrition, hygienic milking procedures, milk quality assurance, and preventive animal health practices.",
     ctaLabel: "Learn More",
-    ctaHref: "/trainings/dairy-farming",
+    ctaHref: "/contact?topic=Training%20Program",
     image: "/images/hero/bg-img.png",
     alt: "Farmer working with livestock at Ingaju Farms",
   },
@@ -194,7 +201,7 @@ export const TRAININGS = [
     title: "Climate-Smart Crop Production",
     description: "Practical instruction in organic-input soil fertility management, composting, natural pest and disease management, and climate-smart farming practices for food and feed crop production.",
     ctaLabel: "Learn More",
-    ctaHref: "/trainings/organic-farming",
+    ctaHref: "/contact?topic=Training%20Program",
     image: "/images/hero/bg-2.png",
     alt: "Farmer demonstrating climate-smart farming techniques",
   },
@@ -203,9 +210,12 @@ export const TRAININGS = [
     title: "Integrated Circular Agriculture",
     description: "Comprehensive training in circular farming systems covering manure management, our organic fertilizer process as it scales up, crop-livestock integration, and nutrient recycling.",
     ctaLabel: "Learn More",
-    ctaHref: "/trainings/circular-agriculture",
+    ctaHref: "/contact?topic=Training%20Program",
     image: "/images/hero/bg-3.png",
-    alt: "Group training session on circular agriculture at Ingaju Farms",
+    // NOTE: alt kept generic — this file is also used in CropsCircularModel.tsx
+    // with a different (specific, unconfirmed) subject; neither description
+    // could be verified against the actual photo. See Priority Fix Tracker.
+    alt: "Ingaju Farms circular agriculture in Nyagatare",
   },
 ];
 
@@ -222,7 +232,7 @@ export const BLOG_POSTS = [
     content: [
       {
         type: "paragraph" as const,
-        text: "Circular agriculture is a farming approach where outputs from one part of the system become inputs for another — creating a closed loop that minimizes waste and maximizes resource efficiency. For small-scale farms across Africa, this model is proving to be both economically viable and environmentally responsible.",
+        text: "Circular agriculture is a farming approach where outputs from one part of the system become inputs for another — closing the loop to minimize waste and maximize resource efficiency. For small-scale farms in Rwanda, this model is proving to be both economically viable and environmentally responsible.",
       },
       {
         type: "heading" as const,
@@ -241,8 +251,11 @@ export const BLOG_POSTS = [
         text: "Why It Works for Small-Scale Farmers",
       },
       {
+        // NOTE: original text cited "up to 40% reductions" — no source found
+        // in the repo; softened to non-numeric language pending verification.
+        // See Ingaju Priority Fix Tracker, Needs Verification.
         type: "paragraph" as const,
-        text: "Small-scale farmers often operate with tight margins and limited access to expensive fertilizers or veterinary inputs. Circular agriculture reduces dependency on external inputs, which directly lowers operating costs. Farmers who have adopted integrated systems report up to 40% reductions in input costs within the first two seasons.",
+        text: "Small-scale farmers often operate with tight margins and limited access to expensive fertilizers or veterinary inputs. Circular agriculture reduces dependency on external inputs, which directly lowers operating costs. Farmers who have adopted integrated systems report meaningful reductions in input costs within the first two seasons.",
       },
       {
         type: "list" as const,
@@ -264,7 +277,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "Our training programs have reached over 300 farmers across the region, equipping them with practical skills in manure management, integrated pest control, water harvesting, and crop-livestock integration. The results speak for themselves — trained farmers consistently outperform untrained peers in both yield and profitability.",
+        text: "Our training programs have reached over 500 farmers across the region, equipping them with practical skills in manure management, natural pest management, water harvesting, and crop-livestock integration. The results speak for themselves — trained farmers consistently outperform untrained peers in both yield and profitability.",
       },
       {
         type: "heading" as const,
@@ -352,15 +365,15 @@ export const BLOG_POSTS = [
     content: [
       {
         type: "paragraph" as const,
-        text: "The gap between what farmers know and what they need to know to farm sustainably is one of the most significant barriers to agricultural transformation in Africa. Technology exists. Better seed varieties exist. Improved practices are documented. Yet adoption remains low because knowledge is not reaching farmers in formats they can access and apply.",
+        text: "The gap between what farmers know and what they need to know to farm sustainably is one of the most significant barriers to agricultural transformation in Rwanda. Technology exists. Better seed varieties exist. Improved practices are documented. Yet adoption remains low because knowledge is not reaching farmers in formats they can access and apply.",
       },
       {
         type: "heading" as const,
-        text: "The Knowledge Gap in African Agriculture",
+        text: "The Knowledge Gap in Rwandan Agriculture",
       },
       {
         type: "paragraph" as const,
-        text: "Most smallholder farmers in sub-Saharan Africa learned to farm from their parents, using methods passed down across generations. These traditional practices have value, but they were developed for different climate conditions, different market realities, and different input environments than what farmers face today. Bridging this gap requires structured, practical, and accessible training.",
+        text: "Most smallholder farmers in Rwanda learned to farm from their parents, using methods passed down across generations. These traditional practices have value, but they were developed for different climate conditions, different market realities, and different input environments than what farmers face today. Bridging this gap requires structured, practical, and accessible training.",
       },
       {
         type: "heading" as const,
@@ -390,7 +403,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "We offer training in dairy farming, organic crop production, and circular agriculture systems. Programs are available for individuals, farmer groups, schools, and corporate teams interested in understanding sustainable food systems. To date, we have trained over 300 farmers, and we track their progress to ensure the knowledge continues to produce results in the field.",
+        text: "We offer training in dairy farming, organic crop production, and circular agriculture systems. Programs are available for individuals, farmer groups, schools, and corporate teams interested in understanding sustainable food systems. To date, we have trained over 500 farmers, and we track their progress to ensure the knowledge continues to produce results in the field.",
       },
       {
         type: "heading" as const,

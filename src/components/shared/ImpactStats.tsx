@@ -58,8 +58,14 @@ export default function ImpactStats() {
               className="text-center px-6"
             >
               <div className="flex items-start justify-center">
-                <CountUp to={stat.value} className="text-5xl font-heading font-bold text-white sm:text-6xl" />
-                <span className="text-5xl font-heading font-bold text-[#6DBE8C] sm:text-6xl">+</span>
+                {stat.value !== undefined ? (
+                  <>
+                    <CountUp to={stat.value} className="text-5xl font-heading font-bold text-white sm:text-6xl" />
+                    <span className="text-5xl font-heading font-bold text-[#6DBE8C] sm:text-6xl">+</span>
+                  </>
+                ) : (
+                  <span className="text-5xl font-heading font-bold text-white sm:text-6xl">{stat.display}</span>
+                )}
               </div>
               <p className="mt-3 text-sm font-body tracking-widest text-white/45">{stat.label}</p>
             </div>

@@ -7,14 +7,13 @@ import { getPublishedBlogPosts } from "@/lib/blog";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Blog | Circular Agriculture, Dairy Farming & Sustainable Food Systems — Ingaju Farms",
-  description: "Expert insights on circular agriculture, organic dairy farming, crop production, and sustainable food systems from the team at Ingaju Farms, Eastern Province, Rwanda. Practical knowledge for farmers and agribusiness professionals.",
-  keywords: ["circular agriculture blog Rwanda", "dairy farming tips Rwanda", "sustainable agriculture Africa", "organic fertilizer benefits", "farm training Rwanda", "regenerative agriculture insights", "smallholder farming Rwanda"],
+  title: "Blog | Circular Agriculture & Farming Insights — Ingaju Farms",
+  description: "Practical insights on circular agriculture, livestock and dairy farming, crop production, and sustainable food systems from the team at Ingaju Farms, Eastern Province, Rwanda.",
   alternates: { canonical: "https://ingajufarms.com/blog" },
   openGraph: {
     url: "https://ingajufarms.com/blog",
-    title: "Blog | Circular Agriculture, Dairy Farming & Sustainable Food Systems — Ingaju Farms",
-    description: "Practical insights on circular agriculture, organic dairy, and sustainable farming from Ingaju Farms, Eastern Province, Rwanda.",
+    title: "Blog | Circular Agriculture & Farming Insights — Ingaju Farms",
+    description: "Practical insights on circular agriculture, livestock and dairy farming, and sustainable crop production from Ingaju Farms, Eastern Province, Rwanda.",
     images: [{ url: "/images/hero/bg-img.png", width: 1200, height: 630, alt: "Ingaju Farms Blog" }],
   },
 };

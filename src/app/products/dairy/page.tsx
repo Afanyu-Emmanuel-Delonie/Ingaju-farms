@@ -6,15 +6,14 @@ import DairyInsights from "@/components/products/dairy/DairyInsights";
 import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata = {
-  title: "Organic Dairy Products Rwanda | Pasture-Fed Milk, Yogurt & Cheese — Ingaju Farms",
-  description: "Buy fresh organic milk, yogurt, cheese, and butter from pasture-fed, hormone-free cattle at Ingaju Farms, Eastern Province, Rwanda. Raised through a closed-loop circular farming system with zero synthetic inputs.",
-  keywords: ["organic dairy products Rwanda", "pasture-fed milk Rwanda", "buy organic milk Eastern Province Rwanda", "hormone-free dairy Rwanda", "sustainable dairy farm Africa", "organic yogurt Rwanda", "circular dairy farming Rwanda"],
+  title: "Livestock & Dairy Products Rwanda | Ingaju Farms",
+  description: "Buy fresh, pasture-fed milk, yogurt, cheese, and butter from Ingaju Farms, Eastern Province, Rwanda — raised through a circular farming system that's closing the loop on synthetic inputs.",
   alternates: { canonical: "https://ingajufarms.com/products/dairy" },
   openGraph: {
     url: "https://ingajufarms.com/products/dairy",
-    title: "Organic Dairy Products Rwanda | Pasture-Fed Milk, Yogurt & Cheese — Ingaju Farms",
-    description: "Hormone-free, pasture-fed organic dairy from Ingaju Farms, Eastern Province, Rwanda. Milk, yogurt, cheese, and butter from a closed-loop circular system.",
-    images: [{ url: "/images/hero/bg-img.png", width: 1200, height: 630, alt: "Ingaju Farms Organic Dairy Products" }],
+    title: "Livestock & Dairy Products Rwanda | Ingaju Farms",
+    description: "Pasture-fed milk, yogurt, cheese, and butter from Ingaju Farms, Eastern Province, Rwanda — part of a circular system closing the loop on synthetic inputs.",
+    images: [{ url: "/images/hero/bg-img.png", width: 1200, height: 630, alt: "Ingaju Farms Livestock & Dairy Products" }],
   },
 };
 

@@ -69,7 +69,7 @@ export default function CircularStages() {
             How the Loop Works
           </h2>
           <p className="mt-4 max-w-md mx-auto text-[15px] font-body leading-relaxed text-[#6B6259]">
-            Four stages. Zero waste. Every output from one stage becomes the input for the next.
+            Four stages, zero-waste ambition — every output from one stage becomes the input for the next.
           </p>
         </div>
 

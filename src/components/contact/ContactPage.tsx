@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import FaqSection from "@/components/sections/FaqSection";
 import BrandPattern from "@/components/shared/BrandPattern";
@@ -43,6 +43,16 @@ const TOPICS = [
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", topic: "", message: "" });
   const [sent, setSent] = useState(false);
+
+  // Reads ?topic= so links from Trainings/Footer/Circular System CTAs land
+  // with the right topic preselected. Read client-side (not via
+  // useSearchParams) so this page can stay statically prerendered.
+  useEffect(() => {
+    const topic = new URLSearchParams(window.location.search).get("topic");
+    if (topic && TOPICS.includes(topic)) {
+      setForm((f) => ({ ...f, topic }));
+    }
+  }, []);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));

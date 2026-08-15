@@ -176,14 +176,14 @@ export default function CircularDiagram() {
         {/* Header */}
         <div className="text-center mb-20">
           <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
-            Ingaju SmartCycle
+            The Loop
           </p>
           <h2 className="font-heading text-3xl font-bold leading-tight text-[#1C2321] sm:text-4xl">
-            A Living, Measured Ecosystem
+            How the System Works
           </h2>
           <p className="mt-4 text-[15px] font-body text-[#6B6259] max-w-md mx-auto leading-relaxed">
-            Four connected stages. Zero waste. A closed loop where every
-            resource stays in use.
+            Four connected stages, zero-waste ambition — a loop we're
+            closing, one resource at a time.
           </p>
         </div>
 

@@ -7,15 +7,14 @@ import CropsInsights from "@/components/products/crops/CropsInsights";
 import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata = {
-  title: "Organic Crop Production Rwanda | Chemical-Free Maize, Beans & Macadamia — Ingaju Farms",
-  description: "Naturally grown maize, beans, soybeans, macadamia, and mangoes from Ingaju Farms, Eastern Province, Rwanda. Cultivated using on-farm organic fertilizer with zero synthetic pesticides or chemicals.",
-  keywords: ["organic crop production Rwanda", "chemical-free farming Eastern Province Rwanda", "organic maize Rwanda", "macadamia farming Rwanda", "sustainable crops Africa", "organic fertilizer crop production Rwanda", "circular farming crop yield Rwanda"],
+  title: "Livestock-Fed Crop Production Rwanda | Ingaju Farms",
+  description: "Low-chemical maize, beans, soybeans, macadamia, and mangoes from Ingaju Farms, Eastern Province, Rwanda. Grown using on-farm organic fertilizer and climate-smart, organic-input practices.",
   alternates: { canonical: "https://ingajufarms.com/products/crops" },
   openGraph: {
     url: "https://ingajufarms.com/products/crops",
-    title: "Organic Crop Production Rwanda | Chemical-Free Maize, Beans & Macadamia — Ingaju Farms",
-    description: "Zero synthetic inputs. Organically enriched soil. Maize, beans, macadamia, and more from Ingaju Farms, Eastern Province, Rwanda.",
-    images: [{ url: "/images/crops/crop-production.png", width: 1200, height: 630, alt: "Ingaju Farms Organic Crop Production" }],
+    title: "Livestock-Fed Crop Production Rwanda | Ingaju Farms",
+    description: "Low-chemical inputs, climate-smart soil practices. Maize, beans, macadamia, and more from Ingaju Farms, Eastern Province, Rwanda.",
+    images: [{ url: "/images/crops/crop-production.png", width: 1200, height: 630, alt: "Ingaju Farms Crop Production" }],
   },
 };
 

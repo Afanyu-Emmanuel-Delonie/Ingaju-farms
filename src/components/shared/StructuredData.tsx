@@ -8,7 +8,7 @@ export default function StructuredData() {
     logo: "https://ingajufarms.com/images/brand/Logo.png",
     image: "https://ingajufarms.com/images/hero/bg-img.png",
     description:
-      "Ingaju Farms is an integrated agricultural enterprise based in Rebero Village, Nyagatare District, Eastern Province. We produce dairy, crops, and organic fertilizer through a circular farming system and train smallholder farmers across Rwanda.",
+      "Ingaju Farms is an integrated agricultural enterprise based in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer through a circular farming system and train smallholder farmers across Rwanda.",
     telephone: "+250788304921",
     email: "support@ingajufarms.com",
     address: {
@@ -36,10 +36,10 @@ export default function StructuredData() {
       "@type": "OfferCatalog",
       name: "Ingaju Farms Products & Services",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Organic Dairy Products", url: "https://ingajufarms.com/products/dairy" } },
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Organic Crop Production", url: "https://ingajufarms.com/products/crops" } },
+        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Livestock & Dairy Products", url: "https://ingajufarms.com/products/dairy" } },
+        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Climate-Smart Crop Production", url: "https://ingajufarms.com/products/crops" } },
         { "@type": "Offer", itemOffered: { "@type": "Product", name: "Organic Fertilizer", url: "https://ingajufarms.com/products/crops" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Farmer Training Programs", url: "https://ingajufarms.com/trainings" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Farmer Training Programs", url: "https://ingajufarms.com/contact" } },
       ],
     },
   };
@@ -65,11 +65,10 @@ export default function StructuredData() {
       { "@type": "ListItem", position: 1, name: "Home", item: "https://ingajufarms.com" },
       { "@type": "ListItem", position: 2, name: "About", item: "https://ingajufarms.com/about" },
       { "@type": "ListItem", position: 3, name: "Circular System", item: "https://ingajufarms.com/circular-system" },
-      { "@type": "ListItem", position: 4, name: "Dairy Products", item: "https://ingajufarms.com/products/dairy" },
+      { "@type": "ListItem", position: 4, name: "Livestock & Dairy", item: "https://ingajufarms.com/products/dairy" },
       { "@type": "ListItem", position: 5, name: "Crop Products", item: "https://ingajufarms.com/products/crops" },
-      { "@type": "ListItem", position: 6, name: "Trainings", item: "https://ingajufarms.com/trainings" },
-      { "@type": "ListItem", position: 7, name: "Blog", item: "https://ingajufarms.com/blog" },
-      { "@type": "ListItem", position: 8, name: "Contact", item: "https://ingajufarms.com/contact" },
+      { "@type": "ListItem", position: 6, name: "Blog", item: "https://ingajufarms.com/blog" },
+      { "@type": "ListItem", position: 7, name: "Contact", item: "https://ingajufarms.com/contact" },
     ],
   };
 

@@ -38,7 +38,7 @@ export default function ExperienceCircularFarming() {
             Book a Farm Tour <ArrowRight className="h-4 w-4" />
           </button>
           <a
-            href="/trainings"
+            href="/contact?topic=Training%20Program"
             className="inline-flex items-center justify-center rounded-full border border-white/40 px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-white/10"
           >
             View Training Programs

@@ -29,7 +29,7 @@ export default function CropsCircularModel() {
             </div>
             <div className="flex flex-col gap-3">
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
-                <Image src="/images/hero/bg-3.png" alt="Harvested beans at Ingaju Farms" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/hero/bg-3.png" alt="Ingaju Farms circular agriculture in Nyagatare" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
                 <Image src="/images/crops/crops-2.png" alt="Farmer tending crop rows" fill sizes="25vw" className="object-cover" />
@@ -44,10 +44,10 @@ export default function CropsCircularModel() {
             </p>
             <h2 className="font-heading text-3xl font-bold leading-tight text-[#1C2321] sm:text-4xl">
               Sustainable Crop Production.<br />
-              <span className="text-[#3A7D5A]">Careful Management.</span>
+              <span className="text-[#3A7D5A]">Grown With Care.</span>
             </h2>
             <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
-              Every stage of our cultivation loop follows an integrated farm system, tracked through careful record-keeping. As we build toward fuller digital tracking systems, this discipline already helps us manage soil nutrients and support consistent crop yields season after season.
+              Every stage of our cultivation loop follows an integrated farm system, tracked through careful digital record-keeping. This discipline helps us manage soil nutrients and support consistent crop yields season after season.
             </p>
             <ul className="mt-6 space-y-3">
               {POINTS.map((point) => (

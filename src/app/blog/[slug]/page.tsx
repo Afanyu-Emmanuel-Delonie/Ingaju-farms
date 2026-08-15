@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: Props) {
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/trainings"
+                href="/contact?topic=Training%20Program"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-body font-semibold text-[#3A7D5A] transition-colors hover:bg-[#F0EBE3]"
               >
                 Explore Trainings <ArrowRight className="h-4 w-4" />

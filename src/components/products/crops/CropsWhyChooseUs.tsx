@@ -16,7 +16,7 @@ const FEATURES = [
   {
     icon: Layers,
     title: "Careful Record-Keeping",
-    desc: "We track our soil and crops through careful record-keeping today, and we're building toward fuller digital systems to sharpen yields even further.",
+    desc: "We track our soil and crops through careful digital record-keeping, season after season.",
   },
   {
     icon: ShieldCheck,
@@ -40,7 +40,7 @@ export default function CropsWhyChooseUs() {
               Grown With Purpose.
             </h2>
             <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259] max-w-sm">
-              We're building toward better data and tighter loops, but the basics come first: careful soil management, honest record-keeping, and crops you can trace back to our fields in Nyagatare.
+              The basics come first: careful soil management, honest record-keeping, and crops you can trace back to our fields in Nyagatare.
             </p>
           </div>
 

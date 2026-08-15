@@ -9,11 +9,11 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   {
-    label: "Enterprises",
+    label: "Enter",
     href: "/products/dairy",
     dropdown: [
       { label: "Livestock & Dairy", href: "/products/dairy" },
-      { label: "Crops Production", href: "/products/crops" }
+      { label: "Crops", href: "/products/crops" }
     ]
   },
   { label: "Circular System", href: "/circular-system" },

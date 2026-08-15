@@ -31,10 +31,10 @@ export default function DairyHero() {
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <a
-            href="/contact"
+            href="#our-products"
             className="w-full text-center rounded-full bg-[#3A7D5A] px-8 py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#2f6b4a] sm:w-auto"
           >
-            Explore our Product
+            Explore Our Products
           </a>
           <button
             onClick={() => open({ variant: "tour" })}

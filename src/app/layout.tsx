@@ -22,33 +22,18 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+// NOTE: `keywords` metadata field removed site-wide — Google hasn't used it
+// as a ranking signal since 2009, and the array previously carried claims
+// ("closed-loop farming system", "…Africa") the visible copy doesn't make.
+// See Ingaju SEO Rules guide.
 export const metadata: Metadata = {
   metadataBase: new URL("https://ingajufarms.com"),
   title: {
-    default: "Ingaju Farms | Dairy, Crops & Circular Agriculture - Eastern Province, Rwanda",
+    default: "Livestock, Crops & Circular Agriculture — Ingaju Farms",
     template: "%s | Ingaju Farms",
   },
     description:
-      "Ingaju Farms is an integrated agricultural enterprise based in Rebero Village, Nyagatare District, Eastern Province. We produce dairy, crops, and organic fertilizer through a circular farming system and train smallholder farmers across Rwanda.",
-  keywords: [
-    "Ingaju Farms",
-    "circular agriculture Rwanda",
-    "integrated dairy farm Rwanda",
-    "organic dairy products Rwanda",
-    "organic fertilizer Rwanda",
-    "sustainable farming Eastern Province Rwanda",
-    "circular economy agriculture Africa",
-    "closed-loop farming system",
-    "circular farming Rwanda",
-    "regenerative agriculture Rwanda",
-    "smallholder farmer training Rwanda",
-    "dairy farm Eastern Province Rwanda",
-    "organic crop production Rwanda",
-    "farm training Rwanda",
-    "Rebero Village Rwanda farm",
-    "sustainable food systems Africa",
-    "pasture-fed milk Rwanda",
-  ],
+      "Ingaju Farms is an integrated agricultural enterprise based in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer through a circular farming system and train smallholder farmers across Rwanda.",
   authors: [{ name: "Ingaju Farms", url: "https://ingajufarms.com" }],
   creator: "Ingaju Farms",
   publisher: "Ingaju Farms",
@@ -58,9 +43,9 @@ export const metadata: Metadata = {
     locale: "en_RW",
     url: "https://ingajufarms.com",
     siteName: "Ingaju Farms",
-    title: "Ingaju Farms | Dairy, Crops & Circular Agriculture - Eastern Province, Rwanda",
+    title: "Livestock, Crops & Circular Agriculture — Ingaju Farms",
     description:
-      "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce dairy, crops, and organic fertilizer while training farmers in circular agriculture.",
+      "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer while training farmers in circular agriculture.",
     images: [
       {
         url: "/images/hero/bg-img.png",
@@ -72,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ingaju Farms | Dairy, Crops & Circular Agriculture - Eastern Province, Rwanda",
+    title: "Livestock, Crops & Circular Agriculture — Ingaju Farms",
     description:
-      "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce dairy, crops, and organic fertilizer while training farmers in circular agriculture.",
+      "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer while training farmers in circular agriculture.",
     images: ["/images/hero/bg-img.png"],
   },
   alternates: {

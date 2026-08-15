@@ -46,7 +46,7 @@ export default function LearnWithIngaju() {
           >
             <div className="flex flex-col gap-3">
               <div className="relative h-56 w-full overflow-hidden rounded-2xl sm:h-72">
-                <Image src="/images/crops/maiz.jpg" alt="Dairy cattle at Ingaju Farms" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/maiz.jpg" alt="Maize growing in the field at Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-40 w-full overflow-hidden rounded-2xl">
                 <Image src="/images/crops/nuts.jpg" alt="Crops growing on the farm" fill sizes="25vw" className="object-cover" />
@@ -54,10 +54,10 @@ export default function LearnWithIngaju() {
             </div>
             <div className="flex flex-col gap-3">
               <div className="relative h-40 w-full overflow-hidden rounded-2xl">
-                <Image src="/images/dairy/milk.jpg" alt="Organic manure being applied" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/dairy/milk.jpg" alt="Fresh milk from Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-56 w-full overflow-hidden rounded-2xl sm:h-72">
-                <Image src="/images/dairy/organic-manure.png" alt="Healthy harvest at Ingaju" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/dairy/organic-manure.png" alt="Organic manure fertilizer at Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
             </div>
           </motion.div>
@@ -73,7 +73,7 @@ export default function LearnWithIngaju() {
              Our Farming <span className="text-[#3A7D5A]"> System.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259] max-w-lg">
-              Ingaju operates a closed loop where outputs from one stage become inputs for the next, reducing waste and lowering costs.
+              Ingaju operates by closing the loop — outputs from one stage become inputs for the next, reducing waste and lowering costs.
             </p>
             {/* Loop steps */}
             <div className="relative mt-8 flex flex-col gap-6">

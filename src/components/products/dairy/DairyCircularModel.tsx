@@ -26,10 +26,9 @@ export default function DairyCircularModel() {
             </h2>
             <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
               Every stage of our livestock operation is tracked through
-              careful record-keeping. As we build toward fuller digital
-              tracking systems, this discipline already helps us improve
-              resource use and keep production consistent season after
-              season.
+              careful digital record-keeping. This discipline helps us
+              improve resource use and keep production consistent season
+              after season.
             </p>
             <ul className="mt-6 space-y-3">
               {POINTS.map((point) => (

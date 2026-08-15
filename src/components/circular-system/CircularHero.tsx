@@ -8,7 +8,7 @@ export default function CircularHero() {
       {/* Content */}
       <div className="relative z-10 container-pad pb-12 w-full">
         <h1 className="max-w-4xl text-3xl font-heading font-bold leading-tight text-white md:text-5xl">
-          One Farm.
+          One System.
           <br />
           <span className="text-[#6DBE8C]">Closing the Loop.</span>
         </h1>

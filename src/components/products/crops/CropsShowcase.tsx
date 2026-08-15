@@ -45,7 +45,7 @@ const CROPS = [
 export default function CropsShowcase() {
   const { open } = useModal();
   return (
-    <section className="w-full bg-white">
+    <section id="our-produce" className="w-full bg-white scroll-mt-24">
       <div className="container-pad py-24">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>

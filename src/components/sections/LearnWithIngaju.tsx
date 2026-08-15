@@ -7,27 +7,28 @@ import { motion } from "framer-motion";
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const STEPS = [
-  { 
-    number: "01", 
-    title: "Crop Cultivation", 
-    desc: "We grow high quality crops and climate smart fodder to support the livestock system." 
+  {
+    number: "01",
+    title: "Crop Cultivation",
+    desc: "We grow crops and climate-smart fodder that feed directly into our livestock system.",
   },
-  { 
-    number: "02", 
-    title: "Dairy Production", 
-    desc: "Well-nourished cattle produce milk and breeding stock under hormone free protocols." 
+  {
+    number: "02",
+    title: "Livestock Production",
+    desc: "Well-nourished cattle produce milk and breeding stock under strict welfare and nutrition standards.",
   },
-  { 
-    number: "03", 
-    title: "Manure Processing", 
-    desc: "Livestock waste is collected and composted into organic fertilizer." 
+  {
+    number: "03",
+    title: "Manure Processing",
+    desc: "Livestock waste is being collected and composted into organic fertilizer as we scale up this line.",
   },
-  { 
-    number: "04", 
-    title: "Regenerative Nutrient Loop", 
-    desc: "Organic fertilizer returns to the soil, supporting the fields and restarting the loop." 
+  {
+    number: "04",
+    title: "Regenerative Nutrient Loop",
+    desc: "As that fertilizer comes online, it returns to the soil supporting the fields and closing the loop.",
   },
 ];
+
 
 export default function LearnWithIngaju() {
   return (
@@ -45,7 +46,7 @@ export default function LearnWithIngaju() {
           >
             <div className="flex flex-col gap-3">
               <div className="relative h-56 w-full overflow-hidden rounded-2xl sm:h-72">
-                <Image src="/images/crops/maiz.jpg" alt="Dairy cattle at Ingaju Farms" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/maiz.jpg" alt="Maize growing in the field at Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-40 w-full overflow-hidden rounded-2xl">
                 <Image src="/images/crops/nuts.jpg" alt="Crops growing on the farm" fill sizes="25vw" className="object-cover" />
@@ -53,10 +54,10 @@ export default function LearnWithIngaju() {
             </div>
             <div className="flex flex-col gap-3">
               <div className="relative h-40 w-full overflow-hidden rounded-2xl">
-                <Image src="/images/dairy/milk.jpg" alt="Organic manure being applied" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/dairy/milk.jpg" alt="Fresh milk from Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-56 w-full overflow-hidden rounded-2xl sm:h-72">
-                <Image src="/images/dairy/organic-manure.png" alt="Healthy harvest at Ingaju" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/dairy/organic-manure.png" alt="Organic manure fertilizer at Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
             </div>
           </motion.div>
@@ -72,7 +73,7 @@ export default function LearnWithIngaju() {
              Our Farming <span className="text-[#3A7D5A]"> System.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259] max-w-lg">
-              Ingaju operates a closed loop where outputs from one stage become inputs for the next, reducing waste and lowering costs.
+              Ingaju operates by closing the loop — outputs from one stage become inputs for the next, reducing waste and lowering costs.
             </p>
             {/* Loop steps */}
             <div className="relative mt-8 flex flex-col gap-6">

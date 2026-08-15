@@ -31,7 +31,7 @@ const PRODUCTS = [
 export default function DairyShowcase() {
   const { open } = useModal();
   return (
-    <section className="w-full bg-[#F8F6F2]">
+    <section id="our-products" className="w-full bg-[#F8F6F2] scroll-mt-24">
       <div className="container-pad py-24">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
@@ -39,7 +39,7 @@ export default function DairyShowcase() {
               Our Products
             </p>
             <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
-              Dairy. Fertility. <span className="text-[#3A7D5A]">Livestock.</span>
+              Livestock. Fertility. <span className="text-[#3A7D5A]">Dairy.</span>
             </h2>
           </div>
           <p className="max-w-sm text-[15px] font-body leading-relaxed text-[#6B6259]">

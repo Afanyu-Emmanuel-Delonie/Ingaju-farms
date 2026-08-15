@@ -3,10 +3,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const POINTS = [
-  "High-yield forage grown using data-driven, climate-smart agronomic practices",
-  "Livestock manure processed into organic fertilizer",
-  "Nutrient-rich compost applied to fields to naturally restore soil fertility",
-  "Crop residues tracked and recycled as feed to complete the measured closed loop",
+  "Forage grown using climate-smart farming practices",
+  "Livestock manure composted into organic fertilizer as that line scales up",
+  "Compost applied to fields to restore soil fertility as the fertilizer line comes online",
+  "Crop residues recycled as feed closing the loop, one piece at a time",
 ];
 
 export default function DairyCircularModel() {
@@ -20,15 +20,15 @@ export default function DairyCircularModel() {
               Ingaju Circular Model
             </p>
             <h2 className="font-heading text-3xl font-bold leading-tight text-[#1C2321] sm:text-4xl">
-              A Dairy System Built on
+              A Livestock System Built on
               <br />
-              <span className="text-[#3A7D5A]">Data-Driven Precision.</span>
+              <span className="text-[#3A7D5A]">Careful Management.</span>
             </h2>
             <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
-              Every stage of our dairy operation is monitored within a
-              managed loop. By combining effective management with continuous
-              data collection, we improve resource use and keep production
-              predictable season after season.
+              Every stage of our livestock operation is tracked through
+              careful digital record-keeping. This discipline helps us
+              improve resource use and keep production consistent season
+              after season.
             </p>
             <ul className="mt-6 space-y-3">
               {POINTS.map((point) => (
@@ -67,7 +67,7 @@ export default function DairyCircularModel() {
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
                 <Image
                   src="/images/dairy/milk.jpg"
-                  alt="Organic manure processing"
+                  alt="Fresh milk from Ingaju Farms"
                   fill
                   sizes="25vw"
                   className="object-cover"
@@ -78,7 +78,7 @@ export default function DairyCircularModel() {
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
                 <Image
                   src="/images/dairy/organic-manure.png"
-                  alt="Dairy barn at Ingaju Farms"
+                  alt="Organic manure processing at Ingaju Farms"
                   fill
                   sizes="25vw"
                   className="object-cover"

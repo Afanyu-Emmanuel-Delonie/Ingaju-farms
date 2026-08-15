@@ -6,23 +6,15 @@ import CoreValues from "@/components/about/CoreValues";
 import JoinUsCta from "@/components/about/JoinUsCta";
 
 export const metadata = {
-  title: "About Ingaju Farms | Circular Agriculture Enterprise - Eastern Province, Rwanda",
+  title: "About Ingaju Farms | Circular Agriculture Enterprise, Rwanda",
   description:
-    "Ingaju Farms is an integrated agricultural enterprise based in Rebero Village, Nyagatare District, Eastern Province. Learn about our work in dairy, crops, organic fertilizer, and farmer training.",
-  keywords: [
-    "about Ingaju Farms",
-    "circular agriculture enterprise Rwanda",
-    "sustainable integrated farm Eastern Province",
-    "organic farming mission Rwanda",
-    "regenerative agriculture Rwanda",
-    "Rebero Village Nyagatare farm Rwanda",
-  ],
+    "Ingaju Farms is an integrated agricultural enterprise based in Rebero Village, Nyagatare District, Eastern Province. Learn about our work in livestock, dairy, crops, organic fertilizer, and farmer training.",
   alternates: { canonical: "https://ingajufarms.com/about" },
   openGraph: {
     url: "https://ingajufarms.com/about",
-    title: "About Ingaju Farms | Circular Agriculture Enterprise - Eastern Province, Rwanda",
+    title: "About Ingaju Farms | Circular Agriculture Enterprise, Rwanda",
     description:
-      "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce dairy, crops, and organic fertilizer and train farmers in circular agriculture.",
+      "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer and train farmers in circular agriculture.",
     images: [
       {
         url: "/images/hero/bg-img.png",

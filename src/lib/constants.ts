@@ -12,7 +12,7 @@ export interface StageDetail {
 export const STAGE_DATA: Record<StageKey, StageDetail> = {
   cattle: {
     label: "Dairy Cattle",
-    imgSrc: "/images/dairy/diary-production.png",
+    imgSrc: "/images/dairy/dairy-production.png",
     imgAlt: "Dairy cattle on the farm",
     angle: 270,
   },
@@ -41,82 +41,82 @@ export const STAGE_ORDER: StageKey[] = ["cattle", "fertilizer", "crop", "feed"];
 export const CIRCULAR_STAGES = [
   {
     number: "01",
-    title: "Dairy Cattle",
+    title: "Livestock Herd",
     body: "Everything begins with the herd. Healthy, well-fed cattle are the base of the system, producing milk daily while generating the organic matter that supports the rest of the farm.",
     bullets: [
-      "Pasture-fed, hormone-free herd managed under strict welfare protocols",
+      "Pasture-fed herd managed under strict welfare and nutrition standards",
       "Milk yield directly tied to feed quality and animal health",
       "Manure collected daily as the primary input for the next stage",
     ],
-    imgSrc: "/images/dairy/diary-production.png",
-    imgAlt: "Dairy cattle being milked at Ingaju Farms",
+    imgSrc: "/images/dairy/dairy-production.png",
+    imgAlt: "Livestock herd being milked at Ingaju Farms",
   },
   {
     number: "02",
     title: "Organic Fertilizer",
-    body: "Manure from the cattle is not discarded  it is processed into nutrient-rich organic fertilizer. This stage eliminates synthetic chemical dependency and returns natural nutrients directly to the soil.",
+    body: "Manure from the herd isn't discarded it's composted into organic fertilizer, a line we're currently scaling up. As it comes online, it's reducing our reliance on synthetic chemicals and returning natural nutrients to the soil.",
     bullets: [
-      "Manure composted and processed into pathogen-reduced organic fertilizer",
-      "Replaces synthetic agrochemicals entirely across all crop fields",
-      "Improves soil microbial activity and long-term fertility season after season",
+      "Manure composted into organic fertilizer as this line scales up to full production",
+      "Designed to reduce reliance on synthetic agrochemicals across our crop fields",
+      "Aims to improve soil health and long-term fertility as the line matures",
     ],
     imgSrc: "/images/dairy/organic-manure.png",
-    imgAlt: "Organic manure fertilizer produced at Ingaju Farms",
+    imgAlt: "Organic manure fertilizer processing at Ingaju Farms",
   },
   {
     number: "03",
     title: "Crop Production",
-    body: "Enriched by organic fertilizer, the fields produce high-yield food and fodder crops. Healthy soil grows nutritious crops and those crops feed both the market and the herd, closing the loop.",
+    body: "As organic fertilizer comes online, our fields grow food and fodder crops on increasingly enriched soil. Healthy soil grows healthy crops and those crops feed both the market and the herd, closing the loop.",
     bullets: [
-      "Zero synthetic pesticides or fertilizers applied at any stage",
-      "Diverse crop varieties grown year-round on organically enriched soil",
-      "Higher nutritional density from biologically active, living soil",
+      "Synthetic pesticide and fertilizer use kept low, moving toward organic-input growing",
+      "Diverse crop varieties grown year-round, supported by our organic fertilizer line as it scales",
+      "Soil health tracked through careful record-keeping",
     ],
     imgSrc: "/images/crops/crops-2.png",
-    imgAlt: "Maize crop production at Ingaju Farms",
+    imgAlt: "Crop fields at Ingaju Farms",
   },
   {
     number: "04",
-    title: "Animal Feed",
-    body: "Harvested crops and crop residues are milled and formulated into balanced animal feed. This final stage returns nutrition back to the herd restarting the cycle with stronger, healthier cattle.",
+    title: "Livestock Feed",
+    body: "Harvested crops and crop residues are prepared into feed for the herd. This final stage returns nutrition back to the herd restarting the cycle a little stronger each time.",
     bullets: [
-      "Crop residues and by-products fully utilized nothing leaves the system",
-      "Feed formulated on-site to match herd nutritional requirements",
-      "Closes the loop: feed quality improves with every cycle of the system",
+      "Crop residues and by-products reused as feed, reducing what leaves the system",
+      "Feed prepared on-site to match herd nutritional needs",
+      "Closing the loop: each cycle strengthens the system a little further",
     ],
     imgSrc: "/images/dairy/feed-production.png",
-    imgAlt: "Milled animal feed produced at Ingaju Farms",
+    imgAlt: "Livestock feed production at Ingaju Farms",
   },
 ];
 
 export const CIRCULAR_BENEFITS = [
   {
     icon: Leaf,
-    title: "Zero Synthetic Inputs",
-    desc: "On-farm organic fertilizer and livestock feed production eliminates all dependence on synthetic agrochemicals improving food safety, soil biology, and long-term production economics.",
-    stat: "100%",
-    statLabel: "Chemical-Free",
+    title: "Low Synthetic Input Use",
+    desc: "On-farm organic fertilizer and livestock feed are reducing our dependence on synthetic agrochemicals, supporting food safety, soil health, and long-term production economics.",
+    stat: "Ongoing",
+    statLabel: "Reducing Chemical Use",
   },
   {
     icon: TrendingDown,
     title: "Lower Production Costs",
-    desc: "Closed-loop resource utilization cuts expenditure on external inputs, strengthening financial resilience against commodity price volatility and supply chain disruptions.",
-    stat: "60%",
-    statLabel: "Input Cost Reduction",
+    desc: "Circular resource use is cutting our expenditure on external inputs, strengthening financial resilience against commodity price volatility and supply chain disruptions.",
+    stat: "Tracked",
+    statLabel: "Input Costs Monitored",
   },
   {
     icon: Users,
-    title: "Smallholder Impact at Scale",
-    desc: "The Ingaju circular model has been transferred to over 300 farmers across Rwanda. The system is scalable, low-cost, and directly applicable to smallholder operations of any size.",
-    stat: "300+",
-    statLabel: "Farmers Trained",
+    title: "Smallholder Impact",
+    desc: "The Ingaju circular model is designed to be low-cost and directly applicable to smallholder operations, and we've shared it with farmers in our community in Nyagatare.",
+    stat: "500+",
+    statLabel: "Farmers Reached",
   },
   {
     icon: RefreshCw,
-    title: "Complete Resource Recovery",
-    desc: "Every by-product manure, crop residues, and processing effluent is captured and reintegrated into the production system. Nothing leaves the loop unutilized.",
-    stat: "0",
-    statLabel: "Waste to Landfill",
+    title: "Resource Recovery, Scaling Up",
+    desc: "Manure, crop residues, and other by-products are increasingly captured and reintegrated into the system as our organic fertilizer line comes online.",
+    stat: "Scaling",
+    statLabel: "Toward Zero Waste",
   },
 ];
 
@@ -136,8 +136,10 @@ export const PARTNERS = [
 export const CATEGORIES = [
   {
     key: "dairy",
-    title: "Dairy & Livestock",
-    description: "Milk and breeding livestock raised under sound welfare, nutrition, and hormone free protocols.",
+    title: "Livestock & Dairy",
+    // NOTE: "with no added hormones" removed — not a confirmed practice.
+    // See Ingaju Priority Fix Tracker, Needs Verification.
+    description: "Milk and breeding livestock raised to strict welfare and nutrition standards.",
     ctaLabel: "Explore Dairy",
     ctaHref: "/products/dairy",
     image: "/images/hero/bg-img.png",
@@ -146,7 +148,7 @@ export const CATEGORIES = [
   {
     key: "crops",
     title: "Crop Production",
-    description: "Maize, legumes, and macadamia nuts cultivated using climate-smart, organic agronomic practices.",
+    description: "Maize, legumes, and macadamia nuts grown using climate-smart, organic-input farming practices.",
     ctaLabel: "Explore Crops",
     ctaHref: "/products/crops",
     image: "/images/crops/crop-production.png",
@@ -155,8 +157,8 @@ export const CATEGORIES = [
   {
     key: "organic-manure",
     title: "Organic Fertilizer",
-    description: "Nutrient-rich, pathogen-reduced organic fertilizer processed from livestock manure to maximize soil fertility.",
-    ctaLabel: "Order Now",
+    description: "Nutrient-rich organic fertilizer processed from our own livestock manure currently scaling up as we complete our composting facility.",
+    ctaLabel: "Join the Waitlist",
     ctaHref: "/contact",
     image: "/images/dairy/organic-manure.png",
     alt: "Organic fertilizer produced at Ingaju Farms",
@@ -164,48 +166,56 @@ export const CATEGORIES = [
   {
     key: "trainings",
     title: "Farmer Training",
-    description: "Practical on-farm capacity building in circular agriculture for smallholders, cooperatives, and agribusiness professionals.",
+    description: "Practical, on-farm training in circular agriculture for smallholders, cooperatives, students and agribusiness professionals.",
     ctaLabel: "Explore Trainings",
-    ctaHref: "/trainings",
+    ctaHref: "/contact?topic=Training%20Program",
     image: "/images/farm/training-1.png",
     alt: "Farmers attending a practical training session at Ingaju Farms",
   },
 ];
 
-export const IMPACT_STATS = [
-  { key: "jobs", value: 50, label: "Jobs Created" },
-  { key: "farmers", value: 300, label: "Farmers Trained" },
-  { key: "products", value: 10, label: "Organic Products Produced" },
-  { key: "partnerships", value: 12, label: "Local Partnerships" },
+// NOTE: "farmers" (500+) is the one confirmed ground-truth figure — matches
+// CIRCULAR_BENEFITS above. jobs/products/partnerships have no source anywhere
+// in the repo, so they're softened to non-numeric language pending
+// verification rather than left as invented counts. See Ingaju Priority Fix
+// Tracker, "Needs Verification."
+export const IMPACT_STATS: { key: string; label: string; value?: number; display?: string }[] = [
+  { key: "jobs", display: "Multiple", label: "Jobs Created" },
+  { key: "farmers", value: 500, label: "Farmers Trained" },
+  { key: "products", display: "Several", label: "Organic Products Produced" },
+  { key: "partnerships", display: "Growing", label: "Local Partnerships" },
 ];
 
 export const TRAININGS = [
   {
     key: "dairy",
-    title: "Dairy Production & Herd Management",
-    description: "Hands-on training in dairy herd management, animal nutrition, hygienic milking procedures, milk quality assurance, and preventive animal health protocols.",
+    title: "Livestock Production & Herd Management",
+    description: "Hands-on training in livestock herd management, animal nutrition, hygienic milking procedures, milk quality assurance, and preventive animal health practices.",
     ctaLabel: "Learn More",
-    ctaHref: "/trainings/dairy-farming",
+    ctaHref: "/contact?topic=Training%20Program",
     image: "/images/hero/bg-img.png",
-    alt: "Farmer working with dairy cattle at Ingaju Farms",
+    alt: "Farmer working with livestock at Ingaju Farms",
   },
   {
     key: "organic",
-    title: "Organic Crop Production",
-    description: "Practical instruction in organic soil fertility management, composting, integrated pest and disease control, and sustainable agronomic practices for food and feed crop production.",
+    title: "Climate-Smart Crop Production",
+    description: "Practical instruction in organic-input soil fertility management, composting, natural pest and disease management, and climate-smart farming practices for food and feed crop production.",
     ctaLabel: "Learn More",
-    ctaHref: "/trainings/organic-farming",
+    ctaHref: "/contact?topic=Training%20Program",
     image: "/images/hero/bg-2.png",
-    alt: "Farmer demonstrating organic farming techniques",
+    alt: "Farmer demonstrating climate-smart farming techniques",
   },
   {
     key: "circular",
     title: "Integrated Circular Agriculture",
-    description: "Comprehensive training in circular farming systems covering manure management, organic fertilizer processing, crop-livestock integration, and nutrient recycling.",
+    description: "Comprehensive training in circular farming systems covering manure management, our organic fertilizer process as it scales up, crop-livestock integration, and nutrient recycling.",
     ctaLabel: "Learn More",
-    ctaHref: "/trainings/circular-agriculture",
+    ctaHref: "/contact?topic=Training%20Program",
     image: "/images/hero/bg-3.png",
-    alt: "Group training session on circular agriculture at Ingaju Farms",
+    // NOTE: alt kept generic — this file is also used in CropsCircularModel.tsx
+    // with a different (specific, unconfirmed) subject; neither description
+    // could be verified against the actual photo. See Priority Fix Tracker.
+    alt: "Ingaju Farms circular agriculture in Nyagatare",
   },
 ];
 
@@ -222,7 +232,7 @@ export const BLOG_POSTS = [
     content: [
       {
         type: "paragraph" as const,
-        text: "Circular agriculture is a farming approach where outputs from one part of the system become inputs for another — creating a closed loop that minimizes waste and maximizes resource efficiency. For small-scale farms across Africa, this model is proving to be both economically viable and environmentally responsible.",
+        text: "Circular agriculture is a farming approach where outputs from one part of the system become inputs for another — closing the loop to minimize waste and maximize resource efficiency. For small-scale farms in Rwanda, this model is proving to be both economically viable and environmentally responsible.",
       },
       {
         type: "heading" as const,
@@ -241,8 +251,11 @@ export const BLOG_POSTS = [
         text: "Why It Works for Small-Scale Farmers",
       },
       {
+        // NOTE: original text cited "up to 40% reductions" — no source found
+        // in the repo; softened to non-numeric language pending verification.
+        // See Ingaju Priority Fix Tracker, Needs Verification.
         type: "paragraph" as const,
-        text: "Small-scale farmers often operate with tight margins and limited access to expensive fertilizers or veterinary inputs. Circular agriculture reduces dependency on external inputs, which directly lowers operating costs. Farmers who have adopted integrated systems report up to 40% reductions in input costs within the first two seasons.",
+        text: "Small-scale farmers often operate with tight margins and limited access to expensive fertilizers or veterinary inputs. Circular agriculture reduces dependency on external inputs, which directly lowers operating costs. Farmers who have adopted integrated systems report meaningful reductions in input costs within the first two seasons.",
       },
       {
         type: "list" as const,
@@ -264,7 +277,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "Our training programs have reached over 300 farmers across the region, equipping them with practical skills in manure management, integrated pest control, water harvesting, and crop-livestock integration. The results speak for themselves — trained farmers consistently outperform untrained peers in both yield and profitability.",
+        text: "Our training programs have reached over 500 farmers across the region, equipping them with practical skills in manure management, natural pest management, water harvesting, and crop-livestock integration. The results speak for themselves — trained farmers consistently outperform untrained peers in both yield and profitability.",
       },
       {
         type: "heading" as const,
@@ -352,15 +365,15 @@ export const BLOG_POSTS = [
     content: [
       {
         type: "paragraph" as const,
-        text: "The gap between what farmers know and what they need to know to farm sustainably is one of the most significant barriers to agricultural transformation in Africa. Technology exists. Better seed varieties exist. Improved practices are documented. Yet adoption remains low because knowledge is not reaching farmers in formats they can access and apply.",
+        text: "The gap between what farmers know and what they need to know to farm sustainably is one of the most significant barriers to agricultural transformation in Rwanda. Technology exists. Better seed varieties exist. Improved practices are documented. Yet adoption remains low because knowledge is not reaching farmers in formats they can access and apply.",
       },
       {
         type: "heading" as const,
-        text: "The Knowledge Gap in African Agriculture",
+        text: "The Knowledge Gap in Rwandan Agriculture",
       },
       {
         type: "paragraph" as const,
-        text: "Most smallholder farmers in sub-Saharan Africa learned to farm from their parents, using methods passed down across generations. These traditional practices have value, but they were developed for different climate conditions, different market realities, and different input environments than what farmers face today. Bridging this gap requires structured, practical, and accessible training.",
+        text: "Most smallholder farmers in Rwanda learned to farm from their parents, using methods passed down across generations. These traditional practices have value, but they were developed for different climate conditions, different market realities, and different input environments than what farmers face today. Bridging this gap requires structured, practical, and accessible training.",
       },
       {
         type: "heading" as const,
@@ -390,7 +403,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "We offer training in dairy farming, organic crop production, and circular agriculture systems. Programs are available for individuals, farmer groups, schools, and corporate teams interested in understanding sustainable food systems. To date, we have trained over 300 farmers, and we track their progress to ensure the knowledge continues to produce results in the field.",
+        text: "We offer training in dairy farming, organic crop production, and circular agriculture systems. Programs are available for individuals, farmer groups, schools, and corporate teams interested in understanding sustainable food systems. To date, we have trained over 500 farmers, and we track their progress to ensure the knowledge continues to produce results in the field.",
       },
       {
         type: "heading" as const,

@@ -9,14 +9,14 @@ const CROPS = [
     label: "Staple Grain",
     title: "Maize",
     unit: "kg",
-    desc: "Grain grown using data-driven, climate-smart agronomy. Harvested at peak maturity with traceable handling.",
+    desc: "Grain grown using climate-smart farming practices. Harvested at peak maturity with traceable handling.",
     img: "/images/crops/maiz-harvest.png",
   },
   {
     label: "Tree Crop",
     title: "Macadamia",
     unit: "kg",
-    desc: "Nuts produced without synthetic inputs and cultivated under sustainable land management practices.",
+    desc: "Nuts grown with minimal synthetic inputs, cultivated under sustainable land management practices.",
     img: "/images/crops/nuts.jpg",
   },
   {
@@ -30,14 +30,14 @@ const CROPS = [
     label: "Oilseed Crop",
     title: "Soybeans",
     unit: "kg",
-    desc: "Oilseed managed under organic fertility practices and supplied to food and feed markets.",
+    desc: "Oilseed managed under organic-input fertility practices and supplied to food and feed markets.",
     img: "/images/crops/soy-beans.png",
   },
   {
     label: "Tropical Fruit",
     title: "Mangoes",
     unit: "kg",
-    desc: "Orchard-grown under organic management and harvested at peak readiness without synthetic post-harvest chemicals.",
+    desc: "Orchard-grown using organic-input management and harvested at peak readiness, with minimal post-harvest chemical use.",
     img: "/images/crops/mangoes.png",
   },
 ];
@@ -45,7 +45,7 @@ const CROPS = [
 export default function CropsShowcase() {
   const { open } = useModal();
   return (
-    <section className="w-full bg-white">
+    <section id="our-produce" className="w-full bg-white scroll-mt-24">
       <div className="container-pad py-24">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>

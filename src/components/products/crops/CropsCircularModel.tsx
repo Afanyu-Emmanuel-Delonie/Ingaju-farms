@@ -5,10 +5,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const POINTS = [
-  "Organic soil fertility supported by processed dairy manure fertilizer",
-  "Synthetic pesticides and chemical inputs are avoided across crop fields",
-  "Crop biomass mapped and returned to fields to naturally rebuild organic matter",
-  "Data-tracked biological controls deployed for integrated pest management",
+  "Manure from our livestock becomes fertilizer for the soil, as we scale up this line",
+  "We keep chemical use low across our fields",
+  "Leftover crop matter goes back into the soil to keep it healthy",
+  "We manage pests naturally to protect our crops",
 ];
 
 export default function CropsCircularModel() {
@@ -21,15 +21,15 @@ export default function CropsCircularModel() {
           <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col gap-3">
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
-                <Image src="/images/crops/maiz.jpg" alt="Corn growing in rich organic soil" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/maiz.jpg" alt="Maize growing in rich organic soil" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
-                <Image src="/images/crops/nuts.jpg" alt="Harvested beans at Ingaju Farms" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/nuts.jpg" alt="Macadamia nuts ready for harvest" fill sizes="25vw" className="object-cover" />
               </div>
             </div>
             <div className="flex flex-col gap-3">
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
-                <Image src="/images/hero/bg-3.png" alt="Macadamia nuts ready for harvest" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/hero/bg-3.png" alt="Ingaju Farms circular agriculture in Nyagatare" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
                 <Image src="/images/crops/crops-2.png" alt="Farmer tending crop rows" fill sizes="25vw" className="object-cover" />
@@ -44,10 +44,10 @@ export default function CropsCircularModel() {
             </p>
             <h2 className="font-heading text-3xl font-bold leading-tight text-[#1C2321] sm:text-4xl">
               Sustainable Crop Production.<br />
-              <span className="text-[#3A7D5A]">Data-Driven Precision.</span>
+              <span className="text-[#3A7D5A]">Grown With Care.</span>
             </h2>
             <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
-              Every stage of our cultivation loop is monitored within an integrated farm system. By combining agronomic management with continuous data collection, we manage soil nutrients and support consistent crop yields season after season.
+              Every stage of our cultivation loop follows an integrated farm system, tracked through careful digital record-keeping. This discipline helps us manage soil nutrients and support consistent crop yields season after season.
             </p>
             <ul className="mt-6 space-y-3">
               {POINTS.map((point) => (

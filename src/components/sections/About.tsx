@@ -26,7 +26,7 @@ export default function About() {
 
           <motion.div variants={item} className="flex flex-col justify-center">
             <p className="text-[15px] font-body leading-relaxed text-[#6B6259]">
-              We operate a self sustaining loop: our crops feed our dairy livestock, and the livestock manure is recycled to fertilize the crops. Guided by rigorous record keeping and effective value chain management, this closed-loop system eliminates expensive synthetic inputs, lowers production costs, and restores soil health.
+              We operate a self sustaining loop: our crops feed our livestock, and the livestock manure is recycled to fertilize the crops. Guided by rigorous record keeping and effective value chain management, we're closing the loop to reduce reliance on expensive synthetic inputs, lower production costs, and restore soil health.
             </p>
             <a
               href="/about"
@@ -42,7 +42,7 @@ export default function About() {
           <motion.div variants={item} className="relative h-72 w-full overflow-hidden rounded-xl">
             <Image
               src="/images/dairy/cow-3.png"
-              alt="Farmer walking with dairy cattle on the Ngaju farm"
+              alt="Farmer walking with dairy cattle on the Ingaju farm"
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
               className="object-cover"
@@ -68,7 +68,7 @@ export default function About() {
           <motion.div variants={item} className="relative h-72 w-full overflow-hidden rounded-xl">
             <Image
               src="/images/about/about-5.png"
-              alt="Ngaju team engaging with farmers and the local community"
+              alt="Ingaju team engaging with farmers and the local community"
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
               className="object-cover"

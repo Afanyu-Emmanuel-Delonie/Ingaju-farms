@@ -39,9 +39,10 @@ export default function FeaturedCategories() {
               </span>
             </div>
             <div className="absolute inset-y-0 left-0 flex flex-col justify-end p-8 max-w-lg">
-              <h3 className="text-2xl font-heading font-bold text-white sm:text-3xl">Dairy & Livestock</h3>
+              <h3 className="text-2xl font-heading font-bold text-white sm:text-3xl">Livestock & Dairy</h3>
+            {/* NOTE: "with no added hormones" removed — not a confirmed practice. See Priority Fix Tracker, Needs Verification. */}
             <p className="mt-2 text-sm font-body leading-relaxed text-white/75">
-              Milk and breeding livestock raised under welfare, nutrition, and hormone free protocols.
+             Milk and breeding livestock raised to strict welfare and nutrition standards.
             </p>
               <span className="mt-5 inline-flex items-center gap-2 text-sm font-body font-semibold text-white border-b border-white/50 pb-0.5 w-fit hover:border-white transition-colors">
                 Explore Dairy <ArrowRight className="h-3.5 w-3.5" />

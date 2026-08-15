@@ -2,23 +2,25 @@ import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 const links = {
+  // NOTE: "Our Farm" (/our-farm) removed — route not built. Re-add once it exists.
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Our Farm", href: "/our-farm" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],
   products: [
-    { label: "Dairy & Livestock", href: "/products/dairy" },
+    { label: "Livestock & Dairy", href: "/products/dairy" },
     { label: "Crop Production", href: "/products/crops" },
     { label: "Breeding Bulls", href: "/products/dairy" },
     { label: "Organic Manure", href: "/products/crops" },
   ],
+  // NOTE: /trainings/* pages don't exist — repointed to Contact with a
+  // preselected topic per Priority Fix Tracker, "Fix This First."
   training: [
-    { label: "Dairy Farming", href: "/trainings/dairy-farming" },
-    { label: "Organic Farming", href: "/trainings/organic-farming" },
-    { label: "Circular Agriculture", href: "/trainings/circular-agriculture" },
-    { label: "Book a Farm Tour", href: "/book-a-tour" },
+    { label: "Livestock & Dairy Training", href: "/contact?topic=Training%20Program" },
+    { label: "Climate-Smart Crop Production", href: "/contact?topic=Training%20Program" },
+    { label: "Circular Agriculture", href: "/contact?topic=Training%20Program" },
+    { label: "Book a Farm Tour", href: "/contact?topic=Farm%20Tour" },
   ],
 };
 
@@ -98,7 +100,7 @@ export default function Footer() {
             <h3 className="text-sm font-body font-semibold uppercase tracking-widest text-[#6DBE8C]">Training & Visits</h3>
             <ul className="mt-4 space-y-3">
               {links.training.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <a href={link.href} className="text-sm font-body text-white/60 transition-colors hover:text-white">{link.label}</a>
                 </li>
               ))}
@@ -108,14 +110,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+        {/* NOTE: Privacy Policy / Terms of Use links removed — /privacy and /terms don't exist yet. Re-add once built. */}
+        <div className="mt-14 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs font-body text-white/35">
             © {new Date().getFullYear()} Ingaju Farms. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <a href="/privacy" className="text-xs font-body text-white/35 transition-colors hover:text-white/70">Privacy Policy</a>
-            <a href="/terms" className="text-xs font-body text-white/35 transition-colors hover:text-white/70">Terms of Use</a>
-          </div>
         </div>
       </div>
     </footer>

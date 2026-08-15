@@ -5,23 +5,23 @@ import { Leaf, RefreshCw, Layers, ShieldCheck } from "lucide-react";
 const FEATURES = [
   {
     icon: Leaf,
-    title: "Zero Synthetic Inputs",
-    desc: "100% free from chemical pesticides or synthetic fertilizers. Cultivated strictly using certified organic soil management and advanced biological pest controls.",
+    title: "Careful Pest & Soil Management",
+    desc: "We keep pesticide and chemical use low, and manage soil and pests naturally wherever we can.",
   },
   {
     icon: RefreshCw,
-    title: "Closed-Loop Ecosystem",
-    desc: "Processed dairy manure restores crop fields while mapped biomass returns as high-nutrition livestock feed—minimizing waste and driving resource efficiency.",
+    title: "A Growing Circular Loop",
+    desc: "Manure from our livestock is composted into fertilizer as that line scales up, and crop residue goes back into the soil — reducing waste at every stage.",
   },
   {
     icon: Layers,
-    title: "Data-Driven Yields",
-    desc: "Continuous soil monitoring and optimized nutrient balancing unlock highly predictable crop yields alongside superior food and feed quality.",
+    title: "Careful Record-Keeping",
+    desc: "We track our soil and crops through careful digital record-keeping, season after season.",
   },
   {
     icon: ShieldCheck,
-    title: "Absolute Traceability",
-    desc: "Every harvest is logged from field to fulfillment, providing verified provenance, transparent quality metrics, and pristine chemical-free assurance.",
+    title: "Traceable From Field to Table",
+    desc: "We know where every harvest comes from and how it was grown — so you can too.",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function CropsWhyChooseUs() {
               Grown With Purpose.
             </h2>
             <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259] max-w-sm">
-              We replace guesswork with data-driven precision. By pairing absolute resource loop efficiency with strict corporate traceability, we deliver enterprise-grade agricultural yields built on true circular principles.
+              The basics come first: careful soil management, honest record-keeping, and crops you can trace back to our fields in Nyagatare.
             </p>
           </div>
 

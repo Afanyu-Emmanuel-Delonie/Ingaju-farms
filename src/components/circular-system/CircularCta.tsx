@@ -23,13 +23,13 @@ export default function CircularCta() {
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
-              href="/trainings"
+              href="/contact?topic=Training%20Program"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
             >
               Join Our Trainings <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="/book-a-tour"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/70 bg-transparent px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-white/10"
             >
               Contact Us

@@ -5,12 +5,15 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BrandPattern from "@/components/shared/BrandPattern";
 
+// NOTE: t1 and t6 originally cited specific percentages ("over 60%", "Over
+// 80%") with no source in the repo — softened to non-numeric language
+// pending verification. See Ingaju Priority Fix Tracker, Needs Verification.
 const testimonials = [
   {
     key: "t1",
     name: "Jean-Pierre Habimana",
     role: "Dairy Farmer, Eastern Province",
-    quote: "I purchased two breeding bulls from Ingaju and within one season, my herd's milk yield increased by over 60%. The quality of their livestock is unlike anything available locally — healthy, well-managed, and exactly what they promise.",
+    quote: "I purchased two breeding bulls from Ingaju and within one season, my herd's milk yield increased noticeably. The quality of their livestock is unlike anything available locally — healthy, well-managed, and exactly what they promise.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
   },
   {
@@ -45,7 +48,7 @@ const testimonials = [
     key: "t6",
     name: "Diane Ingabire",
     role: "Program Officer, GreenHill Foundation Rwanda",
-    quote: "We partnered with Ingaju to run farmer training workshops across three districts. Their hands-on approach and deep practical knowledge produced results we rarely see from classroom-based programs. Over 80% of participants made measurable changes within two months.",
+    quote: "We partnered with Ingaju to run farmer training workshops across three districts. Their hands-on approach and deep practical knowledge produced results we rarely see from classroom-based programs. Most participants made measurable changes within two months.",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
   },
 ];

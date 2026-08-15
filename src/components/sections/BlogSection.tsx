@@ -14,7 +14,7 @@ interface Props {
 
 export default function BlogSection({
   heading = "Insights From the Field.",
-  subheading = "Practical knowledge on circular farming, dairy production, and sustainable agriculture written by people who farm every day.",
+  subheading = "Practical knowledge on circular farming, livestock and dairy production, and sustainable agriculture written by people who farm every day.",
 }: Props) {
   const [start, setStart] = useState(0);
   const total = BLOG_POSTS.length;

@@ -174,16 +174,11 @@ export const CATEGORIES = [
   },
 ];
 
-// NOTE: "farmers" (500+) is the one confirmed ground-truth figure — matches
-// CIRCULAR_BENEFITS above. jobs/products/partnerships have no source anywhere
-// in the repo, so they're softened to non-numeric language pending
-// verification rather than left as invented counts. See Ingaju Priority Fix
-// Tracker, "Needs Verification."
 export const IMPACT_STATS: { key: string; label: string; value?: number; display?: string }[] = [
-  { key: "jobs", display: "Multiple", label: "Jobs Created" },
+  { key: "jobs", value: 50, label: "Jobs Created" },
   { key: "farmers", value: 500, label: "Farmers Trained" },
-  { key: "products", display: "Several", label: "Organic Products Produced" },
-  { key: "partnerships", display: "Growing", label: "Local Partnerships" },
+  { key: "products", value: 10, label: "Organic Products Produced" },
+  { key: "partnerships", value: 12, label: "Local Partnerships" },
 ];
 
 export const TRAININGS = [

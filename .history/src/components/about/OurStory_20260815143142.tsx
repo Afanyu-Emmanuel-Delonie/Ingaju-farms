@@ -35,22 +35,22 @@ export default function OurStory() {
             transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
           >
             <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A]">Our Story</p>
-              <h2 className="mt-3 text-3xl font-heading font-bold leading-tight text-[#1C2321] md:text-4xl">
-                Built From <span className="text-[#3A7D5A]">the Ground Up.</span>
-              </h2>
-             
-              <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259]">
-                Ingaju Farms was established on the view that sustainable food production starts with good farm management. We combine livestock, climate-smart crop production, organic waste recovery, and farmer training in one integrated system that supports the farm and the land around it.
-              </p>
-              <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
-                Over six years of operation, Ingaju has grown into a working example of circular, climate-smart agriculture in Rwanda, showing how productivity and environmental care can support each other.
-              </p>
-                              < a href="/products"
-                className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
-              >
-                Explore Our Products
-                <ArrowRight className="h-4 w-4" />
-              </a>
+            <h2 className="mt-3 text-3xl font-heading font-bold leading-tight text-[#1C2321] md:text-4xl">
+              Our <span className="text-[#3A7D5A]">Story.</span>
+            </h2>
+            <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259]">
+              Ingaju Farms was established on the view that sustainable food production starts with good farm management. We combine dairy livestock, food and feed crop production, organic waste recovery, and farmer training in one integrated system that supports the farm and the land around it.
+            </p>
+            <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
+              Over six years of operation, Ingaju has grown from a single integrated farm into a working example of circular agriculture in Rwanda, showing how productivity and environmental care can support each other.
+            </p>
+            <a
+              href="/products/dairy"
+              className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
+            >
+              Explore Our Products
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </motion.div>
 
         </div>

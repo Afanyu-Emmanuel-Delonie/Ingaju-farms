@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { BLOG_POSTS } from "@/lib/constants";
+import { getPublishedBlogPosts } from "@/lib/blog";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Blog | Circular Agriculture, Dairy Farming & Sustainable Food Systems — Ingaju Farms",
@@ -17,8 +19,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
-  const [featured, ...rest] = BLOG_POSTS;
+export default async function BlogPage() {
+  const posts = await getPublishedBlogPosts();
+  const [featured, ...rest] = posts;
 
   return (
     <main className="min-h-screen bg-[#F8F6F2] pt-32 pb-20">

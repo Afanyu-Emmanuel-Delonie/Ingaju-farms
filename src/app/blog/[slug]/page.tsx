@@ -4,18 +4,24 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Clock, Calendar } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/constants";
+import { getPublishedBlogPosts } from "@/lib/blog";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
+export const revalidate = 60;
+
+// Only pre-renders the built-in posts at build time; posts added later from
+// the portal are rendered on first request and cached (dynamicParams defaults to true).
 export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = BLOG_POSTS.find((p) => p.slug === slug);
+  const posts = await getPublishedBlogPosts();
+  const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
     title: `${post.title} | Ingaju Farms Blog`,
@@ -32,10 +38,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const post = BLOG_POSTS.find((p) => p.slug === slug);
+  const posts = await getPublishedBlogPosts();
+  const post = posts.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  const related = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 2);
+  const related = posts.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
     <main className="min-h-screen bg-[#F8F6F2]">

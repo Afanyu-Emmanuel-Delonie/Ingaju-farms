@@ -38,14 +38,14 @@ export default function OurStory() {
               <h2 className="mt-3 text-3xl font-heading font-bold leading-tight text-[#1C2321] md:text-4xl">
                 Built From <span className="text-[#3A7D5A]">the Ground Up.</span>
               </h2>
-             
               <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259]">
-                Ingaju Farms was established on the view that sustainable food production starts with good farm management. We combine livestock, climate-smart crop production, organic waste recovery, and farmer training in one integrated system that supports the farm and the land around it.
+                Ingaju Farms started with a simple idea: good farm management is the foundation of sustainable food production. Today that means livestock, food and feed crops, organic waste recovery, and farmer training working together as one system — each part feeding the next.
               </p>
               <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
-                Over six years of operation, Ingaju has grown into a working example of circular, climate-smart agriculture in Rwanda, showing how productivity and environmental care can support each other.
+                What began as one farm has become a working example of circular agriculture in Rwanda — proof that productivity and environmental care can grow side by side.
               </p>
-                              < a href="/products"
+
+                < a href="/products"
                 className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#3A7D5A] px-6 py-3 text-sm font-body font-medium text-white transition-colors hover:bg-[#2f6b4a]"
               >
                 Explore Our Products

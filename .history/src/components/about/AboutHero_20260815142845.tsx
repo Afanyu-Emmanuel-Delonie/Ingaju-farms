@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function AboutHero() {
   return (
-    <section className="relative w-full h-[80vh] min-h-[550px] overflow-hidden bg-[#1C2321] flex items-end">
+    <section className="relative w-full h-[80vh] min-h-[500px] overflow-hidden bg-[#1C2321] flex items-end">
 
       {/* Decorative background vectors */}
       <svg className="absolute top-0 right-0 w-[480px] h-[480px] opacity-10 pointer-events-none" viewBox="0 0 480 480" fill="none">
@@ -30,7 +30,7 @@ export default function AboutHero() {
           </h1>
 
           <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/80 md:text-lg">
-            For 6+ years, Ingaju Farms has proven that nothing has to go to waste livestock, crops, and organic recycling running as one tracked system, training farmers with us in Nyagatare, Rwanda.
+            For 6+ years, Ingaju Farms has proven that nothing has to go to waste — livestock, crops, and organic recycling running as one tracked system, training farmers with us in Nyagatare, Rwanda.
           </p>
         
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">

@@ -25,11 +25,9 @@ const STEPS = [
   {
     number: "04",
     title: "Regenerative Nutrient Loop",
-    desc: "As that fertilizer comes online, it returns to the soil supporting the fields and closing the loop.",
+    desc: "As that fertilizer comes online, it returns to the soil — supporting the fields and closing the loop.",
   },
 ];
-
-
 export default function LearnWithIngaju() {
   return (
     <section className="w-full bg-white">

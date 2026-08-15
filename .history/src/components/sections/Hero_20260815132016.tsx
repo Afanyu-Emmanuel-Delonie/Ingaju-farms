@@ -21,11 +21,11 @@ export default function Hero() {
 
       <div className="relative z-10 flex h-full flex-col items-start justify-end container-pad pb-20">
         <h1 className="max-w-4xl text-3xl font-heading font-bold leading-tight text-white md:text-5xl">
-          From Farm Waste <br />
-          <span className="text-[#6DBE8C]">to Farm Wealth.</span>
+          Circular Agriculture for<br />
+          <span className="text-[#6DBE8C]">Sustainable Food Systems.</span>
         </h1>
         <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/75 md:text-lg">
-         Ingaju Farms is a circular agriculture enterprise in Nyagatare, Rwanda turning livestock & dairy, crops, and organic waste into food, income, and capacity building for our farming community
+         Integrating dairy farming, crop cultivation, organic recycling, and capacity building driven by robust data management to power profitable, climate-smart agriculture in Rwanda.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <a

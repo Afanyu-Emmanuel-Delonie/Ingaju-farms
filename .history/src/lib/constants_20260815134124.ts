@@ -155,7 +155,7 @@ export const CATEGORIES = [
   {
     key: "organic-manure",
     title: "Organic Fertilizer",
-    description: "Nutrient-rich organic fertilizer processed from our own livestock manure currently scaling up as we complete our composting facility.",
+    description: "Nutrient-rich organic fertilizer processed from our own livestock manure — currently scaling up as we complete our composting facility.",
     ctaLabel: "Join the Waitlist",
     ctaHref: "/contact",
     image: "/images/dairy/organic-manure.png",
@@ -164,7 +164,7 @@ export const CATEGORIES = [
   {
     key: "trainings",
     title: "Farmer Training",
-    description: "Practical, on-farm training in circular agriculture for smallholders, cooperatives, students and agribusiness professionals.",
+    description: "Practical, on-farm training in circular agriculture for smallholders, cooperatives, and agribusiness professionals.",
     ctaLabel: "Explore Trainings",
     ctaHref: "/trainings",
     image: "/images/farm/training-1.png",

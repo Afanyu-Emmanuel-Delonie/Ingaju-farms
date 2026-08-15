@@ -155,7 +155,7 @@ export const CATEGORIES = [
   {
     key: "organic-manure",
     title: "Organic Fertilizer",
-    description: "Nutrient-rich organic fertilizer processed from our own livestock manure currently scaling up as we complete our composting facility.",
+    description: "Nutrient-rich organic fertilizer processed from our own livestock manure — currently scaling up as we complete our composting facility.",
     ctaLabel: "Join the Waitlist",
     ctaHref: "/contact",
     image: "/images/dairy/organic-manure.png",

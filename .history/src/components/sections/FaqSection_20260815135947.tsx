@@ -3,26 +3,16 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
-const contactLinkClass =
-  "font-semibold text-[#3A7D5A] underline underline-offset-2 hover:opacity-80";
-
 const faqs = [
   {
     question: "What products and services does Ingaju Farms offer?",
     answer:
-      "Ingaju Farms produces fresh milk and breeding livestock, along with maize, beans, soybeans, and macadamia nuts all grown within an integrated circular production system. Our organic fertilizer line is currently scaling up. We also offer structured farmer training programmes and farm visits for educational and professional groups.",
+      "Ingaju Farms produces fresh milk and breeding livestock, along with maize, beans, soybeans, and macadamia nuts — all grown within an integrated circular production system. Our organic fertilizer line is currently scaling up. We also offer structured farmer training programmes and farm visits for educational and professional groups.",
   },
   {
     question: "How can I arrange a farm visit or educational tour?",
-    answer: (
-      <>
-        Farm visits can be arranged through our{" "}
-        <a href="/contact" className={contactLinkClass}>
-          contact page
-        </a>{" "}
-        or by reaching out to our team directly. We accommodate school groups, farmer delegations, research institutions, corporate teams, and individual visitors seeking to observe circular agriculture in practice.
-      </>
-    ),
+    answer:
+      "Farm visits can be arranged through our contact page or by reaching out to our team directly. We accommodate school groups, farmer delegations, research institutions, corporate teams, and individual visitors seeking to observe circular agriculture in practice.",
   },
   {
     question: "What training programmes does Ingaju Farms offer?",
@@ -31,15 +21,8 @@ const faqs = [
   },
   {
     question: "Does Ingaju Farms accept institutional or commercial partnerships?",
-    answer: (
-      <>
-        Yes. We actively pursue partnerships with development organizations, research institutions, government agencies, cooperatives, and private sector actors aligned with sustainable agriculture. Please{" "}
-        <a href="/contact" className={contactLinkClass}>
-          contact us
-        </a>{" "}
-        through our partnership inquiry page to initiate a discussion.
-      </>
-    ),
+    answer:
+      "Yes. We actively pursue partnerships with development organizations, research institutions, government agencies, cooperatives, and private sector actors aligned with sustainable agriculture. Please contact us through our partnership inquiry page to initiate a discussion.",
   },
   {
     question: "How does the circular agriculture system work at Ingaju Farms?",

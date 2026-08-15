@@ -7,11 +7,11 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 const values = [
   { title: "Sustainability", description: "Protecting the environment, preserving soil and water resources, and ensuring long-term agricultural productivity.", icon: Leaf },
- { title: "Innovation", description: "Embracing climate-smart agriculture today, and building toward renewable energy and digital farm-management and tracking systems that improve efficiency, quality, and resilience.", icon: Lightbulb },
- { title: "Integrity", description: "Operating with honesty, transparency, and accountability across all processes, from farm to market.", icon: ShieldCheck },
+  { title: "Innovation", description: "Embracing biotechnology, climate-smart agriculture, and renewable energy to enhance efficiency, quality, and resilience.", icon: Lightbulb },
+  { title: "Integrity", description: "Operating with honesty, transparency, and accountability across all processes, from farm to market.", icon: ShieldCheck },
   { title: "Community Empowerment", description: "Partnering with farmers, youth, women, and local stakeholders to build skills, promote gender equity, and strengthen rural economies.", icon: Users },
-  { title: "Excellence", description: "Pursuing the highest standards in production and service delivery to provide consistent quality and value.", icon: Star },
-  { title: "Inclusivity", description: "Developing agricultural systems that actively involve women, youth, and marginalized groups in our community.", icon: Globe2 },
+  { title: "Excellence", description: "Pursuing the highest standards in production, processing, and service delivery to provide consistent quality and value.", icon: Star },
+  { title: "Inclusivity", description: "Developing agricultural systems that actively involve women, youth, and marginalized groups across Africa.", icon: Globe2 },
   { title: "Resilience", description: "Creating adaptable systems and communities that can withstand climate, market, and economic shocks to ensure long-term viability.", icon: RefreshCcw },
 ];
 

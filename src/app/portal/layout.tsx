@@ -1,13 +1,20 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 import { useAuth } from "@/lib/AuthContext";
 import Image from "next/image";
+
+const NAV_LINKS = [
+  { href: "/portal", label: "Dashboard" },
+  { href: "/portal/blog", label: "Blog Posts" },
+];
 
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
   const { user, loading, signOut } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!loading && !user) router.replace("/portal/login");
@@ -34,6 +41,23 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
             <span className="hidden sm:block text-white/20 text-xs ml-1">/ Operations</span>
           </div>
 
+          <nav className="hidden md:flex items-center gap-1">
+            {NAV_LINKS.map((link) => {
+              const active = link.href === "/portal" ? pathname === "/portal" : pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`rounded-lg px-3 py-1.5 text-xs font-body font-semibold transition-colors ${
+                    active ? "bg-white/10 text-white" : "text-white/50 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2.5">
               {user.photoURL && (
@@ -55,6 +79,23 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
             </button>
           </div>
         </div>
+
+        <nav className="flex md:hidden items-center gap-1 container-pad mx-auto pb-3 -mt-1">
+          {NAV_LINKS.map((link) => {
+            const active = link.href === "/portal" ? pathname === "/portal" : pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`rounded-lg px-3 py-1.5 text-xs font-body font-semibold transition-colors ${
+                  active ? "bg-white/10 text-white" : "text-white/50 hover:text-white"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
       </header>
 
       <main className="flex-1">{children}</main>

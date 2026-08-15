@@ -30,7 +30,7 @@ export default function AboutHero() {
           </h1>
 
           <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/80 md:text-lg">
-            For 6+ years, Ingaju Farms has proven that nothing has to go to waste livestock, crops, and organic recycling running as one tracked system, training farmers with us in Nyagatare, Rwanda.
+            For 6+ years, Ingaju Farms has proven that nothing has to go to wastelivestock, crops, and organic recycling running as one tracked system, training farmers with us in Nyagatare, Rwanda.
           </p>
         
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">

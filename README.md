@@ -1,4 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ingaju Farms
+
+Marketing and content site for **Ingaju Farms**, an integrated circular agriculture enterprise based in Rebero Village, Nyagatare District, Eastern Province, Rwanda.
+
+## Product Description
+
+Ingaju Farms runs a closed-loop farm where the outputs of one enterprise become the inputs of the next: livestock manure is composted into organic fertilizer, that fertilizer feeds the crop fields, the crops and their residues are turned into livestock feed, and the herd restarts the cycle. The goal is a farm that produces more while depending less on external, synthetic inputs — a model built for Rwandan smallholders to learn from and adopt.
+
+### The circular system
+
+1. **Livestock Herd** — a pasture-fed dairy herd managed to welfare and nutrition standards, producing milk daily and generating the manure that feeds the next stage.
+2. **Organic Fertilizer** — manure composted into organic fertilizer (a line currently scaling toward full production), reducing reliance on synthetic agrochemicals and rebuilding soil health.
+3. **Crop Production** — maize, legumes, and macadamia grown on increasingly enriched soil using climate-smart, low-synthetic-input practices, supplying both the market and the herd.
+4. **Livestock Feed** — harvested crops and crop residues are prepared into feed on-site, closing the loop and strengthening the system each cycle.
+
+### What the business offers
+
+- **Livestock & Dairy** — milk and breeding livestock raised to strict welfare and nutrition standards.
+- **Crop Production** — maize, legumes, and macadamia nuts grown using climate-smart, organic-input farming practices.
+- **Organic Fertilizer** — nutrient-rich fertilizer processed from the farm's own livestock manure, scaling up as the composting facility comes online.
+- **Farmer Training** — hands-on, on-farm training in livestock and herd management, climate-smart crop production, and integrated circular agriculture systems, for smallholders, cooperatives, students, schools, and agribusiness professionals. Over 500 farmers trained to date.
+
+### Impact so far
+
+- 50+ jobs created
+- 500+ farmers trained
+- 10 organic products produced
+- 12 local partnerships (including RAB, Nyagatare Cooperative, Agrivet, and others)
+
+### The website
+
+This repository is the Next.js site presenting Ingaju Farms to visitors, partners, and prospective trainees. It covers the farm's story and mission, the circular system in detail, product/enterprise pages (dairy, crops, organic fertilizer), a training and blog section with practical farming content, and contact/inquiry flows for partnership, training, and product interest — plus a lightweight content portal for managing blog posts.
 
 ## Getting Started
 

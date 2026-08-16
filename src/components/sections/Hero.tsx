@@ -25,7 +25,7 @@ export default function Hero() {
           <span className="text-[#6DBE8C]">to Farm Wealth.</span>
         </h1>
         <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/75 md:text-lg">
-         Ingaju Farms is a circular agriculture enterprise in Nyagatare, Rwanda turning livestock & dairy, crops, and organic waste into food, income, and training for our farming community one farm, multiple enterprises, closing the loop toward zero waste.
+         Ingaju Farms is an integrated circular agriculture enterprise in Nyagatare District, Rwanda turning livestock & dairy, crops, and organic waste into food, income, and training for our farming community one farm, multiple enterprises, closing the loop toward zero waste.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <a

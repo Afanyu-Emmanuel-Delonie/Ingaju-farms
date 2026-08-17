@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { X, ArrowRight } from "lucide-react";
+import { db, isFirebaseConfigured } from "@/lib/firebase";
 import { useModal } from "./ModalContext";
 
 const TOUR_TYPES = ["Individual", "School Group", "Corporate", "Farmer Group"];
@@ -25,12 +27,30 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
   );
 }
 
+const EMPTY_ORDER = { qty: "", deliveryDate: "", name: "", phone: "", email: "", address: "", notes: "" };
+const EMPTY_TOUR = { date: "", groupSize: "", tourType: "", name: "", phone: "", email: "", requests: "" };
+const EMPTY_TRAINING = { program: "", name: "", phone: "", email: "", background: "" };
+
 export default function RequestModal() {
   const { isOpen, close, config } = useModal();
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  const [orderForm, setOrderForm] = useState(EMPTY_ORDER);
+  const [tourForm, setTourForm] = useState(EMPTY_TOUR);
+  const [trainingForm, setTrainingForm] = useState(EMPTY_TRAINING);
 
   // Reset on new open
-  useEffect(() => { if (isOpen) setSent(false); }, [isOpen]);
+  useEffect(() => {
+    if (isOpen) {
+      setSent(false);
+      setError("");
+      setOrderForm(EMPTY_ORDER);
+      setTourForm(EMPTY_TOUR);
+      setTrainingForm({ ...EMPTY_TRAINING, program: config?.product ?? "" });
+    }
+  }, [isOpen, config?.product]);
 
   // Lock body scroll
   useEffect(() => {
@@ -46,9 +66,39 @@ export default function RequestModal() {
     training: `Enrol in ${config.product ?? "Training"}`,
   };
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSent(true);
+    if (!config) return;
+
+    if (!db || !isFirebaseConfigured) {
+      setError("Sorry, this form is temporarily unavailable. Please contact us directly at support@ingajufarms.com.");
+      return;
+    }
+
+    setSubmitting(true);
+    setError("");
+    try {
+      const base = {
+        source: config.variant,
+        product: config.product ?? null,
+        unit: config.unit ?? null,
+        status: "new",
+        createdAt: serverTimestamp(),
+      };
+      const payload =
+        config.variant === "order"
+          ? { ...base, ...orderForm }
+          : config.variant === "tour"
+            ? { ...base, ...tourForm }
+            : { ...base, ...trainingForm };
+
+      await addDoc(collection(db, "leads"), payload);
+      setSent(true);
+    } catch {
+      setError("Something went wrong sending your request. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -108,28 +158,49 @@ export default function RequestModal() {
                   </Field>
                   <div className="grid grid-cols-2 gap-4">
                     <Field label={`Quantity (${config.unit ?? "units"})`}>
-                      <input className={inputCls} type="number" min="1" required placeholder="e.g. 50" />
+                      <input
+                        className={inputCls} type="number" min="1" required placeholder="e.g. 50"
+                        value={orderForm.qty} onChange={(e) => setOrderForm((f) => ({ ...f, qty: e.target.value }))}
+                      />
                     </Field>
                     <Field label="Preferred Delivery Date">
-                      <input className={inputCls} type="date" required />
+                      <input
+                        className={inputCls} type="date" required
+                        value={orderForm.deliveryDate} onChange={(e) => setOrderForm((f) => ({ ...f, deliveryDate: e.target.value }))}
+                      />
                     </Field>
                   </div>
                   <Field label="Full Name">
-                    <input className={inputCls} type="text" required placeholder="Jane Doe" />
+                    <input
+                      className={inputCls} type="text" required placeholder="Jane Doe"
+                      value={orderForm.name} onChange={(e) => setOrderForm((f) => ({ ...f, name: e.target.value }))}
+                    />
                   </Field>
                   <div className="grid grid-cols-2 gap-4">
                     <Field label="Phone Number">
-                      <input className={inputCls} type="tel" required placeholder="+250 700 000 000" />
+                      <input
+                        className={inputCls} type="tel" required placeholder="+250 700 000 000"
+                        value={orderForm.phone} onChange={(e) => setOrderForm((f) => ({ ...f, phone: e.target.value }))}
+                      />
                     </Field>
                     <Field label="Email">
-                      <input className={inputCls} type="email" required placeholder="jane@email.com" />
+                      <input
+                        className={inputCls} type="email" required placeholder="jane@email.com"
+                        value={orderForm.email} onChange={(e) => setOrderForm((f) => ({ ...f, email: e.target.value }))}
+                      />
                     </Field>
                   </div>
                   <Field label="Delivery Address">
-                    <input className={inputCls} type="text" required placeholder="Street, City, District" />
+                    <input
+                      className={inputCls} type="text" required placeholder="Street, City, District"
+                      value={orderForm.address} onChange={(e) => setOrderForm((f) => ({ ...f, address: e.target.value }))}
+                    />
                   </Field>
                   <Field label="Additional Notes (optional)">
-                    <textarea className={`${inputCls} resize-none`} rows={3} placeholder="Any special requirements..." />
+                    <textarea
+                      className={`${inputCls} resize-none`} rows={3} placeholder="Any special requirements..."
+                      value={orderForm.notes} onChange={(e) => setOrderForm((f) => ({ ...f, notes: e.target.value }))}
+                    />
                   </Field>
                 </>
               )}
@@ -139,31 +210,52 @@ export default function RequestModal() {
                 <>
                   <div className="grid grid-cols-2 gap-4">
                     <Field label="Preferred Date">
-                      <input className={inputCls} type="date" required />
+                      <input
+                        className={inputCls} type="date" required
+                        value={tourForm.date} onChange={(e) => setTourForm((f) => ({ ...f, date: e.target.value }))}
+                      />
                     </Field>
                     <Field label="Group Size">
-                      <input className={inputCls} type="number" min="1" required placeholder="e.g. 12" />
+                      <input
+                        className={inputCls} type="number" min="1" required placeholder="e.g. 12"
+                        value={tourForm.groupSize} onChange={(e) => setTourForm((f) => ({ ...f, groupSize: e.target.value }))}
+                      />
                     </Field>
                   </div>
                   <Field label="Tour Type">
-                    <select className={inputCls} required defaultValue="">
+                    <select
+                      className={inputCls} required
+                      value={tourForm.tourType} onChange={(e) => setTourForm((f) => ({ ...f, tourType: e.target.value }))}
+                    >
                       <option value="" disabled>Select type</option>
                       {TOUR_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
                     </select>
                   </Field>
                   <Field label="Full Name">
-                    <input className={inputCls} type="text" required placeholder="Jane Doe" />
+                    <input
+                      className={inputCls} type="text" required placeholder="Jane Doe"
+                      value={tourForm.name} onChange={(e) => setTourForm((f) => ({ ...f, name: e.target.value }))}
+                    />
                   </Field>
                   <div className="grid grid-cols-2 gap-4">
                     <Field label="Phone Number">
-                      <input className={inputCls} type="tel" required placeholder="+250 700 000 000" />
+                      <input
+                        className={inputCls} type="tel" required placeholder="+250 700 000 000"
+                        value={tourForm.phone} onChange={(e) => setTourForm((f) => ({ ...f, phone: e.target.value }))}
+                      />
                     </Field>
                     <Field label="Email">
-                      <input className={inputCls} type="email" required placeholder="jane@email.com" />
+                      <input
+                        className={inputCls} type="email" required placeholder="jane@email.com"
+                        value={tourForm.email} onChange={(e) => setTourForm((f) => ({ ...f, email: e.target.value }))}
+                      />
                     </Field>
                   </div>
                   <Field label="Special Requests (optional)">
-                    <textarea className={`${inputCls} resize-none`} rows={3} placeholder="Accessibility needs, language preference..." />
+                    <textarea
+                      className={`${inputCls} resize-none`} rows={3} placeholder="Accessibility needs, language preference..."
+                      value={tourForm.requests} onChange={(e) => setTourForm((f) => ({ ...f, requests: e.target.value }))}
+                    />
                   </Field>
                 </>
               )}
@@ -172,33 +264,55 @@ export default function RequestModal() {
               {config.variant === "training" && (
                 <>
                   <Field label="Program">
-                    <select className={inputCls} required defaultValue={config.product ?? ""}>
+                    <select
+                      className={inputCls} required
+                      value={trainingForm.program} onChange={(e) => setTrainingForm((f) => ({ ...f, program: e.target.value }))}
+                    >
                       <option value="" disabled>Select program</option>
                       {TRAINING_PROGRAMS.map((p) => <option key={p} value={p}>{p}</option>)}
                     </select>
                   </Field>
                   <Field label="Full Name">
-                    <input className={inputCls} type="text" required placeholder="Jane Doe" />
+                    <input
+                      className={inputCls} type="text" required placeholder="Jane Doe"
+                      value={trainingForm.name} onChange={(e) => setTrainingForm((f) => ({ ...f, name: e.target.value }))}
+                    />
                   </Field>
                   <div className="grid grid-cols-2 gap-4">
                     <Field label="Phone Number">
-                      <input className={inputCls} type="tel" required placeholder="+250 700 000 000" />
+                      <input
+                        className={inputCls} type="tel" required placeholder="+250 700 000 000"
+                        value={trainingForm.phone} onChange={(e) => setTrainingForm((f) => ({ ...f, phone: e.target.value }))}
+                      />
                     </Field>
                     <Field label="Email">
-                      <input className={inputCls} type="email" required placeholder="jane@email.com" />
+                      <input
+                        className={inputCls} type="email" required placeholder="jane@email.com"
+                        value={trainingForm.email} onChange={(e) => setTrainingForm((f) => ({ ...f, email: e.target.value }))}
+                      />
                     </Field>
                   </div>
                   <Field label="Farming Background (optional)">
-                    <textarea className={`${inputCls} resize-none`} rows={3} placeholder="Tell us briefly about your current farming situation..." />
+                    <textarea
+                      className={`${inputCls} resize-none`} rows={3} placeholder="Tell us briefly about your current farming situation..."
+                      value={trainingForm.background} onChange={(e) => setTrainingForm((f) => ({ ...f, background: e.target.value }))}
+                    />
                   </Field>
                 </>
               )}
 
+              {error && (
+                <p className="text-xs font-body font-medium text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                  {error}
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="mt-2 w-full rounded-full bg-[#1C2321] py-3.5 text-sm font-body font-semibold text-white hover:bg-[#3A7D5A] transition-colors inline-flex items-center justify-center gap-2"
+                disabled={submitting}
+                className="mt-2 w-full rounded-full bg-[#1C2321] py-3.5 text-sm font-body font-semibold text-white hover:bg-[#3A7D5A] transition-colors inline-flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Submit Request <ArrowRight className="h-4 w-4" />
+                {submitting ? "Submitting..." : "Submit Request"} <ArrowRight className="h-4 w-4" />
               </button>
             </form>
           </>

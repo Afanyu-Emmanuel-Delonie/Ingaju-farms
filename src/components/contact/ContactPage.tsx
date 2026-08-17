@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import { db, isFirebaseConfigured } from "@/lib/firebase";
 import FaqSection from "@/components/sections/FaqSection";
 import BrandPattern from "@/components/shared/BrandPattern";
 
@@ -41,26 +43,55 @@ const TOPICS = [
 ];
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", topic: "", message: "" });
-  const [sent, setSent] = useState(false);
-
-  // Reads ?topic= so links from Trainings/Footer/Circular System CTAs land
-  // with the right topic preselected. Read client-side (not via
-  // useSearchParams) so this page can stay statically prerendered.
-  useEffect(() => {
-    const topic = new URLSearchParams(window.location.search).get("topic");
-    if (topic && TOPICS.includes(topic)) {
-      setForm((f) => ({ ...f, topic }));
+  const [form, setForm] = useState(() => {
+    if (typeof window === "undefined") {
+      return { name: "", email: "", phone: "", topic: "", message: "" };
     }
-  }, []);
+
+    const topic = new URLSearchParams(window.location.search).get("topic");
+    return {
+      name: "",
+      email: "",
+      phone: "",
+      topic: topic && TOPICS.includes(topic) ? topic : "",
+      message: "",
+    };
+  });
+  const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSent(true);
+    if (!db || !isFirebaseConfigured) {
+      setError("Sorry, this form is temporarily unavailable. Please email us directly at support@ingajufarms.com.");
+      return;
+    }
+
+    setSubmitting(true);
+    setError("");
+    try {
+      await addDoc(collection(db, "leads"), {
+        source: "contact",
+        name: form.name,
+        email: form.email,
+        phone: form.phone || null,
+        topic: form.topic,
+        message: form.message,
+        status: "new",
+        createdAt: serverTimestamp(),
+      });
+      setSent(true);
+    } catch (err) {
+      console.error("[Contact form] Firestore error:", err);
+      setError("Something went wrong sending your message. Please try again or email us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -68,7 +99,17 @@ export default function ContactPage() {
 
       {/* ── Hero ── */}
       <section className="relative w-full h-[60vh] lg:h-[70vh] overflow-hidden bg-[#1C2321] flex items-end">
-        <BrandPattern />
+        <video
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          src="/images/about/about.mp4"
+          poster="/images/about/about-3.png"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+        />
+        <div aria-hidden className="absolute inset-0 bg-black/80" />
 
         <div className="relative z-10 container-pad pb-12 w-full">
           <span className="mb-4 inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-widest text-white">
@@ -199,11 +240,18 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="text-xs font-body font-medium text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                      {error}
+                    </p>
+                  )}
+
                   <button
                     type="submit"
-                    className="mt-1 w-full rounded-full bg-[#1C2321] py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#3A7D5A] inline-flex items-center justify-center gap-2"
+                    disabled={submitting}
+                    className="mt-1 w-full rounded-full bg-[#1C2321] py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#3A7D5A] inline-flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Send Message <ArrowRight className="h-4 w-4" />
+                    {submitting ? "Sending..." : "Send Message"} <ArrowRight className="h-4 w-4" />
                   </button>
                 </form>
               )}

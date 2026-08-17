@@ -1,0 +1,55 @@
+mutation CreateData @transaction @auth(level: USER) {
+  user_insert(data: {
+    id_expr: "auth.uid",
+    email: "user@example.com",
+    role: "member",
+    displayName: "User"
+  })
+  category_insert(data: { name: "General" })
+  blogPost_insert(data: {
+    title: "My First Post",
+    content: "Content",
+    status: "published",
+    createdAt: "2023-10-01T00:00:00Z",
+    authorId_expr: "auth.uid"
+  })
+  form_insert(data: { title: "Contact", formType: "feedback", isActive: true })
+  formField_insert(data: { label: "Name", fieldType: "text", form: { id_expr: "auth.uid" } })
+  formSubmission_insert(data: { submittedAt: "2023-10-01T00:00:00Z", rawData: "{}" })
+}
+
+mutation UpdateData @auth(level: USER) {
+  user_update(key: {id_expr: "auth.uid"}, data: {displayName: "New Name"})
+  category_update(id: "00000000-0000-0000-0000-000000000000", data: {description: "Updated"})
+  blogPost_update(id: "00000000-0000-0000-0000-000000000000", data: {status: "archived"})
+  form_update(id: "00000000-0000-0000-0000-000000000000", data: {isActive: false})
+  formField_update(id: "00000000-0000-0000-0000-000000000000", data: {placeholder: "Enter here"})
+  formSubmission_update(id: "00000000-0000-0000-0000-000000000000", data: {rawData: "{\"foo\":\"bar\"}"})
+}
+
+mutation DeleteData @auth(level: USER) {
+  user_delete(key: {id_expr: "auth.uid"})
+  category_delete(id: "00000000-0000-0000-0000-000000000000")
+  blogPost_delete(id: "00000000-0000-0000-0000-000000000000")
+  form_delete(id: "00000000-0000-0000-0000-000000000000")
+  formField_delete(id: "00000000-0000-0000-0000-000000000000")
+  formSubmission_delete(id: "00000000-0000-0000-0000-000000000000")
+}
+
+query ReadData @auth(level: PUBLIC, insecureReason: "Public content access") {
+  user(id: "00000000-0000-0000-0000-000000000000") { displayName email }
+  category(id: "00000000-0000-0000-0000-000000000000") { name }
+  blogPost(id: "00000000-0000-0000-0000-000000000000") { title content }
+  form(id: "00000000-0000-0000-0000-000000000000") { title }
+  formField(id: "00000000-0000-0000-0000-000000000000") { label }
+  formSubmission(id: "00000000-0000-0000-0000-000000000000") { submittedAt }
+}
+
+query ListData @auth(level: PUBLIC, insecureReason: "Public content access") {
+  users { email }
+  categories { name }
+  blogPosts { title }
+  forms { title }
+  formFields { label }
+  formSubmissions { submittedAt }
+}

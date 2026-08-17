@@ -169,7 +169,7 @@ export const CATEGORIES = [
     description: "Practical, on-farm training in circular agriculture for smallholders, cooperatives, students and agribusiness professionals.",
     ctaLabel: "Explore Trainings",
     ctaHref: "/contact?topic=Training%20Program",
-    image: "/images/farm/training-1.png",
+    image: "/images/farm/trainings.png",
     alt: "Farmers attending a practical training session at Ingaju Farms",
   },
 ];

@@ -1,0 +1,43 @@
+type User @table {
+  email: String!
+  role: String!
+  displayName: String
+}
+
+type Category @table {
+  name: String!
+  description: String
+}
+
+type BlogPost @table {
+  title: String!
+  content: String!
+  status: String!
+  createdAt: Timestamp!
+  slug: String
+  excerpt: String
+  imageUrl: String
+  author: User
+  category: Category
+}
+
+type Form @table {
+  title: String!
+  formType: String!
+  description: String
+  isActive: Boolean
+}
+
+type FormField @table {
+  label: String!
+  fieldType: String!
+  isRequired: Boolean
+  placeholder: String
+  form: Form
+}
+
+type FormSubmission @table {
+  submittedAt: Timestamp!
+  rawData: String
+  form: Form
+}

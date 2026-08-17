@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import BackToTop from "@/components/BackToTop";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
+import SiteChrome from "@/components/SiteChrome";
 import { ModalProvider } from "@/components/shared/ModalContext";
 import RequestModal from "@/components/shared/RequestModal";
 import { AuthProvider } from "@/lib/AuthContext";
@@ -91,12 +89,11 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <AuthProvider>
           <ModalProvider>
-            <SmoothScroll>
-              <Navbar />
-              {children}
-              <Footer />
-              <BackToTop />
-            </SmoothScroll>
+            <SiteChrome>
+              <SmoothScroll>
+                {children}
+              </SmoothScroll>
+            </SiteChrome>
             <RequestModal />
           </ModalProvider>
         </AuthProvider>

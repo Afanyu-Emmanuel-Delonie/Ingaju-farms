@@ -4,6 +4,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import {
   onAuthStateChanged,
   signInWithPopup,
+  signInWithEmailAndPassword,
   signOut as firebaseSignOut,
   User,
 } from "firebase/auth";
@@ -13,6 +14,7 @@ interface AuthCtx {
   user: User | null;
   loading: boolean;
   signInWithGoogle: () => Promise<void>;
+  signInWithEmail: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 }
 
@@ -47,13 +49,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     await signInWithPopup(auth, googleProvider);
   };
 
+  const signInWithEmail = async (email: string, password: string) => {
+    if (!auth || !isFirebaseConfigured) {
+      throw new Error(
+        "Firebase authentication is disabled because credentials are not configured.",
+      );
+    }
+
+    await signInWithEmailAndPassword(auth, email, password);
+  };
+
   const signOut = async () => {
     if (!auth || !isFirebaseConfigured) return;
     await firebaseSignOut(auth);
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, signInWithGoogle, signOut }}>
+    <AuthContext.Provider
+      value={{ user, loading, signInWithGoogle, signInWithEmail, signOut }}
+    >
       {children}
     </AuthContext.Provider>
   );

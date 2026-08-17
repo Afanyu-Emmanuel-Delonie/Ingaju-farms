@@ -119,7 +119,7 @@ export default function Testimonials() {
             &ldquo;
           </span>
           <div key={animKey} className="animate-fade-up">
-            <p className="text-base md:text-lg font-heading font-normal leading-relaxed text-white line-clamp-2">
+            <p className="text-base md:text-lg font-heading font-normal leading-relaxed text-white">
               {t.quote}
             </p>
             <div className="mt-7 flex items-center gap-4">

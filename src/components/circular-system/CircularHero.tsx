@@ -6,12 +6,13 @@ export default function CircularHero() {
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src="/images/about/about.mp4"
-        poster="/images/about/about-1.png"
+        poster="/images/about/about-1.webp"
         autoPlay
         muted
         loop
         playsInline
         preload="none"
+        aria-hidden="true"
       />
       <div aria-hidden className="absolute inset-0 bg-black/80" />
 

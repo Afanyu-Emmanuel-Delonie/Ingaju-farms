@@ -12,25 +12,25 @@ export interface StageDetail {
 export const STAGE_DATA: Record<StageKey, StageDetail> = {
   cattle: {
     label: "Dairy Cattle",
-    imgSrc: "/images/dairy/dairy-production.png",
+    imgSrc: "/images/dairy/dairy-production.webp",
     imgAlt: "Dairy cattle on the farm",
     angle: 270,
   },
   fertilizer: {
     label: "Organic Fertilizer",
-    imgSrc: "/images/dairy/organic-manure.png",
+    imgSrc: "/images/dairy/organic-manure.webp",
     imgAlt: "Organic manure fertilizer",
     angle: 0,
   },
   crop: {
     label: "Crop Production",
-    imgSrc: "/images/crops/crops-2.png",
+    imgSrc: "/images/crops/crops-2.webp",
     imgAlt: "Maize crop production",
     angle: 90,
   },
   feed: {
     label: "Animal Feed",
-    imgSrc: "/images/dairy/feed-production.png",
+    imgSrc: "/images/dairy/feed-production.webp",
     imgAlt: "Milled animal feed",
     angle: 180,
   },
@@ -48,7 +48,7 @@ export const CIRCULAR_STAGES = [
       "Milk yield directly tied to feed quality and animal health",
       "Manure collected daily as the primary input for the next stage",
     ],
-    imgSrc: "/images/dairy/dairy-production.png",
+    imgSrc: "/images/dairy/dairy-production.webp",
     imgAlt: "Livestock herd being milked at Ingaju Farms",
   },
   {
@@ -60,7 +60,7 @@ export const CIRCULAR_STAGES = [
       "Designed to reduce reliance on synthetic agrochemicals across our crop fields",
       "Aims to improve soil health and long-term fertility as the line matures",
     ],
-    imgSrc: "/images/dairy/organic-manure.png",
+    imgSrc: "/images/dairy/organic-manure.webp",
     imgAlt: "Organic manure fertilizer processing at Ingaju Farms",
   },
   {
@@ -72,7 +72,7 @@ export const CIRCULAR_STAGES = [
       "Diverse crop varieties grown year-round, supported by our organic fertilizer line as it scales",
       "Soil health tracked through careful record-keeping",
     ],
-    imgSrc: "/images/crops/crops-2.png",
+    imgSrc: "/images/crops/crops-2.webp",
     imgAlt: "Crop fields at Ingaju Farms",
   },
   {
@@ -84,7 +84,7 @@ export const CIRCULAR_STAGES = [
       "Feed prepared on-site to match herd nutritional needs",
       "Closing the loop: each cycle strengthens the system a little further",
     ],
-    imgSrc: "/images/dairy/feed-production.png",
+    imgSrc: "/images/dairy/feed-production.webp",
     imgAlt: "Livestock feed production at Ingaju Farms",
   },
 ];
@@ -121,16 +121,16 @@ export const CIRCULAR_BENEFITS = [
 ];
 
 export const PARTNERS = [
-  { name: "Agrivet", logo: "/images/partners/agrivet.png" },
-  { name: "AIF", logo: "/images/partners/aif.png" },
-  { name: "BK Insurance", logo: "/images/partners/bk-insurance.png" },
-  { name: "Ingabo", logo: "/images/partners/ingabo.png" },
-  { name: "Inyanje", logo: "/images/partners/inyanje.png" },
-  { name: "KAFCO", logo: "/images/partners/kafco.png" },
-  { name: "Nyagatare Cooperative", logo: "/images/partners/nyagatare-cooporative.png" },
-  { name: "RAB", logo: "/images/partners/rab.png" },
-  { name: "Sonarwa", logo: "/images/partners/sonarwa.png" },
-  { name: "Western Seed", logo: "/images/partners/western-seed.png" },
+  { name: "Agrivet", logo: "/images/partners/agrivet.webp" },
+  { name: "AIF", logo: "/images/partners/aif.webp" },
+  { name: "BK Insurance", logo: "/images/partners/bk-insurance.webp" },
+  { name: "Ingabo", logo: "/images/partners/ingabo.webp" },
+  { name: "Inyanje", logo: "/images/partners/inyanje.webp" },
+  { name: "KAFCO", logo: "/images/partners/kafco.webp" },
+  { name: "Nyagatare Cooperative", logo: "/images/partners/nyagatare-cooporative.webp" },
+  { name: "RAB", logo: "/images/partners/rab.webp" },
+  { name: "Sonarwa", logo: "/images/partners/sonarwa.webp" },
+  { name: "Western Seed", logo: "/images/partners/western-seed.webp" },
 ];
 
 export const CATEGORIES = [
@@ -142,7 +142,7 @@ export const CATEGORIES = [
     description: "Milk and breeding livestock raised to strict welfare and nutrition standards.",
     ctaLabel: "Explore Dairy",
     ctaHref: "/products/dairy",
-    image: "/images/hero/bg-img.png",
+    image: "/images/hero/bg-img.webp",
     alt: "Dairy cattle grazing on the Ingaju farm",
   },
   {
@@ -151,7 +151,7 @@ export const CATEGORIES = [
     description: "Maize, legumes, and macadamia nuts grown using climate-smart, organic-input farming practices.",
     ctaLabel: "Explore Crops",
     ctaHref: "/products/crops",
-    image: "/images/crops/crop-production.png",
+    image: "/images/crops/crop-production.webp",
     alt: "Rows of maize growing in the field",
   },
   {
@@ -160,7 +160,7 @@ export const CATEGORIES = [
     description: "Nutrient-rich organic fertilizer processed from our own livestock manure currently scaling up as we complete our composting facility.",
     ctaLabel: "Join the Waitlist",
     ctaHref: "/contact",
-    image: "/images/dairy/organic-manure.png",
+    image: "/images/dairy/organic-manure.webp",
     alt: "Organic fertilizer produced at Ingaju Farms",
   },
   {
@@ -169,7 +169,7 @@ export const CATEGORIES = [
     description: "Practical, on-farm training in circular agriculture for smallholders, cooperatives, students and agribusiness professionals.",
     ctaLabel: "Explore Trainings",
     ctaHref: "/contact?topic=Training%20Program",
-    image: "/images/farm/trainings.png",
+    image: "/images/farm/trainings.webp",
     alt: "Farmers attending a practical training session at Ingaju Farms",
   },
 ];
@@ -188,7 +188,7 @@ export const TRAININGS = [
     description: "Hands-on training in livestock herd management, animal nutrition, hygienic milking procedures, milk quality assurance, and preventive animal health practices.",
     ctaLabel: "Learn More",
     ctaHref: "/contact?topic=Training%20Program",
-    image: "/images/hero/bg-img.png",
+    image: "/images/hero/bg-img.webp",
     alt: "Farmer working with livestock at Ingaju Farms",
   },
   {
@@ -197,7 +197,7 @@ export const TRAININGS = [
     description: "Practical instruction in organic-input soil fertility management, composting, natural pest and disease management, and climate-smart farming practices for food and feed crop production.",
     ctaLabel: "Learn More",
     ctaHref: "/contact?topic=Training%20Program",
-    image: "/images/hero/bg-2.png",
+    image: "/images/hero/bg-2.webp",
     alt: "Farmer demonstrating climate-smart farming techniques",
   },
   {
@@ -206,7 +206,7 @@ export const TRAININGS = [
     description: "Comprehensive training in circular farming systems covering manure management, our organic fertilizer process as it scales up, crop-livestock integration, and nutrient recycling.",
     ctaLabel: "Learn More",
     ctaHref: "/contact?topic=Training%20Program",
-    image: "/images/hero/bg-3.png",
+    image: "/images/hero/bg-3.webp",
     // NOTE: alt kept generic — this file is also used in CropsCircularModel.tsx
     // with a different (specific, unconfirmed) subject; neither description
     // could be verified against the actual photo. See Priority Fix Tracker.
@@ -222,7 +222,7 @@ export const BLOG_POSTS = [
     excerpt: "Discover how integrating livestock, crop production, and waste recycling creates a self-sustaining farming system that benefits both farmers and the environment.",
     date: "June 12, 2025",
     readTime: "6 min read",
-    image: "/images/blog-circular-farming.png",
+    image: "/images/blog-circular-farming.webp",
     alt: "Farmer working on a circular agriculture farm",
     content: [
       {
@@ -295,7 +295,7 @@ export const BLOG_POSTS = [
     excerpt: "From feed management to hygiene protocols, these practices help dairy farmers consistently produce clean, high-quality milk.",
     date: "May 28, 2025",
     readTime: "5 min read",
-    image: "/images/blog-dairy-quality.png",
+    image: "/images/blog-dairy-quality.webp",
     alt: "Dairy cattle in a clean farm environment",
     content: [
       {
@@ -355,7 +355,7 @@ export const BLOG_POSTS = [
     excerpt: "Hands-on training equips farmers with the knowledge and skills to adopt sustainable methods that increase yields and protect natural resources.",
     date: "May 10, 2025",
     readTime: "4 min read",
-    image: "/images/farm/students.png",
+    image: "/images/farm/students.webp",
     alt: "Group of farmers attending a training session",
     content: [
       {
@@ -417,7 +417,7 @@ export const BLOG_POSTS = [
     excerpt: "Discover how manure, crop residues, and other organic materials are turned into compost that rebuilds soil fertility and supports healthier harvests.",
     date: "April 22, 2025",
     readTime: "5 min read",
-    image: "/images/blog-circular-farming.png",
+    image: "/images/blog-circular-farming.webp",
     alt: "Compost-based nutrient recycling on a farm",
     content: [
       {

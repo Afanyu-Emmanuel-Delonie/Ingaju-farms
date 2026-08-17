@@ -56,7 +56,7 @@ export default function DairyCircularModel() {
             <div className="flex flex-col gap-3">
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
                 <Image
-                  src="/images/dairy/cow.png"
+                  src="/images/dairy/cow.webp"
                   alt="Cows grazing at Ingaju Farms"
                   fill
                   sizes="25vw"
@@ -65,7 +65,7 @@ export default function DairyCircularModel() {
               </div>
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
                 <Image
-                  src="/images/dairy/milk.jpg"
+                  src="/images/dairy/milk.webp"
                   alt="Fresh milk from Ingaju Farms"
                   fill
                   sizes="25vw"
@@ -76,7 +76,7 @@ export default function DairyCircularModel() {
             <div className="flex flex-col gap-3">
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
                 <Image
-                  src="/images/dairy/organic-manure.png"
+                  src="/images/dairy/organic-manure.webp"
                   alt="Organic manure processing at Ingaju Farms"
                   fill
                   sizes="25vw"
@@ -85,7 +85,7 @@ export default function DairyCircularModel() {
               </div>
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
                 <Image
-                  src="/images/dairy/cow-4.png"
+                  src="/images/dairy/cow-4.webp"
                   alt="Farmer caring for livestock"
                   fill
                   sizes="25vw"

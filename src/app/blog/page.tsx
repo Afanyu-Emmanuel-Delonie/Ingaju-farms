@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://ingajufarms.com/blog",
     title: "Blog | Circular Agriculture & Farming Insights — Ingaju Farms",
     description: "Practical insights on circular agriculture, livestock and dairy farming, and sustainable crop production from Ingaju Farms, Eastern Province, Rwanda.",
-    images: [{ url: "/images/hero/bg-img.png", width: 1200, height: 630, alt: "Ingaju Farms Blog" }],
+    images: [{ url: "/images/hero/bg-img.webp", width: 1200, height: 630, alt: "Ingaju Farms Blog" }],
   },
 };
 

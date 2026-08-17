@@ -10,21 +10,21 @@ const PRODUCTS = [
     title: "Fresh Milk",
     unit: "liters",
     desc: "Milk from pasture-fed cattle. Produced under hygiene and climate-smart protocols with traceability.",
-    img: "/images/dairy/milk.jpg",
+    img: "/images/dairy/milk.webp",
   },
   {
     label: "Farm Input",
     title: "Organic Fertilizer",
     unit: "kg",
     desc: "Nutrient-rich compost processed from livestock manure. A soil amendment designed to rebuild long-term soil health.",
-    img: "/images/dairy/organic-manure.png",
+    img: "/images/dairy/organic-manure.webp",
   },
   {
     label: "Livestock",
     title: "Breeding Stock",
     unit: "head",
     desc: "Disease-free bulls and heifers raised under welfare standards to support herd performance and dairy production.",
-    img: "/images/dairy/bools.png", 
+    img: "/images/dairy/bools.webp", 
   }
 ];
 
@@ -54,6 +54,7 @@ export default function DairyShowcase() {
                 src={prod.img}
                 alt={prod.title}
                 fill
+                sizes="340px"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent" />

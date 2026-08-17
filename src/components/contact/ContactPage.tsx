@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import { db, isFirebaseConfigured } from "@/lib/firebase";
@@ -114,12 +114,13 @@ export default function ContactPage() {
         <video
           className="absolute inset-0 w-full h-full object-cover object-center"
           src="/images/about/about.mp4"
-          poster="/images/about/about-3.png"
+          poster="/images/about/about-3.webp"
           autoPlay
           muted
           loop
           playsInline
           preload="none"
+          aria-hidden="true"
         />
         <div aria-hidden className="absolute inset-0 bg-black/80" />
 

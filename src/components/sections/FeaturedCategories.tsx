@@ -25,7 +25,7 @@ export default function FeaturedCategories() {
             className="group relative block h-[28rem] w-full overflow-hidden rounded-2xl sm:h-[32rem]"
           >
             <Image
-              src="/images/dairy/cow-4.png"
+              src="/images/dairy/cow-4.webp"
               alt="Dairy cattle grazing on the farm"
               fill
               sizes="100vw"

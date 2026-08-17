@@ -8,7 +8,7 @@ export default function ExperienceCircularFarming() {
   return (
     <section
       className="relative w-full overflow-hidden bg-fixed bg-center bg-cover"
-      style={{ backgroundImage: "url('/images/hero/bg-img.png')" }}
+      style={{ backgroundImage: "url('/images/hero/bg-img.webp')" }}
     >
       <div aria-hidden className="absolute inset-0 bg-black/60" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />

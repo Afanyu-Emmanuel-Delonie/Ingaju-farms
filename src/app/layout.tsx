@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer while training farmers in circular agriculture.",
     images: [
       {
-        url: "/images/hero/bg-img.png",
+        url: "/images/hero/bg-img.webp",
         width: 1200,
         height: 630,
         alt: "Ingaju Farms - Circular agriculture in Eastern Province, Rwanda",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     title: "Livestock, Crops & Circular Agriculture — Ingaju Farms",
     description:
       "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer while training farmers in circular agriculture.",
-    images: ["/images/hero/bg-img.png"],
+    images: ["/images/hero/bg-img.webp"],
   },
   alternates: {
     canonical: "https://ingajufarms.com",

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     url: "https://ingajufarms.com/contact",
     title: "Contact Ingaju Farms | Rebero Village, Nyagatare District, Eastern Province, Rwanda",
     description: "Reach Ingaju Farms for orders, tours, training, or partnerships. Located in Rebero Village, Nyagatare District, Eastern Province, Rwanda.",
-    images: [{ url: "/images/hero/bg-img.png", width: 1200, height: 630, alt: "Contact Ingaju Farms" }],
+    images: [{ url: "/images/hero/bg-img.webp", width: 1200, height: 630, alt: "Contact Ingaju Farms" }],
   },
 };
 

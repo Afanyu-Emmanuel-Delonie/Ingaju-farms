@@ -41,7 +41,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
         <div className="container-pad mx-auto flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             <div className="relative w-7 h-7">
-              <Image src="/images/brand/Logo.png" alt="Ingaju Farms" fill className="object-contain" />
+              <Image src="/images/brand/Logo.webp" alt="Ingaju Farms" fill sizes="28px" className="object-contain" />
             </div>
             <span className="text-white font-heading font-bold text-sm tracking-wide">Ingaju Portal</span>
             <span className="hidden sm:block text-white/20 text-xs ml-1">/ Operations</span>

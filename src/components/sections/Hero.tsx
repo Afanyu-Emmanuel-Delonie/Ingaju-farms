@@ -9,12 +9,13 @@ export default function Hero() {
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src="/images/about/about.mp4"
-        poster="/images/hero/bg-img.png"
+        poster="/images/hero/bg-img.webp"
         autoPlay
         muted
         loop
         playsInline
         preload="none"
+        aria-hidden="true"
       />
       <div className="absolute inset-0 bg-black/80" />
 

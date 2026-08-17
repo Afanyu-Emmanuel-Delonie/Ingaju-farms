@@ -18,7 +18,7 @@ export const metadata = {
       "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer and train farmers in circular agriculture.",
     images: [
       {
-        url: "/images/hero/bg-img.png",
+        url: "/images/hero/bg-img.webp",
         width: 1200,
         height: 630,
         alt: "Ingaju Farms - About Us",

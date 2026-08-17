@@ -8,7 +8,7 @@ export default function CropsCta() {
   return (
     <section
       className="relative w-full min-h-[520px] overflow-hidden bg-fixed bg-center bg-cover sm:min-h-[580px] lg:min-h-[640px]"
-      style={{ backgroundImage: "url('/images/crops/nuts.jpg')" }}
+      style={{ backgroundImage: "url('/images/crops/nuts.webp')" }}
     >
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
 

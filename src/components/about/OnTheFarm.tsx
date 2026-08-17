@@ -5,22 +5,22 @@ import { ArrowRight } from "lucide-react";
 import { useMemo } from "react";
 
 const IMAGES = [
-  { src: "/images/farm/trainings.png", alt: "Farmer training session" },
-  { src: "/images/about/about-2.png", alt: "Farm operations" },
-  { src: "/images/crops/maiz.jpg", alt: "Maize harvest" },
-  { src: "/images/about/about-3.png", alt: "On the farm" },
-  { src: "/images/about/about-5.png", alt: "Farm landscape" },
-  { src: "/images/about/about-8.png", alt: "On the farm" },
-  { src: "/images/about/about-9.png", alt: "On the farm" },
-  { src: "/images/about/about-10.png", alt: "On the farm" },
-  { src: "/images/about/about-11.png", alt: "On the farm" },
-    { src: "/images/farm/students.png", alt: "Students on farm visit" },
-  { src: "/images/about/about-12.png", alt: "On the farm" },
-  { src: "/images/dairy/cow-4.png", alt: "Dairy production" },
-  { src: "/images/about/about-13.png", alt: "On the farm" },
-  { src: "/images/about/about-14.png", alt: "On the farm" },
-  { src: "/images/about/about-15.jpg", alt: "On the farm" },
-  { src: "/images/crops/crops-2.png", alt: "Maize harvest" },
+  { src: "/images/farm/trainings.webp", alt: "Students observing dairy cattle during a farm training session" },
+  { src: "/images/about/about-2.webp", alt: "Community members gathered at an Ingaju Farms event" },
+  { src: "/images/crops/maiz.webp", alt: "Farmers harvesting maize at Ingaju Farms" },
+  { src: "/images/about/about-3.webp", alt: "Dairy farmers attending a training session at Ingaju Farms" },
+  { src: "/images/about/about-5.webp", alt: "Farmer transporting freshly cut fodder by motorcycle" },
+  { src: "/images/about/about-8.webp", alt: "Farmers attending a dairy farming management training session" },
+  { src: "/images/about/about-9.webp", alt: "Trainer leading a livestock farmer training session" },
+  { src: "/images/about/about-10.webp", alt: "Farmer carrying freshly cut fodder on a motorcycle" },
+  { src: "/images/about/about-11.webp", alt: "Farm worker standing beside dairy cows in the barn" },
+    { src: "/images/farm/students.webp", alt: "Agriculture students gathered for a training session at Ingaju Farms" },
+  { src: "/images/about/about-12.webp", alt: "Farmers attending a cooperative training meeting" },
+  { src: "/images/dairy/cow-4.webp", alt: "Dairy cows and calves resting in the barn" },
+  { src: "/images/about/about-13.webp", alt: "Team members in discussion at the farm" },
+  { src: "/images/about/about-14.webp", alt: "Trainees in lab coats visiting the dairy barn" },
+  { src: "/images/about/about-15.webp", alt: "Group gathered together outside a farm building" },
+  { src: "/images/crops/crops-2.webp", alt: "Irrigation sprinklers watering the maize fields" },
 ];
 
 function shuffle<T>(arr: T[]): T[] {

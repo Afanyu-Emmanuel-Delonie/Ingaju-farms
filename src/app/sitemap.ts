@@ -1,8 +1,10 @@
 import { MetadataRoute } from 'next'
+import { getPublishedBlogPosts } from '@/lib/blog';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://ingajufarms.com';
   const now = new Date();
+  const posts = await getPublishedBlogPosts();
 
   return [
     {
@@ -47,5 +49,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.6,
     },
+    ...posts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
   ]
 }

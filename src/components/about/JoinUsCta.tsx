@@ -4,7 +4,7 @@ export default function JoinUsCta() {
   return (
     <section
       className="relative w-full min-h-[520px] overflow-hidden bg-fixed bg-center bg-cover sm:min-h-[580px] lg:min-h-[640px]"
-      style={{ backgroundImage: "url('/images/hero/bg-img.png')" }}
+      style={{ backgroundImage: "url('/images/hero/bg-img.webp')" }}
     >
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0d1f1a]/95 via-[#0d1f1a]/60 to-black/20" />
 

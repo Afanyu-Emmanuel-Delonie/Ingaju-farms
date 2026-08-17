@@ -5,8 +5,8 @@ export default function StructuredData() {
     "@id": "https://ingajufarms.com/#organization",
     name: "Ingaju Farms",
     url: "https://ingajufarms.com",
-    logo: "https://ingajufarms.com/images/brand/Logo.png",
-    image: "https://ingajufarms.com/images/hero/bg-img.png",
+    logo: "https://ingajufarms.com/images/brand/Logo.webp",
+    image: "https://ingajufarms.com/images/hero/bg-img.webp",
     description:
       "Ingaju Farms is an integrated agricultural enterprise based in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer through a circular farming system and train smallholder farmers across Rwanda.",
     telephone: "+250788304921",

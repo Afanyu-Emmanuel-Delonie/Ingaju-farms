@@ -8,12 +8,13 @@ export default function AboutHero() {
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src="/videos/about-hero.mp4"
-        poster="/images/about/about-1.png"
+        poster="/images/about/about-1.webp"
         autoPlay
         muted
         loop
         playsInline
         preload="none"
+        aria-hidden="true"
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/85" />

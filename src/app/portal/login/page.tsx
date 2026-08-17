@@ -91,7 +91,7 @@ export default function LoginPage() {
             {/* Logo */}
             <div className="flex items-center gap-3 mb-8">
               <div className="relative w-9 h-9">
-                <Image src="/images/brand/Logo.png" alt="Ingaju Farms" fill className="object-contain rounded-full" />
+                <Image src="/images/brand/Logo.webp" alt="Ingaju Farms" fill sizes="36px" className="object-contain rounded-full" />
               </div>
               <div>
                 <p className="text-white font-heading font-bold text-base leading-tight">Ingaju Farms</p>

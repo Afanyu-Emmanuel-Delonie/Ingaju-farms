@@ -1,9 +1,19 @@
-import BrandPattern from "@/components/shared/BrandPattern";
-
 export default function CircularHero() {
   return (
     <section className="relative w-full h-[80vh] lg:h-[80vh] overflow-hidden bg-[#1C2321] flex items-end">
-      <BrandPattern />
+
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/images/about/about.mp4"
+        poster="/images/about/about-1.png"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="none"
+      />
+      <div aria-hidden className="absolute inset-0 bg-[#1C2321]/65" />
 
       {/* Content */}
       <div className="relative z-10 container-pad pb-12 w-full">

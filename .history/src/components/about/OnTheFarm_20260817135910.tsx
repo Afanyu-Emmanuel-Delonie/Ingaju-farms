@@ -6,21 +6,22 @@ import { useMemo } from "react";
 
 const IMAGES = [
   { src: "/images/farm/trainings.png", alt: "Farmer training session" },
+  { src: "/images/dairy/cow.png", alt: "Dairy herd on pasture" },
   { src: "/images/about/about-2.png", alt: "Farm operations" },
   { src: "/images/crops/maiz.jpg", alt: "Maize harvest" },
   { src: "/images/about/about-3.png", alt: "On the farm" },
+  { src: "/images/farm/students.png", alt: "Students on farm visit" },
   { src: "/images/about/about-5.png", alt: "Farm landscape" },
   { src: "/images/about/about-8.png", alt: "On the farm" },
   { src: "/images/about/about-9.png", alt: "On the farm" },
   { src: "/images/about/about-10.png", alt: "On the farm" },
   { src: "/images/about/about-11.png", alt: "On the farm" },
-    { src: "/images/farm/students.png", alt: "Students on farm visit" },
   { src: "/images/about/about-12.png", alt: "On the farm" },
-  { src: "/images/dairy/cow-4.png", alt: "Dairy production" },
   { src: "/images/about/about-13.png", alt: "On the farm" },
   { src: "/images/about/about-14.png", alt: "On the farm" },
   { src: "/images/about/about-15.jpg", alt: "On the farm" },
-  { src: "/images/crops/crops-2.png", alt: "Maize harvest" },
+  { src: "/images/crops/crop-production.png", alt: "Crop production" },
+  { src: "/images/crops/maiz-harvest.png", alt: "Maize harvest" },
 ];
 
 function shuffle<T>(arr: T[]): T[] {
@@ -44,7 +45,7 @@ export default function OnTheFarm() {
         </h2>
       </div>
 
-      <div className="relative flex gap-4 overflow-hidden">
+      <div className="flex gap-4 w-full pl-6 sm:pl-20">
         {[0, 1].map((i) => (
           <div key={i} aria-hidden={i === 1} className="flex gap-4 shrink-0 animate-marquee">
             {shuffled.map((img) => (

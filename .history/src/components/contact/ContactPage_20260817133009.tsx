@@ -44,13 +44,7 @@ const TOPICS = [
 ];
 
 export default function ContactPage() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    topic: "",
-    message: "",
-  });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", topic: "", message: "" });
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -62,20 +56,14 @@ export default function ContactPage() {
     }
   }, []);
 
-  function handleChange(
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
-  ) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!db || !isFirebaseConfigured) {
-      setError(
-        "Sorry, this form is temporarily unavailable. Please email us directly at support@ingajufarms.com.",
-      );
+      setError("Sorry, this form is temporarily unavailable. Please email us directly at support@ingajufarms.com.");
       return;
     }
 
@@ -91,17 +79,12 @@ export default function ContactPage() {
         message: form.message,
         status: "new",
       };
-      await addDoc(collection(db, "leads"), {
-        ...leadPayload,
-        createdAt: serverTimestamp(),
-      });
+      await addDoc(collection(db, "leads"), { ...leadPayload, createdAt: serverTimestamp() });
       notifyNewLead(leadPayload);
       setSent(true);
     } catch (err) {
       console.error("[Contact form] Firestore error:", err);
-      setError(
-        "Something went wrong sending your message. Please try again or email us directly.",
-      );
+      setError("Something went wrong sending your message. Please try again or email us directly.");
     } finally {
       setSubmitting(false);
     }
@@ -109,6 +92,7 @@ export default function ContactPage() {
 
   return (
     <main className="flex flex-col min-h-screen">
+
       {/* ── Hero ── */}
       <section className="relative w-full h-[60vh] lg:h-[70vh] overflow-hidden bg-[#1C2321] flex items-end">
         <video
@@ -132,9 +116,7 @@ export default function ContactPage() {
             <span className="text-[#6DBE8C]">Conversation.</span>
           </h1>
           <p className="mt-4 max-w-xl font-body text-base leading-relaxed text-white/70">
-            Whether you&apos;re looking to order products, book a farm tour,
-            join a training, or explore a partnership — we&apos;d love to hear
-            from you.
+            Whether you&apos;re looking to order products, book a farm tour, join a training, or explore a partnership — we&apos;d love to hear from you.
           </p>
         </div>
       </section>
@@ -143,22 +125,18 @@ export default function ContactPage() {
       <section className="w-full bg-[#F8F6F2]">
         <div className="container-pad py-20">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-12">
+
             {/* Left — dark info panel */}
             <div className="relative overflow-hidden rounded-3xl bg-[#1C2321] p-8 lg:p-10 flex flex-col justify-between gap-10">
               <BrandPattern />
 
               <div>
-                <p className="text-xs font-body font-semibold uppercase tracking-widest text-[#6DBE8C] mb-3">
-                  Contact Information
-                </p>
+                <p className="text-xs font-body font-semibold uppercase tracking-widest text-[#6DBE8C] mb-3">Contact Information</p>
                 <h2 className="font-heading text-2xl font-bold text-white leading-snug">
-                  We&apos;re always
-                  <br />
-                  happy to help.
+                  We&apos;re always<br />happy to help.
                 </h2>
                 <p className="mt-3 text-sm font-body text-white/55 leading-relaxed max-w-xs">
-                  Reach out through any channel below and our team will get back
-                  to you promptly.
+                  Reach out through any channel below and our team will get back to you promptly.
                 </p>
               </div>
 
@@ -170,15 +148,9 @@ export default function ContactPage() {
                       <Icon className="h-4 w-4" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-body font-semibold uppercase tracking-widest text-white/40">
-                        {label}
-                      </p>
-                      <p className="mt-0.5 text-sm font-body font-medium text-white">
-                        {value}
-                      </p>
-                      <p className="mt-0.5 text-xs font-body text-white/40">
-                        {sub}
-                      </p>
+                      <p className="text-[10px] font-body font-semibold uppercase tracking-widest text-white/40">{label}</p>
+                      <p className="mt-0.5 text-sm font-body font-medium text-white">{value}</p>
+                      <p className="mt-0.5 text-xs font-body text-white/40">{sub}</p>
                     </div>
                   </li>
                 ))}
@@ -195,24 +167,12 @@ export default function ContactPage() {
                   <div className="w-12 h-12 rounded-full bg-[#3A7D5A]/10 flex items-center justify-center text-[#3A7D5A]">
                     <ArrowRight className="h-5 w-5" />
                   </div>
-                  <h3 className="font-heading text-2xl font-bold text-[#1C2321]">
-                    Message Sent!
-                  </h3>
+                  <h3 className="font-heading text-2xl font-bold text-[#1C2321]">Message Sent!</h3>
                   <p className="text-sm font-body text-[#6B6259] leading-relaxed max-w-sm">
-                    Thank you for reaching out. We&apos;ll get back to you
-                    within 24 hours.
+                    Thank you for reaching out. We&apos;ll get back to you within 24 hours.
                   </p>
                   <button
-                    onClick={() => {
-                      setSent(false);
-                      setForm({
-                        name: "",
-                        email: "",
-                        phone: "",
-                        topic: "",
-                        message: "",
-                      });
-                    }}
+                    onClick={() => { setSent(false); setForm({ name: "", email: "", phone: "", topic: "", message: "" }); }}
                     className="mt-2 text-sm font-body font-semibold text-[#3A7D5A] border-b border-[#3A7D5A]/40 pb-0.5 hover:border-[#3A7D5A] transition-colors"
                   >
                     Send another message
@@ -220,104 +180,52 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                  <div className="flex flex-col gap-1.5">
-                    <label
-                      htmlFor="name"
-                      className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]"
-                    >
-                      Full Name
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={handleChange}
-                      placeholder="Jane Doe"
-                      className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label
-                      htmlFor="email"
-                      className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]"
-                    >
-                      Email Address
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="jane@email.com"
-                      className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
-                    />
-                  </div>
+                                      <div className="flex flex-col gap-1.5">
+                      <label htmlFor="name" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Full Name</label>
+                      <input
+                        id="name" name="name" type="text" required
+                        value={form.name} onChange={handleChange}
+                        placeholder="Jane Doe"
+                        className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-1.5">
+                      <label htmlFor="email" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Email Address</label>
+                      <input
+                        id="email" name="email" type="email" required
+                        value={form.email} onChange={handleChange}
+                        placeholder="jane@email.com"
+                        className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
+                      />
+                    </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
-                      <label
-                        htmlFor="phone"
-                        className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]"
-                      >
-                        Phone{" "}
-                        <span className="normal-case text-[#B0A89E]">
-                          (optional)
-                        </span>
-                      </label>
+                      <label htmlFor="phone" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Phone <span className="normal-case text-[#B0A89E]">(optional)</span></label>
                       <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={form.phone}
-                        onChange={handleChange}
+                        id="phone" name="phone" type="tel"
+                        value={form.phone} onChange={handleChange}
                         placeholder="+250 700 000 000"
                         className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label
-                        htmlFor="topic"
-                        className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]"
-                      >
-                        Topic
-                      </label>
+                      <label htmlFor="topic" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Topic</label>
                       <select
-                        id="topic"
-                        name="topic"
-                        required
-                        value={form.topic}
-                        onChange={handleChange}
+                        id="topic" name="topic" required
+                        value={form.topic} onChange={handleChange}
                         className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2] appearance-none"
                       >
-                        <option value="" disabled>
-                          Select a topic
-                        </option>
-                        {TOPICS.map((t) => (
-                          <option key={t} value={t}>
-                            {t}
-                          </option>
-                        ))}
+                        <option value="" disabled>Select a topic</option>
+                        {TOPICS.map((t) => <option key={t} value={t}>{t}</option>)}
                       </select>
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label
-                      htmlFor="message"
-                      className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]"
-                    >
-                      Message
-                    </label>
+                    <label htmlFor="message" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Message</label>
                     <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={5}
-                      value={form.message}
-                      onChange={handleChange}
+                      id="message" name="message" required rows={5}
+                      value={form.message} onChange={handleChange}
                       placeholder="Tell us how we can help you..."
                       className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2] resize-none"
                     />
@@ -334,12 +242,12 @@ export default function ContactPage() {
                     disabled={submitting}
                     className="mt-1 w-full rounded-full bg-[#1C2321] py-3.5 text-sm font-body font-semibold text-white transition-colors hover:bg-[#3A7D5A] inline-flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {submitting ? "Sending..." : "Send Message"}{" "}
-                    <ArrowRight className="h-4 w-4" />
+                    {submitting ? "Sending..." : "Send Message"} <ArrowRight className="h-4 w-4" />
                   </button>
                 </form>
               )}
             </div>
+
           </div>
         </div>
       </section>
@@ -364,6 +272,7 @@ export default function ContactPage() {
 
       {/* ── FAQ ── */}
       <FaqSection />
+
     </main>
   );
 }

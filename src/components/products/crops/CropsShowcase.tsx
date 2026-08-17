@@ -10,35 +10,35 @@ const CROPS = [
     title: "Maize",
     unit: "kg",
     desc: "Grain grown using climate-smart farming practices. Harvested at peak maturity with traceable handling.",
-    img: "/images/crops/maiz-harvest.png",
+    img: "/images/crops/maiz-harvest.webp",
   },
   {
     label: "Tree Crop",
     title: "Macadamia",
     unit: "kg",
     desc: "Nuts grown with minimal synthetic inputs, cultivated under sustainable land management practices.",
-    img: "/images/crops/nuts.jpg",
+    img: "/images/crops/nuts.webp",
   },
   {
     label: "Protein Crop",
     title: "Fresh Beans",
     unit: "kg",
     desc: "Legumes grown through a sustainable crop rotation loop. They help restore soil structure and add nitrogen naturally.",
-    img: "/images/crops/beans.png",
+    img: "/images/crops/beans.webp",
   },
   {
     label: "Oilseed Crop",
     title: "Soybeans",
     unit: "kg",
     desc: "Oilseed managed under organic-input fertility practices and supplied to food and feed markets.",
-    img: "/images/crops/soy-beans.png",
+    img: "/images/crops/soy-beans.webp",
   },
   {
     label: "Tropical Fruit",
     title: "Mangoes",
     unit: "kg",
     desc: "Orchard-grown using organic-input management and harvested at peak readiness, with minimal post-harvest chemical use.",
-    img: "/images/crops/mangoes.png",
+    img: "/images/crops/mangoes.webp",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function CropsShowcase() {
         <div className="flex flex-wrap justify-center gap-6">
           {CROPS.map((prod, idx) => (
             <div key={idx} className="relative h-[500px] w-full max-w-[340px] overflow-hidden rounded-3xl">
-              <Image src={prod.img} alt={prod.title} fill className="object-cover" />
+              <Image src={prod.img} alt={prod.title} fill sizes="340px" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent" />
               <div className="absolute top-5 left-5">
                 <span className="inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-3 py-1 text-[10px] font-body font-semibold uppercase tracking-widest text-white">

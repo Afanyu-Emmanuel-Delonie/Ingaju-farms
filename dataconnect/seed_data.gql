@@ -1,0 +1,37 @@
+mutation CreateSeedData @transaction {
+  user_insertMany(data: [
+    { email: "alice@example.com", role: "admin", displayName: "Alice Admin" },
+    { email: "bob@example.com", role: "editor", displayName: "Bob Editor" },
+    { email: "charlie@example.com", role: "viewer", displayName: "Charlie Viewer" }
+  ])
+  
+  category_insertMany(data: [
+    { name: "Tech", description: "Technology articles" },
+    { name: "News", description: "Daily updates" },
+    { name: "Tutorials", description: "How-to guides" }
+  ])
+
+  blogPost_insertMany(data: [
+    { title: "First Post", content: "Hello world", status: "published", createdAt: "2023-01-01T00:00:00Z" },
+    { title: "Tech Trends", content: "AI is rising", status: "draft", createdAt: "2023-01-02T00:00:00Z" },
+    { title: "Quick News", content: "Big things happening", status: "published", createdAt: "2023-01-03T00:00:00Z" }
+  ])
+
+  form_insertMany(data: [
+    { title: "Contact Form", formType: "feedback", isActive: true },
+    { title: "Registration", formType: "signup", isActive: true },
+    { title: "Survey", formType: "poll", isActive: false }
+  ])
+
+  formField_insertMany(data: [
+    { label: "Email", fieldType: "text", isRequired: true },
+    { label: "Message", fieldType: "textarea", isRequired: false },
+    { label: "Age", fieldType: "number", isRequired: true }
+  ])
+
+  formSubmission_insertMany(data: [
+    { submittedAt: "2023-01-01T12:00:00Z", rawData: "{\"email\": \"a@b.com\"}" },
+    { submittedAt: "2023-01-02T13:00:00Z", rawData: "{\"email\": \"c@d.com\"}" },
+    { submittedAt: "2023-01-03T14:00:00Z", rawData: "{\"email\": \"e@f.com\"}" }
+  ])
+}

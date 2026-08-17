@@ -2,27 +2,31 @@
 
 import Image from "next/image";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { BLOG_POSTS } from "@/lib/constants";
 import { useState } from "react";
+import type { BlogPost } from "@/lib/blog";
 
 const VISIBLE = 3;
 
 interface Props {
+  posts: BlogPost[];
   heading?: string;
   subheading?: string;
 }
 
 export default function BlogSection({
+  posts,
   heading = "Insights From the Field.",
   subheading = "Practical knowledge on circular farming, livestock and dairy production, and sustainable agriculture written by people who farm every day.",
 }: Props) {
   const [start, setStart] = useState(0);
-  const total = BLOG_POSTS.length;
+  const total = posts.length;
+
+  if (total === 0) return null;
 
   const prev = () => setStart((s) => (s - 1 + total) % total);
   const next = () => setStart((s) => (s + 1) % total);
 
-  const visible = Array.from({ length: VISIBLE }, (_, i) => BLOG_POSTS[(start + i) % total]);
+  const visible = Array.from({ length: Math.min(VISIBLE, total) }, (_, i) => posts[(start + i) % total]);
 
   return (
     <section className="w-full bg-white">
@@ -39,26 +43,27 @@ export default function BlogSection({
             </p>
           </div>
 
-          {/* Controls */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={prev}
-              aria-label="Previous posts"
-              className="flex items-center justify-center w-9 h-9 rounded-full border border-[#1C2321]/15 text-[#1C2321] hover:bg-[#3A7D5A] hover:border-[#3A7D5A] hover:text-white transition-colors"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </button>
-            <span className="text-xs font-body text-[#6B6259] tabular-nums">
-              {start + 1} – {((start + VISIBLE - 1) % total) + 1} of {total}
-            </span>
-            <button
-              onClick={next}
-              aria-label="Next posts"
-              className="flex items-center justify-center w-9 h-9 rounded-full border border-[#1C2321]/15 text-[#1C2321] hover:bg-[#3A7D5A] hover:border-[#3A7D5A] hover:text-white transition-colors"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </button>
-          </div>
+          {total > VISIBLE && (
+            <div className="flex items-center gap-2">
+              <button
+                onClick={prev}
+                aria-label="Previous posts"
+                className="flex items-center justify-center w-9 h-9 rounded-full border border-[#1C2321]/15 text-[#1C2321] hover:bg-[#3A7D5A] hover:border-[#3A7D5A] hover:text-white transition-colors"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+              <span className="text-xs font-body text-[#6B6259] tabular-nums">
+                {start + 1} – {((start + VISIBLE - 1) % total) + 1} of {total}
+              </span>
+              <button
+                onClick={next}
+                aria-label="Next posts"
+                className="flex items-center justify-center w-9 h-9 rounded-full border border-[#1C2321]/15 text-[#1C2321] hover:bg-[#3A7D5A] hover:border-[#3A7D5A] hover:text-white transition-colors"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

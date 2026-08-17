@@ -4,6 +4,21 @@ export default function AboutHero() {
   return (
     <section className="relative w-full h-[80vh] min-h-[550px] overflow-hidden bg-[#1C2321] flex items-end">
 
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/videos/about-hero.mp4"
+        poster="/images/about/about-1.webp"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="none"
+        aria-hidden="true"
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/85" />
+
       {/* Decorative background vectors */}
       <svg className="absolute top-0 right-0 w-[480px] h-[480px] opacity-10 pointer-events-none" viewBox="0 0 480 480" fill="none">
         <circle cx="380" cy="100" r="220" stroke="#3A7D5A" strokeWidth="1.5" />
@@ -30,7 +45,7 @@ export default function AboutHero() {
           </h1>
 
           <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/80 md:text-lg">
-            For 6+ years, Ingaju Farms has proven that nothing has to go to waste livestock, crops, and organic recycling running as one tracked system, training farmers with us in Nyagatare, Rwanda.
+            For over 6 years Ingaju Circular Farm has proven that nothing has to go to waste: livestock, crops, and organic recycling running as one tracked system, as well as training and partnership to enhance better livelihoods in Rwanda.
           </p>
         
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">

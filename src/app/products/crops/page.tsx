@@ -14,7 +14,7 @@ export const metadata = {
     url: "https://ingajufarms.com/products/crops",
     title: "Livestock-Fed Crop Production Rwanda | Ingaju Farms",
     description: "Low-chemical inputs, climate-smart soil practices. Maize, beans, macadamia, and more from Ingaju Farms, Eastern Province, Rwanda.",
-    images: [{ url: "/images/crops/crop-production.png", width: 1200, height: 630, alt: "Ingaju Farms Crop Production" }],
+    images: [{ url: "/images/crops/crop-production.webp", width: 1200, height: 630, alt: "Ingaju Farms Crop Production" }],
   },
 };
 

@@ -49,7 +49,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[360px] w-full overflow-hidden">
-        <Image src={post.image} alt={post.alt} fill priority className="object-cover object-center" />
+        <Image src={post.image} alt={post.alt} fill priority sizes="100vw" className="object-cover object-center" />
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         <div className="relative z-10 flex h-full flex-col justify-end container-pad pb-12">

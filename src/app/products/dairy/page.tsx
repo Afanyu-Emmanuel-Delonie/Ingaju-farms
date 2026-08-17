@@ -13,7 +13,7 @@ export const metadata = {
     url: "https://ingajufarms.com/products/dairy",
     title: "Livestock & Dairy Products Rwanda | Ingaju Farms",
     description: "Pasture-fed milk, yogurt, cheese, and butter from Ingaju Farms, Eastern Province, Rwanda — part of a circular system closing the loop on synthetic inputs.",
-    images: [{ url: "/images/hero/bg-img.png", width: 1200, height: 630, alt: "Ingaju Farms Livestock & Dairy Products" }],
+    images: [{ url: "/images/hero/bg-img.webp", width: 1200, height: 630, alt: "Ingaju Farms Livestock & Dairy Products" }],
   },
 };
 

@@ -9,8 +9,11 @@ import BlogSection from "@/components/sections/BlogSection";
 import ReadyToExperienceCta from "@/components/sections/ReadyToExperienceCta";
 import FaqSection from "@/components/sections/FaqSection";
 import FadeIn from "@/components/animations/FadeIn";
+import { getPublishedBlogPosts } from "@/lib/blog";
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getPublishedBlogPosts();
+
   return (
     <main className="flex flex-col">
       <Hero />
@@ -20,7 +23,9 @@ export default function Home() {
       <FadeIn direction="none" duration={1}><ImpactStats /></FadeIn>
       <FadeIn direction="up" delay={0.05}><LearnWithIngaju /></FadeIn>
       <FadeIn direction="up" delay={0.05}><Testimonials /></FadeIn>
-      <FadeIn direction="up" delay={0.05}><section id="blog"><BlogSection /></section></FadeIn>
+      {posts.length > 0 && (
+        <FadeIn direction="up" delay={0.05}><section id="blog"><BlogSection posts={posts} /></section></FadeIn>
+      )}
       <FadeIn direction="up" delay={0.05}><ReadyToExperienceCta /></FadeIn>
       <FadeIn direction="up" delay={0.05}><FaqSection /></FadeIn>
     </main>

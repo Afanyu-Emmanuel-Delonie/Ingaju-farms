@@ -16,6 +16,8 @@ import { db, isFirebaseConfigured } from "@/lib/firebase";
 import { useAuth } from "@/lib/AuthContext";
 import { BLOG_COLLECTION, type BlogContentBlock, type BlogPost } from "@/lib/blog";
 import { BLOG_POSTS } from "@/lib/constants";
+import { toDirectImageUrl } from "@/lib/driveImage";
+import { revalidateBlog } from "@/lib/revalidateBlog";
 import {
   ChevronDown,
   Clock,
@@ -25,6 +27,7 @@ import {
   GripVertical,
   Pencil,
   Plus,
+  Sprout,
   Trash2,
   X,
 } from "lucide-react";
@@ -220,7 +223,7 @@ export default function PortalBlogPage() {
         slug,
         category: form.category.trim(),
         excerpt: form.excerpt.trim(),
-        image: form.image.trim(),
+        image: toDirectImageUrl(form.image),
         alt: form.alt.trim(),
         readTime: form.readTime.trim() || "5 min read",
         published: form.published,
@@ -239,6 +242,7 @@ export default function PortalBlogPage() {
         });
         setSuccessMsg("Post published.");
       }
+      revalidateBlog(slug);
       closeForm();
       setTimeout(() => setSuccessMsg(""), 4000);
     } catch {
@@ -251,12 +255,43 @@ export default function PortalBlogPage() {
   const togglePublished = async (post: BlogPost) => {
     if (!db || !post.id) return;
     await updateDoc(doc(db, BLOG_COLLECTION, post.id), { published: !(post.published !== false) });
+    revalidateBlog(post.slug);
   };
 
   const handleDelete = async (post: BlogPost) => {
     if (!db || !post.id) return;
     if (!confirm(`Delete "${post.title}"? This cannot be undone.`)) return;
     await deleteDoc(doc(db, BLOG_COLLECTION, post.id));
+    revalidateBlog(post.slug);
+  };
+
+  const unseededPosts = BLOG_POSTS.filter(
+    (bp) => !posts.some((p) => p.slug === bp.slug),
+  );
+
+  const seedBuiltInPosts = async () => {
+    const firestore = db;
+    if (!firestore || unseededPosts.length === 0) return;
+    setSubmitting(true);
+    try {
+      await Promise.all(
+        unseededPosts.map((post) =>
+          addDoc(collection(firestore, BLOG_COLLECTION), {
+            ...post,
+            published: true,
+            authorEmail: user?.email ?? "seed",
+            createdAt: serverTimestamp(),
+          }),
+        ),
+      );
+      unseededPosts.forEach((post) => revalidateBlog(post.slug));
+      setSuccessMsg(`Seeded ${unseededPosts.length} built-in post${unseededPosts.length === 1 ? "" : "s"}.`);
+      setTimeout(() => setSuccessMsg(""), 4000);
+    } catch {
+      setError("Something went wrong seeding the built-in posts. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   // ── Render ────────────────────────────────────────────────────────────
@@ -274,13 +309,26 @@ export default function PortalBlogPage() {
           </p>
         </div>
 
-        <button
-          onClick={() => (showForm ? closeForm() : openNew())}
-          className="flex items-center gap-2 bg-[#1C2321] hover:bg-[#3A7D5A] text-white text-sm font-body font-semibold px-4 py-2.5 rounded-xl transition-colors"
-        >
-          {showForm ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-          {showForm ? "Cancel" : "New Post"}
-        </button>
+        <div className="flex items-center gap-2">
+          {unseededPosts.length > 0 && (
+            <button
+              onClick={seedBuiltInPosts}
+              disabled={submitting}
+              className="flex items-center gap-2 rounded-xl border border-[#E0D8CE] text-[#6B6259] hover:border-[#3A7D5A] hover:text-[#3A7D5A] text-sm font-body font-semibold px-4 py-2.5 transition-colors disabled:opacity-60"
+              title="Adds the built-in articles as editable posts in this list"
+            >
+              <Sprout className="w-4 h-4" />
+              Seed Built-in Posts ({unseededPosts.length})
+            </button>
+          )}
+          <button
+            onClick={() => (showForm ? closeForm() : openNew())}
+            className="flex items-center gap-2 bg-[#1C2321] hover:bg-[#3A7D5A] text-white text-sm font-body font-semibold px-4 py-2.5 rounded-xl transition-colors"
+          >
+            {showForm ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+            {showForm ? "Cancel" : "New Post"}
+          </button>
+        </div>
       </div>
 
       {!isFirebaseConfigured && (
@@ -371,14 +419,14 @@ export default function PortalBlogPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="flex flex-col gap-1.5 sm:col-span-2">
               <label className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">
-                Image URL <span className="normal-case text-[#B0A89E]">(must be a local /images path or an allowed remote domain)</span>
+                Image URL <span className="normal-case text-[#B0A89E]">(local /images path, Google Drive share link, or an allowed remote domain)</span>
               </label>
               <input
                 type="text"
                 required
                 value={form.image}
                 onChange={(e) => setForm((f) => ({ ...f, image: e.target.value }))}
-                placeholder="/images/blog-example.png or https://images.unsplash.com/..."
+                placeholder="/images/blog-example.png, a Google Drive share link, or https://images.unsplash.com/..."
                 className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] bg-[#F8F6F2] outline-none focus:border-[#3A7D5A] transition-colors"
               />
             </div>

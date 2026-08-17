@@ -14,7 +14,7 @@ export const metadata = {
     url: "https://ingajufarms.com/circular-system",
     title: "Circular Agriculture System | Closing the Loop — Ingaju Farms",
     description: "A farm in Eastern Province, Rwanda closing the loop, one stage at a time — resources recovered and reused, working toward a zero-waste ambition.",
-    images: [{ url: "/images/hero/bg-img.png", width: 1200, height: 630, alt: "Ingaju Farms Circular System" }],
+    images: [{ url: "/images/hero/bg-img.webp", width: 1200, height: 630, alt: "Ingaju Farms Circular System" }],
   },
 };
 

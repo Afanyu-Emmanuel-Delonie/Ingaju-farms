@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/lib/AuthContext";
+import { isFirebaseConfigured } from "@/lib/firebase";
 import Image from "next/image";
 
 const NAV_LINKS = [
@@ -17,15 +18,20 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!loading && !user) router.replace("/portal/login");
-  }, [user, loading, router]);
+    if (!isFirebaseConfigured) return; // skip auth guard until Firebase is added
+    if (!loading && !user && pathname !== "/portal/login") router.replace("/portal/login");
+  }, [user, loading, router, pathname]);
 
-  if (loading || !user) {
+  if (isFirebaseConfigured && (loading || (!user && pathname !== "/portal/login"))) {
     return (
       <div className="min-h-screen bg-[#F8F6F2] flex items-center justify-center">
         <div className="w-6 h-6 rounded-full border-2 border-[#3A7D5A] border-t-transparent animate-spin" />
       </div>
     );
+  }
+
+  if (pathname === "/portal/login") {
+    return <>{children}</>;
   }
 
   return (
@@ -35,7 +41,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
         <div className="container-pad mx-auto flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             <div className="relative w-7 h-7">
-              <Image src="/images/brand/Logo.png" alt="Ingaju Farms" fill className="object-contain" />
+              <Image src="/images/brand/Logo.webp" alt="Ingaju Farms" fill sizes="28px" className="object-contain" />
             </div>
             <span className="text-white font-heading font-bold text-sm tracking-wide">Ingaju Portal</span>
             <span className="hidden sm:block text-white/20 text-xs ml-1">/ Operations</span>
@@ -60,7 +66,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
 
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2.5">
-              {user.photoURL && (
+              {user?.photoURL && (
                 <Image
                   src={user.photoURL}
                   alt={user.displayName ?? "User"}
@@ -69,7 +75,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
                   className="rounded-full border border-white/20"
                 />
               )}
-              <span className="hidden sm:block text-xs font-body text-white/60">{user.displayName ?? user.email}</span>
+              <span className="hidden sm:block text-xs font-body text-white/60">{user?.displayName ?? user?.email ?? "Admin"}</span>
             </div>
             <button
               onClick={signOut}

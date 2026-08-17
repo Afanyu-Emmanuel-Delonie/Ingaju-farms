@@ -3,6 +3,7 @@ import OurStory from "@/components/about/OurStory";
 import MissionVision from "@/components/about/MissionVision";
 import ImpactStats from "@/components/shared/ImpactStats";
 import CoreValues from "@/components/about/CoreValues";
+import OnTheFarm from "@/components/about/OnTheFarm";
 import JoinUsCta from "@/components/about/JoinUsCta";
 
 export const metadata = {
@@ -17,7 +18,7 @@ export const metadata = {
       "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer and train farmers in circular agriculture.",
     images: [
       {
-        url: "/images/hero/bg-img.png",
+        url: "/images/hero/bg-img.webp",
         width: 1200,
         height: 630,
         alt: "Ingaju Farms - About Us",
@@ -35,6 +36,7 @@ export default function AboutPage() {
       <ImpactStats />
       <CoreValues />
       <JoinUsCta />
+      <OnTheFarm />
     </main>
   );
 }

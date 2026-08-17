@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://ingajufarms.com/blog",
     title: "Blog | Circular Agriculture & Farming Insights — Ingaju Farms",
     description: "Practical insights on circular agriculture, livestock and dairy farming, and sustainable crop production from Ingaju Farms, Eastern Province, Rwanda.",
-    images: [{ url: "/images/hero/bg-img.png", width: 1200, height: 630, alt: "Ingaju Farms Blog" }],
+    images: [{ url: "/images/hero/bg-img.webp", width: 1200, height: 630, alt: "Ingaju Farms Blog" }],
   },
 };
 
@@ -36,6 +36,13 @@ export default async function BlogPage() {
           </p>
         </div>
 
+        {posts.length === 0 ? (
+          <div className="rounded-2xl bg-white p-12 text-center shadow-sm">
+            <p className="text-base font-heading font-bold text-[#1C2321]">No articles published yet</p>
+            <p className="mt-1 text-sm font-body text-[#6B6259]">Check back soon for new posts from the farm.</p>
+          </div>
+        ) : (
+        <>
         {/* Featured post */}
         <Link
           href={`/blog/${featured.slug}`}
@@ -100,6 +107,8 @@ export default async function BlogPage() {
             </Link>
           ))}
         </div>
+        </>
+        )}
 
       </div>
     </main>

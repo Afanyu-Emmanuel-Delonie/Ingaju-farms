@@ -7,10 +7,11 @@ export default function CropsHero() {
     <section className="relative h-screen lg:h-screen w-full overflow-hidden">
       <div className="absolute inset-0 animate-ken-burns">
         <Image
-          src="/images/crops/crops-2.png"
+          src="/images/crops/crops-2.webp"
           alt="Ingaju Farms green crop fields"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center"
         />
       </div>

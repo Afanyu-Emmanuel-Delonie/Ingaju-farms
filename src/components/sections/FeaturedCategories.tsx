@@ -22,14 +22,14 @@ export default function FeaturedCategories() {
           {/* Dairy — full-width hero card */}
           <a
             href="/products/dairy"
-            className="group relative block h-96 w-full overflow-hidden rounded-2xl"
+            className="group relative block h-[28rem] w-full overflow-hidden rounded-2xl sm:h-[32rem]"
           >
             <Image
-              src="/images/hero/bg-img.png"
+              src="/images/dairy/cow-4.webp"
               alt="Dairy cattle grazing on the farm"
               fill
               sizes="100vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover object-left-top transition-transform duration-500 group-hover:scale-105 sm:object-[50%_top]"
             />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
             {/* Frosted label */}

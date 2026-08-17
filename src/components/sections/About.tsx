@@ -41,7 +41,7 @@ export default function About() {
         <motion.div variants={container(0.1)} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-8%" }} className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <motion.div variants={item} className="relative h-72 w-full overflow-hidden rounded-xl">
             <Image
-              src="/images/dairy/cow-3.png"
+              src="/images/dairy/cow-1.webp"
               alt="Farmer walking with dairy cattle on the Ingaju farm"
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
@@ -67,7 +67,7 @@ export default function About() {
 
           <motion.div variants={item} className="relative h-72 w-full overflow-hidden rounded-xl">
             <Image
-              src="/images/about/about-5.png"
+              src="/images/about/about-6.webp"
               alt="Ingaju team engaging with farmers and the local community"
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"

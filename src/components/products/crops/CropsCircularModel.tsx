@@ -21,18 +21,18 @@ export default function CropsCircularModel() {
           <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col gap-3">
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
-                <Image src="/images/crops/maiz.jpg" alt="Maize growing in rich organic soil" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/maiz.webp" alt="Maize growing in rich organic soil" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
-                <Image src="/images/crops/nuts.jpg" alt="Macadamia nuts ready for harvest" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/nuts.webp" alt="Macadamia nuts ready for harvest" fill sizes="25vw" className="object-cover" />
               </div>
             </div>
             <div className="flex flex-col gap-3">
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
-                <Image src="/images/hero/bg-3.png" alt="Ingaju Farms circular agriculture in Nyagatare" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/hero/bg-3.webp" alt="Ingaju Farms circular agriculture in Nyagatare" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
-                <Image src="/images/crops/crops-2.png" alt="Farmer tending crop rows" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/crops-2.webp" alt="Farmer tending crop rows" fill sizes="25vw" className="object-cover" />
               </div>
             </div>
           </div>

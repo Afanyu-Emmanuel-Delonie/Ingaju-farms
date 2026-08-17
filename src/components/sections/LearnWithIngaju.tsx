@@ -46,18 +46,18 @@ export default function LearnWithIngaju() {
           >
             <div className="flex flex-col gap-3">
               <div className="relative h-56 w-full overflow-hidden rounded-2xl sm:h-72">
-                <Image src="/images/crops/maiz.jpg" alt="Maize growing in the field at Ingaju Farms" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/maiz.webp" alt="Maize growing in the field at Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-40 w-full overflow-hidden rounded-2xl">
-                <Image src="/images/crops/nuts.jpg" alt="Crops growing on the farm" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/crops/nuts.webp" alt="Crops growing on the farm" fill sizes="25vw" className="object-cover" />
               </div>
             </div>
             <div className="flex flex-col gap-3">
               <div className="relative h-40 w-full overflow-hidden rounded-2xl">
-                <Image src="/images/dairy/milk.jpg" alt="Fresh milk from Ingaju Farms" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/dairy/milk.webp" alt="Fresh milk from Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
               <div className="relative h-56 w-full overflow-hidden rounded-2xl sm:h-72">
-                <Image src="/images/dairy/organic-manure.png" alt="Organic manure fertilizer at Ingaju Farms" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/dairy/organic-manure.webp" alt="Organic manure fertilizer at Ingaju Farms" fill sizes="25vw" className="object-cover" />
               </div>
             </div>
           </motion.div>

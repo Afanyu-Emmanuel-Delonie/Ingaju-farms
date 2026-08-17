@@ -25,10 +25,9 @@ export default function DairyCircularModel() {
               <span className="text-[#3A7D5A]">Careful Management.</span>
             </h2>
             <p className="mt-4 text-[15px] font-body leading-relaxed text-[#6B6259]">
-              Every stage of our livestock operation is tracked through
-              careful digital record-keeping. This discipline helps us
-              improve resource use and keep production consistent season
-              after season.
+              Every stage of our livestock operation is tracked through careful
+              digital record-keeping. This discipline helps us improve resource
+              use and keep production consistent season after season.
             </p>
             <ul className="mt-6 space-y-3">
               {POINTS.map((point) => (
@@ -57,7 +56,7 @@ export default function DairyCircularModel() {
             <div className="flex flex-col gap-3">
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
                 <Image
-                  src="/images/hero/bg-img.png"
+                  src="/images/dairy/cow.webp"
                   alt="Cows grazing at Ingaju Farms"
                   fill
                   sizes="25vw"
@@ -66,7 +65,7 @@ export default function DairyCircularModel() {
               </div>
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
                 <Image
-                  src="/images/dairy/milk.jpg"
+                  src="/images/dairy/milk.webp"
                   alt="Fresh milk from Ingaju Farms"
                   fill
                   sizes="25vw"
@@ -77,7 +76,7 @@ export default function DairyCircularModel() {
             <div className="flex flex-col gap-3">
               <div className="relative h-36 w-full overflow-hidden rounded-xl">
                 <Image
-                  src="/images/dairy/organic-manure.png"
+                  src="/images/dairy/organic-manure.webp"
                   alt="Organic manure processing at Ingaju Farms"
                   fill
                   sizes="25vw"
@@ -86,7 +85,7 @@ export default function DairyCircularModel() {
               </div>
               <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
                 <Image
-                  src="/images/dairy/cow-3.png"
+                  src="/images/dairy/cow-4.webp"
                   alt="Farmer caring for livestock"
                   fill
                   sizes="25vw"

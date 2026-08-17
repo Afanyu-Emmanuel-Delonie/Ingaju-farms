@@ -1,23 +1,23 @@
 "use client";
 
-import Image from "next/image";
-import bgImg from "../../../public/images/hero/bg-img.png";
 import { useModal } from "@/components/shared/ModalContext";
 
 export default function Hero() {
   const { open } = useModal();
   return (
-    <section className="relative h-screen lg:h-screen w-full overflow-hidden">
-      <div className="absolute inset-0 animate-ken-burns">
-        <Image
-          src={bgImg}
-          alt="Ingaju Farms dairy cattle"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-      </div>
-      <div className="absolute inset-0 bg-black/55" />
+    <section className="relative h-screen w-full overflow-hidden">
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/images/about/about.mp4"
+        poster="/images/hero/bg-img.webp"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="none"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-black/80" />
 
       <div className="relative z-10 flex h-full flex-col items-start justify-end container-pad pb-20">
         <h1 className="max-w-4xl text-3xl font-heading font-bold leading-tight text-white md:text-5xl">

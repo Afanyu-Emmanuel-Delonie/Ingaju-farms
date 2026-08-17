@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import BackToTop from "@/components/BackToTop";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
+import { getPublishedBlogPosts } from "@/lib/blog";
+import SiteChrome from "@/components/SiteChrome";
 import { ModalProvider } from "@/components/shared/ModalContext";
 import RequestModal from "@/components/shared/RequestModal";
 import { AuthProvider } from "@/lib/AuthContext";
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
       "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer while training farmers in circular agriculture.",
     images: [
       {
-        url: "/images/hero/bg-img.png",
+        url: "/images/hero/bg-img.webp",
         width: 1200,
         height: 630,
         alt: "Ingaju Farms - Circular agriculture in Eastern Province, Rwanda",
@@ -60,7 +59,7 @@ export const metadata: Metadata = {
     title: "Livestock, Crops & Circular Agriculture — Ingaju Farms",
     description:
       "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer while training farmers in circular agriculture.",
-    images: ["/images/hero/bg-img.png"],
+    images: ["/images/hero/bg-img.webp"],
   },
   alternates: {
     canonical: "https://ingajufarms.com",
@@ -78,11 +77,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const posts = await getPublishedBlogPosts().catch(() => []);
+  const hasBlog = posts.length > 0;
+
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}>
       <head>
@@ -91,12 +93,11 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <AuthProvider>
           <ModalProvider>
-            <SmoothScroll>
-              <Navbar />
-              {children}
-              <Footer />
-              <BackToTop />
-            </SmoothScroll>
+            <SiteChrome hasBlog={hasBlog}>
+              <SmoothScroll>
+                {children}
+              </SmoothScroll>
+            </SiteChrome>
             <RequestModal />
           </ModalProvider>
         </AuthProvider>

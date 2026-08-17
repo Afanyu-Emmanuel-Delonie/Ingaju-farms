@@ -9,11 +9,12 @@ export default function DairyHero() {
     <section className="relative h-screen lg:h-screen w-full overflow-hidden">
       <div className="absolute inset-0 animate-ken-burns">
         <Image
-          src="/images/hero/bg-img.png"
+          src="/images/dairy/dairy.webp"
           alt="Dairy cattle inside the Ingaju farm barn"
           fill
           priority
-          className="object-cover object-center"
+          sizes="100vw"
+          className="object-cover object-[40%_center] sm:object-center"
         />
       </div>
       <div className="absolute inset-0 bg-black/55" />

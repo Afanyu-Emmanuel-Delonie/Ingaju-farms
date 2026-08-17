@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import {
   collection,
   addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
   onSnapshot,
   query,
   orderBy,
@@ -22,6 +25,9 @@ import {
   Clock,
   Copy,
   Check,
+  Archive,
+  ArchiveRestore,
+  Trash2,
 } from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -34,6 +40,7 @@ interface Submission {
   subject: string;
   body: string;
   submittedBy: string;
+  status?: string;
   createdAt: Timestamp | null;
 }
 
@@ -73,6 +80,15 @@ function leadDetailFields(lead: Lead) {
 function leadTabFor(lead: Lead): TabKey {
   if (lead.source === "order") return "orders";
   return "inquiries"; // contact, tour, training
+}
+
+function isArchived(item: { status?: string }) {
+  return item.status === "archived";
+}
+
+// Capitalizes the first letter of every word, e.g. "john DOE" -> "John Doe".
+function toTitleCase(str: string) {
+  return str.toLowerCase().replace(/\p{L}[\p{L}'’-]*/gu, (word) => word[0].toUpperCase() + word.slice(1));
 }
 
 // ── Static config ──────────────────────────────────────────────────────────
@@ -137,15 +153,28 @@ function statusBadge(type: TabKey) {
 
 // ── Cards ──────────────────────────────────────────────────────────────────
 
-function LeadCard({ lead, copiedKey, onCopy }: { lead: Lead; copiedKey: string | null; onCopy: (text: string, key: string) => void }) {
+function LeadCard({
+  lead,
+  copiedKey,
+  onCopy,
+  onArchive,
+  onDelete,
+}: {
+  lead: Lead;
+  copiedKey: string | null;
+  onCopy: (text: string, key: string) => void;
+  onArchive: (archived: boolean) => void;
+  onDelete: () => void;
+}) {
+  const archived = isArchived(lead);
   return (
-    <div className="bg-white rounded-2xl border border-neutral-200 p-5 flex flex-col sm:flex-row sm:items-start gap-4">
+    <div className={`bg-white rounded-2xl border border-neutral-200 p-5 flex flex-col sm:flex-row sm:items-start gap-4 ${archived ? "opacity-60" : ""}`}>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-2 flex-wrap">
           <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#6DBE8C]/10 text-[#3A7D5A]">
             {LEAD_SOURCE_LABELS[lead.source] ?? lead.source}
           </span>
-          <h3 className="text-sm font-heading font-bold text-[#1C2321]">{lead.name}</h3>
+          <h3 className="text-sm font-heading font-bold text-[#1C2321]">{lead.name ? toTitleCase(lead.name) : ""}</h3>
         </div>
         <dl className="grid grid-cols-1 gap-x-6 gap-y-1 sm:grid-cols-2">
           {leadDetailFields(lead).map(([key, value]) => (
@@ -191,6 +220,26 @@ function LeadCard({ lead, copiedKey, onCopy }: { lead: Lead; copiedKey: string |
               </a>
             </>
           )}
+          <button
+            onClick={() => onArchive(!archived)}
+            title={archived ? "Restore to active" : "Mark as archived"}
+            className="flex items-center gap-1 rounded-lg border border-[#E0D8CE] px-2 py-1 text-[10px] font-body font-semibold text-[#6B6259] hover:border-[#3A7D5A] hover:text-[#3A7D5A] transition-colors"
+          >
+            {archived ? <ArchiveRestore className="w-3 h-3" /> : <Archive className="w-3 h-3" />}
+            {archived ? "Restore" : "Archive"}
+          </button>
+          {archived && (
+            <button
+              onClick={() => {
+                if (confirm(`Permanently delete this ${LEAD_SOURCE_LABELS[lead.source] ?? lead.source}?`)) onDelete();
+              }}
+              title="Delete permanently"
+              className="flex items-center gap-1 rounded-lg border border-red-200 px-2 py-1 text-[10px] font-body font-semibold text-red-500 hover:border-red-400 hover:bg-red-50 transition-colors"
+            >
+              <Trash2 className="w-3 h-3" />
+              Delete
+            </button>
+          )}
         </div>
         <span className="flex items-center gap-1 text-[10px] font-body text-[#B0A89E]">
           <Clock className="w-3 h-3" />
@@ -201,9 +250,18 @@ function LeadCard({ lead, copiedKey, onCopy }: { lead: Lead; copiedKey: string |
   );
 }
 
-function SubmissionCard({ submission }: { submission: Submission }) {
+function SubmissionCard({
+  submission,
+  onArchive,
+  onDelete,
+}: {
+  submission: Submission;
+  onArchive: (archived: boolean) => void;
+  onDelete: () => void;
+}) {
+  const archived = isArchived(submission);
   return (
-    <div className="bg-white rounded-2xl border border-neutral-200 p-5 flex flex-col sm:flex-row sm:items-start gap-4">
+    <div className={`bg-white rounded-2xl border border-neutral-200 p-5 flex flex-col sm:flex-row sm:items-start gap-4 ${archived ? "opacity-60" : ""}`}>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1 flex-wrap">
           <span className={`text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${statusBadge(submission.type)}`}>{submission.type}</span>
@@ -211,8 +269,30 @@ function SubmissionCard({ submission }: { submission: Submission }) {
         </div>
         <p className="text-xs font-body text-[#6B6259] leading-relaxed line-clamp-2">{submission.body}</p>
       </div>
-      <div className="shrink-0 flex flex-col items-end gap-1 text-right">
+      <div className="shrink-0 flex flex-col items-end gap-1.5 text-right">
         <span className="text-[10px] font-body text-[#6B6259]">{submission.submittedBy}</span>
+        <div className="flex items-center gap-1.5">
+          <button
+            onClick={() => onArchive(!archived)}
+            title={archived ? "Restore to active" : "Mark as archived"}
+            className="flex items-center gap-1 rounded-lg border border-[#E0D8CE] px-2 py-1 text-[10px] font-body font-semibold text-[#6B6259] hover:border-[#3A7D5A] hover:text-[#3A7D5A] transition-colors"
+          >
+            {archived ? <ArchiveRestore className="w-3 h-3" /> : <Archive className="w-3 h-3" />}
+            {archived ? "Restore" : "Archive"}
+          </button>
+          {archived && (
+            <button
+              onClick={() => {
+                if (confirm(`Permanently delete "${submission.subject}"?`)) onDelete();
+              }}
+              title="Delete permanently"
+              className="flex items-center gap-1 rounded-lg border border-red-200 px-2 py-1 text-[10px] font-body font-semibold text-red-500 hover:border-red-400 hover:bg-red-50 transition-colors"
+            >
+              <Trash2 className="w-3 h-3" />
+              Delete
+            </button>
+          )}
+        </div>
         <span className="flex items-center gap-1 text-[10px] font-body text-[#B0A89E]">
           <Clock className="w-3 h-3" />
           {formatDate(submission.createdAt)}
@@ -228,6 +308,7 @@ export default function PortalPage() {
   const { user } = useAuth();
   const [activeTab, setActiveTab] = useState<TabKey>("orders");
   const [showForm, setShowForm] = useState(false);
+  const [showArchived, setShowArchived] = useState(false);
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [leads, setLeads] = useState<Lead[]>([]);
   const [submitting, setSubmitting] = useState(false);
@@ -238,6 +319,37 @@ export default function PortalPage() {
     await navigator.clipboard.writeText(text);
     setCopiedKey(key);
     setTimeout(() => setCopiedKey((k) => (k === key ? null : k)), 1500);
+  };
+
+  const archiveLead = async (id: string, archived: boolean) => {
+    if (!db) return;
+    await updateDoc(doc(db, "leads", id), { status: archived ? "archived" : "new" });
+  };
+
+  const archiveSubmission = async (id: string, archived: boolean) => {
+    if (!db) return;
+    await updateDoc(doc(db, "portal_submissions", id), { status: archived ? "archived" : "new" });
+  };
+
+  const deleteLead = async (id: string) => {
+    if (!db) return;
+    await deleteDoc(doc(db, "leads", id));
+  };
+
+  const deleteSubmission = async (id: string) => {
+    if (!db) return;
+    await deleteDoc(doc(db, "portal_submissions", id));
+  };
+
+  const deleteAllArchived = async () => {
+    if (!db || archivedCount === 0) return;
+    if (!confirm(`Permanently delete all ${archivedCount} archived ${activeTab}? This cannot be undone.`)) return;
+    const archivedLeads = leads.filter((l) => leadTabFor(l) === activeTab && isArchived(l));
+    const archivedSubmissions = submissions.filter((s) => s.type === activeTab && isArchived(s));
+    await Promise.all([
+      ...archivedLeads.map((l) => deleteLead(l.id)),
+      ...archivedSubmissions.map((s) => deleteSubmission(s.id)),
+    ]);
   };
 
   const [orderForm, setOrderForm] = useState({ product: "", qty: "", unit: "", notes: "" });
@@ -263,14 +375,19 @@ export default function PortalPage() {
   }, []);
 
   const tabCount = (key: TabKey) =>
-    leads.filter((l) => leadTabFor(l) === key).length + submissions.filter((s) => s.type === key).length;
+    leads.filter((l) => leadTabFor(l) === key && !isArchived(l)).length +
+    submissions.filter((s) => s.type === key && !isArchived(s)).length;
 
-  const tabLeads = leads.filter((l) => leadTabFor(l) === activeTab);
-  const tabSubmissions = submissions.filter((s) => s.type === activeTab);
+  const archivedCount =
+    leads.filter((l) => leadTabFor(l) === activeTab && isArchived(l)).length +
+    submissions.filter((s) => s.type === activeTab && isArchived(s)).length;
+
+  const tabLeads = leads.filter((l) => leadTabFor(l) === activeTab && isArchived(l) === showArchived);
+  const tabSubmissions = submissions.filter((s) => s.type === activeTab && isArchived(s) === showArchived);
   const feed = [
     ...tabLeads.map((data) => ({ kind: "lead" as const, data })),
     ...tabSubmissions.map((data) => ({ kind: "submission" as const, data })),
-  ].sort((a, b) => (b.data.createdAt?.toMillis() ?? Date.now()) - (a.data.createdAt?.toMillis() ?? Date.now()));
+  ].sort((a, b) => (b.data.createdAt?.toMillis() ?? Infinity) - (a.data.createdAt?.toMillis() ?? Infinity));
 
   // ── Submit handlers ──────────────────────────────────────────────────────
 
@@ -357,7 +474,7 @@ export default function PortalPage() {
           {TABS.map(({ key, label, icon: Icon, color }) => (
             <button
               key={key}
-              onClick={() => { setActiveTab(key); setShowForm(false); }}
+              onClick={() => { setActiveTab(key); setShowForm(false); setShowArchived(false); }}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-body font-semibold transition-all duration-200 ${
                 activeTab === key ? "bg-[#1C2321] text-white shadow-sm" : "text-[#6B6259] hover:text-[#1C2321]"
               }`}
@@ -373,17 +490,39 @@ export default function PortalPage() {
           ))}
         </div>
 
-        <button
-          onClick={() => setShowForm((v) => !v)}
-          className="flex items-center gap-2 bg-[#1C2321] hover:bg-[#3A7D5A] text-white text-sm font-body font-semibold px-4 py-2.5 rounded-xl transition-colors"
-        >
-          {showForm ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-          {showForm ? "Cancel" : `New ${TABS.find((t) => t.key === activeTab)?.label.slice(0, -1)}`}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => { setShowArchived((v) => !v); setShowForm(false); }}
+            className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-body font-semibold transition-colors ${
+              showArchived ? "bg-[#1C2321] text-white" : "border border-[#E0D8CE] text-[#6B6259] hover:border-[#3A7D5A] hover:text-[#3A7D5A]"
+            }`}
+          >
+            {showArchived ? <X className="w-4 h-4" /> : <Archive className="w-4 h-4" />}
+            {showArchived ? "Back to Active" : `Archived (${archivedCount})`}
+          </button>
+          {showArchived && archivedCount > 0 && (
+            <button
+              onClick={deleteAllArchived}
+              className="flex items-center gap-2 rounded-xl border border-red-200 text-red-500 hover:bg-red-50 hover:border-red-400 text-sm font-body font-semibold px-4 py-2.5 transition-colors"
+            >
+              <Trash2 className="w-4 h-4" />
+              Delete All Archived
+            </button>
+          )}
+          {!showArchived && (
+            <button
+              onClick={() => setShowForm((v) => !v)}
+              className="flex items-center gap-2 bg-[#1C2321] hover:bg-[#3A7D5A] text-white text-sm font-body font-semibold px-4 py-2.5 rounded-xl transition-colors"
+            >
+              {showForm ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+              {showForm ? "Cancel" : `New ${TABS.find((t) => t.key === activeTab)?.label.slice(0, -1)}`}
+            </button>
+          )}
+        </div>
       </div>
 
       {/* ── Inline form (portal submissions only) ── */}
-      {showForm && (
+      {showForm && !showArchived && (
         <div className="mb-6 bg-white rounded-2xl border border-neutral-200 p-6 shadow-sm animate-fade-up">
           <p className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259] mb-5">
             New {TABS.find((t) => t.key === activeTab)?.label.slice(0, -1)}
@@ -481,115 +620,43 @@ export default function PortalPage() {
         </div>
       )}
 
-      {/* ── Leads list ── */}
-      {activeTab === "leads" && (
-        leads.length === 0 ? (
-          <div className="bg-white rounded-2xl border border-neutral-200 p-12 text-center">
-            <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center mx-auto mb-3">
-              <Mail className="w-4 h-4 text-[#6DBE8C]" />
-            </div>
-            <p className="text-sm font-body font-semibold text-[#1C2321]">No contact leads yet</p>
-            <p className="text-xs font-body text-[#6B6259] mt-1">Submissions from the public contact form will appear here.</p>
+      {/* ── Feed: public leads + staff submissions for this tab ── */}
+      {feed.length === 0 ? (
+        <div className="bg-white rounded-2xl border border-neutral-200 p-12 text-center">
+          <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center mx-auto mb-3">
+            {(() => { const T = TABS.find((t) => t.key === activeTab)!; return <T.icon className={`w-4 h-4 ${T.color}`} />; })()}
           </div>
-        ) : (
-          <div className="flex flex-col gap-3">
-            {leads.map((lead) => (
-              <div key={lead.id} className="bg-white rounded-2xl border border-neutral-200 p-5 flex flex-col sm:flex-row sm:items-start gap-4">
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-2 flex-wrap">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#6DBE8C]/10 text-[#3A7D5A]">
-                      {LEAD_SOURCE_LABELS[lead.source] ?? lead.source}
-                    </span>
-                    <h3 className="text-sm font-heading font-bold text-[#1C2321]">{lead.name}</h3>
-                  </div>
-                  <dl className="grid grid-cols-1 gap-x-6 gap-y-1 sm:grid-cols-2">
-                    {leadDetailFields(lead).map(([key, value]) => (
-                      <div key={key} className="flex gap-1.5 text-xs font-body">
-                        <dt className="shrink-0 font-semibold text-[#6B6259]">{formatFieldLabel(key)}:</dt>
-                        <dd className="text-[#6B6259] break-words">{String(value)}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-                <div className="shrink-0 flex flex-col items-end gap-2 text-right">
-                  {lead.email && <span className="text-[10px] font-body text-[#3A7D5A] font-semibold">{lead.email}</span>}
-                  <div className="flex items-center gap-1.5">
-                    {lead.email && (
-                      <button
-                        onClick={() => copyToClipboard(lead.email!, `${lead.id}-email`)}
-                        title="Copy email"
-                        className="flex items-center gap-1 rounded-lg border border-[#E0D8CE] px-2 py-1 text-[10px] font-body font-semibold text-[#6B6259] hover:border-[#3A7D5A] hover:text-[#3A7D5A] transition-colors"
-                      >
-                        {copiedKey === `${lead.id}-email` ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
-                        Email
-                      </button>
-                    )}
-                    {lead.phone && (
-                      <>
-                        <button
-                          onClick={() => copyToClipboard(lead.phone!, `${lead.id}-phone`)}
-                          title="Copy phone number"
-                          className="flex items-center gap-1 rounded-lg border border-[#E0D8CE] px-2 py-1 text-[10px] font-body font-semibold text-[#6B6259] hover:border-[#3A7D5A] hover:text-[#3A7D5A] transition-colors"
-                        >
-                          {copiedKey === `${lead.id}-phone` ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
-                          Phone
-                        </button>
-                        <a
-                          href={whatsappLink(lead.phone)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="Reply on WhatsApp"
-                          className="flex items-center gap-1 rounded-lg bg-[#25D366]/10 px-2 py-1 text-[10px] font-body font-semibold text-[#128C4A] hover:bg-[#25D366]/20 transition-colors"
-                        >
-                          <WhatsAppIcon className="w-3 h-3" />
-                          WhatsApp
-                        </a>
-                      </>
-                    )}
-                  </div>
-                  <span className="flex items-center gap-1 text-[10px] font-body text-[#B0A89E]">
-                    <Clock className="w-3 h-3" />
-                    {formatDate(lead.createdAt)}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        )
-      )}
-
-      {/* ── Portal submissions list ── */}
-      {activeTab !== "leads" && (
-        filteredSubmissions.length === 0 ? (
-          <div className="bg-white rounded-2xl border border-neutral-200 p-12 text-center">
-            <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center mx-auto mb-3">
-              {(() => { const T = TABS.find((t) => t.key === activeTab)!; return <T.icon className={`w-4 h-4 ${T.color}`} />; })()}
-            </div>
-            <p className="text-sm font-body font-semibold text-[#1C2321]">No {activeTab} yet</p>
-            <p className="text-xs font-body text-[#6B6259] mt-1">Use the button above to create the first one.</p>
-          </div>
-        ) : (
-          <div className="flex flex-col gap-3">
-            {filteredSubmissions.map((s) => (
-              <div key={s.id} className="bg-white rounded-2xl border border-neutral-200 p-5 flex flex-col sm:flex-row sm:items-start gap-4">
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1 flex-wrap">
-                    <span className={`text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${statusBadge(s.type)}`}>{s.type}</span>
-                    <h3 className="text-sm font-heading font-bold text-[#1C2321] truncate">{s.subject}</h3>
-                  </div>
-                  <p className="text-xs font-body text-[#6B6259] leading-relaxed line-clamp-2">{s.body}</p>
-                </div>
-                <div className="shrink-0 flex flex-col items-end gap-1 text-right">
-                  <span className="text-[10px] font-body text-[#6B6259]">{s.submittedBy}</span>
-                  <span className="flex items-center gap-1 text-[10px] font-body text-[#B0A89E]">
-                    <Clock className="w-3 h-3" />
-                    {formatDate(s.createdAt)}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        )
+          <p className="text-sm font-body font-semibold text-[#1C2321]">
+            {showArchived ? `No archived ${activeTab}` : `No ${activeTab} yet`}
+          </p>
+          <p className="text-xs font-body text-[#6B6259] mt-1">
+            {showArchived
+              ? "Items you archive will show up here."
+              : "Public submissions land here automatically, or use the button above to add one."}
+          </p>
+        </div>
+      ) : (
+        <div className="flex flex-col gap-3">
+          {feed.map((entry) =>
+            entry.kind === "lead" ? (
+              <LeadCard
+                key={`lead-${entry.data.id}`}
+                lead={entry.data}
+                copiedKey={copiedKey}
+                onCopy={copyToClipboard}
+                onArchive={(archived) => archiveLead(entry.data.id, archived)}
+                onDelete={() => deleteLead(entry.data.id)}
+              />
+            ) : (
+              <SubmissionCard
+                key={`sub-${entry.data.id}`}
+                submission={entry.data}
+                onArchive={(archived) => archiveSubmission(entry.data.id, archived)}
+                onDelete={() => deleteSubmission(entry.data.id)}
+              />
+            ),
+          )}
+        </div>
       )}
     </div>
   );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
+import { getPublishedBlogPosts } from "@/lib/blog";
 import SiteChrome from "@/components/SiteChrome";
 import { ModalProvider } from "@/components/shared/ModalContext";
 import RequestModal from "@/components/shared/RequestModal";
@@ -76,11 +77,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const posts = await getPublishedBlogPosts().catch(() => []);
+  const hasBlog = posts.length > 0;
+
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}>
       <head>
@@ -89,7 +93,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <AuthProvider>
           <ModalProvider>
-            <SiteChrome>
+            <SiteChrome hasBlog={hasBlog}>
               <SmoothScroll>
                 {children}
               </SmoothScroll>

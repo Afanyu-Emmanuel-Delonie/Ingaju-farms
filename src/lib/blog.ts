@@ -1,5 +1,5 @@
-import { cache } from "react";
-import { collection, getDocs, orderBy, query, Timestamp } from "firebase/firestore";
+import { unstable_noStore as noStore } from "next/cache";
+import { collection, getDocs, orderBy, query, where, Timestamp } from "firebase/firestore";
 import { db, isFirebaseConfigured } from "@/lib/firebase";
 import { BLOG_POSTS } from "@/lib/constants";
 
@@ -31,26 +31,28 @@ const STATIC_BLOG_POSTS = BLOG_POSTS as BlogPost[];
 async function fetchDynamicPosts(): Promise<BlogPost[]> {
   if (!db || !isFirebaseConfigured) return [];
   try {
-    const q = query(collection(db, BLOG_COLLECTION), orderBy("createdAt", "desc"));
+    // Firestore rejects an unfiltered `list` query outright for unauthenticated
+    // readers (the security rule can't prove every result is published unless
+    // the query itself is restricted), so the equality filter is required here,
+    // not just a nice-to-have.
+    const q = query(
+      collection(db, BLOG_COLLECTION),
+      where("published", "==", true),
+      orderBy("createdAt", "desc"),
+    );
     const snap = await getDocs(q);
-    return snap.docs
-      .map((d) => ({ id: d.id, ...d.data() }) as BlogPost)
-      .filter((p) => p.published !== false);
-  } catch {
+    // createdAt is a Firestore Timestamp instance (used only for ordering
+    // above) — it can't cross the Server -> Client Component boundary, and
+    // nothing downstream reads it, so drop it rather than pass it through.
+    return snap.docs.map((d) => ({ id: d.id, ...d.data(), createdAt: null }) as BlogPost);
+  } catch (err) {
+    console.error("[blog] Failed to fetch posts from Firestore:", err);
     return [];
   }
 }
 
-// Dynamic (portal-authored) posts first, static posts fill the rest; a
-// dynamic post can override a static one by reusing the same slug.
-export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
-  const dynamicPosts = await fetchDynamicPosts();
-  const merged = [...dynamicPosts, ...STATIC_BLOG_POSTS];
-
-  const seen = new Set<string>();
-  return merged.filter((post) => {
-    if (seen.has(post.slug)) return false;
-    seen.add(post.slug);
-    return true;
-  });
-});
+export async function getPublishedBlogPosts(): Promise<BlogPost[]> {
+  noStore();
+  if (!isFirebaseConfigured) return STATIC_BLOG_POSTS as BlogPost[];
+  return fetchDynamicPosts();
+}

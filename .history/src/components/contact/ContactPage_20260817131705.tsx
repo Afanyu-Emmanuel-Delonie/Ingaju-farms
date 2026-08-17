@@ -179,45 +179,49 @@ export default function ContactPage() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                                      <div className="flex flex-col gap-1.5">
-                      <label htmlFor="name" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Full Name</label>
-                      <input
-                        id="name" name="name" type="text" required
-                        value={form.name} onChange={handleChange}
-                        placeholder="Jane Doe"
-                        className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
-                      />
+                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                  <div>
+                    <p className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259] mb-1">Your Details</p>
+                      <div className="flex flex-col gap-1.5">
+                        <label htmlFor="name" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Full Name</label>
+                        <input
+                          id="name" name="name" type="text" required
+                          value={form.name} onChange={handleChange}
+                          placeholder="Jane Doe"
+                          className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label htmlFor="email" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Email Address</label>
+                        <input
+                          id="email" name="email" type="email" required
+                          value={form.email} onChange={handleChange}
+                          placeholder="jane@email.com"
+                          className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
+                        />
+                      </div>
                     </div>
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="email" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Email Address</label>
-                      <input
-                        id="email" name="email" type="email" required
-                        value={form.email} onChange={handleChange}
-                        placeholder="jane@email.com"
-                        className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
-                      />
-                    </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="phone" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Phone <span className="normal-case text-[#B0A89E]">(optional)</span></label>
-                      <input
-                        id="phone" name="phone" type="tel"
-                        value={form.phone} onChange={handleChange}
-                        placeholder="+250 700 000 000"
-                        className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="topic" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Topic</label>
-                      <select
-                        id="topic" name="topic" required
-                        value={form.topic} onChange={handleChange}
-                        className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2] appearance-none"
-                      >
-                        <option value="" disabled>Select a topic</option>
-                        {TOPICS.map((t) => <option key={t} value={t}>{t}</option>)}
-                      </select>
+                    <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      <div className="flex flex-col gap-1.5">
+                        <label htmlFor="phone" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Phone <span className="normal-case text-[#B0A89E]">(optional)</span></label>
+                        <input
+                          id="phone" name="phone" type="tel"
+                          value={form.phone} onChange={handleChange}
+                          placeholder="+250 700 000 000"
+                          className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label htmlFor="topic" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Topic</label>
+                        <select
+                          id="topic" name="topic" required
+                          value={form.topic} onChange={handleChange}
+                          className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2] appearance-none"
+                        >
+                          <option value="" disabled>Select a topic</option>
+                          {TOPICS.map((t) => <option key={t} value={t}>{t}</option>)}
+                        </select>
+                      </div>
                     </div>
                   </div>
 

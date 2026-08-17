@@ -180,7 +180,8 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                                      <div className="flex flex-col gap-1.5">
+                  <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-1.5">
                       <label htmlFor="name" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Full Name</label>
                       <input
                         id="name" name="name" type="text" required
@@ -198,7 +199,6 @@ export default function ContactPage() {
                         className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] outline-none placeholder:text-[#C0B8AE] focus:border-[#3A7D5A] transition-colors bg-[#F8F6F2]"
                       />
                     </div>
-                  <div className="grid grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
                       <label htmlFor="phone" className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Phone <span className="normal-case text-[#B0A89E]">(optional)</span></label>
                       <input

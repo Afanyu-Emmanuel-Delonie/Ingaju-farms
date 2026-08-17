@@ -1,6 +1,6 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, type Auth } from "firebase/auth";
-import { getFirestore, type Firestore } from "firebase/firestore";
+import { initializeFirestore, getFirestore, type Firestore } from "firebase/firestore";
 import { isSupported, getAnalytics, type Analytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -32,7 +32,21 @@ let analyticsInstance: Analytics | null = null;
 if (isFirebaseConfigured) {
   const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
   authInstance = getAuth(app);
-  firestoreDb = getFirestore(app);
+
+  // The Firestore Web SDK's default WebChannel transport is unreliable in
+  // server-rendered / serverless Node environments (Next.js server
+  // components, Vercel functions) — queries can hang indefinitely. Long
+  // polling is Firebase's documented workaround; auto-detect keeps the
+  // faster transport in the browser.
+  try {
+    firestoreDb = initializeFirestore(app, {
+      experimentalAutoDetectLongPolling: true,
+    });
+  } catch {
+    // Already initialized (e.g. hot reload) — reuse the existing instance.
+    firestoreDb = getFirestore(app);
+  }
+
   googleProviderInstance = new GoogleAuthProvider();
 
   if (typeof window !== "undefined" && firebaseConfig.measurementId) {

@@ -5,7 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 
-const navLinks = [
+interface NavLink {
+  label: string;
+  href: string;
+  dropdown?: { label: string; href: string }[];
+}
+
+const BASE_NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   {
@@ -18,10 +24,12 @@ const navLinks = [
   },
   { label: "Circular System", href: "/circular-system" },
   { label: "Contact Us", href: "/contact" },
-  { label: "Blog", href: "/#blog" },
 ];
 
-export default function Navbar() {
+const BLOG_LINK: NavLink = { label: "Blog", href: "/#blog" };
+
+export default function Navbar({ hasBlog }: { hasBlog: boolean }) {
+  const navLinks = hasBlog ? [...BASE_NAV_LINKS, BLOG_LINK] : BASE_NAV_LINKS;
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 

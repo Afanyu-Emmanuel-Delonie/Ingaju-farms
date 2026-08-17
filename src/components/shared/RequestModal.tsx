@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { X, ArrowRight } from "lucide-react";
 import { db, isFirebaseConfigured } from "@/lib/firebase";
+import { notifyNewLead } from "@/lib/notify";
 import { useModal } from "./ModalContext";
 
 const TOUR_TYPES = ["Individual", "School Group", "Corporate", "Farmer Group"];
@@ -83,16 +84,16 @@ export default function RequestModal() {
         product: config.product ?? null,
         unit: config.unit ?? null,
         status: "new",
-        createdAt: serverTimestamp(),
       };
-      const payload =
+      const leadPayload =
         config.variant === "order"
           ? { ...base, ...orderForm }
           : config.variant === "tour"
             ? { ...base, ...tourForm }
             : { ...base, ...trainingForm };
 
-      await addDoc(collection(db, "leads"), payload);
+      await addDoc(collection(db, "leads"), { ...leadPayload, createdAt: serverTimestamp() });
+      notifyNewLead(leadPayload);
       setSent(true);
     } catch {
       setError("Something went wrong sending your request. Please try again.");

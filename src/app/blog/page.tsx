@@ -7,7 +7,7 @@ import { getPublishedBlogPosts } from "@/lib/blog";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Blog | Circular Agriculture & Farming Insights — Ingaju Farms",
+  title: { absolute: "Blog | Circular Agriculture & Farming Insights — Ingaju Farms" },
   description: "Practical insights on circular agriculture, livestock and dairy farming, crop production, and sustainable food systems from the team at Ingaju Farms, Eastern Province, Rwanda.",
   alternates: { canonical: "https://ingajufarms.com/blog" },
   openGraph: {

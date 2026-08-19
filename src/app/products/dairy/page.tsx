@@ -6,7 +6,7 @@ import DairyInsights from "@/components/products/dairy/DairyInsights";
 import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata = {
-  title: "Livestock & Dairy Products Rwanda | Ingaju Farms",
+  title: { absolute: "Livestock & Dairy Products Rwanda | Ingaju Farms" },
   description: "Buy fresh, pasture-fed milk, yogurt, cheese, and butter from Ingaju Farms, Eastern Province, Rwanda — raised through a circular farming system that's closing the loop on synthetic inputs.",
   alternates: { canonical: "https://ingajufarms.com/products/dairy" },
   openGraph: {

@@ -7,7 +7,7 @@ import OnTheFarm from "@/components/about/OnTheFarm";
 import JoinUsCta from "@/components/about/JoinUsCta";
 
 export const metadata = {
-  title: "About Ingaju Farms | Circular Agriculture Enterprise, Rwanda",
+  title: { absolute: "About Ingaju Farms | Circular Agriculture Enterprise, Rwanda" },
   description:
     "Ingaju Farms is an integrated agricultural enterprise based in Rebero Village, Nyagatare District, Eastern Province. Learn about our work in livestock, dairy, crops, organic fertilizer, and farmer training.",
   alternates: { canonical: "https://ingajufarms.com/about" },

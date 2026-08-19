@@ -24,9 +24,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    title: `${post.title} | Ingaju Farms Blog`,
+    title: { absolute: `${post.title} | Ingaju Farms Blog` },
     description: post.excerpt,
+    alternates: { canonical: `https://ingajufarms.com/blog/${slug}` },
     openGraph: {
+      url: `https://ingajufarms.com/blog/${slug}`,
       title: post.title,
       description: post.excerpt,
       type: "article",

@@ -7,7 +7,7 @@ import CircularCta from "@/components/circular-system/CircularCta";
 import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata = {
-  title: "Circular Agriculture System | Closing the Loop — Ingaju Farms",
+  title: { absolute: "Circular Agriculture System | Closing the Loop — Ingaju Farms" },
   description: "Discover how Ingaju Farms is closing the loop on a circular agriculture system in Eastern Province, Rwanda — cattle manure becomes organic fertilizer as that line scales up, crops feed the herd, and resources stay in use toward a zero-waste ambition.",
   alternates: { canonical: "https://ingajufarms.com/circular-system" },
   openGraph: {

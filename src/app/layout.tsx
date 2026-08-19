@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import { getPublishedBlogPosts } from "@/lib/blog";
+import { getPublishedTestimonials } from "@/lib/testimonials";
 import SiteChrome from "@/components/SiteChrome";
 import { ModalProvider } from "@/components/shared/ModalContext";
 import RequestModal from "@/components/shared/RequestModal";
 import { AuthProvider } from "@/lib/AuthContext";
 import StructuredData from "@/components/shared/StructuredData";
+import Splash from "@/components/Splash";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -82,8 +84,12 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const posts = await getPublishedBlogPosts().catch(() => []);
+  const [posts, testimonials] = await Promise.all([
+    getPublishedBlogPosts().catch(() => []),
+    getPublishedTestimonials().catch(() => []),
+  ]);
   const hasBlog = posts.length > 0;
+  const hasTestimonials = testimonials.length > 0;
 
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}>
@@ -91,9 +97,10 @@ export default async function RootLayout({
         <StructuredData />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <Splash />
         <AuthProvider>
           <ModalProvider>
-            <SiteChrome hasBlog={hasBlog}>
+            <SiteChrome hasBlog={hasBlog} hasTestimonials={hasTestimonials}>
               <SmoothScroll>
                 {children}
               </SmoothScroll>

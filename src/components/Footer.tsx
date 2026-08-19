@@ -2,20 +2,18 @@ import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 const links = {
-  // NOTE: "Our Farm" (/our-farm) removed — route not built. Re-add once it exists.
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Blog", href: "/blog" },
+    { label: "Circular System", href: "/circular-system" },
+    { label: "Blog", href: "/#blog" },
     { label: "Contact", href: "/contact" },
   ],
   products: [
     { label: "Livestock & Dairy", href: "/products/dairy" },
     { label: "Crop Production", href: "/products/crops" },
     { label: "Breeding Bulls", href: "/products/dairy" },
-    { label: "Organic Manure", href: "/products/crops" },
+    { label: "Organic Fertilizer", href: "/contact?topic=Product%20Order" },
   ],
-  // NOTE: /trainings/* pages don't exist — repointed to Contact with a
-  // preselected topic per Priority Fix Tracker, "Fix This First."
   training: [
     { label: "Livestock & Dairy Training", href: "/contact?topic=Training%20Program" },
     { label: "Climate-Smart Crop Production", href: "/contact?topic=Training%20Program" },

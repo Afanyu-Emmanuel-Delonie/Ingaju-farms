@@ -3,17 +3,15 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import {
   onAuthStateChanged,
-  signInWithPopup,
   signInWithEmailAndPassword,
   signOut as firebaseSignOut,
   User,
 } from "firebase/auth";
-import { auth, googleProvider, isFirebaseConfigured } from "@/lib/firebase";
+import { auth, isFirebaseConfigured } from "@/lib/firebase";
 
 interface AuthCtx {
   user: User | null;
   loading: boolean;
-  signInWithGoogle: () => Promise<void>;
   signInWithEmail: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 }
@@ -30,7 +28,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setLoading(false);
       return;
     }
-
     const unsub = onAuthStateChanged(auth, (u) => {
       setUser(u);
       setLoading(false);
@@ -38,24 +35,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return unsub;
   }, []);
 
-  const signInWithGoogle = async () => {
-    if (!auth || !googleProvider || !isFirebaseConfigured) {
-      console.warn(
-        "Firebase authentication is disabled because credentials are not configured.",
-      );
-      return;
-    }
-
-    await signInWithPopup(auth, googleProvider);
-  };
-
   const signInWithEmail = async (email: string, password: string) => {
     if (!auth || !isFirebaseConfigured) {
-      throw new Error(
-        "Firebase authentication is disabled because credentials are not configured.",
-      );
+      throw new Error("Firebase authentication is disabled because credentials are not configured.");
     }
-
     await signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -65,9 +48,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider
-      value={{ user, loading, signInWithGoogle, signInWithEmail, signOut }}
-    >
+    <AuthContext.Provider value={{ user, loading, signInWithEmail, signOut }}>
       {children}
     </AuthContext.Provider>
   );

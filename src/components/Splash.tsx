@@ -3,20 +3,32 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-// Mounted once in the root layout, so it plays on first page load only —
-// layout.tsx never remounts on client-side navigation, unlike the old
-// app/template.tsx curtain which replayed on every route change and fought
-// with SmoothScroll's Lenis re-init, causing visible glitches while scrolling.
 export default function Splash() {
   const [leaving, setLeaving] = useState(false);
   const [gone, setGone] = useState(false);
 
   useEffect(() => {
-    const leave = setTimeout(() => setLeaving(true), 350);
-    const remove = setTimeout(() => setGone(true), 600);
+    let leaveTimer: ReturnType<typeof setTimeout>;
+    let removeTimer: ReturnType<typeof setTimeout>;
+
+    function dismiss() {
+      setLeaving(true);
+      removeTimer = setTimeout(() => setGone(true), 500);
+    }
+
+    if (document.readyState === "complete") {
+      // Page already loaded (e.g. fast cache hit) — show briefly then exit
+      leaveTimer = setTimeout(dismiss, 300);
+    } else {
+      window.addEventListener("load", dismiss, { once: true });
+      // Safety cap: never hold longer than 8s on very slow connections
+      leaveTimer = setTimeout(dismiss, 8000);
+    }
+
     return () => {
-      clearTimeout(leave);
-      clearTimeout(remove);
+      clearTimeout(leaveTimer);
+      clearTimeout(removeTimer);
+      window.removeEventListener("load", dismiss);
     };
   }, []);
 
@@ -25,16 +37,42 @@ export default function Splash() {
   return (
     <div
       aria-hidden="true"
-      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-2.5 bg-[#0a0f0d] pointer-events-none transition-opacity duration-250 ease-out ${
+      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#F8F6F2] pointer-events-none transition-opacity duration-500 ease-out ${
         leaving ? "opacity-0" : "opacity-100"
       }`}
     >
-      <div className="relative h-11 w-11 overflow-hidden rounded-full">
-        <Image src="/images/brand/Logo.webp" alt="" fill sizes="44px" className="object-contain" priority />
+      {/* Spinner ring + logo */}
+      <div className="relative flex items-center justify-center">
+        <span className="loader-ring" />
+        <div className="relative z-10 w-16 h-16 rounded-full overflow-hidden border-2 border-[#E0D8CE] bg-white shadow-sm">
+          <Image
+            src="/images/brand/Logo.webp"
+            alt=""
+            fill
+            sizes="64px"
+            className="object-cover"
+            priority
+          />
+        </div>
       </div>
-      <span className="font-heading text-lg font-bold text-white">
-        Ingaju <span className="text-[#D07A53]">Farms</span>
-      </span>
+
+      {/* Wordmark */}
+      <p className="mt-6 font-heading text-sm font-semibold tracking-[0.2em] uppercase text-[#1C2321] loader-fade-in">
+        Ingaju <span className="text-[#3A7D5A]">Farms</span>
+      </p>
+
+      {/* Tagline */}
+      <p
+        className="mt-1.5 font-body text-[10px] tracking-[0.25em] uppercase text-[#6B6259] loader-fade-in"
+        style={{ animationDelay: "0.15s" }}
+      >
+        Circular Agriculture
+      </p>
+
+      {/* Indeterminate bar — pulses until page is ready */}
+      <div className="mt-8 w-28 h-px bg-[#E0D8CE] overflow-hidden rounded-full">
+        <div className="h-full bg-[#3A7D5A] loader-bar" />
+      </div>
     </div>
   );
 }

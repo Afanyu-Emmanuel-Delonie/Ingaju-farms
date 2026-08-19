@@ -10,9 +10,13 @@ import ReadyToExperienceCta from "@/components/sections/ReadyToExperienceCta";
 import FaqSection from "@/components/sections/FaqSection";
 import FadeIn from "@/components/animations/FadeIn";
 import { getPublishedBlogPosts } from "@/lib/blog";
+import { getPublishedTestimonials } from "@/lib/testimonials";
 
 export default async function Home() {
-  const posts = await getPublishedBlogPosts();
+  const [posts, testimonials] = await Promise.all([
+    getPublishedBlogPosts(),
+    getPublishedTestimonials(),
+  ]);
 
   return (
     <main className="flex flex-col">
@@ -22,7 +26,9 @@ export default async function Home() {
       <FadeIn direction="up" delay={0.05}><FeaturedCategories /></FadeIn>
       <FadeIn direction="none" duration={1}><ImpactStats /></FadeIn>
       <FadeIn direction="up" delay={0.05}><LearnWithIngaju /></FadeIn>
-      <FadeIn direction="up" delay={0.05}><Testimonials /></FadeIn>
+      {testimonials.length > 0 && (
+        <FadeIn direction="up" delay={0.05}><section id="testimonials"><Testimonials testimonials={testimonials} /></section></FadeIn>
+      )}
       {posts.length > 0 && (
         <FadeIn direction="up" delay={0.05}><section id="blog"><BlogSection posts={posts} /></section></FadeIn>
       )}

@@ -461,3 +461,45 @@ export const BLOG_POSTS = [
   },
 ];
 
+// NOTE: t1 and t6 originally cited specific percentages ("over 60%", "Over
+// 80%") with no source in the repo — softened to non-numeric language
+// pending verification. See Ingaju Priority Fix Tracker, Needs Verification.
+export const TESTIMONIALS = [
+  {
+    key: "t1",
+    name: "Jean-Pierre Habimana",
+    role: "Dairy Farmer, Eastern Province",
+    quote: "I purchased two breeding bulls from Ingaju and within one season, my herd's milk yield increased noticeably. The quality of their livestock is unlike anything available locally — healthy, well-managed, and exactly what they promise.",
+  },
+  {
+    key: "t2",
+    name: "Claudine Uwimana",
+    role: "Smallholder Farmer, Musanze",
+    quote: "The circular agriculture training changed how I think about my entire farm. I used to burn my crop waste. Now it feeds my livestock, and their manure feeds my fields. My costs dropped and my harvests improved in the same season.",
+  },
+  {
+    key: "t3",
+    name: "Olivier Nshimiyimana",
+    role: "Agronomist, Rwanda Agriculture Board",
+    quote: "Ingaju is the most complete example of circular agriculture I have encountered in Rwanda. They are not just talking about sustainability — they have built a farm that proves it works at commercial scale. A genuine model for the country.",
+  },
+  {
+    key: "t4",
+    name: "Solange Mukamana",
+    role: "Head Teacher, Kigali STEM School",
+    quote: "We visited Ingaju with 40 secondary school students and it was the most impactful field trip we have ever organised. The team explains every part of the system clearly. Our students came back asking to study agriculture — that says everything.",
+  },
+  {
+    key: "t5",
+    name: "Emmanuel Bizimana",
+    role: "Supply Manager, Rwamagana Dairy Cooperative",
+    quote: "We have been sourcing fresh milk from Ingaju for over a year. The consistency is remarkable — same quality, same hygiene standards, same reliability every single delivery. For a cooperative our size, that dependability is everything.",
+  },
+  {
+    key: "t6",
+    name: "Diane Ingabire",
+    role: "Program Officer, GreenHill Foundation Rwanda",
+    quote: "We partnered with Ingaju to run farmer training workshops across three districts. Their hands-on approach and deep practical knowledge produced results we rarely see from classroom-based programs. Most participants made measurable changes within two months.",
+  },
+];
+

@@ -10,6 +10,7 @@ import Image from "next/image";
 const NAV_LINKS = [
   { href: "/portal", label: "Dashboard" },
   { href: "/portal/blog", label: "Blog Posts" },
+  { href: "/portal/testimonials", label: "Testimonials" },
 ];
 
 export default function PortalLayout({ children }: { children: React.ReactNode }) {

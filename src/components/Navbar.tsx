@@ -27,9 +27,14 @@ const BASE_NAV_LINKS: NavLink[] = [
 ];
 
 const BLOG_LINK: NavLink = { label: "Blog", href: "/#blog" };
+const TESTIMONIALS_LINK: NavLink = { label: "Testimonials", href: "/#testimonials" };
 
-export default function Navbar({ hasBlog }: { hasBlog: boolean }) {
-  const navLinks = hasBlog ? [...BASE_NAV_LINKS, BLOG_LINK] : BASE_NAV_LINKS;
+export default function Navbar({ hasBlog, hasTestimonials }: { hasBlog: boolean; hasTestimonials: boolean }) {
+  const navLinks = [
+    ...BASE_NAV_LINKS,
+    ...(hasTestimonials ? [TESTIMONIALS_LINK] : []),
+    ...(hasBlog ? [BLOG_LINK] : []),
+  ];
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 

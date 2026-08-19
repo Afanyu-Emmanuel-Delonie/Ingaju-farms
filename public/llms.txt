@@ -5,11 +5,11 @@ Ingaju Farms is a circular agriculture enterprise located in Rebero Village, Nya
 The farm operates a closed-loop farming system where every resource — manure, crop residues, and water — is recovered and reused within the production cycle.
 
 ## What We Do
-- Organic dairy production: pasture-fed, hormone-free cattle producing fresh milk, yogurt, cheese, and butter
-- Organic crop production: maize, beans, soybeans, macadamia, and mangoes grown with zero synthetic inputs
-- Organic fertilizer: processed from livestock manure, replacing all synthetic agrochemicals
+- Livestock & dairy: pasture-fed cattle raised to strict welfare and nutrition standards, producing fresh milk, yogurt, cheese, and butter
+- Crop production: maize, beans, soybeans, macadamia, and mangoes grown using low-chemical, climate-smart, organic-input practices
+- Organic fertilizer: processed from livestock manure, reducing reliance on synthetic agrochemicals (a line currently scaling toward full production)
 - Animal feed: milled on-farm from crop residues and by-products
-- Farmer training: practical circular agriculture training for 300+ smallholder farmers across Rwanda
+- Farmer training: practical circular agriculture training for 500+ smallholder farmers across Rwanda
 
 ## Circular System
 The Ingaju circular system has four core stages:
@@ -30,12 +30,12 @@ The Ingaju circular system has four core stages:
 - Website: https://ingajufarms.com
 
 ## Key Facts
-- 300+ smallholder farmers trained across Rwanda
+- 500+ smallholder farmers trained across Rwanda
 - 50+ jobs created
-- 10+ organic products produced
+- 10 organic products produced
 - 12 local partnerships
-- Zero synthetic pesticides or fertilizers used
-- Zero waste to landfill
+- Low-chemical, organic-input farming practices
+- Working toward a zero-waste ambition
 
 ## Pages
 - Homepage: https://ingajufarms.com
@@ -43,6 +43,5 @@ The Ingaju circular system has four core stages:
 - Circular System: https://ingajufarms.com/circular-system
 - Dairy Products: https://ingajufarms.com/products/dairy
 - Crop Products: https://ingajufarms.com/products/crops
-- Trainings: https://ingajufarms.com/trainings
 - Blog: https://ingajufarms.com/blog
 - Contact: https://ingajufarms.com/contact

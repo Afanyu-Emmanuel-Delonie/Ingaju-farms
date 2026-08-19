@@ -7,7 +7,7 @@ export default function AboutHero() {
       {/* Background video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/about-hero.mp4"
+        src="/images/about/about.mp4"
         poster="/images/about/about-1.webp"
         autoPlay
         muted

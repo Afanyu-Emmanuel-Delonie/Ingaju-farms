@@ -7,7 +7,7 @@ import CropsInsights from "@/components/products/crops/CropsInsights";
 import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata = {
-  title: "Livestock-Fed Crop Production Rwanda | Ingaju Farms",
+  title: { absolute: "Livestock-Fed Crop Production Rwanda | Ingaju Farms" },
   description: "Low-chemical maize, beans, soybeans, macadamia, and mangoes from Ingaju Farms, Eastern Province, Rwanda. Grown using on-farm organic fertilizer and climate-smart, organic-input practices.",
   alternates: { canonical: "https://ingajufarms.com/products/crops" },
   openGraph: {

@@ -7,6 +7,7 @@ import { ModalProvider } from "@/components/shared/ModalContext";
 import RequestModal from "@/components/shared/RequestModal";
 import { AuthProvider } from "@/lib/AuthContext";
 import StructuredData from "@/components/shared/StructuredData";
+import Splash from "@/components/Splash";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -91,6 +92,7 @@ export default async function RootLayout({
         <StructuredData />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <Splash />
         <AuthProvider>
           <ModalProvider>
             <SiteChrome hasBlog={hasBlog}>

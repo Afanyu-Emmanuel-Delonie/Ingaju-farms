@@ -2,7 +2,7 @@ import ContactPage from "@/components/contact/ContactPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Ingaju Farms | Rebero Village, Nyagatare District, Eastern Province, Rwanda",
+  title: { absolute: "Contact Ingaju Farms | Rebero Village, Nyagatare District, Eastern Province, Rwanda" },
   description: "Contact Ingaju Farms in Rebero Village, Nyagatare District, Eastern Province, Rwanda. Reach us for product orders, farm tours, training programs, or partnership inquiries. Call +250 788 304 921 or email support@ingajufarms.com.",
   alternates: { canonical: "https://ingajufarms.com/contact" },
   openGraph: {

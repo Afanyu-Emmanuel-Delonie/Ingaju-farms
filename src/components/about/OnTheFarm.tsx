@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { useMemo } from "react";
 
 const IMAGES = [
   { src: "/images/farm/trainings.webp", alt: "Students observing dairy cattle during a farm training session" },
@@ -23,18 +22,7 @@ const IMAGES = [
   { src: "/images/crops/crops-2.webp", alt: "Irrigation sprinklers watering the maize fields" },
 ];
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 export default function OnTheFarm() {
-  const shuffled = useMemo(() => shuffle(IMAGES), []);
-
   return (
     <section className="w-full bg-[#F7F5F2] py-16 overflow-hidden">
       <div className="container-pad mb-10">
@@ -47,7 +35,7 @@ export default function OnTheFarm() {
       <div className="relative flex gap-4 overflow-hidden">
         {[0, 1].map((i) => (
           <div key={i} aria-hidden={i === 1} className="flex gap-4 shrink-0 animate-marquee">
-            {shuffled.map((img) => (
+            {IMAGES.map((img) => (
               <div key={img.src} className="relative h-52 w-64 shrink-0 rounded-2xl overflow-hidden sm:h-72 sm:w-80 lg:h-96 lg:w-96">
                 <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="320px" />
               </div>

@@ -36,9 +36,9 @@ export default function StructuredData() {
       "@type": "OfferCatalog",
       name: "Ingaju Farms Products & Services",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Livestock & Dairy Products", url: "https://ingajufarms.com/products/dairy" } },
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Climate-Smart Crop Production", url: "https://ingajufarms.com/products/crops" } },
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Organic Fertilizer", url: "https://ingajufarms.com/products/crops" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Livestock & Dairy Products", url: "https://ingajufarms.com/products/dairy" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Climate-Smart Crop Production", url: "https://ingajufarms.com/products/crops" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Organic Fertilizer", url: "https://ingajufarms.com/products/crops" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Farmer Training Programs", url: "https://ingajufarms.com/contact" } },
       ],
     },

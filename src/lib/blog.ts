@@ -20,6 +20,7 @@ export interface BlogPost {
   readTime: string;
   image: string;
   alt: string;
+  video?: string;
   content: BlogContentBlock[];
   published?: boolean;
   authorEmail?: string;

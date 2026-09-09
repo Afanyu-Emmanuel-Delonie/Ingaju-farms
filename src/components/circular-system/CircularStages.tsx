@@ -57,19 +57,19 @@ export default function CircularStages() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-24">
+    <section id="the-loop" ref={sectionRef} className="w-full bg-white py-24">
       <div className="container-pad mx-auto max-w-5xl">
 
         {/* Header */}
         <div className="text-center mb-20">
           <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
-            The Four Stages
+            The Three Stages
           </p>
           <h2 className="font-heading text-3xl font-bold text-[#1C2321] sm:text-4xl">
             How the Loop Works
           </h2>
           <p className="mt-4 max-w-md mx-auto text-[15px] font-body leading-relaxed text-[#6B6259]">
-            Four stages, zero-waste ambition — every output from one stage becomes the input for the next.
+            Three stages, zero-waste ambition — every output from one stage becomes the input for the next.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export default function CircularStages() {
                 {/* Content */}
                 <div className="stage-content lg:w-1/2">
                   <p className="text-xs font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
-                    {number} / 04
+                    {number} / 03
                   </p>
                   <h3 className="font-heading text-2xl font-bold text-[#1C2321] sm:text-3xl leading-tight">
                     {title}

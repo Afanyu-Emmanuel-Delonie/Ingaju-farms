@@ -47,6 +47,7 @@ interface FormState {
   excerpt: string;
   image: string;
   alt: string;
+  video: string;
   readTime: string;
   published: boolean;
   blocks: BlockDraft[];
@@ -62,6 +63,7 @@ const EMPTY_FORM: FormState = {
   excerpt: "",
   image: "",
   alt: "",
+  video: "",
   readTime: "5 min read",
   published: true,
   blocks: [{ type: "paragraph", text: "" }],
@@ -147,6 +149,7 @@ export default function PortalBlogPage() {
       excerpt: post.excerpt,
       image: post.image,
       alt: post.alt,
+      video: post.video ?? "",
       readTime: post.readTime,
       published: post.published !== false,
       blocks: blocksToDraft(post.content),
@@ -225,6 +228,7 @@ export default function PortalBlogPage() {
         excerpt: form.excerpt.trim(),
         image: toDirectImageUrl(form.image),
         alt: form.alt.trim(),
+        video: form.video.trim(),
         readTime: form.readTime.trim() || "5 min read",
         published: form.published,
         content,
@@ -450,6 +454,19 @@ export default function PortalBlogPage() {
               value={form.alt}
               onChange={(e) => setForm((f) => ({ ...f, alt: e.target.value }))}
               placeholder="Farmer working on a circular agriculture farm"
+              className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] bg-[#F8F6F2] outline-none focus:border-[#3A7D5A] transition-colors"
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">
+              Hero Video URL <span className="normal-case text-[#B0A89E]">(optional — a direct .mp4/.webm link plays in the article hero instead of the image above, which is still used as its poster frame and everywhere else the post is listed)</span>
+            </label>
+            <input
+              type="text"
+              value={form.video}
+              onChange={(e) => setForm((f) => ({ ...f, video: e.target.value }))}
+              placeholder="/images/blog-example.mp4 or https://..."
               className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-body text-[#1C2321] bg-[#F8F6F2] outline-none focus:border-[#3A7D5A] transition-colors"
             />
           </div>

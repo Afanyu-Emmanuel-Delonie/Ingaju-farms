@@ -1,91 +1,41 @@
 import { Leaf, TrendingDown, Globe, Users, Zap, Droplets, Sprout, RefreshCw } from "lucide-react";
 
-export type StageKey = "cattle" | "fertilizer" | "crop" | "feed";
-
-export interface StageDetail {
-  label: string;
-  imgSrc: string;
-  imgAlt: string;
-  angle: number;
-}
-
-export const STAGE_DATA: Record<StageKey, StageDetail> = {
-  cattle: {
-    label: "Dairy Cattle",
-    imgSrc: "/images/dairy/dairy-production.webp",
-    imgAlt: "Dairy cattle on the farm",
-    angle: 270,
-  },
-  fertilizer: {
-    label: "Organic Fertilizer",
-    imgSrc: "/images/dairy/organic-manure.webp",
-    imgAlt: "Organic manure fertilizer",
-    angle: 0,
-  },
-  crop: {
-    label: "Crop Production",
-    imgSrc: "/images/crops/crops-2.webp",
-    imgAlt: "Maize crop production",
-    angle: 90,
-  },
-  feed: {
-    label: "Animal Feed",
-    imgSrc: "/images/dairy/feed-production.webp",
-    imgAlt: "Milled animal feed",
-    angle: 180,
-  },
-};
-
-export const STAGE_ORDER: StageKey[] = ["cattle", "fertilizer", "crop", "feed"];
-
 export const CIRCULAR_STAGES = [
   {
     number: "01",
-    title: "Livestock Herd",
-    body: "Everything begins with the herd. Healthy, well-fed cattle are the base of the system, producing milk daily while generating the organic matter that supports the rest of the farm.",
+    title: "Organic Fertilizer",
+    body: "Manure from the herd is composted into organic fertilizer, returning nutrients to the soil that grows our feed crops.",
     bullets: [
-      "Pasture-fed herd managed under strict welfare and nutrition standards",
-      "Milk yield directly tied to feed quality and animal health",
-      "Manure collected daily as the primary input for the next stage",
+      "Manure composted daily into nutrient-rich organic fertilizer",
+      "Reduces reliance on synthetic agrochemicals",
+      "Nutrients returned to the soil that grows our feed crops",
     ],
-    imgSrc: "/images/dairy/dairy-production.webp",
-    imgAlt: "Livestock herd being milked at Ingaju Farms",
+    imgSrc: "/images/dairy/organic-manure.webp",
+    imgAlt: "Organic fertilizer processing at Ingaju Farms",
   },
   {
     number: "02",
-    title: "Organic Fertilizer",
-    body: "Manure from the herd isn't discarded it's composted into organic fertilizer, a line we're currently scaling up. As it comes online, it's reducing our reliance on synthetic chemicals and returning natural nutrients to the soil.",
+    title: "Animal Feed",
+    body: "Feed crops grown on fertilizer-enriched soil are milled and prepared for the herd, keeping nutrition consistent year-round.",
     bullets: [
-      "Manure composted into organic fertilizer as this line scales up to full production",
-      "Designed to reduce reliance on synthetic agrochemicals across our crop fields",
-      "Aims to improve soil health and long-term fertility as the line matures",
+      "Feed crops grown on fertilizer-enriched soil",
+      "Feed milled and prepared on-site to match herd nutritional needs",
+      "Consistent feed quality supports steady milk yield",
     ],
-    imgSrc: "/images/dairy/organic-manure.webp",
-    imgAlt: "Organic manure fertilizer processing at Ingaju Farms",
+    imgSrc: "/images/dairy/feed-production.webp",
+    imgAlt: "Animal feed production at Ingaju Farms",
   },
   {
     number: "03",
-    title: "Crop Production",
-    body: "As organic fertilizer comes online, our fields grow food and fodder crops on increasingly enriched soil. Healthy soil grows healthy crops and those crops feed both the market and the herd, closing the loop.",
+    title: "Milk Production",
+    body: "Well-fed cattle are milked daily with modern equipment, producing quality milk and the manure that restarts the cycle.",
     bullets: [
-      "Synthetic pesticide and fertilizer use kept low, moving toward organic-input growing",
-      "Diverse crop varieties grown year-round, supported by our organic fertilizer line as it scales",
-      "Soil health tracked through careful record-keeping",
+      "Pasture-fed herd managed under strict welfare and nutrition standards",
+      "Modern milking equipment maintains hygiene and consistent yield",
+      "Manure collected daily, closing the loop back into organic fertilizer",
     ],
-    imgSrc: "/images/crops/crops-2.webp",
-    imgAlt: "Crop fields at Ingaju Farms",
-  },
-  {
-    number: "04",
-    title: "Livestock Feed",
-    body: "Harvested crops and crop residues are prepared into feed for the herd. This final stage returns nutrition back to the herd restarting the cycle a little stronger each time.",
-    bullets: [
-      "Crop residues and by-products reused as feed, reducing what leaves the system",
-      "Feed prepared on-site to match herd nutritional needs",
-      "Closing the loop: each cycle strengthens the system a little further",
-    ],
-    imgSrc: "/images/dairy/feed-production.webp",
-    imgAlt: "Livestock feed production at Ingaju Farms",
+    imgSrc: "/images/dairy/dairy-production.webp",
+    imgAlt: "Milk production at Ingaju Farms",
   },
 ];
 

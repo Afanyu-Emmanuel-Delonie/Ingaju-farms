@@ -1,5 +1,4 @@
 import CircularHero from "@/components/circular-system/CircularHero";
-import CircularDiagram from "@/components/circular-system/CircularDiagram";
 import CircularStages from "@/components/circular-system/CircularStages";
 import CircularBenefits from "@/components/circular-system/CircularBenefits";
 import CircularTrainings from "@/components/circular-system/CircularTrainings";
@@ -22,7 +21,6 @@ export default function CircularSystemPage() {
   return (
     <main className="flex min-h-screen flex-col bg-white">
       <CircularHero />
-      <FadeIn direction="up" delay={0.05}><CircularDiagram /></FadeIn>
       <FadeIn direction="up" delay={0.05}><CircularStages /></FadeIn>
       <FadeIn direction="up" delay={0.05}><CircularBenefits /></FadeIn>
       <FadeIn direction="up" delay={0.05}><CircularTrainings /></FadeIn>

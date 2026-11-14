@@ -33,7 +33,7 @@ export default function Testimonials({ testimonials }: { testimonials: Testimoni
       <BrandPattern />
       <div className="container-pad grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-12 md:gap-16 items-center min-h-[320px]">
 
-        {/* Left — heading + controls */}
+        {/* Left - heading + controls */}
         <div>
           <h2 className="text-3xl md:text-4xl font-heading font-medium text-white leading-tight">
             Trusted by Farmers<br />
@@ -73,7 +73,7 @@ export default function Testimonials({ testimonials }: { testimonials: Testimoni
           </div>
         </div>
 
-        {/* Right — quote */}
+        {/* Right - quote */}
         <div>
           <span className="block font-heading text-[80px] leading-none text-[#3A7D5A] -mb-3 select-none" aria-hidden>
             &ldquo;

@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     url: "https://ingajufarms.com/products/dairy",
     title: "Fresh Milk & Breeding Cattle in Nyagatare | Ingaju Farms",
-    description: "Pasture-fed milk and disease-free breeding cattle from Ingaju Farms, Eastern Province, Rwanda — part of a circular system closing the loop on synthetic inputs.",
+    description: "Pasture-fed milk and disease-free breeding cattle from Ingaju Farms, Eastern Province, Rwanda - part of a circular system closing the loop on synthetic inputs.",
     images: [{ url: "/images/dairy/dairy.webp", width: 1200, height: 630, alt: "Dairy cattle inside the Ingaju farm barn" }],
   },
 };

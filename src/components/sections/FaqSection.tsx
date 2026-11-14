@@ -10,7 +10,7 @@ const contactLinkClass =
 // `answer` is the rendered JSX (may include links); `answerText` is the
 // plain-text equivalent used for the FAQPage JSON-LD, which can't hold JSX.
 // A FAQ is only rendered, and only emitted into the schema, when both are
-// non-empty — see the `.filter()` below.
+// non-empty - see the `.filter()` below.
 const faqs = [
   {
     question: "What products and services does Ingaju Farms offer?",

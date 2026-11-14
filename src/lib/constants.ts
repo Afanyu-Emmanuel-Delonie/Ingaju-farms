@@ -5,94 +5,57 @@ import {
   Users,
   Zap,
   Droplets,
-  Sprout,
   RefreshCw,
-  Beef,
-  Recycle,
-  Wheat,
-  ShoppingCart,
-  GraduationCap,
 } from "lucide-react";
 
 export const SOCIAL_LINKS: { label: string; href: string }[] = [];
 
 export const FERTILIZER_LINE_STATUS = "as that line scales up";
 
+// Data only - icons are mapped by `key` in CircularLoopDiagram.tsx and
+// CircularLoopRoadmap.tsx so this file doesn't need to import icon components.
+// NOTE(owner): descriptions are drafted process copy, not verified figures -
+// review wording before treating this as final.
 export const CIRCULAR_LOOP_STAGES: {
   key: string;
   label: string;
   sublabel?: string;
-  icon: typeof Sprout;
+  description: string;
 }[] = [
   {
     key: "soil",
     label: "Soil & Crop Production",
     sublabel: "Feed",
-    icon: Sprout,
+    description: "Feed crops are grown using organic inputs from earlier in the cycle, supplying nutrition for the herd.",
   },
   {
     key: "livestock",
     label: "Livestock Production",
     sublabel: "Dairy & Poultry",
-    icon: Beef,
+    description: "Cattle and poultry are raised on that feed, producing milk, meat, and eggs for the farm.",
   },
-  { key: "manure", label: "Manure & Organic Waste Management", icon: Recycle },
+  {
+    key: "manure",
+    label: "Manure & Organic Waste Management",
+    description: "Manure and organic waste from the herd are collected and managed rather than discarded.",
+  },
   {
     key: "resources",
     label: "Circular Use of Resources",
     sublabel: "Compost & Feed",
-    icon: Wheat,
+    description: `That waste is converted into organic fertilizer and feed ${FERTILIZER_LINE_STATUS}, returning nutrients to the soil.`,
   },
   {
     key: "processing",
     label: "Processing & Commercialisation",
     sublabel: "Value Addition",
-    icon: ShoppingCart,
+    description: "Farm outputs are processed and prepared for sale, adding value before they reach customers.",
   },
   {
     key: "learning",
     label: "Ingaju Centre for Learning",
     sublabel: "Capacity Building",
-    icon: GraduationCap,
-  },
-];
-
-export const CIRCULAR_STAGES = [
-  {
-    number: "01",
-    title: "Organic Fertilizer",
-    body: `Manure from the herd is composted into organic fertilizer ${FERTILIZER_LINE_STATUS}, returning nutrients to the soil that grows our feed crops.`,
-    bullets: [
-      `Manure composted into nutrient-rich organic fertilizer ${FERTILIZER_LINE_STATUS}`,
-      "Reduces reliance on synthetic agrochemicals",
-      "Nutrients returned to the soil that grows our feed crops",
-    ],
-    imgSrc: "/images/dairy/organic-manure.webp",
-    imgAlt: "Organic fertilizer processing at Ingaju Farms",
-  },
-  {
-    number: "02",
-    title: "Animal Feed",
-    body: "Feed crops grown on fertilizer-enriched soil are milled and prepared for the herd, keeping nutrition consistent year-round.",
-    bullets: [
-      "Feed crops grown on fertilizer-enriched soil",
-      "Feed milled and prepared on-site to match herd nutritional needs",
-      "Consistent feed quality supports steady milk yield",
-    ],
-    imgSrc: "/images/dairy/feed-production.webp",
-    imgAlt: "Animal feed production at Ingaju Farms",
-  },
-  {
-    number: "03",
-    title: "Milk Production",
-    body: "Well-fed cattle are milked daily with modern equipment, producing quality milk and the manure that restarts the cycle.",
-    bullets: [
-      "Pasture-fed herd managed under strict welfare and nutrition standards",
-      "Modern milking equipment maintains hygiene and consistent yield",
-      `Manure collected daily, closing the loop back into organic fertilizer ${FERTILIZER_LINE_STATUS}`,
-    ],
-    imgSrc: "/images/dairy/dairy-production.webp",
-    imgAlt: "Milk production at Ingaju Farms",
+    description: "Farmers and students are trained on-site in the practices that keep this cycle running.",
   },
 ];
 

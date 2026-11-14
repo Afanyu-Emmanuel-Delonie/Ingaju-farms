@@ -46,7 +46,7 @@ export default function Footer() {
       <div className="relative container-pad py-16">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
 
-          {/* Brand — spans 2 cols on large */}
+          {/* Brand - spans 2 cols on large */}
           <div className="lg:col-span-2">
             <div className="flex items-start gap-4">
               <Image
@@ -110,13 +110,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        {/* NOTE: Privacy Policy / Terms of Use links removed — /privacy and /terms don't exist yet. Re-add once built. */}
+        {/* NOTE: Privacy Policy / Terms of Use links removed - /privacy and /terms don't exist yet. Re-add once built. */}
         <div className="mt-14 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-8 sm:flex-row sm:justify-between">
           <p className="text-xs font-body text-white/35">
             © {new Date().getFullYear()} Ingaju Farms. All rights reserved.
           </p>
           {/* Sourced from the single SOCIAL_LINKS config (src/lib/constants.ts),
-              which also feeds the Organization JSON-LD `sameAs` field — renders
+              which also feeds the Organization JSON-LD `sameAs` field - renders
               nothing until the owner adds real profile URLs there. */}
           {SOCIAL_LINKS.length > 0 && (
             <ul className="flex items-center gap-4">

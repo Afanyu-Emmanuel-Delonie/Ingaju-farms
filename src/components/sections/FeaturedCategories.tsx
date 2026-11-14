@@ -19,7 +19,7 @@ export default function FeaturedCategories() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-4">
-          {/* Dairy — full-width hero card */}
+          {/* Dairy - full-width hero card */}
           <a
             href="/products/dairy"
             className="group relative block h-[28rem] w-full overflow-hidden rounded-2xl sm:h-[32rem]"
@@ -40,7 +40,7 @@ export default function FeaturedCategories() {
             </div>
             <div className="absolute inset-y-0 left-0 flex flex-col justify-end p-8 max-w-lg">
               <h3 className="text-2xl font-heading font-bold text-white sm:text-3xl">Livestock & Dairy</h3>
-            {/* NOTE: "with no added hormones" removed — not a confirmed practice. See Priority Fix Tracker, Needs Verification. */}
+            {/* NOTE: "with no added hormones" removed - not a confirmed practice. See Priority Fix Tracker, Needs Verification. */}
             <p className="mt-2 text-sm font-body leading-relaxed text-white/75">
              Milk and breeding livestock raised to strict welfare and nutrition standards.
             </p>
@@ -50,7 +50,7 @@ export default function FeaturedCategories() {
             </div>
           </a>
 
-          {/* Remaining 3 categories — single row */}
+          {/* Remaining 3 categories - single row */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {CATEGORIES.slice(1).map((category) => (
             <a

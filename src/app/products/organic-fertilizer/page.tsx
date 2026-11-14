@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 // No price exists yet (the line hasn't reached commercial volume), so no
-// `offers` field is emitted — see the Ingaju SEO Rules guide on not inventing
+// `offers` field is emitted - see the Ingaju SEO Rules guide on not inventing
 // business facts. `availability: PreOrder` is accurate, not invented: this is
 // genuinely a waitlist for a product line that is scaling up.
 // TODO(owner): once pricing is set, add `offers: { "@type": "Offer", price, priceCurrency: "RWF", availability: "https://schema.org/PreOrder" }`.
@@ -55,7 +55,7 @@ export default function OrganicFertilizerPage() {
             </h1>
             <p className="mt-4 max-w-lg font-body text-base leading-relaxed text-[#6B6259]">
               Our organic fertilizer is nutrient-rich compost processed from our own livestock
-              manure — a soil amendment designed to rebuild long-term soil health. The line is{" "}
+              manure - a soil amendment designed to rebuild long-term soil health. The line is{" "}
               {FERTILIZER_LINE_STATUS}, and we&apos;re opening a waitlist for farmers who want
               early access once it reaches commercial volume.
             </p>

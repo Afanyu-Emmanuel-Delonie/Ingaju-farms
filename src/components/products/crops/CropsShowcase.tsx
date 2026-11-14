@@ -43,7 +43,7 @@ const CROPS = [
   },
 ];
 
-// No price field exists for these products, so no `offers` is emitted —
+// No price field exists for these products, so no `offers` is emitted -
 // adding one would mean inventing a price. See Ingaju SEO Rules guide.
 // TODO(owner): once prices are confirmed, add `offers: { "@type": "Offer", price, priceCurrency: "RWF" }` per crop.
 const cropsJsonLd = CROPS.map((p) => ({

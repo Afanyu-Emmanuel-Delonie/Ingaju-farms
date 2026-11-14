@@ -100,7 +100,7 @@ function draftToBlocks(blocks: BlockDraft[]): BlogContentBlock[] {
 }
 
 function formatDate(post: BlogPost) {
-  if (!post.createdAt) return post.date || "—";
+  if (!post.createdAt) return post.date || "-";
   return post.createdAt.toDate().toLocaleDateString("en-RW", {
     day: "numeric",
     month: "short",
@@ -460,7 +460,7 @@ export default function PortalBlogPage() {
 
           <div className="flex flex-col gap-1.5">
             <label className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">
-              Hero Video URL <span className="normal-case text-[#B0A89E]">(optional — a direct .mp4/.webm link plays in the article hero instead of the image above, which is still used as its poster frame and everywhere else the post is listed)</span>
+              Hero Video URL <span className="normal-case text-[#B0A89E]">(optional - a direct .mp4/.webm link plays in the article hero instead of the image above, which is still used as its poster frame and everywhere else the post is listed)</span>
             </label>
             <input
               type="text"

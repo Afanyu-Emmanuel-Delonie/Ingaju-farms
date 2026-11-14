@@ -21,7 +21,7 @@ export default function StructuredData() {
       addressRegion: "Eastern Province",
       addressCountry: "RW",
     },
-    // NOTE: no `geo` field — the previous build shipped invented GPS
+    // NOTE: no `geo` field - the previous build shipped invented GPS
     // coordinates (-1.5, 30.5), which Google's Rich Results Test would treat
     // as real data. Don't add one back without a verified reading.
     // TODO(owner): provide verified GPS coordinates for the farm, then add
@@ -37,7 +37,7 @@ export default function StructuredData() {
     areaServed: "Rwanda",
     // Populated from the single SOCIAL_LINKS config (src/lib/constants.ts) so
     // the footer and this schema can never drift apart. Empty until the
-    // owner confirms real profile URLs — see TODO there.
+    // owner confirms real profile URLs - see TODO there.
     sameAs: SOCIAL_LINKS.map((link) => link.href),
     hasOfferCatalog: {
       "@type": "OfferCatalog",

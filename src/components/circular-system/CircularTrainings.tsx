@@ -35,7 +35,7 @@ export default function CircularTrainings() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
-              {/* Label — top left */}
+              {/* Label - top left */}
               <div className="absolute top-5 left-5">
                 <span className="inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-3 py-1 text-[10px] font-body font-semibold uppercase tracking-widest text-white">
                   Training

@@ -138,7 +138,7 @@ export default function ContactPage() {
           </h1>
           <p className="mt-4 max-w-xl font-body text-base leading-relaxed text-white/70">
             Whether you&apos;re looking to order products, book a farm tour,
-            join a training, or explore a partnership — we&apos;d love to hear
+            join a training, or explore a partnership - we&apos;d love to hear
             from you.
           </p>
         </div>
@@ -148,7 +148,7 @@ export default function ContactPage() {
       <section className="w-full bg-[#F8F6F2]">
         <div className="container-pad py-20">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-12">
-            {/* Left — dark info panel */}
+            {/* Left - dark info panel */}
             <div className="relative overflow-hidden rounded-3xl bg-[#1C2321] p-8 lg:p-10 flex flex-col justify-between gap-10">
               <BrandPattern />
 
@@ -193,7 +193,7 @@ export default function ContactPage() {
               <div className="w-12 h-0.5 bg-[#3A7D5A]" />
             </div>
 
-            {/* Right — form */}
+            {/* Right - form */}
             <div className="rounded-3xl bg-white p-8 lg:p-10 shadow-sm">
               {sent ? (
                 <div className="flex flex-col items-start justify-center h-full gap-4 py-12">

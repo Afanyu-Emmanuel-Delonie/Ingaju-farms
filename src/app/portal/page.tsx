@@ -397,7 +397,7 @@ export default function PortalPage() {
     if (!db || !isFirebaseConfigured) { setSubmitting(false); return; }
     await addDoc(collection(db, "portal_submissions"), {
       type: "orders",
-      subject: `${orderForm.product} — ${orderForm.qty} ${orderForm.unit}`,
+      subject: `${orderForm.product} - ${orderForm.qty} ${orderForm.unit}`,
       body: orderForm.notes || "No additional notes.",
       submittedBy: user?.email ?? "unknown",
       createdAt: serverTimestamp(),

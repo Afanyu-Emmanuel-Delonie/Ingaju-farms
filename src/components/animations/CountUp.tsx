@@ -13,8 +13,8 @@ interface CountUpProps {
 }
 
 export default function CountUp({ to, duration = 1.5, className }: CountUpProps) {
-  // Initialized to the final value (not 0) so the server-rendered HTML —
-  // what crawlers and no-JS visitors see — always shows the real number.
+  // Initialized to the final value (not 0) so the server-rendered HTML -
+  // what crawlers and no-JS visitors see - always shows the real number.
   // The count-up is a client-only visual flourish on top of that.
   const [count, setCount] = useState(to);
   const ref = useRef<HTMLSpanElement>(null);

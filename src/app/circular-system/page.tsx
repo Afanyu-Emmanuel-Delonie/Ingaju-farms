@@ -1,6 +1,6 @@
 import CircularHero from "@/components/circular-system/CircularHero";
 import CircularLoopDiagram from "@/components/circular-system/CircularLoopDiagram";
-import CircularStages from "@/components/circular-system/CircularStages";
+import CircularLoopRoadmap from "@/components/circular-system/CircularLoopRoadmap";
 import CircularBenefits from "@/components/circular-system/CircularBenefits";
 import CircularTrainings from "@/components/circular-system/CircularTrainings";
 import CircularCta from "@/components/circular-system/CircularCta";
@@ -25,7 +25,7 @@ export default function CircularSystemPage() {
       <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Circular System", path: "/circular-system" }])} />
       <CircularHero />
       <FadeIn direction="up" delay={0.05}><CircularLoopDiagram /></FadeIn>
-      <FadeIn direction="up" delay={0.05}><CircularStages /></FadeIn>
+      <FadeIn direction="up" delay={0.05}><CircularLoopRoadmap /></FadeIn>
       <FadeIn direction="up" delay={0.05}><CircularBenefits /></FadeIn>
       <FadeIn direction="up" delay={0.05}><CircularTrainings /></FadeIn>
       <FadeIn direction="up" delay={0.05}><CircularCta /></FadeIn>

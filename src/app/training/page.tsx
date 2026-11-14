@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Only emitted once real session dates exist — see TRAINING_DATES_CONFIRMED's
+// Only emitted once real session dates exist - see TRAINING_DATES_CONFIRMED's
 // TODO in src/lib/constants.ts. Shipping placeholder dates in Event schema
 // would be invented data that Google could index as real.
 const eventsJsonLd = TRAINING_DATES_CONFIRMED

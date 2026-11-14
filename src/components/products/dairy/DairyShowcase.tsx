@@ -30,7 +30,7 @@ const PRODUCTS = [
   }
 ];
 
-// No price field exists for these products, so no `offers` is emitted —
+// No price field exists for these products, so no `offers` is emitted -
 // adding one would mean inventing a price. See Ingaju SEO Rules guide.
 // TODO(owner): once prices are confirmed, add `offers: { "@type": "Offer", price, priceCurrency: "RWF" }` per product.
 const productsJsonLd = PRODUCTS.map((p) => ({
@@ -74,7 +74,7 @@ export default function DairyShowcase() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent" />
 
-              {/* Label — top left */}
+              {/* Label - top left */}
               <div className="absolute top-5 left-5">
                 <span className="inline-block rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-3 py-1 text-[10px] font-body font-semibold uppercase tracking-widest text-white">
                   {prod.label}

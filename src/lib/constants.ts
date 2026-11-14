@@ -71,7 +71,7 @@ export const CIRCULAR_BENEFITS = [
     icon: Users,
     title: "Smallholder Impact",
     desc: "The Ingaju circular model is designed to be low-cost and directly applicable to smallholder operations, and we've shared it with farmers in our community in Nyagatare.",
-    stat: "500+",
+    stat: "300+",
     statLabel: "Farmers Reached",
   },
   {
@@ -139,9 +139,9 @@ export const CATEGORIES = [
 
 export const IMPACT_STATS: { key: string; label: string; value?: number; display?: string }[] = [
   { key: "jobs", value: 50, label: "Jobs Created" },
-  { key: "farmers", value: 500, label: "Farmers Trained" },
+  { key: "farmers", value: 300, label: "Farmers Trained" },
+  { key: "workers", value: 35, label: "Permanent Workers" },
   { key: "products", value: 10, label: "Organic Products Produced" },
-  { key: "partnerships", value: 12, label: "Local Partnerships" },
 ];
 
 // Guards the Event JSON-LD on /training: Google penalizes structured data with
@@ -240,7 +240,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "Our training programs have reached over 500 farmers across the region, equipping them with practical skills in manure management, natural pest management, water harvesting, and crop-livestock integration. The results speak for themselves — trained farmers consistently outperform untrained peers in both yield and profitability.",
+        text: "Our training programs have reached over 300 farmers across the region, equipping them with practical skills in manure management, natural pest management, water harvesting, and crop-livestock integration. The results speak for themselves — trained farmers consistently outperform untrained peers in both yield and profitability.",
       },
       {
         type: "heading" as const,
@@ -366,7 +366,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "We offer training in dairy farming, organic crop production, and circular agriculture systems. Programs are available for individuals, farmer groups, schools, and corporate teams interested in understanding sustainable food systems. To date, we have trained over 500 farmers, and we track their progress to ensure the knowledge continues to produce results in the field.",
+        text: "We offer training in dairy farming, organic crop production, and circular agriculture systems. Programs are available for individuals, farmer groups, schools, and corporate teams interested in understanding sustainable food systems. To date, we have trained over 300 farmers, and we track their progress to ensure the knowledge continues to produce results in the field.",
       },
       {
         type: "heading" as const,

@@ -80,6 +80,10 @@ export default function About() {
             <svg className="absolute bottom-0 right-0 w-40 h-40 opacity-5 pointer-events-none" viewBox="0 0 300 300" fill="none">
               <path d="M300 300 Q 100 300 100 100" stroke="#6DBE8C" strokeWidth="60" strokeLinecap="round" />
             </svg>
+            {/* This is a composite figure (trained + employed + cooperative
+                partners), distinct from the "300+ farmers trained" figure
+                used elsewhere, so it wasn't changed with that update.
+                TODO(owner): confirm this combined total is still accurate. */}
             <span className="text-4xl font-heading font-bold leading-none sm:text-5xl">500+</span>
             <p className="mt-3 text-sm font-body font-semibold tracking-wide uppercase">Farmers & Community Members Reached</p>
             <p className="mt-2 text-xs font-body leading-relaxed text-white/80">

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import type { BlogPost } from "@/lib/blog";
@@ -72,12 +71,6 @@ export default function BlogSection({
                 </button>
               </div>
             )}
-            <Link
-              href="/blog"
-              className="text-xs font-body font-semibold text-[#3A7D5A] border-b border-[#3A7D5A]/40 pb-0.5 hover:border-[#3A7D5A] transition-colors whitespace-nowrap"
-            >
-              View All Posts
-            </Link>
           </div>
         </div>
 

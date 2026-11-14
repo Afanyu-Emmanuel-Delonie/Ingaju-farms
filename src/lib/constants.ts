@@ -138,7 +138,7 @@ export const CATEGORIES = [
 ];
 
 export const IMPACT_STATS: { key: string; label: string; value?: number; display?: string }[] = [
-  { key: "jobs", value: 50, label: "Jobs Created" },
+  { key: "jobs", value: 50, label: "Jobs Created Daily" },
   { key: "farmers", value: 300, label: "Farmers Trained" },
   { key: "workers", value: 35, label: "Permanent Workers" },
   { key: "products", value: 10, label: "Organic Products Produced" },

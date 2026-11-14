@@ -5,6 +5,7 @@ import CropsWhyChooseUs from "@/components/products/crops/CropsWhyChooseUs";
 import CropsCta from "@/components/products/crops/CropsCta";
 import CropsInsights from "@/components/products/crops/CropsInsights";
 import FadeIn from "@/components/animations/FadeIn";
+import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata = {
   title: { absolute: "Livestock-Fed Crop Production Rwanda | Ingaju Farms" },
@@ -21,6 +22,7 @@ export const metadata = {
 export default function CropsPage() {
   return (
     <main className="flex min-h-screen flex-col bg-white">
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Crop Production", path: "/products/crops" }])} />
       <CropsHero />
       <FadeIn direction="up" delay={0.05}><CropsShowcase /></FadeIn>
       <FadeIn direction="up" delay={0.05}><CropsCircularModel /></FadeIn>

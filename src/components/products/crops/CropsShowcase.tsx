@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useModal } from "@/components/shared/ModalContext";
+import JsonLd from "@/components/JsonLd";
 
 const CROPS = [
   {
@@ -42,10 +43,23 @@ const CROPS = [
   },
 ];
 
+// No price field exists for these products, so no `offers` is emitted —
+// adding one would mean inventing a price. See Ingaju SEO Rules guide.
+// TODO(owner): once prices are confirmed, add `offers: { "@type": "Offer", price, priceCurrency: "RWF" }` per crop.
+const cropsJsonLd = CROPS.map((p) => ({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: p.title,
+  image: `https://ingajufarms.com${p.img}`,
+  description: p.desc,
+  brand: { "@type": "Brand", name: "Ingaju Farms" },
+}));
+
 export default function CropsShowcase() {
   const { open } = useModal();
   return (
     <section id="our-produce" className="w-full bg-white scroll-mt-24">
+      <JsonLd data={cropsJsonLd} />
       <div className="container-pad py-24">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
@@ -78,12 +92,16 @@ export default function CropsShowcase() {
                 <p className="mt-3 text-sm font-body text-white/75 leading-relaxed">
                   {prod.desc}
                 </p>
-                <button
-                  onClick={() => open({ variant: "order", product: prod.title, unit: prod.unit })}
+                <a
+                  href={`/contact?topic=Product%20Order&product=${encodeURIComponent(prod.title)}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    open({ variant: "order", product: prod.title, unit: prod.unit });
+                  }}
                   className="mt-5 inline-flex items-center gap-2 text-sm font-body font-semibold text-white border-b border-white/50 pb-0.5 hover:border-white transition-colors"
                 >
                   Order Now <ArrowRight className="h-3.5 w-3.5" />
-                </button>
+                </a>
               </div>
             </div>
           ))}

@@ -5,6 +5,7 @@ import ImpactStats from "@/components/shared/ImpactStats";
 import CoreValues from "@/components/about/CoreValues";
 import OnTheFarm from "@/components/about/OnTheFarm";
 import JoinUsCta from "@/components/about/JoinUsCta";
+import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata = {
   title: { absolute: "About Ingaju Farms | Circular Agriculture Enterprise, Rwanda" },
@@ -30,6 +31,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main className="flex min-h-screen flex-col w-full">
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
       <AboutHero />
       <OurStory />
       <MissionVision />

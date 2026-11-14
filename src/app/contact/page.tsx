@@ -1,5 +1,6 @@
 import ContactPage from "@/components/contact/ContactPage";
 import { Metadata } from "next";
+import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: { absolute: "Contact Ingaju Farms | Rebero Village, Nyagatare District, Eastern Province, Rwanda" },
@@ -14,5 +15,10 @@ export const metadata: Metadata = {
 };
 
 export default function Contact() {
-  return <ContactPage />;
+  return (
+    <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }])} />
+      <ContactPage />
+    </>
+  );
 }

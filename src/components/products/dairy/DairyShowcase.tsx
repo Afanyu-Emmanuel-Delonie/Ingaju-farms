@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useModal } from "@/components/shared/ModalContext";
+import JsonLd from "@/components/JsonLd";
 
 const PRODUCTS = [
   {
@@ -24,14 +25,28 @@ const PRODUCTS = [
     title: "Breeding Stock",
     unit: "head",
     desc: "Disease-free bulls and heifers raised under welfare standards to support herd performance and dairy production.",
-    img: "/images/dairy/bools.webp", 
+    img: "/images/dairy/bools.webp",
+    anchorId: "breeding-stock",
   }
 ];
+
+// No price field exists for these products, so no `offers` is emitted —
+// adding one would mean inventing a price. See Ingaju SEO Rules guide.
+// TODO(owner): once prices are confirmed, add `offers: { "@type": "Offer", price, priceCurrency: "RWF" }` per product.
+const productsJsonLd = PRODUCTS.map((p) => ({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: p.title,
+  image: `https://ingajufarms.com${p.img}`,
+  description: p.desc,
+  brand: { "@type": "Brand", name: "Ingaju Farms" },
+}));
 
 export default function DairyShowcase() {
   const { open } = useModal();
   return (
     <section id="our-products" className="w-full bg-[#F8F6F2] scroll-mt-24">
+      <JsonLd data={productsJsonLd} />
       <div className="container-pad py-24">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
@@ -49,7 +64,7 @@ export default function DairyShowcase() {
 
         <div className="flex flex-wrap justify-center gap-6">
           {PRODUCTS.map((prod, idx) => (
-            <div key={idx} className="relative h-[500px] w-full max-w-[340px] overflow-hidden rounded-3xl">
+            <div key={idx} id={prod.anchorId} className="relative h-[500px] w-full max-w-[340px] overflow-hidden rounded-3xl scroll-mt-24">
               <Image
                 src={prod.img}
                 alt={prod.title}
@@ -74,12 +89,19 @@ export default function DairyShowcase() {
                 <p className="mt-3 text-sm font-body text-white/75 leading-relaxed">
                   {prod.desc}
                 </p>
-                <button
-                  onClick={() => open({ variant: "order", product: prod.title, unit: prod.unit })}
+                {/* Real href so the order flow is crawlable/shareable and works
+                    without JS; JS users get the richer modal instead of a
+                    full navigation. */}
+                <a
+                  href={`/contact?topic=Product%20Order&product=${encodeURIComponent(prod.title)}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    open({ variant: "order", product: prod.title, unit: prod.unit });
+                  }}
                   className="mt-5 inline-flex items-center gap-2 text-sm font-body font-semibold text-white border-b border-white/50 pb-0.5 hover:border-white transition-colors"
                 >
                   Order Now <ArrowRight className="h-3.5 w-3.5" />
-                </button>
+                </a>
               </div>
             </div>
           ))}

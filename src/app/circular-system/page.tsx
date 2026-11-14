@@ -4,6 +4,7 @@ import CircularBenefits from "@/components/circular-system/CircularBenefits";
 import CircularTrainings from "@/components/circular-system/CircularTrainings";
 import CircularCta from "@/components/circular-system/CircularCta";
 import FadeIn from "@/components/animations/FadeIn";
+import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata = {
   title: { absolute: "Circular Agriculture System | Closing the Loop — Ingaju Farms" },
@@ -20,6 +21,7 @@ export const metadata = {
 export default function CircularSystemPage() {
   return (
     <main className="flex min-h-screen flex-col bg-white">
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Circular System", path: "/circular-system" }])} />
       <CircularHero />
       <FadeIn direction="up" delay={0.05}><CircularStages /></FadeIn>
       <FadeIn direction="up" delay={0.05}><CircularBenefits /></FadeIn>

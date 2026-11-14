@@ -1,12 +1,25 @@
 import { Leaf, TrendingDown, Globe, Users, Zap, Droplets, Sprout, RefreshCw } from "lucide-react";
 
+// Site-wide social links, reused by the Footer and by the Organization JSON-LD
+// `sameAs` field in StructuredData.tsx. Left empty until real profile URLs are
+// confirmed — do not invent handles. See Ingaju SEO Rules guide.
+// TODO(owner): add real social profile URLs, e.g. { label: "Facebook", href: "https://facebook.com/..." }
+export const SOCIAL_LINKS: { label: string; href: string }[] = [];
+
+// Single source of truth for the organic fertilizer line's status, since the
+// copy previously contradicted itself across pages ("composted daily" vs.
+// "as the line scales up"). Everywhere on the site now treats the line as
+// scaling up, not yet at full daily-composting volume.
+// TODO(owner): confirm current status and update this phrase when the line is fully operational.
+export const FERTILIZER_LINE_STATUS = "as that line scales up";
+
 export const CIRCULAR_STAGES = [
   {
     number: "01",
     title: "Organic Fertilizer",
-    body: "Manure from the herd is composted into organic fertilizer, returning nutrients to the soil that grows our feed crops.",
+    body: `Manure from the herd is composted into organic fertilizer ${FERTILIZER_LINE_STATUS}, returning nutrients to the soil that grows our feed crops.`,
     bullets: [
-      "Manure composted daily into nutrient-rich organic fertilizer",
+      `Manure composted into nutrient-rich organic fertilizer ${FERTILIZER_LINE_STATUS}`,
       "Reduces reliance on synthetic agrochemicals",
       "Nutrients returned to the soil that grows our feed crops",
     ],
@@ -32,7 +45,7 @@ export const CIRCULAR_STAGES = [
     bullets: [
       "Pasture-fed herd managed under strict welfare and nutrition standards",
       "Modern milking equipment maintains hygiene and consistent yield",
-      "Manure collected daily, closing the loop back into organic fertilizer",
+      `Manure collected daily, closing the loop back into organic fertilizer ${FERTILIZER_LINE_STATUS}`,
     ],
     imgSrc: "/images/dairy/dairy-production.webp",
     imgAlt: "Milk production at Ingaju Farms",
@@ -130,6 +143,11 @@ export const IMPACT_STATS: { key: string; label: string; value?: number; display
   { key: "products", value: 10, label: "Organic Products Produced" },
   { key: "partnerships", value: 12, label: "Local Partnerships" },
 ];
+
+// Guards the Event JSON-LD on /training: Google penalizes structured data with
+// invented dates, so no Event schema is emitted until real session dates exist.
+// TODO(owner): once real training session dates are scheduled, add them below and set this to true.
+export const TRAINING_DATES_CONFIRMED = false;
 
 export const TRAININGS = [
   {

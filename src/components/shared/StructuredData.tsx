@@ -1,8 +1,11 @@
+import JsonLd from "@/components/JsonLd";
+import { SOCIAL_LINKS } from "@/lib/constants";
+
 export default function StructuredData() {
   const organization = {
     "@context": "https://schema.org",
     "@type": ["Organization", "LocalBusiness", "Farm"],
-    "@id": "https://ingajufarms.com/#organization",
+    "@id": "https://ingajufarms.com/#org",
     name: "Ingaju Farms",
     url: "https://ingajufarms.com",
     logo: "https://ingajufarms.com/images/brand/Logo.webp",
@@ -14,15 +17,15 @@ export default function StructuredData() {
     address: {
       "@type": "PostalAddress",
       streetAddress: "Rebero Village",
-      addressLocality: "Nyagatare District",
+      addressLocality: "Nyagatare",
       addressRegion: "Eastern Province",
       addressCountry: "RW",
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: -1.5,
-      longitude: 30.5,
-    },
+    // NOTE: no `geo` field — the previous build shipped invented GPS
+    // coordinates (-1.5, 30.5), which Google's Rich Results Test would treat
+    // as real data. Don't add one back without a verified reading.
+    // TODO(owner): provide verified GPS coordinates for the farm, then add
+    // `geo: { "@type": "GeoCoordinates", latitude, longitude }` here.
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -31,15 +34,19 @@ export default function StructuredData() {
         closes: "17:00",
       },
     ],
-    sameAs: ["https://ingajufarms.com"],
+    areaServed: "Rwanda",
+    // Populated from the single SOCIAL_LINKS config (src/lib/constants.ts) so
+    // the footer and this schema can never drift apart. Empty until the
+    // owner confirms real profile URLs — see TODO there.
+    sameAs: SOCIAL_LINKS.map((link) => link.href),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Ingaju Farms Products & Services",
       itemListElement: [
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Livestock & Dairy Products", url: "https://ingajufarms.com/products/dairy" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Climate-Smart Crop Production", url: "https://ingajufarms.com/products/crops" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Organic Fertilizer", url: "https://ingajufarms.com/products/crops" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Farmer Training Programs", url: "https://ingajufarms.com/contact" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Organic Fertilizer", url: "https://ingajufarms.com/products/organic-fertilizer" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Farmer Training Programs", url: "https://ingajufarms.com/training" } },
       ],
     },
   };
@@ -50,7 +57,7 @@ export default function StructuredData() {
     "@id": "https://ingajufarms.com/#website",
     url: "https://ingajufarms.com",
     name: "Ingaju Farms",
-    publisher: { "@id": "https://ingajufarms.com/#organization" },
+    publisher: { "@id": "https://ingajufarms.com/#org" },
     potentialAction: {
       "@type": "SearchAction",
       target: { "@type": "EntryPoint", urlTemplate: "https://ingajufarms.com/blog?q={search_term_string}" },
@@ -58,25 +65,5 @@ export default function StructuredData() {
     },
   };
 
-  const breadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://ingajufarms.com" },
-      { "@type": "ListItem", position: 2, name: "About", item: "https://ingajufarms.com/about" },
-      { "@type": "ListItem", position: 3, name: "Circular System", item: "https://ingajufarms.com/circular-system" },
-      { "@type": "ListItem", position: 4, name: "Livestock & Dairy", item: "https://ingajufarms.com/products/dairy" },
-      { "@type": "ListItem", position: 5, name: "Crop Products", item: "https://ingajufarms.com/products/crops" },
-      { "@type": "ListItem", position: 6, name: "Blog", item: "https://ingajufarms.com/blog" },
-      { "@type": "ListItem", position: 7, name: "Contact", item: "https://ingajufarms.com/contact" },
-    ],
-  };
-
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-    </>
-  );
+  return <JsonLd data={[organization, website]} />;
 }

@@ -8,12 +8,12 @@ import FadeIn from "@/components/animations/FadeIn";
 import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata = {
-  title: { absolute: "Livestock-Fed Crop Production Rwanda | Ingaju Farms" },
-  description: "Low-chemical maize, beans, soybeans, macadamia, and mangoes from Ingaju Farms, Eastern Province, Rwanda. Grown using on-farm organic fertilizer and climate-smart, organic-input practices.",
+  title: { absolute: "Maize, Beans & Macadamia from Nyagatare | Ingaju Farms" },
+  description: "Climate-smart maize, beans, soybeans, macadamia, and mangoes from Ingaju Farms in Nyagatare, Rwanda, grown with low synthetic inputs on a circular farm.",
   alternates: { canonical: "https://ingajufarms.com/products/crops" },
   openGraph: {
     url: "https://ingajufarms.com/products/crops",
-    title: "Livestock-Fed Crop Production Rwanda | Ingaju Farms",
+    title: "Maize, Beans & Macadamia from Nyagatare | Ingaju Farms",
     description: "Low-chemical inputs, climate-smart soil practices. Maize, beans, macadamia, and more from Ingaju Farms, Eastern Province, Rwanda.",
     images: [{ url: "/images/crops/crop-production.webp", width: 1200, height: 630, alt: "Ingaju Farms Crop Production" }],
   },

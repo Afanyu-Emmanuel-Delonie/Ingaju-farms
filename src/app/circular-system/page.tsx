@@ -7,14 +7,14 @@ import FadeIn from "@/components/animations/FadeIn";
 import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata = {
-  title: { absolute: "Circular Agriculture System | Closing the Loop — Ingaju Farms" },
-  description: "Discover how Ingaju Farms is closing the loop on a circular agriculture system in Eastern Province, Rwanda — cattle manure becomes organic fertilizer as that line scales up, crops feed the herd, and resources stay in use toward a zero-waste ambition.",
+  title: { absolute: "Circular Agriculture System in Rwanda | Ingaju Farms" },
+  description: "See how Ingaju Farms closes the loop in Nyagatare District, Rwanda: cattle manure becomes organic fertilizer as that line scales up, and crops feed the herd.",
   alternates: { canonical: "https://ingajufarms.com/circular-system" },
   openGraph: {
     url: "https://ingajufarms.com/circular-system",
-    title: "Circular Agriculture System | Closing the Loop — Ingaju Farms",
+    title: "Circular Agriculture System in Rwanda | Ingaju Farms",
     description: "A farm in Eastern Province, Rwanda closing the loop, one stage at a time — resources recovered and reused, working toward a zero-waste ambition.",
-    images: [{ url: "/images/hero/bg-img.webp", width: 1200, height: 630, alt: "Ingaju Farms Circular System" }],
+    images: [{ url: "/images/circular-system.webp", width: 1200, height: 630, alt: "Ingaju Farms Circular System" }],
   },
 };
 

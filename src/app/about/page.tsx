@@ -8,13 +8,13 @@ import JoinUsCta from "@/components/about/JoinUsCta";
 import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata = {
-  title: { absolute: "About Ingaju Farms | Circular Agriculture Enterprise, Rwanda" },
+  title: { absolute: "About Ingaju Farms | Circular Farm, Nyagatare" },
   description:
-    "Ingaju Farms is an integrated agricultural enterprise based in Rebero Village, Nyagatare District, Eastern Province. Learn about our work in livestock, dairy, crops, organic fertilizer, and farmer training.",
+    "About Ingaju Farms, a circular agriculture farm in Rebero Village, Nyagatare, Rwanda producing livestock, dairy, crops, organic fertilizer, and training.",
   alternates: { canonical: "https://ingajufarms.com/about" },
   openGraph: {
     url: "https://ingajufarms.com/about",
-    title: "About Ingaju Farms | Circular Agriculture Enterprise, Rwanda",
+    title: "About Ingaju Farms | Circular Farm, Nyagatare",
     description:
       "Ingaju Farms is an integrated farm in Rebero Village, Nyagatare District, Eastern Province. We produce livestock, dairy, crops, and organic fertilizer and train farmers in circular agriculture.",
     images: [

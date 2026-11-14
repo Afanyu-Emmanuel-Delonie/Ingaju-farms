@@ -12,6 +12,20 @@ import FadeIn from "@/components/animations/FadeIn";
 import { getPublishedBlogPosts } from "@/lib/blog";
 import { getPublishedTestimonials } from "@/lib/testimonials";
 
+export const metadata = {
+  title: { absolute: "Circular Farm in Nyagatare, Rwanda | Ingaju Farms" },
+  description:
+    "Ingaju Farms is a circular agriculture farm in Nyagatare District, Rwanda, turning livestock, crops, and organic waste into food, income, and farmer training.",
+  openGraph: {
+    title: "Circular Farm in Nyagatare, Rwanda | Ingaju Farms",
+    description:
+      "Ingaju Farms is a circular agriculture farm in Nyagatare, Rwanda, turning livestock, crops, and organic waste into food, income, and training for the farming community.",
+  },
+  twitter: {
+    title: "Circular Farm in Nyagatare, Rwanda | Ingaju Farms",
+  },
+};
+
 export default async function Home() {
   const [posts, testimonials] = await Promise.all([
     getPublishedBlogPosts(),

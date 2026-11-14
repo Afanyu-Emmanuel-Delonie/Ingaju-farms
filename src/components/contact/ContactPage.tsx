@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import { db, isFirebaseConfigured } from "@/lib/firebase";
-import { notifyNewLead } from "@/lib/notify";
+import { notifyNewLead, pingWhatsApp } from "@/lib/notify";
 import FaqSection from "@/components/sections/FaqSection";
 import BrandPattern from "@/components/shared/BrandPattern";
 
@@ -82,6 +82,8 @@ export default function ContactPage() {
       );
       return;
     }
+
+    pingWhatsApp(form.name, "a message on your contact form");
 
     setSubmitting(true);
     setError("");

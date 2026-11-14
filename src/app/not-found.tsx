@@ -30,14 +30,14 @@ export default function NotFound() {
   return (
     <main className="relative min-h-screen w-full bg-[#1C2321] flex items-center justify-center overflow-hidden">
 
-      {/* Decorative concentric circles — top right */}
+      {/* Decorative concentric circles - top right */}
       <svg className="absolute top-0 right-0 w-[520px] h-[520px] opacity-10 pointer-events-none" viewBox="0 0 480 480" fill="none">
         <circle cx="380" cy="100" r="220" stroke="#3A7D5A" strokeWidth="1.5" />
         <circle cx="380" cy="100" r="160" stroke="#3A7D5A" strokeWidth="1" />
         <circle cx="380" cy="100" r="90"  stroke="#6DBE8C" strokeWidth="1" />
       </svg>
 
-      {/* Dot grid — bottom left */}
+      {/* Dot grid - bottom left */}
       <svg className="absolute bottom-0 left-0 w-56 h-56 opacity-10 pointer-events-none" viewBox="0 0 200 200" fill="#6DBE8C">
         {Array.from({ length: 6 }).map((_, row) =>
           Array.from({ length: 6 }).map((_, col) => (
@@ -46,7 +46,7 @@ export default function NotFound() {
         )}
       </svg>
 
-      {/* Decorative arc — bottom right */}
+      {/* Decorative arc - bottom right */}
       <svg className="absolute bottom-0 right-0 w-72 h-72 opacity-[0.06] pointer-events-none" viewBox="0 0 300 300" fill="none">
         <path d="M300 300 Q 100 300 100 100" stroke="#3A7D5A" strokeWidth="60" strokeLinecap="round" />
       </svg>

@@ -1,7 +1,7 @@
 export default function BrandPattern() {
   return (
     <>
-      {/* Concentric circles — top right */}
+      {/* Concentric circles - top right */}
       <svg
         className="absolute top-0 right-0 w-[480px] h-[480px] opacity-10 pointer-events-none"
         viewBox="0 0 480 480"
@@ -12,7 +12,7 @@ export default function BrandPattern() {
         <circle cx="380" cy="100" r="90"  stroke="#6DBE8C" strokeWidth="1" />
       </svg>
 
-      {/* Dot grid — bottom left */}
+      {/* Dot grid - bottom left */}
       <svg
         className="absolute bottom-0 left-0 w-56 h-56 opacity-10 pointer-events-none"
         viewBox="0 0 200 200"
@@ -25,7 +25,7 @@ export default function BrandPattern() {
         )}
       </svg>
 
-      {/* Arc — bottom right */}
+      {/* Arc - bottom right */}
       <svg
         className="absolute bottom-0 right-0 w-72 h-72 opacity-[0.07] pointer-events-none"
         viewBox="0 0 300 300"

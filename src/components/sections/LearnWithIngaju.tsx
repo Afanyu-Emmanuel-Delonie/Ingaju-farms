@@ -36,7 +36,7 @@ export default function LearnWithIngaju() {
       <div className="container-pad py-24">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center lg:gap-18">
 
-          {/* Left — image */}
+          {/* Left - image */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function LearnWithIngaju() {
             </div>
           </motion.div>
 
-          {/* Right — copy */}
+          {/* Right - copy */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ export default function LearnWithIngaju() {
              Our Farming <span className="text-[#3A7D5A]"> System.</span>
             </h2>
             <p className="mt-5 text-[15px] font-body leading-relaxed text-[#6B6259] max-w-lg">
-              Ingaju operates by closing the loop — outputs from one stage become inputs for the next, reducing waste and lowering costs.
+              Ingaju operates by closing the loop - outputs from one stage become inputs for the next, reducing waste and lowering costs.
             </p>
             {/* Loop steps */}
             <div className="relative mt-8 flex flex-col gap-6">

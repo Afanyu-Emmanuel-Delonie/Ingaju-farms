@@ -35,7 +35,7 @@ if (isFirebaseConfigured) {
 
   // The Firestore Web SDK's default WebChannel transport is unreliable in
   // server-rendered / serverless Node environments (Next.js server
-  // components, Vercel functions) — queries can hang indefinitely. Long
+  // components, Vercel functions) - queries can hang indefinitely. Long
   // polling is Firebase's documented workaround; auto-detect keeps the
   // faster transport in the browser.
   try {
@@ -43,7 +43,7 @@ if (isFirebaseConfigured) {
       experimentalAutoDetectLongPolling: true,
     });
   } catch {
-    // Already initialized (e.g. hot reload) — reuse the existing instance.
+    // Already initialized (e.g. hot reload) - reuse the existing instance.
     firestoreDb = getFirestore(app);
   }
 

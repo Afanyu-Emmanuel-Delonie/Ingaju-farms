@@ -28,7 +28,7 @@ export default function ExperienceCircularFarming() {
           <span className="text-[#6DBE8C]">Live It.</span>
         </h2>
         <p className="mt-6 max-w-xl text-base font-body leading-relaxed text-white/70">
-          Ingaju is a working farm, not a showroom. Visit as a student, farmer, business, or curious mind — and see circular agriculture in action.
+          Ingaju is a working farm, not a showroom. Visit as a student, farmer, business, or curious mind - and see circular agriculture in action.
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <button

@@ -131,7 +131,7 @@ export default function RequestModal() {
             </div>
             <h3 className="font-heading text-2xl font-bold text-[#1C2321]">Request Sent!</h3>
             <p className="text-sm font-body text-[#6B6259] leading-relaxed">
-              Thank you — our team will get back to you within 24 hours to confirm the details.
+              Thank you - our team will get back to you within 24 hours to confirm the details.
             </p>
             <button
               onClick={close}

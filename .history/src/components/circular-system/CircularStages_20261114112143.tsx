@@ -57,11 +57,11 @@ export default function CircularStages() {
   }, []);
 
   return (
-    <section id="the-loop" ref={sectionRef} className="w-full bg-white py-24">
+    <section id="the-loop" ref={sectionRef} className="w-full bg-white py-16 sm:py-24">
       <div className="container-pad mx-auto max-w-5xl">
 
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-20">
           <p className="text-sm font-body font-semibold tracking-widest uppercase text-[#3A7D5A] mb-3">
             The Three Stages
           </p>
@@ -69,19 +69,19 @@ export default function CircularStages() {
             How the Loop Works
           </h2>
           <p className="mt-4 max-w-md mx-auto text-[15px] font-body leading-relaxed text-[#6B6259]">
-            Three stages, zero-waste ambition — every output from one stage becomes the input for the next.
+            Three stages, zero-waste ambition - every output from one stage becomes the input for the next.
           </p>
         </div>
 
         {/* Stages */}
-        <div className="flex flex-col gap-24">
+        <div className="flex flex-col gap-20 sm:gap-30">
           {CIRCULAR_STAGES.map(({ number, title, body, bullets, imgSrc, imgAlt }, i) => {
             const isEven = i % 2 === 1;
             return (
               <div
                 key={number}
                 ref={(el) => { rowRefs.current[i] = el; }}
-                className={`flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16 ${isEven ? "lg:flex-row-reverse" : ""}`}
+                className={`flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-16 ${isEven ? "lg:flex-row-reverse" : ""}`}
               >
                 {/* Image */}
                 <div className="stage-img lg:w-1/2 flex-shrink-0">

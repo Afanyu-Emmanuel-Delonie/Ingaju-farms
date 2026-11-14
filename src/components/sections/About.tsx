@@ -41,7 +41,7 @@ export default function About() {
         <motion.div variants={container(0.1)} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-8%" }} className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <motion.div variants={item} className="relative h-72 w-full overflow-hidden rounded-xl">
             <Image
-              src="/images/dairy/cow-1.webp"
+              src="/images/about/about-15.webp"
               alt="Farmer walking with dairy cattle on the Ingaju farm"
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
@@ -67,7 +67,7 @@ export default function About() {
 
           <motion.div variants={item} className="relative h-72 w-full overflow-hidden rounded-xl">
             <Image
-              src="/images/about/about-6.webp"
+              src="/images/about/about-13.webp"
               alt="Ingaju team engaging with farmers and the local community"
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
@@ -80,8 +80,12 @@ export default function About() {
             <svg className="absolute bottom-0 right-0 w-40 h-40 opacity-5 pointer-events-none" viewBox="0 0 300 300" fill="none">
               <path d="M300 300 Q 100 300 100 100" stroke="#6DBE8C" strokeWidth="60" strokeLinecap="round" />
             </svg>
-            <span className="text-4xl font-heading font-bold leading-none sm:text-5xl">500+</span>
-            <p className="mt-3 text-sm font-body font-semibold tracking-wide uppercase">Farmers & Community Members Reached</p>
+            {/* This is a composite figure (trained + employed + cooperative
+                partners), distinct from the "300+ farmers trained" figure
+                used elsewhere, so it wasn't changed with that update.
+                TODO(owner): confirm this combined total is still accurate. */}
+            <span className="text-4xl font-heading font-bold leading-none sm:text-5xl">300+</span>
+            <p className="mt-3 text-sm font-body font-semibold tracking-wide uppercase">Farmers Trained</p>
             <p className="mt-2 text-xs font-body leading-relaxed text-white/80">
               Farmers trained, employed, and engaged through on-farm programmes, cooperative partnerships, and knowledge transfer initiatives.
             </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import type { BlogPost } from "@/lib/blog";
@@ -23,10 +24,14 @@ export default function BlogSection({
 
   if (total === 0) return null;
 
-  const prev = () => setStart((s) => (s - 1 + total) % total);
-  const next = () => setStart((s) => (s + 1) % total);
+  // Paginates in fixed VISIBLE-sized pages (no wraparound) so the "X – Y of
+  // Z" label is always a real, non-decreasing range instead of wrapping back
+  // past the end (e.g. the old "3 – 1 of 4").
+  const prev = () => setStart((s) => Math.max(0, s - VISIBLE));
+  const next = () => setStart((s) => (s + VISIBLE < total ? s + VISIBLE : s));
 
-  const visible = Array.from({ length: Math.min(VISIBLE, total) }, (_, i) => posts[(start + i) % total]);
+  const visible = posts.slice(start, start + VISIBLE);
+  const rangeEnd = Math.min(start + VISIBLE, total);
 
   return (
     <section className="w-full bg-white">
@@ -43,27 +48,37 @@ export default function BlogSection({
             </p>
           </div>
 
-          {total > VISIBLE && (
-            <div className="flex items-center gap-2">
-              <button
-                onClick={prev}
-                aria-label="Previous posts"
-                className="flex items-center justify-center w-9 h-9 rounded-full border border-[#1C2321]/15 text-[#1C2321] hover:bg-[#3A7D5A] hover:border-[#3A7D5A] hover:text-white transition-colors"
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <span className="text-xs font-body text-[#6B6259] tabular-nums">
-                {start + 1} – {((start + VISIBLE - 1) % total) + 1} of {total}
-              </span>
-              <button
-                onClick={next}
-                aria-label="Next posts"
-                className="flex items-center justify-center w-9 h-9 rounded-full border border-[#1C2321]/15 text-[#1C2321] hover:bg-[#3A7D5A] hover:border-[#3A7D5A] hover:text-white transition-colors"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
-          )}
+          <div className="flex items-center gap-4">
+            {total > VISIBLE && (
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={prev}
+                  disabled={start === 0}
+                  aria-label="Previous posts"
+                  className="flex items-center justify-center w-9 h-9 rounded-full border border-[#1C2321]/15 text-[#1C2321] hover:bg-[#3A7D5A] hover:border-[#3A7D5A] hover:text-white transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-[#1C2321]/15 disabled:hover:text-[#1C2321]"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </button>
+                <span className="text-xs font-body text-[#6B6259] tabular-nums">
+                  {start + 1} – {rangeEnd} of {total}
+                </span>
+                <button
+                  onClick={next}
+                  disabled={rangeEnd >= total}
+                  aria-label="Next posts"
+                  className="flex items-center justify-center w-9 h-9 rounded-full border border-[#1C2321]/15 text-[#1C2321] hover:bg-[#3A7D5A] hover:border-[#3A7D5A] hover:text-white transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-[#1C2321]/15 disabled:hover:text-[#1C2321]"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              </div>
+            )}
+            <Link
+              href="/blog"
+              className="text-xs font-body font-semibold text-[#3A7D5A] border-b border-[#3A7D5A]/40 pb-0.5 hover:border-[#3A7D5A] transition-colors whitespace-nowrap"
+            >
+              View All Posts
+            </Link>
+          </div>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

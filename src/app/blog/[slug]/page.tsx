@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Clock, Calendar } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/constants";
 import { getPublishedBlogPosts } from "@/lib/blog";
+import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -46,8 +47,35 @@ export default async function BlogPostPage({ params }: Props) {
 
   const related = posts.filter((p) => p.slug !== slug).slice(0, 2);
 
+  // post.date is stored as free-text ("June 12, 2025"); schema.org wants
+  // ISO 8601, so convert when parseable and fall back to the raw string
+  // (still valid, just less strictly formatted) otherwise.
+  const parsedDate = new Date(post.date);
+  const isoDate = Number.isNaN(parsedDate.getTime()) ? post.date : parsedDate.toISOString();
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: `https://ingajufarms.com${post.image}`,
+    datePublished: isoDate,
+    dateModified: isoDate,
+    author: { "@type": "Organization", name: "Ingaju Farms", url: "https://ingajufarms.com" },
+    publisher: { "@id": "https://ingajufarms.com/#org" },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://ingajufarms.com/blog/${slug}` },
+  };
+
   return (
     <main className="min-h-screen bg-[#F8F6F2]">
+      <JsonLd data={articleJsonLd} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${slug}` },
+        ])}
+      />
 
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[360px] w-full overflow-hidden">

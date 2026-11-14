@@ -17,7 +17,7 @@ export default function Splash() {
     }
 
     if (document.readyState === "complete") {
-      // Page already loaded (e.g. fast cache hit) — show briefly then exit
+      // Page already loaded (e.g. fast cache hit) - show briefly then exit
       leaveTimer = setTimeout(dismiss, 300);
     } else {
       window.addEventListener("load", dismiss, { once: true });
@@ -69,7 +69,7 @@ export default function Splash() {
         Circular Agriculture
       </p>
 
-      {/* Indeterminate bar — pulses until page is ready */}
+      {/* Indeterminate bar - pulses until page is ready */}
       <div className="mt-8 w-28 h-px bg-[#E0D8CE] overflow-hidden rounded-full">
         <div className="h-full bg-[#3A7D5A] loader-bar" />
       </div>

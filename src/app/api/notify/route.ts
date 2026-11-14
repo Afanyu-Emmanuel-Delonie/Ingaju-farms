@@ -65,7 +65,7 @@ export async function POST(request: Request) {
         from: fromEmail,
         to: [notifyEmail],
         ...(ccEmail ? { cc: [ccEmail] } : {}),
-        subject: `New ${label} — ${name}`,
+        subject: `New ${label} - ${name}`,
         html,
       }),
     });

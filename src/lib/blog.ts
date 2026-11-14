@@ -43,7 +43,7 @@ async function fetchDynamicPosts(): Promise<BlogPost[]> {
     );
     const snap = await getDocs(q);
     // createdAt is a Firestore Timestamp instance (used only for ordering
-    // above) — it can't cross the Server -> Client Component boundary, and
+    // above) - it can't cross the Server -> Client Component boundary, and
     // nothing downstream reads it, so drop it rather than pass it through.
     return snap.docs.map((d) => ({ id: d.id, ...d.data(), createdAt: null }) as BlogPost);
   } catch (err) {

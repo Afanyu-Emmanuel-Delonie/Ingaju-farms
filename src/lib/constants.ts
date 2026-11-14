@@ -1,41 +1,61 @@
-import { Leaf, TrendingDown, Globe, Users, Zap, Droplets, Sprout, RefreshCw } from "lucide-react";
+import {
+  Leaf,
+  TrendingDown,
+  Globe,
+  Users,
+  Zap,
+  Droplets,
+  RefreshCw,
+} from "lucide-react";
 
-export const CIRCULAR_STAGES = [
+export const SOCIAL_LINKS: { label: string; href: string }[] = [];
+
+export const FERTILIZER_LINE_STATUS = "as that line scales up";
+
+// Data only - icons are mapped by `key` in CircularLoopDiagram.tsx and
+// CircularLoopRoadmap.tsx so this file doesn't need to import icon components.
+// NOTE(owner): descriptions are drafted process copy, not verified figures -
+// review wording before treating this as final.
+export const CIRCULAR_LOOP_STAGES: {
+  key: string;
+  label: string;
+  sublabel?: string;
+  description: string;
+}[] = [
   {
-    number: "01",
-    title: "Organic Fertilizer",
-    body: "Manure from the herd is composted into organic fertilizer, returning nutrients to the soil that grows our feed crops.",
-    bullets: [
-      "Manure composted daily into nutrient-rich organic fertilizer",
-      "Reduces reliance on synthetic agrochemicals",
-      "Nutrients returned to the soil that grows our feed crops",
-    ],
-    imgSrc: "/images/dairy/organic-manure.webp",
-    imgAlt: "Organic fertilizer processing at Ingaju Farms",
+    key: "soil",
+    label: "Soil & Crop Production",
+    sublabel: "Feed",
+    description: "Feed crops are grown using organic inputs from earlier in the cycle, supplying nutrition for the herd.",
   },
   {
-    number: "02",
-    title: "Animal Feed",
-    body: "Feed crops grown on fertilizer-enriched soil are milled and prepared for the herd, keeping nutrition consistent year-round.",
-    bullets: [
-      "Feed crops grown on fertilizer-enriched soil",
-      "Feed milled and prepared on-site to match herd nutritional needs",
-      "Consistent feed quality supports steady milk yield",
-    ],
-    imgSrc: "/images/dairy/feed-production.webp",
-    imgAlt: "Animal feed production at Ingaju Farms",
+    key: "livestock",
+    label: "Livestock Production",
+    sublabel: "Dairy & Poultry",
+    description: "Cattle and poultry are raised on that feed, producing milk, meat, and eggs for the farm.",
   },
   {
-    number: "03",
-    title: "Milk Production",
-    body: "Well-fed cattle are milked daily with modern equipment, producing quality milk and the manure that restarts the cycle.",
-    bullets: [
-      "Pasture-fed herd managed under strict welfare and nutrition standards",
-      "Modern milking equipment maintains hygiene and consistent yield",
-      "Manure collected daily, closing the loop back into organic fertilizer",
-    ],
-    imgSrc: "/images/dairy/dairy-production.webp",
-    imgAlt: "Milk production at Ingaju Farms",
+    key: "manure",
+    label: "Manure & Organic Waste Management",
+    description: "Manure and organic waste from the herd are collected and managed rather than discarded.",
+  },
+  {
+    key: "resources",
+    label: "Circular Use of Resources",
+    sublabel: "Compost & Feed",
+    description: `That waste is converted into organic fertilizer and feed ${FERTILIZER_LINE_STATUS}, returning nutrients to the soil.`,
+  },
+  {
+    key: "processing",
+    label: "Processing & Commercialisation",
+    sublabel: "Value Addition",
+    description: "Farm outputs are processed and prepared for sale, adding value before they reach customers.",
+  },
+  {
+    key: "learning",
+    label: "Ingaju Centre for Learning",
+    sublabel: "Capacity Building",
+    description: "Farmers and students are trained on-site in the practices that keep this cycle running.",
   },
 ];
 
@@ -58,7 +78,7 @@ export const CIRCULAR_BENEFITS = [
     icon: Users,
     title: "Smallholder Impact",
     desc: "The Ingaju circular model is designed to be low-cost and directly applicable to smallholder operations, and we've shared it with farmers in our community in Nyagatare.",
-    stat: "500+",
+    stat: "300+",
     statLabel: "Farmers Reached",
   },
   {
@@ -77,7 +97,10 @@ export const PARTNERS = [
   { name: "Ingabo", logo: "/images/partners/ingabo.webp" },
   { name: "Inyanje", logo: "/images/partners/inyanje.webp" },
   { name: "KAFCO", logo: "/images/partners/kafco.webp" },
-  { name: "Nyagatare Cooperative", logo: "/images/partners/nyagatare-cooporative.webp" },
+  {
+    name: "Nyagatare Cooperative",
+    logo: "/images/partners/nyagatare-cooporative.webp",
+  },
   { name: "RAB", logo: "/images/partners/rab.webp" },
   { name: "Sonarwa", logo: "/images/partners/sonarwa.webp" },
   { name: "Western Seed", logo: "/images/partners/western-seed.webp" },
@@ -87,9 +110,10 @@ export const CATEGORIES = [
   {
     key: "dairy",
     title: "Livestock & Dairy",
-    // NOTE: "with no added hormones" removed — not a confirmed practice.
+    // NOTE: "with no added hormones" removed - not a confirmed practice.
     // See Ingaju Priority Fix Tracker, Needs Verification.
-    description: "Milk and breeding livestock raised to strict welfare and nutrition standards.",
+    description:
+      "Milk and breeding livestock raised to strict welfare and nutrition standards.",
     ctaLabel: "Explore Dairy",
     ctaHref: "/products/dairy",
     image: "/images/hero/bg-img.webp",
@@ -98,7 +122,8 @@ export const CATEGORIES = [
   {
     key: "crops",
     title: "Crop Production",
-    description: "Maize, legumes, and macadamia nuts grown using climate-smart, organic-input farming practices.",
+    description:
+      "Maize, legumes, and macadamia nuts grown using climate-smart, organic-input farming practices.",
     ctaLabel: "Explore Crops",
     ctaHref: "/products/crops",
     image: "/images/crops/crop-production.webp",
@@ -107,7 +132,8 @@ export const CATEGORIES = [
   {
     key: "organic-manure",
     title: "Organic Fertilizer",
-    description: "Nutrient-rich organic fertilizer processed from our own livestock manure currently scaling up as we complete our composting facility.",
+    description:
+      "Nutrient-rich organic fertilizer processed from our own livestock manure currently scaling up as we complete our composting facility.",
     ctaLabel: "Join the Waitlist",
     ctaHref: "/contact",
     image: "/images/dairy/organic-manure.webp",
@@ -116,7 +142,8 @@ export const CATEGORIES = [
   {
     key: "trainings",
     title: "Farmer Training",
-    description: "Practical, on-farm training in circular agriculture for smallholders, cooperatives, students and agribusiness professionals.",
+    description:
+      "Practical, on-farm training in circular agriculture for smallholders, cooperatives, students and agribusiness professionals.",
     ctaLabel: "Explore Trainings",
     ctaHref: "/contact?topic=Training%20Program",
     image: "/images/farm/trainings.webp",
@@ -124,18 +151,29 @@ export const CATEGORIES = [
   },
 ];
 
-export const IMPACT_STATS: { key: string; label: string; value?: number; display?: string }[] = [
-  { key: "jobs", value: 50, label: "Jobs Created" },
-  { key: "farmers", value: 500, label: "Farmers Trained" },
+export const IMPACT_STATS: {
+  key: string;
+  label: string;
+  value?: number;
+  display?: string;
+}[] = [
+  { key: "jobs", value: 50, label: "Jobs Created Daily" },
+  { key: "farmers", value: 300, label: "Farmers Trained" },
+  { key: "workers", value: 35, label: "Permanent Workers" },
   { key: "products", value: 10, label: "Organic Products Produced" },
-  { key: "partnerships", value: 12, label: "Local Partnerships" },
 ];
+
+// Guards the Event JSON-LD on /training: Google penalizes structured data with
+// invented dates, so no Event schema is emitted until real session dates exist.
+// TODO(owner): once real training session dates are scheduled, add them below and set this to true.
+export const TRAINING_DATES_CONFIRMED = false;
 
 export const TRAININGS = [
   {
     key: "dairy",
     title: "Livestock Production & Herd Management",
-    description: "Hands-on training in livestock herd management, animal nutrition, hygienic milking procedures, milk quality assurance, and preventive animal health practices.",
+    description:
+      "Hands-on training in livestock herd management, animal nutrition, hygienic milking procedures, milk quality assurance, and preventive animal health practices.",
     ctaLabel: "Learn More",
     ctaHref: "/contact?topic=Training%20Program",
     image: "/images/hero/bg-img.webp",
@@ -144,7 +182,8 @@ export const TRAININGS = [
   {
     key: "organic",
     title: "Climate-Smart Crop Production",
-    description: "Practical instruction in organic-input soil fertility management, composting, natural pest and disease management, and climate-smart farming practices for food and feed crop production.",
+    description:
+      "Practical instruction in organic-input soil fertility management, composting, natural pest and disease management, and climate-smart farming practices for food and feed crop production.",
     ctaLabel: "Learn More",
     ctaHref: "/contact?topic=Training%20Program",
     image: "/images/hero/bg-2.webp",
@@ -153,11 +192,12 @@ export const TRAININGS = [
   {
     key: "circular",
     title: "Integrated Circular Agriculture",
-    description: "Comprehensive training in circular farming systems covering manure management, our organic fertilizer process as it scales up, crop-livestock integration, and nutrient recycling.",
+    description:
+      "Comprehensive training in circular farming systems covering manure management, our organic fertilizer process as it scales up, crop-livestock integration, and nutrient recycling.",
     ctaLabel: "Learn More",
     ctaHref: "/contact?topic=Training%20Program",
     image: "/images/hero/bg-3.webp",
-    // NOTE: alt kept generic — this file is also used in CropsCircularModel.tsx
+    // NOTE: alt kept generic - this file is also used in CropsCircularModel.tsx
     // with a different (specific, unconfirmed) subject; neither description
     // could be verified against the actual photo. See Priority Fix Tracker.
     alt: "Ingaju Farms circular agriculture in Nyagatare",
@@ -169,7 +209,8 @@ export const BLOG_POSTS = [
     slug: "circular-agriculture-small-scale-farms",
     category: "Circular Farming",
     title: "How Circular Agriculture Is Transforming Small-Scale Farms",
-    excerpt: "Discover how integrating livestock, crop production, and waste recycling creates a self-sustaining farming system that benefits both farmers and the environment.",
+    excerpt:
+      "Discover how integrating livestock, crop production, and waste recycling creates a self-sustaining farming system that benefits both farmers and the environment.",
     date: "June 12, 2025",
     readTime: "6 min read",
     image: "/images/blog-circular-farming.webp",
@@ -177,7 +218,7 @@ export const BLOG_POSTS = [
     content: [
       {
         type: "paragraph" as const,
-        text: "Circular agriculture is a farming approach where outputs from one part of the system become inputs for another — closing the loop to minimize waste and maximize resource efficiency. For small-scale farms in Rwanda, this model is proving to be both economically viable and environmentally responsible.",
+        text: "Circular agriculture is a farming approach where outputs from one part of the system become inputs for another - closing the loop to minimize waste and maximize resource efficiency. For small-scale farms in Rwanda, this model is proving to be both economically viable and environmentally responsible.",
       },
       {
         type: "heading" as const,
@@ -196,7 +237,7 @@ export const BLOG_POSTS = [
         text: "Why It Works for Small-Scale Farmers",
       },
       {
-        // NOTE: original text cited "up to 40% reductions" — no source found
+        // NOTE: original text cited "up to 40% reductions" - no source found
         // in the repo; softened to non-numeric language pending verification.
         // See Ingaju Priority Fix Tracker, Needs Verification.
         type: "paragraph" as const,
@@ -222,7 +263,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "Our training programs have reached over 500 farmers across the region, equipping them with practical skills in manure management, natural pest management, water harvesting, and crop-livestock integration. The results speak for themselves — trained farmers consistently outperform untrained peers in both yield and profitability.",
+        text: "Our training programs have reached over 300 farmers across the region, equipping them with practical skills in manure management, natural pest management, water harvesting, and crop-livestock integration. The results speak for themselves - trained farmers consistently outperform untrained peers in both yield and profitability.",
       },
       {
         type: "heading" as const,
@@ -230,7 +271,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "You do not need to transform your entire farm overnight. Start with one connection — perhaps composting manure from your livestock and applying it to one crop field. Observe the results over one season. Then add another loop. Gradual integration is more sustainable than wholesale change and allows you to build confidence and knowledge at each step.",
+        text: "You do not need to transform your entire farm overnight. Start with one connection - perhaps composting manure from your livestock and applying it to one crop field. Observe the results over one season. Then add another loop. Gradual integration is more sustainable than wholesale change and allows you to build confidence and knowledge at each step.",
       },
       {
         type: "paragraph" as const,
@@ -242,7 +283,8 @@ export const BLOG_POSTS = [
     slug: "improve-milk-quality-organic-dairy",
     category: "Dairy Farming",
     title: "5 Practices That Improve Milk Quality on Organic Dairy Farms",
-    excerpt: "From feed management to hygiene protocols, these practices help dairy farmers consistently produce clean, high-quality milk.",
+    excerpt:
+      "From feed management to hygiene protocols, these practices help dairy farmers consistently produce clean, high-quality milk.",
     date: "May 28, 2025",
     readTime: "5 min read",
     image: "/images/blog-dairy-quality.webp",
@@ -274,7 +316,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "Subclinical mastitis — an udder infection with no visible symptoms — is one of the leading causes of reduced milk quality and yield on dairy farms. Regular somatic cell count testing and daily observation of milk appearance help catch problems early before they affect the entire herd.",
+        text: "Subclinical mastitis - an udder infection with no visible symptoms - is one of the leading causes of reduced milk quality and yield on dairy farms. Regular somatic cell count testing and daily observation of milk appearance help catch problems early before they affect the entire herd.",
       },
       {
         type: "heading" as const,
@@ -290,7 +332,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "Dairy cattle are creatures of habit. Irregular milking schedules cause stress, which elevates cortisol levels and directly suppresses milk let-down. Milking at the same times each day — typically morning and evening — keeps animals calm, productive, and healthy. Farms that maintain consistent schedules report both higher volumes and better quality scores.",
+        text: "Dairy cattle are creatures of habit. Irregular milking schedules cause stress, which elevates cortisol levels and directly suppresses milk let-down. Milking at the same times each day - typically morning and evening - keeps animals calm, productive, and healthy. Farms that maintain consistent schedules report both higher volumes and better quality scores.",
       },
       {
         type: "paragraph" as const,
@@ -302,7 +344,8 @@ export const BLOG_POSTS = [
     slug: "farm-training-sustainable-agriculture",
     category: "Training & Education",
     title: "Why Farm Training Programs Are Key to Sustainable Agriculture",
-    excerpt: "Hands-on training equips farmers with the knowledge and skills to adopt sustainable methods that increase yields and protect natural resources.",
+    excerpt:
+      "Hands-on training equips farmers with the knowledge and skills to adopt sustainable methods that increase yields and protect natural resources.",
     date: "May 10, 2025",
     readTime: "4 min read",
     image: "/images/farm/students.webp",
@@ -326,7 +369,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "The most effective training programs share several characteristics. They are delivered on actual farms — not in classrooms. They use demonstration plots where farmers can see results with their own eyes. They involve farmers in the learning process rather than treating them as passive recipients. And they provide follow-up support so that knowledge translates into lasting behavior change.",
+        text: "The most effective training programs share several characteristics. They are delivered on actual farms - not in classrooms. They use demonstration plots where farmers can see results with their own eyes. They involve farmers in the learning process rather than treating them as passive recipients. And they provide follow-up support so that knowledge translates into lasting behavior change.",
       },
       {
         type: "list" as const,
@@ -344,11 +387,11 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "At Ingaju Farms, our training programs are built around real farm operations, not hypothetical scenarios. Participants work alongside our team on active farm tasks — managing livestock, composting manure, preparing soil, and harvesting crops. This hands-on approach ensures that skills are genuinely transferred, not just described.",
+        text: "At Ingaju Farms, our training programs are built around real farm operations, not hypothetical scenarios. Participants work alongside our team on active farm tasks - managing livestock, composting manure, preparing soil, and harvesting crops. This hands-on approach ensures that skills are genuinely transferred, not just described.",
       },
       {
         type: "paragraph" as const,
-        text: "We offer training in dairy farming, organic crop production, and circular agriculture systems. Programs are available for individuals, farmer groups, schools, and corporate teams interested in understanding sustainable food systems. To date, we have trained over 500 farmers, and we track their progress to ensure the knowledge continues to produce results in the field.",
+        text: "We offer training in dairy farming, organic crop production, and circular agriculture systems. Programs are available for individuals, farmer groups, schools, and corporate teams interested in understanding sustainable food systems. To date, we have trained over 300 farmers, and we track their progress to ensure the knowledge continues to produce results in the field.",
       },
       {
         type: "heading" as const,
@@ -356,7 +399,7 @@ export const BLOG_POSTS = [
       },
       {
         type: "paragraph" as const,
-        text: "When one farmer learns a better practice and achieves better results, their neighbors notice. They ask questions. They visit the farm. Knowledge spreads through social networks in ways that no extension program can replicate through top-down delivery alone. This is why investing in training is not just about the individual farmer — it is about creating the conditions for community-wide transformation.",
+        text: "When one farmer learns a better practice and achieves better results, their neighbors notice. They ask questions. They visit the farm. Knowledge spreads through social networks in ways that no extension program can replicate through top-down delivery alone. This is why investing in training is not just about the individual farmer - it is about creating the conditions for community-wide transformation.",
       },
     ],
   },
@@ -364,7 +407,8 @@ export const BLOG_POSTS = [
     slug: "composting-nutrient-loop-farm",
     category: "Nutrient Recycling",
     title: "How Composting Returns Nutrients to the Soil",
-    excerpt: "Discover how manure, crop residues, and other organic materials are turned into compost that rebuilds soil fertility and supports healthier harvests.",
+    excerpt:
+      "Discover how manure, crop residues, and other organic materials are turned into compost that rebuilds soil fertility and supports healthier harvests.",
     date: "April 22, 2025",
     readTime: "5 min read",
     image: "/images/blog-circular-farming.webp",
@@ -412,44 +456,49 @@ export const BLOG_POSTS = [
 ];
 
 // NOTE: t1 and t6 originally cited specific percentages ("over 60%", "Over
-// 80%") with no source in the repo — softened to non-numeric language
+// 80%") with no source in the repo - softened to non-numeric language
 // pending verification. See Ingaju Priority Fix Tracker, Needs Verification.
 export const TESTIMONIALS = [
   {
     key: "t1",
     name: "Jean-Pierre Habimana",
     role: "Dairy Farmer, Eastern Province",
-    quote: "I purchased two breeding bulls from Ingaju and within one season, my herd's milk yield increased noticeably. The quality of their livestock is unlike anything available locally — healthy, well-managed, and exactly what they promise.",
+    quote:
+      "I purchased two breeding bulls from Ingaju and within one season, my herd's milk yield increased noticeably. The quality of their livestock is unlike anything available locally - healthy, well-managed, and exactly what they promise.",
   },
   {
     key: "t2",
     name: "Claudine Uwimana",
     role: "Smallholder Farmer, Musanze",
-    quote: "The circular agriculture training changed how I think about my entire farm. I used to burn my crop waste. Now it feeds my livestock, and their manure feeds my fields. My costs dropped and my harvests improved in the same season.",
+    quote:
+      "The circular agriculture training changed how I think about my entire farm. I used to burn my crop waste. Now it feeds my livestock, and their manure feeds my fields. My costs dropped and my harvests improved in the same season.",
   },
   {
     key: "t3",
     name: "Olivier Nshimiyimana",
     role: "Agronomist, Rwanda Agriculture Board",
-    quote: "Ingaju is the most complete example of circular agriculture I have encountered in Rwanda. They are not just talking about sustainability — they have built a farm that proves it works at commercial scale. A genuine model for the country.",
+    quote:
+      "Ingaju is the most complete example of circular agriculture I have encountered in Rwanda. They are not just talking about sustainability - they have built a farm that proves it works at commercial scale. A genuine model for the country.",
   },
   {
     key: "t4",
     name: "Solange Mukamana",
     role: "Head Teacher, Kigali STEM School",
-    quote: "We visited Ingaju with 40 secondary school students and it was the most impactful field trip we have ever organised. The team explains every part of the system clearly. Our students came back asking to study agriculture — that says everything.",
+    quote:
+      "We visited Ingaju with 40 secondary school students and it was the most impactful field trip we have ever organised. The team explains every part of the system clearly. Our students came back asking to study agriculture - that says everything.",
   },
   {
     key: "t5",
     name: "Emmanuel Bizimana",
     role: "Supply Manager, Rwamagana Dairy Cooperative",
-    quote: "We have been sourcing fresh milk from Ingaju for over a year. The consistency is remarkable — same quality, same hygiene standards, same reliability every single delivery. For a cooperative our size, that dependability is everything.",
+    quote:
+      "We have been sourcing fresh milk from Ingaju for over a year. The consistency is remarkable - same quality, same hygiene standards, same reliability every single delivery. For a cooperative our size, that dependability is everything.",
   },
   {
     key: "t6",
     name: "Diane Ingabire",
     role: "Program Officer, GreenHill Foundation Rwanda",
-    quote: "We partnered with Ingaju to run farmer training workshops across three districts. Their hands-on approach and deep practical knowledge produced results we rarely see from classroom-based programs. Most participants made measurable changes within two months.",
+    quote:
+      "We partnered with Ingaju to run farmer training workshops across three districts. Their hands-on approach and deep practical knowledge produced results we rarely see from classroom-based programs. Most participants made measurable changes within two months.",
   },
 ];
-

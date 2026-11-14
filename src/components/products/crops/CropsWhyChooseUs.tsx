@@ -11,7 +11,7 @@ const FEATURES = [
   {
     icon: RefreshCw,
     title: "A Growing Circular Loop",
-    desc: "Manure from our livestock is composted into fertilizer as that line scales up, and crop residue goes back into the soil — reducing waste at every stage.",
+    desc: "Manure from our livestock is composted into fertilizer as that line scales up, and crop residue goes back into the soil - reducing waste at every stage.",
   },
   {
     icon: Layers,
@@ -21,7 +21,7 @@ const FEATURES = [
   {
     icon: ShieldCheck,
     title: "Traceable From Field to Table",
-    desc: "We know where every harvest comes from and how it was grown — so you can too.",
+    desc: "We know where every harvest comes from and how it was grown - so you can too.",
   },
 ];
 

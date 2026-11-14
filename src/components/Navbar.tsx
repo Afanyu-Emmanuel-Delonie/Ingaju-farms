@@ -19,7 +19,8 @@ const BASE_NAV_LINKS: NavLink[] = [
     href: "/products/dairy",
     dropdown: [
       { label: "Livestock & Dairy", href: "/products/dairy" },
-      { label: "Crops Production", href: "/products/crops" }
+      { label: "Crops Production", href: "/products/crops" },
+      { label: "Organic Fertilizer", href: "/products/organic-fertilizer" },
     ]
   },
   { label: "Circular System", href: "/circular-system" },
@@ -52,7 +53,7 @@ export default function Navbar({ hasBlog, hasTestimonials }: { hasBlog: boolean;
           <div className="relative h-12 w-12 overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-105">
             <Image
               src="/images/brand/Logo.webp"
-              alt="Ingaju Farms Logo"
+              alt="Ingaju Farms"
               fill
               sizes="48px"
               className="object-contain"

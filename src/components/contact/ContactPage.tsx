@@ -56,10 +56,14 @@ export default function ContactPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const topic = new URLSearchParams(window.location.search).get("topic");
-    if (topic && TOPICS.includes(topic)) {
-      setForm((f) => ({ ...f, topic }));
-    }
+    const params = new URLSearchParams(window.location.search);
+    const topic = params.get("topic");
+    const product = params.get("product");
+    setForm((f) => ({
+      ...f,
+      topic: topic && TOPICS.includes(topic) ? topic : f.topic,
+      message: product ? `I'm interested in ordering: ${product}\n\n${f.message}`.trim() : f.message,
+    }));
   }, []);
 
   function handleChange(

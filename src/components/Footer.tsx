@@ -1,20 +1,22 @@
 import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 const links = {
   company: [
     { label: "About Us", href: "/about" },
     { label: "Circular System", href: "/circular-system" },
-    { label: "Blog", href: "/#blog" },
+    { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],
   products: [
     { label: "Livestock & Dairy", href: "/products/dairy" },
     { label: "Crop Production", href: "/products/crops" },
-    { label: "Breeding Bulls", href: "/products/dairy" },
-    { label: "Organic Fertilizer", href: "/contact?topic=Product%20Order" },
+    { label: "Breeding Bulls", href: "/products/dairy#breeding-stock" },
+    { label: "Organic Fertilizer", href: "/products/organic-fertilizer" },
   ],
   training: [
+    { label: "All Training Programs", href: "/training" },
     { label: "Livestock & Dairy Training", href: "/contact?topic=Training%20Program" },
     { label: "Climate-Smart Crop Production", href: "/contact?topic=Training%20Program" },
     { label: "Circular Agriculture", href: "/contact?topic=Training%20Program" },
@@ -109,10 +111,29 @@ export default function Footer() {
 
         {/* Bottom bar */}
         {/* NOTE: Privacy Policy / Terms of Use links removed — /privacy and /terms don't exist yet. Re-add once built. */}
-        <div className="mt-14 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-8 sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-8 sm:flex-row sm:justify-between">
           <p className="text-xs font-body text-white/35">
             © {new Date().getFullYear()} Ingaju Farms. All rights reserved.
           </p>
+          {/* Sourced from the single SOCIAL_LINKS config (src/lib/constants.ts),
+              which also feeds the Organization JSON-LD `sameAs` field — renders
+              nothing until the owner adds real profile URLs there. */}
+          {SOCIAL_LINKS.length > 0 && (
+            <ul className="flex items-center gap-4">
+              {SOCIAL_LINKS.map((social) => (
+                <li key={social.href}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-body text-white/50 transition-colors hover:text-white"
+                  >
+                    {social.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </footer>

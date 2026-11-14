@@ -16,10 +16,10 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     if (isPortal) return () => {};
 
     const lenis = new Lenis({
-      duration: 0.9,
-      easing: (t) => 1 - Math.pow(1 - t, 4),
+      duration: 0.6,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
-      wheelMultiplier: 0.8,
+      wheelMultiplier: 1.2,
       touchMultiplier: 1.5,
     });
 

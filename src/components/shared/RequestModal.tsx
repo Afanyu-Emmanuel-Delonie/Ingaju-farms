@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { X, ArrowRight } from "lucide-react";
 import { db, isFirebaseConfigured } from "@/lib/firebase";
-import { notifyNewLead } from "@/lib/notify";
+import { notifyNewLead, pingWhatsApp } from "@/lib/notify";
 import { useModal } from "./ModalContext";
 
 const TOUR_TYPES = ["Individual", "School Group", "Corporate", "Farmer Group"];
@@ -31,6 +31,12 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 const EMPTY_ORDER = { qty: "", deliveryDate: "", name: "", phone: "", email: "", address: "", notes: "" };
 const EMPTY_TOUR = { date: "", groupSize: "", tourType: "", name: "", phone: "", email: "", requests: "" };
 const EMPTY_TRAINING = { program: "", name: "", phone: "", email: "", background: "" };
+
+const WHATSAPP_LABELS: Record<string, string> = {
+  order: "an order request on your website",
+  tour: "a tour request on your website",
+  training: "a training enrolment on your website",
+};
 
 export default function RequestModal() {
   const { isOpen, close, config } = useModal();
@@ -75,6 +81,10 @@ export default function RequestModal() {
       setError("Sorry, this form is temporarily unavailable. Please contact us directly at support@ingajufarms.com.");
       return;
     }
+
+    const name =
+      config.variant === "order" ? orderForm.name : config.variant === "tour" ? tourForm.name : trainingForm.name;
+    pingWhatsApp(name, WHATSAPP_LABELS[config.variant] ?? "a request on your website");
 
     setSubmitting(true);
     setError("");

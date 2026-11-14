@@ -27,7 +27,6 @@ import {
   GripVertical,
   Pencil,
   Plus,
-  Sprout,
   Trash2,
   X,
 } from "lucide-react";
@@ -269,35 +268,6 @@ export default function PortalBlogPage() {
     revalidateBlog(post.slug);
   };
 
-  const unseededPosts = BLOG_POSTS.filter(
-    (bp) => !posts.some((p) => p.slug === bp.slug),
-  );
-
-  const seedBuiltInPosts = async () => {
-    const firestore = db;
-    if (!firestore || unseededPosts.length === 0) return;
-    setSubmitting(true);
-    try {
-      await Promise.all(
-        unseededPosts.map((post) =>
-          addDoc(collection(firestore, BLOG_COLLECTION), {
-            ...post,
-            published: true,
-            authorEmail: user?.email ?? "seed",
-            createdAt: serverTimestamp(),
-          }),
-        ),
-      );
-      unseededPosts.forEach((post) => revalidateBlog(post.slug));
-      setSuccessMsg(`Seeded ${unseededPosts.length} built-in post${unseededPosts.length === 1 ? "" : "s"}.`);
-      setTimeout(() => setSuccessMsg(""), 4000);
-    } catch {
-      setError("Something went wrong seeding the built-in posts. Please try again.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
   // ── Render ────────────────────────────────────────────────────────────
 
   return (
@@ -314,17 +284,6 @@ export default function PortalBlogPage() {
         </div>
 
         <div className="flex items-center gap-2">
-          {unseededPosts.length > 0 && (
-            <button
-              onClick={seedBuiltInPosts}
-              disabled={submitting}
-              className="flex items-center gap-2 rounded-xl border border-[#E0D8CE] text-[#6B6259] hover:border-[#3A7D5A] hover:text-[#3A7D5A] text-sm font-body font-semibold px-4 py-2.5 transition-colors disabled:opacity-60"
-              title="Adds the built-in articles as editable posts in this list"
-            >
-              <Sprout className="w-4 h-4" />
-              Seed Built-in Posts ({unseededPosts.length})
-            </button>
-          )}
           <button
             onClick={() => (showForm ? closeForm() : openNew())}
             className="flex items-center gap-2 bg-[#1C2321] hover:bg-[#3A7D5A] text-white text-sm font-body font-semibold px-4 py-2.5 rounded-xl transition-colors"
@@ -384,14 +343,17 @@ export default function PortalBlogPage() {
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">Slug</label>
+              <label className="text-xs font-body font-semibold uppercase tracking-widest text-[#6B6259]">
+                Slug {editingId && <span className="normal-case text-[#B0A89E]">(can&apos;t be changed after publishing)</span>}
+              </label>
               <input
                 type="text"
                 required
+                disabled={!!editingId}
                 value={form.slug}
                 onChange={(e) => setForm((f) => ({ ...f, slug: slugify(e.target.value), slugTouched: true }))}
                 placeholder="how-circular-agriculture..."
-                className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-mono text-[#1C2321] bg-[#F8F6F2] outline-none focus:border-[#3A7D5A] transition-colors"
+                className="rounded-xl border border-[#E0D8CE] px-4 py-3 text-sm font-mono text-[#1C2321] bg-[#F8F6F2] outline-none focus:border-[#3A7D5A] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               />
             </div>
 

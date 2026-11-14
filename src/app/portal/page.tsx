@@ -168,7 +168,7 @@ function LeadCard({
 }) {
   const archived = isArchived(lead);
   return (
-    <div className={`bg-white rounded-2xl border border-neutral-200 p-5 flex flex-col sm:flex-row sm:items-start gap-4 ${archived ? "opacity-60" : ""}`}>
+    <div className={`bg-white rounded-2xl border border-neutral-200 p-5 flex flex-col gap-4 ${archived ? "opacity-60" : ""}`}>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-2 flex-wrap">
           <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#6DBE8C]/10 text-[#3A7D5A]">
@@ -185,9 +185,8 @@ function LeadCard({
           ))}
         </dl>
       </div>
-      <div className="shrink-0 flex flex-col items-end gap-2 text-right">
-        {lead.email && <span className="text-[10px] font-body text-[#3A7D5A] font-semibold">{lead.email}</span>}
-        <div className="flex items-center gap-1.5">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div className="flex items-center flex-wrap gap-1.5">
           {lead.email && (
             <button
               onClick={() => onCopy(lead.email!, `${lead.id}-email`)}
@@ -241,10 +240,13 @@ function LeadCard({
             </button>
           )}
         </div>
-        <span className="flex items-center gap-1 text-[10px] font-body text-[#B0A89E]">
-          <Clock className="w-3 h-3" />
-          {formatDate(lead.createdAt)}
-        </span>
+        <div className="flex items-center gap-3">
+          {lead.email && <span className="text-[10px] font-body text-[#3A7D5A] font-semibold truncate max-w-[180px]">{lead.email}</span>}
+          <span className="flex items-center gap-1 text-[10px] font-body text-[#B0A89E] shrink-0">
+            <Clock className="w-3 h-3" />
+            {formatDate(lead.createdAt)}
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -261,7 +263,7 @@ function SubmissionCard({
 }) {
   const archived = isArchived(submission);
   return (
-    <div className={`bg-white rounded-2xl border border-neutral-200 p-5 flex flex-col sm:flex-row sm:items-start gap-4 ${archived ? "opacity-60" : ""}`}>
+    <div className={`bg-white rounded-2xl border border-neutral-200 p-5 flex flex-col gap-3 ${archived ? "opacity-60" : ""}`}>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1 flex-wrap">
           <span className={`text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${statusBadge(submission.type)}`}>{submission.type}</span>
@@ -269,9 +271,8 @@ function SubmissionCard({
         </div>
         <p className="text-xs font-body text-[#6B6259] leading-relaxed line-clamp-2">{submission.body}</p>
       </div>
-      <div className="shrink-0 flex flex-col items-end gap-1.5 text-right">
-        <span className="text-[10px] font-body text-[#6B6259]">{submission.submittedBy}</span>
-        <div className="flex items-center gap-1.5">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div className="flex items-center flex-wrap gap-1.5">
           <button
             onClick={() => onArchive(!archived)}
             title={archived ? "Restore to active" : "Mark as archived"}
@@ -293,10 +294,13 @@ function SubmissionCard({
             </button>
           )}
         </div>
-        <span className="flex items-center gap-1 text-[10px] font-body text-[#B0A89E]">
-          <Clock className="w-3 h-3" />
-          {formatDate(submission.createdAt)}
-        </span>
+        <div className="flex items-center gap-3">
+          <span className="text-[10px] font-body text-[#6B6259] truncate max-w-[160px]">{submission.submittedBy}</span>
+          <span className="flex items-center gap-1 text-[10px] font-body text-[#B0A89E] shrink-0">
+            <Clock className="w-3 h-3" />
+            {formatDate(submission.createdAt)}
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -469,18 +473,18 @@ export default function PortalPage() {
       )}
 
       {/* Tabs + New button */}
-      <div className="flex items-center justify-between mb-6 gap-4 flex-wrap">
-        <div className="flex items-center gap-1 bg-white border border-neutral-200 rounded-xl p-1 flex-wrap">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
+        <div className="flex items-center gap-1 bg-white border border-neutral-200 rounded-xl p-1 w-full sm:w-auto">
           {TABS.map(({ key, label, icon: Icon, color }) => (
             <button
               key={key}
               onClick={() => { setActiveTab(key); setShowForm(false); setShowArchived(false); }}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-body font-semibold transition-all duration-200 ${
+              className={`flex flex-1 sm:flex-none items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-lg text-sm font-body font-semibold transition-all duration-200 ${
                 activeTab === key ? "bg-[#1C2321] text-white shadow-sm" : "text-[#6B6259] hover:text-[#1C2321]"
               }`}
             >
-              <Icon className={`w-3.5 h-3.5 ${activeTab === key ? "text-white" : color}`} />
-              {label}
+              <Icon className={`w-3.5 h-3.5 shrink-0 ${activeTab === key ? "text-white" : color}`} />
+              <span className="hidden xs:inline sm:inline">{label}</span>
               <span className={`text-[10px] font-mono rounded-full px-1.5 py-0.5 ${
                 activeTab === key ? "bg-white/15 text-white" : "bg-neutral-100 text-[#6B6259]"
               }`}>
@@ -490,32 +494,34 @@ export default function PortalPage() {
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => { setShowArchived((v) => !v); setShowForm(false); }}
-            className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-body font-semibold transition-colors ${
+            className={`flex items-center gap-2 rounded-xl px-3 sm:px-4 py-2.5 text-sm font-body font-semibold transition-colors ${
               showArchived ? "bg-[#1C2321] text-white" : "border border-[#E0D8CE] text-[#6B6259] hover:border-[#3A7D5A] hover:text-[#3A7D5A]"
             }`}
           >
             {showArchived ? <X className="w-4 h-4" /> : <Archive className="w-4 h-4" />}
-            {showArchived ? "Back to Active" : `Archived (${archivedCount})`}
+            <span className="hidden sm:inline">{showArchived ? "Back to Active" : `Archived (${archivedCount})`}</span>
+            <span className="sm:hidden">{showArchived ? "Active" : `(${archivedCount})`}</span>
           </button>
           {showArchived && archivedCount > 0 && (
             <button
               onClick={deleteAllArchived}
-              className="flex items-center gap-2 rounded-xl border border-red-200 text-red-500 hover:bg-red-50 hover:border-red-400 text-sm font-body font-semibold px-4 py-2.5 transition-colors"
+              className="flex items-center gap-2 rounded-xl border border-red-200 text-red-500 hover:bg-red-50 hover:border-red-400 text-sm font-body font-semibold px-3 sm:px-4 py-2.5 transition-colors"
             >
               <Trash2 className="w-4 h-4" />
-              Delete All Archived
+              <span className="hidden sm:inline">Delete All Archived</span>
             </button>
           )}
           {!showArchived && (
             <button
               onClick={() => setShowForm((v) => !v)}
-              className="flex items-center gap-2 bg-[#1C2321] hover:bg-[#3A7D5A] text-white text-sm font-body font-semibold px-4 py-2.5 rounded-xl transition-colors"
+              className="flex items-center gap-2 bg-[#1C2321] hover:bg-[#3A7D5A] text-white text-sm font-body font-semibold px-3 sm:px-4 py-2.5 rounded-xl transition-colors"
             >
               {showForm ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-              {showForm ? "Cancel" : `New ${TABS.find((t) => t.key === activeTab)?.label.slice(0, -1)}`}
+              <span className="hidden sm:inline">{showForm ? "Cancel" : `New ${TABS.find((t) => t.key === activeTab)?.label.slice(0, -1)}`}</span>
+              <span className="sm:hidden">{showForm ? "Cancel" : "New"}</span>
             </button>
           )}
         </div>
